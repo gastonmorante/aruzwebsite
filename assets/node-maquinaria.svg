@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- ARUZ Maquinaria Node Emblem -->
+  <g transform="translate(24, 16)">
+    <path d="M 6 36 L 18 16 L 34 16 L 42 36 L 36 36 L 30 22 L 18 22 L 12 36 Z" fill="#EEB623"/>
+    <circle cx="14" cy="40" r="4.5" fill="#FFFFFF"/>
+    <circle cx="26" cy="40" r="4.5" fill="#FFFFFF"/>
+    <circle cx="38" cy="40" r="4.5" fill="#FFFFFF"/>
+  </g>
+  <text x="50" y="78" text-anchor="middle" font-family="'Montserrat', 'Poppins', sans-serif" font-size="11" font-weight="900" letter-spacing="1px" fill="#FFFFFF">ARUZ</text>
+  <text x="50" y="90" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="6.5" font-weight="700" letter-spacing="1.2px" fill="#EEB623">MAQUINARIA</text>
+</svg>

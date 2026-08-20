@@ -136,7 +136,7 @@ function initParticleCanvas() {
 }
 
 /* --------------------------------------------------------------------------
-   3D HUD ORBIT ENGINE & REAL-TIME CALLOUT LEADER LINES
+   3D HUD ORBIT ENGINE & REAL-TIME CALLOUT LEADER LINES (ON HOVER)
    -------------------------------------------------------------------------- */
 function init3DHudOrbit() {
   const stage = document.getElementById('hudStage');
@@ -150,7 +150,8 @@ function init3DHudOrbit() {
   let currentAngle = 0;
   let targetSpeed = 0.0032;
   let currentSpeed = 0.0032;
-  let isHovered = false;
+  let activeHoverIndex = -1;
+  let leaveTimer = null;
 
   const nodeOffsets = [
     0,                  // 0 rad (ARUZ Desarrolladora)
@@ -159,27 +160,48 @@ function init3DHudOrbit() {
     (3 * Math.PI) / 2   // 3PI/2 rad (ARUZ Maquinaria)
   ];
 
-  // Pause/slow speed on hover
-  nodes.forEach(node => {
-    node.addEventListener('mouseenter', () => {
-      isHovered = true;
-      targetSpeed = 0.0004; // Gentle slow motion inspection
+  function setActive(idx) {
+    if (leaveTimer) clearTimeout(leaveTimer);
+    activeHoverIndex = idx;
+    targetSpeed = 0.0003; // Gentle slow motion inspection
+    
+    nodes.forEach((n, i) => {
+      if (i === idx) n.classList.add('active');
+      else n.classList.remove('active');
     });
-    node.addEventListener('mouseleave', () => {
-      isHovered = false;
+
+    cards.forEach((c, i) => {
+      if (i === idx) c.classList.add('visible');
+      else c.classList.remove('visible');
+    });
+  }
+
+  function clearActive() {
+    leaveTimer = setTimeout(() => {
+      activeHoverIndex = -1;
       targetSpeed = 0.0032;
+      nodes.forEach(n => n.classList.remove('active'));
+      cards.forEach(c => c.classList.remove('visible'));
+    }, 180);
+  }
+
+  // Node hover events
+  nodes.forEach((node, idx) => {
+    node.addEventListener('mouseenter', () => setActive(idx));
+    node.addEventListener('mouseleave', clearActive);
+    // Touch support for mobile devices
+    node.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768 && activeHoverIndex !== idx) {
+        e.preventDefault();
+        setActive(idx);
+      }
     });
   });
 
-  cards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      isHovered = true;
-      targetSpeed = 0.0004;
-    });
-    card.addEventListener('mouseleave', () => {
-      isHovered = false;
-      targetSpeed = 0.0032;
-    });
+  // Card hover events to maintain visibility
+  cards.forEach((card, idx) => {
+    card.addEventListener('mouseenter', () => setActive(idx));
+    card.addEventListener('mouseleave', clearActive);
   });
 
   // Mouse tilt parallax on the 3D stage
@@ -192,8 +214,8 @@ function init3DHudOrbit() {
     const rect = stage.getBoundingClientRect();
     const nx = (e.clientX - (rect.left + rect.width / 2)) / (window.innerWidth / 2);
     const ny = (e.clientY - (rect.top + rect.height / 2)) / (window.innerHeight / 2);
-    targetTiltY = nx * 7;  // Rotate Y in deg
-    targetTiltX = -ny * 6; // Rotate X in deg
+    targetTiltY = nx * 6;  // Rotate Y in deg
+    targetTiltX = -ny * 5; // Rotate X in deg
   });
 
   function updateOrbit() {
@@ -211,12 +233,11 @@ function init3DHudOrbit() {
     const centerX = stageWidth / 2;
     const centerY = stageHeight / 2;
 
-    // Elliptical 3D radii responsive to container width
     const isMobile = window.innerWidth <= 768;
     const rx = isMobile ? stageWidth * 0.38 : Math.min(380, stageWidth * 0.34);
     const ry = isMobile ? stageHeight * 0.32 : Math.min(140, stageHeight * 0.28);
 
-    // Callout fixed anchor quadrant offsets relative to center
+    // Dynamic quadrant anchor positions for Callout Cards
     const cardPositions = [
       { x: centerX + rx * 0.88, y: centerY - ry * 1.35 }, // Top Right (Desarrolladora)
       { x: centerX + rx * 0.88, y: centerY + ry * 0.85 }, // Bottom Right (Inmobiliaria)
@@ -238,11 +259,11 @@ function init3DHudOrbit() {
       const nodeX = centerX + cosA * rx;
       const nodeY = centerY + sinA * ry;
 
-      // 3D Depth: sinA maps from -1 (back/top) to +1 (front/bottom)
+      // 3D Depth calculation
       const depthFactor = (sinA + 1) / 2; // 0 (far) to 1 (near)
-      const scale = 0.85 + depthFactor * 0.35; // 0.85x to 1.2x
-      const opacity = 0.65 + depthFactor * 0.35;
-      const zIndex = Math.round(5 + depthFactor * 15);
+      const scale = (idx === activeHoverIndex ? 1.15 : 0.85) + depthFactor * 0.3;
+      const opacity = idx === activeHoverIndex ? 1.0 : (0.7 + depthFactor * 0.3);
+      const zIndex = Math.round((idx === activeHoverIndex ? 30 : 5) + depthFactor * 15);
 
       node.style.left = `${nodeX}px`;
       node.style.top = `${nodeY}px`;
@@ -250,41 +271,39 @@ function init3DHudOrbit() {
       node.style.opacity = opacity;
       node.style.zIndex = zIndex;
 
-      // Card position for this sub-brand
+      // Update card positioning
       const card = cards[idx];
       if (card) {
-        let cardX, cardY;
         if (!isMobile) {
-          cardX = cardPositions[idx].x;
-          cardY = cardPositions[idx].y;
+          const cardX = cardPositions[idx].x;
+          const cardY = cardPositions[idx].y;
           card.style.left = `${cardX}px`;
           card.style.top = `${cardY}px`;
-        } else {
-          // In mobile, cards arrange cleanly below
-          cardX = centerX;
-          cardY = centerY;
         }
 
-        // Draw Real-Time Technical Callout Leader Line
-        if (!isMobile) {
+        // ONLY draw Technical Callout Leader Line if this node/card is currently active/hovered!
+        if (!isMobile && idx === activeHoverIndex) {
+          const cardX = cardPositions[idx].x;
+          const cardY = cardPositions[idx].y;
           const cardAnchorX = idx < 2 ? cardX : cardX + card.offsetWidth;
           const cardAnchorY = cardY + card.offsetHeight / 2;
 
-          const kneeX = nodeX + (cardAnchorX > nodeX ? 35 : -35);
+          const kneeX = nodeX + (cardAnchorX > nodeX ? 40 : -40);
           const kneeY = cardAnchorY;
 
-          // Leader Polyline: (nodeX, nodeY) -> (kneeX, nodeY) -> (kneeX, kneeY) -> (cardAnchorX, cardAnchorY)
+          // Leader Polyline
           const polyline = document.createElementNS('http://www.w3.org/2000/svg', 'path');
           const d = `M ${nodeX} ${nodeY} L ${kneeX} ${nodeY} L ${kneeX} ${kneeY} L ${cardAnchorX} ${cardAnchorY}`;
           polyline.setAttribute('d', d);
-          polyline.setAttribute('class', `hud-leader-line ${node.classList.contains('active') ? 'active' : ''}`);
+          polyline.setAttribute('class', 'hud-leader-line active');
+          polyline.style.opacity = '1';
           svg.appendChild(polyline);
 
           // Node Anchor Dot
           const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
           dot.setAttribute('cx', nodeX);
           dot.setAttribute('cy', nodeY);
-          dot.setAttribute('r', 3.5);
+          dot.setAttribute('r', 4);
           dot.setAttribute('class', 'hud-leader-dot');
           svg.appendChild(dot);
 
@@ -292,7 +311,7 @@ function init3DHudOrbit() {
           const dotCard = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
           dotCard.setAttribute('cx', cardAnchorX);
           dotCard.setAttribute('cy', cardAnchorY);
-          dotCard.setAttribute('r', 2.5);
+          dotCard.setAttribute('r', 3);
           dotCard.setAttribute('class', 'hud-leader-dot');
           svg.appendChild(dotCard);
         }

@@ -695,25 +695,26 @@ p {
   transition: transform 0.1s linear;
 }
 
-/* Node Emblem Button */
+/* Node Emblem Button with Brand Logo */
 .node-emblem {
-  width: 60px;
-  height: 60px;
+  width: 76px;
+  height: 76px;
   border-radius: 50%;
-  background: var(--color-carbon);
-  border: 1.5px solid var(--color-border-gold);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  background: radial-gradient(circle at 35% 35%, #2A2224 0%, #161213 85%);
+  border: 2px solid var(--color-border-gold);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.85), inset 0 0 12px rgba(238, 182, 35, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   transition: var(--transition-smooth);
+  padding: 6px;
 }
 
-.node-emblem svg {
-  width: 26px;
-  height: 26px;
-  fill: var(--color-gold);
+.node-logo-svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   transition: var(--transition-smooth);
 }
 
@@ -731,19 +732,34 @@ p {
   100% { transform: scale(1.4); opacity: 0; }
 }
 
-/* Iron Man / After Effects HUD Callout Card */
+/* Iron Man / After Effects HUD Callout Card (Hidden by default, shown on Hover) */
 .hud-callout-card {
   position: absolute;
-  width: 240px;
-  background: rgba(22, 18, 19, 0.92);
+  width: 250px;
+  background: rgba(22, 18, 19, 0.95);
   border: 1px solid var(--color-border-gold);
   border-radius: 6px;
-  padding: 0.75rem 0.9rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(12px);
+  padding: 0.85rem 1rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(14px);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px) scale(0.95);
+  transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.32s;
+  z-index: 25;
+}
+
+.hud-callout-card.visible,
+.hud-callout-card:hover {
+  opacity: 1;
+  visibility: visible;
   pointer-events: auto;
-  transition: var(--transition-smooth);
-  z-index: 12;
+  transform: translateY(0) scale(1);
+  box-shadow: 0 20px 50px rgba(238, 182, 35, 0.3);
+  border-color: var(--color-gold);
 }
 
 .hud-callout-card::before {
@@ -751,10 +767,10 @@ p {
   position: absolute;
   top: -1px;
   left: 10px;
-  width: 30px;
+  width: 35px;
   height: 2px;
   background: var(--color-gold);
-  box-shadow: 0 0 8px var(--color-gold);
+  box-shadow: 0 0 10px var(--color-gold);
 }
 
 .hud-card-sys-tag {
