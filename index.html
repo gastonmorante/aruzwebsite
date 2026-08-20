@@ -113,9 +113,9 @@
   <style>
     body { scroll-behavior: smooth; }
     .glass-panel { 
-      background: rgba(255, 255, 255, 0.82); 
-      backdrop-filter: blur(14px); 
-      border: 1px solid rgba(238, 182, 35, 0.22); 
+      background: rgba(255, 255, 255, 0.88); 
+      backdrop-filter: blur(16px); 
+      border: 1px solid rgba(238, 182, 35, 0.25); 
     }
     .ambient-shadow { 
       box-shadow: 0 12px 35px rgba(35, 31, 32, 0.07); 
@@ -174,9 +174,9 @@
   </div>
 
   <!-- ==========================================================================
-       1. HERO SECTION WITH GOOGLE STITCH WEBGL SHADER
+       1. UNIFIED HERO SECTION WITH WEBGL SHADER & INTEGRATED 3D ORBIT HUB
        ========================================================================== -->
-  <section class="relative w-full min-h-[90vh] flex items-center justify-center pt-24 pb-12 px-margin-mobile md:px-margin-desktop overflow-hidden">
+  <section class="relative w-full min-h-screen flex flex-col items-center justify-start pt-24 pb-12 px-margin-mobile md:px-margin-desktop overflow-hidden">
     
     <!-- STITCH_SHADER_START:ANIMATION_5 -->
     <div class="absolute inset-0 w-full h-full object-cover -z-10 opacity-60" style="display:block;">
@@ -308,40 +308,25 @@
     </div>
     <!-- STITCH_SHADER_END:ANIMATION_5 -->
 
-    <div class="relative z-10 max-w-4xl mx-auto text-center animate-fade-up py-8">
-      <h1 class="font-display-lg text-4xl sm:text-5xl md:text-6xl text-carbon-aruz mb-6 leading-tight font-serif">
-        Control total, desde el diseño hasta la entrega.
-      </h1>
-      <p class="font-body-lg text-base md:text-lg text-gris-grafito mb-8 max-w-2xl mx-auto leading-relaxed">
-        ARUZ es la única firma en la Riviera Maya que asesora, construye y da seguimiento a tu propiedad bajo una misma estructura familiar. No dependes de varios proveedores: dependes de un solo equipo que responde por todo el proceso.
-      </p>
-      
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+    <!-- Top Headline Content -->
+    <div class="relative z-10 max-w-4xl mx-auto text-center animate-fade-up pt-2 pb-4">
+      <div class="mb-4 flex justify-center">
         <span class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-md px-5 py-2 rounded-full border border-outline-variant/40 font-label-caps text-xs text-verde-manglar font-bold shadow-sm">
           <span class="material-symbols-outlined text-base">verified</span>
           +12 años trabajando con los expertos de Ciudad Mayakoba.
         </span>
-        <a href="#interactive-hub-3d" class="inline-flex items-center gap-2 bg-carbon-aruz text-white hover:bg-dorado-profundo px-6 py-2.5 rounded-full font-label-caps text-xs uppercase font-bold transition-all shadow-md">
-          <span>Ver Núcleo 3D Interactivo</span>
-          <span class="material-symbols-outlined text-sm">orbit</span>
-        </a>
       </div>
+      <h1 class="font-display-lg text-4xl sm:text-5xl md:text-6xl text-carbon-aruz mb-4 leading-tight font-serif">
+        Control total, desde el diseño hasta la entrega.
+      </h1>
+      <p class="font-body-lg text-base md:text-lg text-gris-grafito mb-6 max-w-2xl mx-auto leading-relaxed">
+        ARUZ es la única firma en la Riviera Maya que asesora, construye y da seguimiento a tu propiedad bajo una misma estructura familiar. No dependes de varios proveedores: dependes de un solo equipo que responde por todo el proceso.
+      </p>
     </div>
-  </section>
 
-  <!-- ==========================================================================
-       2. ARUZ ECOSYSTEM HUB - 3D INTERACTIVE CORE ANIMATION (ORBIT ENGINE)
-       ========================================================================== -->
-  <section class="py-10 md:py-16 px-margin-mobile md:px-margin-desktop bg-carbon-aruz text-white relative overflow-hidden" id="interactive-hub-3d">
-    
-    <!-- Background Technical Grid & Particle Glow -->
-    <div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: linear-gradient(to right, rgba(238,182,35,0.15) 1px, transparent 1px), linear-gradient(to bottom, rgba(238,182,35,0.15) 1px, transparent 1px); background-size: 40px 40px;"></div>
-    <div class="absolute inset-0 bg-radial-gradient from-dorado-aruz/10 via-transparent to-transparent pointer-events-none"></div>
-
-    <div class="max-w-[1420px] mx-auto relative z-10">
-      
-      <!-- 3D Orbit Stage Container -->
-      <div class="hud-orbit-stage" id="hudStage" style="height: 520px; max-width: 1100px; margin: 0 auto; position: relative;">
+    <!-- Integrated 3D Interactive Orbit Hub (Centerpiece of the Hero) -->
+    <div class="relative z-10 w-full max-w-[1280px] mx-auto mt-2">
+      <div class="hud-orbit-stage" id="hudStage" style="height: 480px; max-width: 1100px; margin: 0 auto; position: relative;">
         
         <!-- SVG Dynamic Leader Lines -->
         <svg class="hud-callout-svg" id="hudCalloutSvg" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10;"></svg>
@@ -442,12 +427,12 @@
         </div>
 
       </div>
-
     </div>
+
   </section>
 
   <!-- ==========================================================================
-       3. CORE 360 DIVISIONS - CARDS WITH OFFICIAL SVG LOGOS
+       2. CORE 360 DIVISIONS - CARDS WITH CRISP DARK VECTOR SVG LOGOS
        ========================================================================== -->
   <section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface-bright relative border-t border-outline-variant/20" id="divisiones-core">
     <div class="max-w-[1420px] mx-auto">
@@ -469,7 +454,7 @@
         <!-- 1. ARUZ Desarrolladora -->
         <div class="glass-panel rounded-xl p-7 ambient-shadow hover:shadow-xl transition-all duration-300 animate-fade-up group flex flex-col h-full border-t-4 border-t-transparent hover:border-t-dorado-profundo hover:-translate-y-1">
           <div class="h-14 mb-4 flex items-center">
-            <img src="assets/logo-aruz-desarrolladora.svg" alt="ARUZ Desarrolladora" class="h-11 w-auto object-contain">
+            <img src="assets/logo-aruz-desarrolladora-dark.svg" alt="ARUZ Desarrolladora" class="h-11 w-auto object-contain">
           </div>
           <span class="font-label-caps text-[11px] text-dorado-profundo mb-2 block uppercase font-bold tracking-wider">Desarrollo Propio</span>
           <p class="font-body-md text-xs sm:text-sm text-gris-grafito mb-6 flex-grow leading-relaxed">
@@ -490,7 +475,7 @@
         <!-- 2. ARUZ Inmobiliaria -->
         <div class="glass-panel rounded-xl p-7 ambient-shadow hover:shadow-xl transition-all duration-300 animate-fade-up delay-100 group flex flex-col h-full border-t-4 border-t-transparent hover:border-t-dorado-profundo hover:-translate-y-1">
           <div class="h-14 mb-4 flex items-center">
-            <img src="assets/logo-aruz-inmobiliaria.svg" alt="ARUZ Inmobiliaria" class="h-11 w-auto object-contain">
+            <img src="assets/logo-aruz-inmobiliaria-dark.svg" alt="ARUZ Inmobiliaria" class="h-11 w-auto object-contain">
           </div>
           <span class="font-label-caps text-[11px] text-dorado-profundo mb-2 block uppercase font-bold tracking-wider">Comercialización</span>
           <p class="font-body-md text-xs sm:text-sm text-gris-grafito mb-6 flex-grow leading-relaxed">
@@ -511,7 +496,7 @@
         <!-- 3. CADE Constructora -->
         <div class="glass-panel rounded-xl p-7 ambient-shadow hover:shadow-xl transition-all duration-300 animate-fade-up delay-200 group flex flex-col h-full border-t-4 border-t-transparent hover:border-t-dorado-profundo hover:-translate-y-1">
           <div class="h-14 mb-4 flex items-center">
-            <img src="assets/logo-cade.svg" alt="CADE Diseño y Construcción" class="h-11 w-auto object-contain">
+            <img src="assets/logo-cade-dark.svg" alt="CADE Diseño y Construcción" class="h-11 w-auto object-contain">
           </div>
           <span class="font-label-caps text-[11px] text-dorado-profundo mb-2 block uppercase font-bold tracking-wider">Brazo Constructor</span>
           <p class="font-body-md text-xs sm:text-sm text-gris-grafito mb-6 flex-grow leading-relaxed">
@@ -532,7 +517,7 @@
         <!-- 4. ARUZ Maquinaria -->
         <div class="glass-panel rounded-xl p-7 ambient-shadow hover:shadow-xl transition-all duration-300 animate-fade-up delay-300 group flex flex-col h-full border-t-4 border-t-transparent hover:border-t-dorado-profundo hover:-translate-y-1">
           <div class="h-14 mb-4 flex items-center">
-            <img src="assets/logo-aruz-maquinaria.svg" alt="ARUZ Maquinaria" class="h-11 w-auto object-contain">
+            <img src="assets/logo-aruz-maquinaria-dark.svg" alt="ARUZ Maquinaria" class="h-11 w-auto object-contain">
           </div>
           <span class="font-label-caps text-[11px] text-dorado-profundo mb-2 block uppercase font-bold tracking-wider">Infraestructura</span>
           <p class="font-body-md text-xs sm:text-sm text-gris-grafito mb-6 flex-grow leading-relaxed">
@@ -555,7 +540,7 @@
   </section>
 
   <!-- ==========================================================================
-       4. 4 REAL PRE-SALE HOUSES IN CIUDAD MAYAKOBA (4-COLUMN HORIZONTAL GRID)
+       3. 4 REAL PRE-SALE HOUSES IN CIUDAD MAYAKOBA (4-COLUMN HORIZONTAL GRID)
        ========================================================================== -->
   <section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-carbon-aruz text-white relative" id="preventas-mayakoba">
     <div class="max-w-[1420px] mx-auto">
@@ -747,7 +732,7 @@
   </section>
 
   <!-- ==========================================================================
-       5. CIRCLO ARUZ & CONTACT MODULE
+       4. CIRCLO ARUZ & CONTACT MODULE
        ========================================================================== -->
   <section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface relative" id="contacto-hub">
     <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
