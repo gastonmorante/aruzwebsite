@@ -1,0 +1,1567 @@
+/* ==========================================================================
+   ARUZ CORE 360 DIGITAL ECOSYSTEM - STYLE SYSTEM
+   Manual de Identidad de Marca v2.0 - High-Tech Minimalist Architecture
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Work+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Official Brand Palette (Sección 14 Manual v2.0) */
+  --color-gold: #EEB623;          /* Dorado ARUZ (Primario / logotipo) */
+  --color-carbon: #231F20;        /* Carbón ARUZ (Texto principal y fondos oscuros) */
+  --color-piedra: #D8C9AE;        /* Piedra Maya (Neutro cálido de apoyo) */
+  --color-manglar: #3F5D48;       /* Verde Manglar (Acento sustentable / certificación) */
+  --color-grafito: #59555A;       /* Gris Grafito (Texto secundario y fichas técnicas) */
+  --color-gold-deep: #C79215;     /* Dorado Profundo (Acento / Botones CTA) */
+
+  /* Supporting UI Tones & Glassmorphism */
+  --color-bg-body: #0F0E0F;
+  --color-bg-card: #181617;
+  --color-bg-card-alt: #1F1C1D;
+  --color-bg-light: #F7F5F0;
+  --color-text-light: #F4F1EA;
+  --color-text-muted: #A39D98;
+  --color-border-subtle: rgba(216, 201, 174, 0.15);
+  --color-border-gold: rgba(238, 182, 35, 0.4);
+  --color-border-gold-solid: #EEB623;
+  --color-gold-glow: rgba(238, 182, 35, 0.18);
+  --color-manglar-glow: rgba(63, 93, 72, 0.25);
+  
+  /* Glass Effects */
+  --glass-bg: rgba(23, 21, 22, 0.85);
+  --glass-border: rgba(238, 182, 35, 0.2);
+  --glass-blur: blur(14px);
+
+  /* Typography (Sección 15 Manual v2.0) */
+  --font-title: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Standard Spacing & Transitions */
+  --container-max: 1280px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --shadow-gold: 0 12px 35px -8px rgba(238, 182, 35, 0.25);
+  --shadow-card: 0 16px 40px -10px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1.05rem; /* 16.8px within 16-18px standard */
+  line-height: 1.4;   /* Interlineado 1.3x - 1.4x para cuerpo */
+  color: var(--color-text-light);
+  background-color: var(--color-bg-body);
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(238, 182, 35, 0.04) 0%, transparent 45%),
+    radial-gradient(circle at 85% 65%, rgba(63, 93, 72, 0.05) 0%, transparent 50%),
+    linear-gradient(to bottom, rgba(35, 31, 32, 0.4) 0%, rgba(15, 14, 15, 0.95) 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+/* Headings Hierarchy (Sección 15 Manual v2.0) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  line-height: 1.15;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem); /* 48px - 56px web standard */
+  font-weight: 900; /* Poppins Black */
+}
+
+h2 {
+  font-size: clamp(1.85rem, 3.5vw, 2.25rem); /* 32px - 36px web standard */
+  font-weight: 800; /* Poppins Black/ExtraBold */
+}
+
+h3 {
+  font-size: clamp(1.3rem, 2.2vw, 1.5rem); /* 22px - 24px web standard */
+  font-weight: 600; /* Poppins SemiBold / Light */
+}
+
+h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+p {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.highlight-text {
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.legal-text {
+  font-size: 0.8rem; /* 12.8px within 12-13px standard */
+  color: var(--color-grafito);
+  line-height: 1.4;
+}
+
+.gold-accent {
+  color: var(--color-gold);
+}
+
+.manglar-accent {
+  color: #5BA36F;
+}
+
+.piedra-accent {
+  color: var(--color-piedra);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.section-spacing {
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
+  position: relative;
+}
+
+/* ==========================================================================
+   HEADER & NAVBAR (Glassmorphism + 1X Protection Zone)
+   ========================================================================== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border);
+  transition: var(--transition-smooth);
+}
+
+.site-header.scrolled {
+  background: rgba(15, 14, 15, 0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-bottom-color: rgba(238, 182, 35, 0.35);
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 86px;
+  gap: 1.5rem;
+}
+
+/* Logo with 1X safety margin */
+.brand-logo-link {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: var(--transition-smooth);
+}
+
+.brand-logo-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--color-gold);
+}
+
+.brand-logo-img {
+  height: 48px;
+  width: auto;
+  min-width: 145px;
+  object-fit: contain;
+}
+
+/* Navigation Links */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  font-family: var(--font-title);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  padding: 0.5rem 0.2rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--color-gold);
+  transition: var(--transition-smooth);
+}
+
+.nav-link:hover {
+  color: var(--color-gold);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Nav Dropdown for Divisions */
+.has-dropdown:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  min-width: 260px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  box-shadow: var(--shadow-card);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: var(--transition-smooth);
+  z-index: 100;
+}
+
+.dropdown-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  transition: var(--transition-smooth);
+}
+
+.dropdown-link:hover {
+  background: rgba(238, 182, 35, 0.12);
+  color: var(--color-gold);
+}
+
+.dropdown-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(238, 182, 35, 0.2);
+  color: var(--color-gold);
+}
+
+.dropdown-tag.cade {
+  background: rgba(63, 93, 72, 0.3);
+  color: #7BD195;
+}
+
+/* CTA Button - Dorado Profundo */
+.btn-cta-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-deep) 100%);
+  color: var(--color-carbon);
+  font-family: var(--font-title);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(238, 182, 35, 0.3);
+  transition: var(--transition-smooth);
+  text-align: center;
+}
+
+.btn-cta-gold:hover {
+  background: linear-gradient(135deg, #FFC83B 0%, var(--color-gold) 100%);
+  box-shadow: 0 6px 22px rgba(238, 182, 35, 0.45);
+  transform: translateY(-2px);
+  color: #000000;
+}
+
+.btn-secondary-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border-gold);
+  color: var(--color-text-light);
+  font-family: var(--font-title);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-secondary-outline:hover {
+  background: rgba(238, 182, 35, 0.12);
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+/* Mobile Hamburger Toggle */
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.mobile-toggle span {
+  display: block;
+  width: 100%;
+  height: 2.5px;
+  background: var(--color-gold);
+  border-radius: 2px;
+  transition: var(--transition-smooth);
+}
+
+.mobile-toggle.active span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.mobile-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-toggle.active span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   HERO SECTION - MODELO 360 INTERACTIVO
+   ========================================================================== */
+
+.hero-section {
+  padding-top: 130px;
+  padding-bottom: 4rem;
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(circle at 50% 30%, rgba(238, 182, 35, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(63, 93, 72, 0.1) 0%, transparent 50%);
+}
+
+.hero-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(216, 201, 174, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(216, 201, 174, 0.03) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  background: rgba(238, 182, 35, 0.1);
+  border: 1px solid var(--color-border-gold);
+  font-family: var(--font-title);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 1.5rem;
+}
+
+.hero-badge .pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  box-shadow: 0 0 10px var(--color-gold);
+  animation: pulseAnimation 2s infinite;
+}
+
+@keyframes pulseAnimation {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 16px var(--color-gold); }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.hero-title {
+  margin-bottom: 1.2rem;
+  line-height: 1.1;
+}
+
+.hero-title span {
+  display: block;
+}
+
+.hero-tagline {
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  font-weight: 600;
+  color: var(--color-piedra);
+  margin-bottom: 1rem;
+}
+
+.hero-evp {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  max-width: 780px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+/* 360 Ecosystem Flow Diagram (Interactive) */
+.flow-360-container {
+  background: rgba(24, 22, 23, 0.9);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: 2.2rem;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  backdrop-filter: var(--glass-blur);
+  margin-top: 1rem;
+}
+
+.flow-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.flow-title-wrap h3 {
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.flow-title-wrap p {
+  font-size: 0.88rem;
+}
+
+.flow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  position: relative;
+}
+
+.flow-card {
+  background: rgba(35, 31, 32, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 1.4rem 1.1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.flow-card:hover, .flow-card.active {
+  background: rgba(35, 31, 32, 0.95);
+  border-color: var(--color-gold);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(238, 182, 35, 0.2);
+}
+
+.flow-step-num {
+  font-family: var(--font-title);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.flow-card h4 {
+  font-size: 1.05rem;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+}
+
+.flow-card p {
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.flow-card .flow-icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 0.8rem;
+  fill: var(--color-gold);
+}
+
+/* Active detail preview bar */
+.flow-detail-banner {
+  margin-top: 1.8rem;
+  padding: 1.2rem 1.5rem;
+  border-radius: var(--radius-md);
+  background: rgba(238, 182, 35, 0.06);
+  border-left: 4px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  text-align: left;
+}
+
+.flow-detail-text strong {
+  color: var(--color-gold);
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+}
+
+.flow-detail-text p {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-top: 0.2rem;
+}
+
+/* ==========================================================================
+   HOLDING STRUCTURE & 4 DIVISIONS SECTION
+   ========================================================================== */
+
+.holding-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.division-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.division-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-border-subtle);
+  transition: var(--transition-smooth);
+}
+
+.division-card.aruz-dev {
+  border-color: var(--color-border-gold);
+  box-shadow: 0 10px 30px -10px rgba(238, 182, 35, 0.15);
+}
+
+.division-card.aruz-dev::before {
+  background: linear-gradient(90deg, var(--color-gold), #FFF);
+}
+
+.division-card.cade {
+  border-color: rgba(63, 93, 72, 0.4);
+}
+
+.division-card.cade::before {
+  background: var(--color-manglar);
+}
+
+.division-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+}
+
+.division-card.aruz-dev:hover {
+  border-color: var(--color-gold);
+  box-shadow: 0 18px 45px -10px rgba(238, 182, 35, 0.25);
+}
+
+.division-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.division-logo-slot {
+  height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.division-logo-slot img, .division-logo-slot svg {
+  height: 38px;
+  width: auto;
+}
+
+.division-type-badge {
+  font-family: var(--font-title);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-piedra);
+}
+
+.division-type-badge.dev {
+  background: rgba(238, 182, 35, 0.18);
+  color: var(--color-gold);
+  border: 1px solid var(--color-border-gold);
+}
+
+.division-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.division-card p {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.division-features {
+  margin-bottom: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.division-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.division-feature-item svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.division-footer {
+  border-top: 1px solid var(--color-border-subtle);
+  padding-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.division-footer-link {
+  font-family: var(--font-title);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.division-footer-link:hover {
+  text-decoration: underline;
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   SECCIÓN 01: ARUZ DESARROLLADORA (4 PRODUCTOS PREVENTA)
+   ========================================================================== */
+
+.luxury-border-glow {
+  border: 1px solid var(--color-border-gold-solid);
+  box-shadow: 0 0 25px rgba(238, 182, 35, 0.12);
+}
+
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-title);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.6rem;
+}
+
+.section-head-wrap {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 3.5rem;
+}
+
+.section-head-wrap h2 {
+  margin-bottom: 0.8rem;
+}
+
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.8rem;
+}
+
+.property-card {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.property-card.flagship {
+  border-color: var(--color-border-gold);
+  background: linear-gradient(180deg, #1C191A 0%, #151314 100%);
+}
+
+.property-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-gold);
+  box-shadow: 0 20px 45px -12px rgba(238, 182, 35, 0.25);
+}
+
+.property-img-wrap {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background: #252223;
+}
+
+.property-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.property-card:hover .property-img {
+  transform: scale(1.06);
+}
+
+.property-badge-top {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+
+.prop-tag {
+  font-family: var(--font-title);
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 9px;
+  border-radius: 4px;
+  background: rgba(35, 31, 32, 0.85);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.prop-tag.preventa {
+  background: var(--color-gold);
+  color: var(--color-carbon);
+  font-weight: 800;
+}
+
+.prop-tag.cade-seal {
+  background: rgba(63, 93, 72, 0.9);
+  color: #FFFFFF;
+  border-color: #5BA36F;
+}
+
+.property-body {
+  padding: 1.6rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.property-title-wrap {
+  margin-bottom: 1rem;
+}
+
+.property-location {
+  font-size: 0.82rem;
+  color: var(--color-piedra);
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.property-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.property-specs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid var(--color-border-subtle);
+  margin-bottom: 1.2rem;
+}
+
+.spec-box {
+  text-align: center;
+}
+
+.spec-val {
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.spec-label {
+  font-size: 0.72rem;
+  color: var(--color-grafito);
+  text-transform: uppercase;
+}
+
+.property-pricing {
+  margin-bottom: 1.4rem;
+}
+
+.price-label {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.price-value {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--color-gold);
+}
+
+.property-actions {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.6rem;
+}
+
+.btn-card-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-gold);
+  color: var(--color-carbon);
+  font-family: var(--font-title);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  transition: var(--transition-smooth);
+  text-align: center;
+}
+
+.btn-card-primary:hover {
+  background: #FFC83B;
+  color: #000;
+}
+
+.btn-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border-subtle);
+  color: var(--color-piedra);
+  transition: var(--transition-smooth);
+}
+
+.btn-card-icon:hover {
+  background: rgba(238, 182, 35, 0.15);
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+/* ==========================================================================
+   SECCIÓN 02: ARUZ INMOBILIARIA (PROPIEDADES DE TERCEROS CERTIFICADAS)
+   ========================================================================== */
+
+.certified-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-border-subtle);
+  color: var(--color-text-muted);
+  font-family: var(--font-title);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background: rgba(238, 182, 35, 0.15);
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+/* ==========================================================================
+   SECCIÓN 03: CADE & MAQUINARIA PESADA (RESPALDO TÉCNICO)
+   ========================================================================== */
+
+.technical-backing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.technical-stamp-showcase {
+  background: radial-gradient(circle at center, rgba(63, 93, 72, 0.2) 0%, rgba(35, 31, 32, 0.8) 70%);
+  border: 1px solid rgba(63, 93, 72, 0.35);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.stamp-rotator {
+  width: 170px;
+  height: 170px;
+  margin: 0 auto 1.8rem;
+  animation: rotateStamp 30s linear infinite;
+}
+
+@keyframes rotateStamp {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.technical-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.tech-metric-card {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-sm);
+  padding: 1rem 0.6rem;
+}
+
+.tech-metric-num {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--color-gold);
+}
+
+.tech-metric-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.technical-info-wrap h2 {
+  margin-bottom: 1.2rem;
+}
+
+.technical-info-wrap p {
+  margin-bottom: 1.4rem;
+  font-size: 1.02rem;
+}
+
+.technical-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.tech-bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.tech-bullet-item svg {
+  width: 22px;
+  height: 22px;
+  fill: #5BA36F;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.tech-bullet-item strong {
+  color: #FFFFFF;
+  display: block;
+  font-size: 0.95rem;
+}
+
+.tech-bullet-item span {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   SECCIÓN 04: LOS 5 PILARES & CÍRCULO ARUZ
+   ========================================================================== */
+
+.pilares-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.4rem;
+  margin-top: 2.5rem;
+}
+
+.pilar-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.6rem 1.2rem;
+  transition: var(--transition-smooth);
+}
+
+.pilar-card:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-4px);
+  background: rgba(35, 31, 32, 0.9);
+}
+
+.pilar-index {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--color-gold);
+  opacity: 0.6;
+  margin-bottom: 0.5rem;
+}
+
+.pilar-card h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  color: #FFFFFF;
+}
+
+.pilar-card p {
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+/* Círculo ARUZ Banner */
+.circulo-banner {
+  margin-top: 3.5rem;
+  background: linear-gradient(135deg, rgba(35, 31, 32, 0.9) 0%, rgba(23, 21, 22, 0.95) 100%);
+  border: 1px solid var(--color-border-gold);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.timeline-circulo {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.timeline-circulo::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: var(--color-border-gold);
+  z-index: 0;
+}
+
+.timeline-node {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  flex: 1;
+}
+
+.node-bubble {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 0.6rem;
+  border-radius: 50%;
+  background: var(--color-bg-card);
+  border: 2px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-title);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--color-gold);
+  box-shadow: 0 0 12px rgba(238, 182, 35, 0.2);
+}
+
+.node-title {
+  font-family: var(--font-title);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 0.2rem;
+}
+
+.node-desc {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   SMART ADVISOR PRE-FILTER & CONTACT FORM
+   ========================================================================== */
+
+.advisor-box {
+  background: var(--color-bg-card);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+  box-shadow: var(--shadow-card);
+}
+
+.advisor-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+}
+
+.advisor-form-wrap h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--color-piedra);
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-sm);
+  background: rgba(35, 31, 32, 0.8);
+  border: 1px solid var(--color-border-subtle);
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(238, 182, 35, 0.15);
+}
+
+/* Directory Cards (Sección 21) */
+.directory-card {
+  background: rgba(35, 31, 32, 0.7);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.4rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: var(--transition-smooth);
+}
+
+.directory-card:hover {
+  border-color: var(--color-gold);
+  background: rgba(35, 31, 32, 0.95);
+}
+
+.dir-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(238, 182, 35, 0.15);
+  border: 2px solid var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-title);
+  font-weight: 800;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.dir-info h4 {
+  font-size: 1.05rem;
+  color: #FFFFFF;
+}
+
+.dir-info .role {
+  font-size: 0.82rem;
+  color: var(--color-piedra);
+  margin-bottom: 0.3rem;
+}
+
+.dir-info .contact-line {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.dir-info .contact-line a:hover {
+  color: var(--color-gold);
+}
+
+/* ==========================================================================
+   FOOTER (Sección 21 & Legal)
+   ========================================================================== */
+
+.site-footer {
+  background: #090809;
+  border-top: 1px solid rgba(238, 182, 35, 0.2);
+  padding-top: 4.5rem;
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.footer-brand p {
+  font-size: 0.88rem;
+  margin-top: 1rem;
+  margin-bottom: 1.2rem;
+  max-width: 320px;
+}
+
+.footer-col h4 {
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 1.2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: var(--color-gold);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footer-links a {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+.footer-links a:hover {
+  color: var(--color-gold);
+  transform: translateX(3px);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Floating WhatsApp Quick Advisory Badge */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 999;
+  background: #25D366;
+  color: #FFFFFF;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  transition: var(--transition-smooth);
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+}
+
+.floating-whatsapp svg {
+  width: 32px;
+  height: 32px;
+  fill: #FFFFFF;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN SYSTEM
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .flow-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .holding-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .technical-backing-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .circulo-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .advisor-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 86px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 14, 15, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1.5rem;
+    gap: 1.2rem;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-y: auto;
+  }
+
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+
+  .nav-dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: transparent;
+    border: none;
+    padding-left: 1rem;
+    box-shadow: none;
+  }
+
+  .flow-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-circulo {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .timeline-circulo::before {
+    display: none;
+  }
+
+  .timeline-node {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .node-bubble {
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}

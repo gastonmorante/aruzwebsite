@@ -1,0 +1,12 @@
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs & Temporary Files
+*.log
+.vscode/
+.idea/
+
+# Large backup PDFs in root if not needed for web deployment
+*.tmp

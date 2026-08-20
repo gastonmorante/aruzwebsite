@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 120" width="100%" height="100%">
+  <!-- CADE Logo Vector Monochrome/Color -->
+  <g transform="translate(10, 15)">
+    <!-- Architectural drafting compass/bracket geometry -->
+    <path d="M 10 90 L 45 10 L 80 90 L 62 90 L 45 48 L 28 90 Z" fill="#231F20"/>
+    <rect x="38" y="58" width="14" height="6" fill="#EEB623"/>
+    
+    <!-- Wordmark -->
+    <g transform="translate(100, 10)">
+      <text x="0" y="52" font-family="'Poppins', sans-serif" font-size="52" font-weight="900" letter-spacing="1px" fill="#231F20">CADE</text>
+      <text x="2" y="80" font-family="'Work Sans', sans-serif" font-size="16" font-weight="600" letter-spacing="4px" fill="#59555A">DISEÑO Y CONSTRUCCIÓN</text>
+    </g>
+  </g>
+</svg>
