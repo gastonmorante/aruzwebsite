@@ -242,10 +242,10 @@ p {
 }
 
 .nav-link {
-  font-family: var(--font-title);
-  font-size: 0.84rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
   color: var(--color-text-light);
   padding: 0.5rem 0.2rem;
@@ -304,10 +304,10 @@ p {
   justify-content: space-between;
   padding: 0.7rem 0.9rem;
   border-radius: var(--radius-sm);
-  font-family: var(--font-title);
-  font-size: 0.82rem;
+  font-family: var(--font-sans);
+  font-size: 0.80rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   color: var(--color-text-light);
   transition: var(--transition-smooth);
 }
@@ -318,6 +318,7 @@ p {
 }
 
 .dropdown-tag {
+  font-family: var(--font-sans);
   font-size: 0.65rem;
   font-weight: 800;
   letter-spacing: 0.05em;
@@ -343,9 +344,9 @@ p {
   border-radius: var(--radius-sm);
   background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-deep) 100%);
   color: var(--color-carbon-dark);
-  font-family: var(--font-title);
-  font-size: 0.84rem;
-  font-weight: 900;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   border: none;
@@ -371,8 +372,8 @@ p {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--color-border-gold);
   color: var(--color-text-light);
-  font-family: var(--font-title);
-  font-size: 0.84rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -950,7 +951,7 @@ p {
 }
 
 .prop-tag {
-  font-family: var(--font-title);
+  font-family: var(--font-sans);
   font-size: 0.64rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -985,7 +986,7 @@ p {
 }
 
 .property-location {
-  font-family: var(--font-title);
+  font-family: var(--font-sans);
   font-size: 0.70rem;
   font-weight: 700;
   color: var(--color-gold);
@@ -993,17 +994,16 @@ p {
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .property-title {
-  font-family: var(--font-title);
-  font-size: 1.18rem;
-  font-weight: 800;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 400;
   color: #FFFFFF;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
   margin-bottom: 0.4rem;
 }
 
@@ -1036,13 +1036,14 @@ p {
 }
 
 .spec-val {
-  font-family: var(--font-title);
-  font-size: 0.88rem;
-  font-weight: 800;
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 700;
   color: #FFFFFF;
 }
 
 .spec-label {
+  font-family: var(--font-sans);
   font-size: 0.62rem;
   color: var(--color-text-muted);
   text-transform: uppercase;
@@ -1055,6 +1056,7 @@ p {
 }
 
 .price-label {
+  font-family: var(--font-sans);
   font-size: 0.64rem;
   color: var(--color-stone);
   text-transform: uppercase;
@@ -1063,9 +1065,9 @@ p {
 }
 
 .price-value {
-  font-family: var(--font-title);
+  font-family: var(--font-sans);
   font-size: 1.35rem;
-  font-weight: 900;
+  font-weight: 800;
   color: var(--color-gold);
   letter-spacing: -0.01em;
   margin-top: 2px;
@@ -1085,9 +1087,9 @@ p {
   border-radius: var(--radius-sm);
   background: var(--color-gold);
   color: var(--color-carbon-dark);
-  font-family: var(--font-title);
+  font-family: var(--font-sans);
   font-size: 0.78rem;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: var(--transition-smooth);
@@ -1197,7 +1199,7 @@ p {
 }
 
 .division-type-badge {
-  font-family: var(--font-title);
+  font-family: var(--font-sans);
   font-size: 0.68rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -1246,10 +1248,10 @@ p {
 }
 
 .division-footer-link {
-  font-family: var(--font-title);
-  font-size: 0.84rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-gold);
   display: flex;
