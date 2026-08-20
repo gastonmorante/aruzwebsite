@@ -867,12 +867,12 @@ p {
 
 .section-tag {
   display: inline-block;
-  font-family: var(--font-title);
+  font-family: var(--font-sans);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-gold-deep);
   margin-bottom: 0.8rem;
 }
 
@@ -1494,22 +1494,22 @@ p {
 
 .form-label {
   display: block;
-  font-family: var(--font-title);
-  font-size: 0.78rem;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 0.45rem;
-  color: var(--color-piedra);
+  color: var(--color-carbon);
 }
 
 .form-input, .form-select, .form-textarea {
   width: 100%;
   padding: 0.85rem 1.1rem;
   border-radius: var(--radius-sm);
-  background: rgba(22, 18, 19, 0.85);
-  border: 1px solid var(--color-border-subtle);
-  color: #FFFFFF;
+  background: #FFFFFF;
+  border: 1px solid rgba(216, 201, 174, 0.5);
+  color: var(--color-carbon);
   font-family: var(--font-body);
   font-size: 0.95rem;
   transition: var(--transition-smooth);
@@ -1517,26 +1517,39 @@ p {
 
 .form-input:focus, .form-select:focus, .form-textarea:focus {
   outline: none;
-  border-color: var(--color-gold);
+  border-color: var(--color-gold-deep);
   box-shadow: 0 0 0 3px rgba(238, 182, 35, 0.2);
 }
 
+.advisor-box {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(238, 182, 35, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: 0 12px 35px rgba(35, 31, 32, 0.07);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
 .directory-card {
-  background: rgba(22, 18, 19, 0.75);
-  border: 1px solid var(--color-border-subtle);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(238, 182, 35, 0.25);
   border-radius: var(--radius-md);
   padding: 1.5rem;
   margin-bottom: 1.1rem;
   display: flex;
   align-items: center;
   gap: 1.3rem;
+  box-shadow: 0 10px 30px rgba(35, 31, 32, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   transition: var(--transition-smooth);
 }
 
 .directory-card:hover {
-  border-color: var(--color-gold);
-  background: rgba(22, 18, 19, 0.95);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  border-color: var(--color-gold-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(35, 31, 32, 0.12);
 }
 
 .dir-avatar {
@@ -1544,20 +1557,27 @@ p {
   height: 54px;
   border-radius: 50%;
   background: rgba(238, 182, 35, 0.15);
-  border: 2px solid var(--color-gold);
+  border: 2px solid var(--color-gold-deep);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-title);
-  font-weight: 900;
-  color: var(--color-gold);
+  font-family: var(--font-sans);
+  font-weight: 800;
+  color: var(--color-gold-deep);
   flex-shrink: 0;
   box-shadow: 0 0 15px rgba(238, 182, 35, 0.2);
 }
 
 .dir-info h4 {
   font-size: 1.05rem;
-  color: #FFFFFF;
+  font-family: var(--font-sans);
+  color: var(--color-carbon);
+  margin-bottom: 0.2rem;
+}
+
+.dir-info p {
+  color: var(--color-grafito);
+  font-size: 0.85rem;
 }
 
 .dir-info .role {
