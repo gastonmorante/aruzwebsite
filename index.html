@@ -309,9 +309,6 @@
     <!-- STITCH_SHADER_END:ANIMATION_5 -->
 
     <div class="relative z-10 max-w-4xl mx-auto text-center animate-fade-up py-8">
-      <span class="font-label-caps text-xs md:text-sm text-dorado-profundo uppercase tracking-widest mb-4 block font-bold">
-        ARUZ ECOSYSTEM HUB // 3D INTERACTIVE CORE · GRUPO RUIZ MÉXICO
-      </span>
       <h1 class="font-display-lg text-4xl sm:text-5xl md:text-6xl text-carbon-aruz mb-6 leading-tight font-serif">
         Control total, desde el diseño hasta la entrega.
       </h1>
@@ -335,7 +332,7 @@
   <!-- ==========================================================================
        2. ARUZ ECOSYSTEM HUB - 3D INTERACTIVE CORE ANIMATION (ORBIT ENGINE)
        ========================================================================== -->
-  <section class="py-12 md:py-20 px-margin-mobile md:px-margin-desktop bg-carbon-aruz text-white relative overflow-hidden" id="interactive-hub-3d">
+  <section class="py-10 md:py-16 px-margin-mobile md:px-margin-desktop bg-carbon-aruz text-white relative overflow-hidden" id="interactive-hub-3d">
     
     <!-- Background Technical Grid & Particle Glow -->
     <div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: linear-gradient(to right, rgba(238,182,35,0.15) 1px, transparent 1px), linear-gradient(to bottom, rgba(238,182,35,0.15) 1px, transparent 1px); background-size: 40px 40px;"></div>
@@ -343,35 +340,23 @@
 
     <div class="max-w-[1420px] mx-auto relative z-10">
       
-      <div class="text-center mb-8">
-        <span class="font-label-caps text-xs text-dorado-aruz uppercase tracking-widest mb-2 block font-bold">
-          Núcleo Central en Movimiento
-        </span>
-        <h2 class="font-serif text-3xl sm:text-4xl text-white mb-3">
-          4 Nodos Orbitando el Ecosistema ARUZ
-        </h2>
-        <p class="text-xs sm:text-sm text-piedra-maya/80 max-w-xl mx-auto font-body-md">
-          Pasa el cursor sobre los logos vectoriales para desacelerar la órbita e inspeccionar cada división en tiempo real.
-        </p>
-      </div>
-
       <!-- 3D Orbit Stage Container -->
-      <div class="hud-orbit-stage" id="hudStage" style="height: 520px; max-width: 1000px; margin: 0 auto; position: relative;">
+      <div class="hud-orbit-stage" id="hudStage" style="height: 520px; max-width: 1100px; margin: 0 auto; position: relative;">
         
         <!-- SVG Dynamic Leader Lines -->
         <svg class="hud-callout-svg" id="hudCalloutSvg" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10;"></svg>
 
         <!-- Orbit Elliptical Rings -->
-        <div class="hud-orbit-track" style="border-color: rgba(238, 182, 35, 0.22); border-style: dashed;"></div>
-        <div class="hud-orbit-track inner" style="border-color: rgba(216, 201, 174, 0.15);"></div>
+        <div class="hud-orbit-track"></div>
+        <div class="hud-orbit-track inner"></div>
 
-        <!-- Central Core: Master ARUZ Gold Logo -->
-        <div class="hud-central-core" style="background: radial-gradient(circle at 35% 35%, #2A2224 0%, #161213 85%); border-color: #EEB623; box-shadow: 0 0 50px rgba(238, 182, 35, 0.45);">
-          <div class="core-logo-wrap" style="padding: 14px;">
-            <img src="assets/logo-white.svg" alt="ARUZ Core" style="width: 100%; height: 100%; object-fit: contain;">
+        <!-- Central Core: Compact Master ARUZ Gold Medallion -->
+        <div class="hud-central-core">
+          <div class="core-hologram-disk"></div>
+          <div class="core-hologram-ticks"></div>
+          <div class="core-logo-wrap" style="padding: 10px; display: flex; align-items: center; justify-content: center;">
+            <img src="assets/logo-white.svg" alt="ARUZ Core" style="width: 82px; height: auto; object-fit: contain;">
           </div>
-          <div class="core-pulse-ring" style="border-color: rgba(238, 182, 35, 0.6);"></div>
-          <div class="core-pulse-ring delay" style="border-color: rgba(238, 182, 35, 0.3);"></div>
         </div>
 
         <!-- Orbiting Nodes (4 Integrated Sub-brands with Official SVGs) -->

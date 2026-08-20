@@ -234,15 +234,15 @@ function init3DHudOrbit() {
     const centerY = stageHeight / 2;
 
     const isMobile = window.innerWidth <= 768;
-    const rx = isMobile ? stageWidth * 0.38 : Math.min(380, stageWidth * 0.34);
-    const ry = isMobile ? stageHeight * 0.32 : Math.min(140, stageHeight * 0.28);
+    const rx = isMobile ? stageWidth * 0.42 : Math.min(410, stageWidth * 0.38);
+    const ry = isMobile ? stageHeight * 0.34 : Math.min(165, stageHeight * 0.30);
 
     // Dynamic quadrant anchor positions for Callout Cards
     const cardPositions = [
-      { x: centerX + rx * 0.88, y: centerY - ry * 1.35 }, // Top Right (Desarrolladora)
-      { x: centerX + rx * 0.88, y: centerY + ry * 0.85 }, // Bottom Right (Inmobiliaria)
-      { x: centerX - rx * 1.35, y: centerY + ry * 0.85 }, // Bottom Left (CADE)
-      { x: centerX - rx * 1.35, y: centerY - ry * 1.35 }  // Top Left (Maquinaria)
+      { x: centerX + rx * 0.92, y: centerY - ry * 1.30 }, // Top Right (Desarrolladora)
+      { x: centerX + rx * 0.92, y: centerY + ry * 0.90 }, // Bottom Right (Inmobiliaria)
+      { x: centerX - rx * 1.38, y: centerY + ry * 0.90 }, // Bottom Left (CADE)
+      { x: centerX - rx * 1.38, y: centerY - ry * 1.30 }  // Top Left (Maquinaria)
     ];
 
     // Clear SVG dynamic lines

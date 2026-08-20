@@ -1,21 +1,22 @@
 /* ==========================================================================
    ARUZ CORE 360 DIGITAL ECOSYSTEM - STYLE SYSTEM
-   Manual de Identidad de Marca v2.0 - Luxury High-Tech Minimalist (HUD Edition)
-   Paleta: Carbon & Gold (#161213 y #EEB623)
+   Manual de Identidad de Marca v2.0 - Google Stitch Luxury High-Tech
+   Paleta: Carbon & Gold (#231F20, #EEB623, #D8C9AE, #3F5D48, #C79215)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Poppins:wght@300;400;500;600;700;800;900&family=Work+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800;900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
 
 :root {
-  /* Official Brand Palette (Sección 14 Manual v2.0 & Luxury Carbon & Gold) */
-  --color-gold: #EEB623;          /* Dorado ARUZ (Primario / logotipo) */
-  --color-carbon: #161213;        /* Carbon ARUZ Profundo */
-  --color-carbon-dark: #0D0B0C;   /* Carbon Fondo Profundo */
+  /* Official Brand Palette (Google Stitch & Luxury Identity) */
+  --color-gold: #EEB623;          /* Dorado ARUZ */
+  --color-gold-deep: #C79215;     /* Dorado Profundo */
+  --color-carbon: #231F20;        /* Carbon ARUZ */
+  --color-carbon-dark: #141011;   /* Carbon Fondo Profundo */
   --color-carbon-card: #1D1819;   /* Carbon Tarjeta */
-  --color-piedra: #D8C9AE;        /* Piedra Maya (Neutro cálido de apoyo) */
-  --color-manglar: #3F5D48;       /* Verde Manglar (Acento sustentable / certificación) */
-  --color-grafito: #59555A;       /* Gris Grafito (Texto secundario y fichas técnicas) */
-  --color-gold-deep: #C79215;     /* Dorado Profundo (Acento / Botones CTA) */
+  --color-piedra: #D8C9AE;        /* Piedra Maya */
+  --color-manglar: #3F5D48;       /* Verde Manglar */
+  --color-grafito: #59555A;       /* Gris Grafito */
+  --color-surface-bright: #FFF8F2;/* Superficie Cálida */
 
   /* Supporting UI Tones & Glassmorphism */
   --color-bg-body: #110E0F;
@@ -23,20 +24,22 @@
   --color-bg-card-alt: #221D1E;
   --color-text-light: #F8F5EE;
   --color-text-muted: #A8A19B;
-  --color-border-subtle: rgba(216, 201, 174, 0.12);
-  --color-border-gold: rgba(238, 182, 35, 0.45);
+  --color-border-subtle: rgba(216, 201, 174, 0.15);
+  --color-border-gold: rgba(238, 182, 35, 0.40);
   --color-border-gold-solid: #EEB623;
   --color-gold-glow: rgba(238, 182, 35, 0.25);
   --color-gold-bloom: rgba(238, 182, 35, 0.45);
   
   /* Glass Effects */
-  --glass-bg: rgba(22, 18, 19, 0.88);
-  --glass-border: rgba(238, 182, 35, 0.25);
+  --glass-bg: rgba(26, 21, 22, 0.88);
+  --glass-border: rgba(238, 182, 35, 0.22);
   --glass-blur: blur(16px);
 
-  /* Typography (Montserrat Bold Titles & Work Sans / Montserrat Regular Body) */
-  --font-title: 'Montserrat', 'Poppins', sans-serif;
-  --font-body: 'Work Sans', 'Montserrat', sans-serif;
+  /* Typography (Libre Caslon Text for Titles & Plus Jakarta Sans for Body/HUD) */
+  --font-serif: 'Libre Caslon Text', Georgia, serif;
+  --font-title: 'Libre Caslon Text', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', 'Montserrat', sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Montserrat', sans-serif;
 
   /* Standard Spacing & Transitions */
   --container-max: 1420px;
@@ -103,37 +106,34 @@ button, input, select, textarea {
   font: inherit;
 }
 
-/* Headings Hierarchy (Montserrat & High-Tech Tracking) */
+/* Headings Hierarchy (Libre Caslon Text Luxury Editorial) */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-title);
-  line-height: 1.15;
+  line-height: 1.18;
   color: #FFFFFF;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
 }
 
 h1 {
-  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
-  font-weight: 900;
-  letter-spacing: 0.02em;
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  font-weight: 400;
 }
 
 h2 {
-  font-size: clamp(1.8rem, 3.2vw, 2.4rem);
-  font-weight: 800;
-  letter-spacing: 0.03em;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-weight: 400;
 }
 
 h3 {
-  font-size: clamp(1.25rem, 2vw, 1.55rem);
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-weight: 400;
 }
 
 h4 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  letter-spacing: 0.05em;
 }
 
 p {
@@ -547,101 +547,95 @@ p {
    3D HUD INTERACTIVE STAGE & ORBITAL MATRIX
    ========================================================================== */
 
-.hud-interactive-stage {
+.hud-interactive-stage,
+.hud-orbit-stage {
   position: relative;
   width: 100%;
   max-width: 1120px;
   height: 520px;
-  margin-top: 1rem;
+  margin: 0 auto;
   perspective: 1200px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Central Metallic Gold Core (Gravitational Anchor) */
-.hud-center-core {
+.hud-orbit-track {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 180px;
-  height: 180px;
+  width: 820px;
+  max-width: 92%;
+  height: 330px;
+  border-radius: 50%;
+  border: 1px dashed rgba(238, 182, 35, 0.25);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hud-orbit-track.inner {
+  width: 660px;
+  height: 250px;
+  border: 1px solid rgba(216, 201, 174, 0.12);
+}
+
+/* Central Metallic Gold Core (Gravitational Anchor) */
+.hud-center-core,
+.hud-central-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 140px;
   z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #2A2224 0%, #161213 85%);
+  border: 2px solid var(--color-gold);
+  box-shadow: 0 0 40px rgba(238, 182, 35, 0.4), inset 0 0 15px rgba(238, 182, 35, 0.2);
+  transition: var(--transition-smooth);
+}
+
+.hud-center-core:hover,
+.hud-central-core:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+  box-shadow: 0 0 55px rgba(238, 182, 35, 0.65), inset 0 0 20px rgba(238, 182, 35, 0.35);
+  border-color: #FFFFFF;
 }
 
 .core-hologram-disk {
   position: absolute;
-  inset: -20px;
-  border: 1px dashed rgba(238, 182, 35, 0.4);
+  inset: -14px;
+  border: 1px dashed rgba(238, 182, 35, 0.35);
   border-radius: 50%;
   animation: rotateClockwise 35s linear infinite;
+  pointer-events: none;
 }
 
 .core-hologram-ticks {
   position: absolute;
-  inset: -38px;
-  border: 1px solid rgba(238, 182, 35, 0.2);
+  inset: -28px;
+  border: 1px solid rgba(238, 182, 35, 0.15);
   border-radius: 50%;
   border-top-color: var(--color-gold);
   border-bottom-color: var(--color-gold);
   animation: rotateCounterClockwise 25s linear infinite;
-}
-
-.core-radar-sweep {
-  position: absolute;
-  inset: -60px;
-  border-radius: 50%;
-  background: conic-gradient(from 0deg, rgba(238, 182, 35, 0.15) 0deg, transparent 60deg, transparent 360deg);
-  animation: rotateClockwise 8s linear infinite;
   pointer-events: none;
 }
 
-.core-metallic-shield {
-  width: 124px;
-  height: 124px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #2E2527 0%, #161213 80%);
-  border: 2px solid var(--color-gold);
-  box-shadow: 
-    0 0 35px rgba(238, 182, 35, 0.45),
-    inset 0 0 20px rgba(238, 182, 35, 0.3);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-  transition: var(--transition-smooth);
-}
-
-.hud-center-core:hover .core-metallic-shield {
-  transform: scale(1.06);
-  box-shadow: 
-    0 0 50px rgba(238, 182, 35, 0.7),
-    inset 0 0 30px rgba(238, 182, 35, 0.5);
-  border-color: #FFFFFF;
-}
-
-.core-logo-mark {
-  width: 68px;
+.core-logo-mark,
+.core-logo-wrap img {
+  width: 82px;
   height: auto;
-  filter: drop-shadow(0 0 8px rgba(238, 182, 35, 0.6));
-}
-
-.core-subtext {
-  font-family: var(--font-title);
-  font-size: 0.58rem;
-  font-weight: 800;
-  letter-spacing: 0.2em;
-  color: var(--color-gold);
-  margin-top: 4px;
-  text-transform: uppercase;
+  max-height: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(238, 182, 35, 0.5));
 }
 
 /* Real-Time SVG Callout Leader Overlay */
