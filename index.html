@@ -94,103 +94,147 @@
   </header>
 
   <!-- ==========================================================================
-       HERO SECTION - EL MODELO 360 INTERACTIVO
+       HERO SECTION - 3D INTERACTIVE CORE (IRON MAN HUD & AFTER EFFECTS)
        ========================================================================== -->
   <section class="hero-section" id="modelo360">
-    <div class="hero-backdrop"></div>
-    <div class="hero-grid-lines"></div>
+    <!-- 3D Suspended Golden Particles Canvas -->
+    <canvas id="heroParticleCanvas"></canvas>
     
-    <div class="container">
-      <div class="hero-content">
-        
-        <div class="hero-badge">
-          <span class="pulse-dot"></span>
-          <span>Ecosistema Integrado · Grupo Ruiz México</span>
+    <!-- Technical HUD Grid & Ambient Glow -->
+    <div class="hero-technical-grid"></div>
+    <div class="hero-ambient-glow"></div>
+    
+    <div class="hero-container">
+      
+      <!-- Top Typography & Status Badge -->
+      <div class="hero-header-text">
+        <div class="hero-sys-badge">
+          <span class="hud-crosshair"></span>
+          <span>ARUZ ECOSYSTEM HUB // 3D INTERACTIVE CORE · GRUPO RUIZ MÉXICO</span>
         </div>
 
-        <h1 class="hero-title">
+        <h1 class="hero-main-title">
           <span>Control total, desde el</span>
           <span class="gold-accent">diseño hasta la entrega.</span>
         </h1>
 
-        <p class="hero-tagline">
+        <p class="hero-tagline-hud">
           "+12 años trabajando con los expertos de Ciudad Mayakoba."
         </p>
 
-        <p class="hero-evp">
+        <p class="hero-evp-hud">
           ARUZ es la única firma en la Riviera Maya que asesora, construye y da seguimiento a tu propiedad bajo una misma estructura familiar. No dependes de varios proveedores: dependes de un solo equipo que responde por todo el proceso.
         </p>
+      </div>
 
-        <div class="hero-cta-group">
-          <a href="#desarrolladora" class="btn-cta-gold">
-            <span>Explorar Preventas Exclusivas</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
-          </a>
-          <a href="#contacto" class="btn-secondary-outline">
-            <span>Hablar con un Asesor Experto</span>
-          </a>
+      <!-- 3D Interactive HUD Orbit Stage -->
+      <div class="hud-interactive-stage" id="hudStage">
+        
+        <!-- SVG Dynamic Callout Leaders Overlay -->
+        <svg id="hudCalloutSvg"></svg>
+
+        <!-- Central Metallic Gold Core (Gravitational Anchor) -->
+        <div class="hud-center-core" title="ARUZ CORE - Centro Gravitacional del Ecosistema">
+          <div class="core-hologram-disk"></div>
+          <div class="core-hologram-ticks"></div>
+          <div class="core-radar-sweep"></div>
+          <div class="core-metallic-shield">
+            <img src="assets/logo-white.svg" alt="ARUZ" class="core-logo-mark">
+            <span class="core-subtext">CORE 360</span>
+          </div>
         </div>
 
-        <!-- 360 Ecosystem Interactive Diagram (4 Submarcas Integradas) -->
-        <div class="flow-360-container">
-          <div class="flow-header">
-            <div class="flow-title-wrap">
-              <h3>
-                <span class="gold-accent">ECOSISTEMA ARUZ 360</span> — 4 Submarcas Integradas
-              </h3>
-              <p>Haz clic en cada submarca para conocer su rol técnico y operativo en Grupo Ruiz México</p>
+        <!-- 3D Orbiting Nodes & Interactive Callouts -->
+        <div class="hud-orbit-plane">
+          
+          <!-- Node 1: ARUZ Desarrolladora -->
+          <a href="desarrolladora.html" class="hud-orbit-node" id="node1" title="Explorar ARUZ Desarrolladora">
+            <div class="node-emblem">
+              <div class="node-ring-pulse"></div>
+              <svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
             </div>
-            <span class="prop-tag cade-seal">Holding Integrado</span>
+          </a>
+
+          <!-- Callout Card 1 -->
+          <div class="hud-callout-card" id="card1">
+            <div class="hud-card-sys-tag">
+              <span>SYS.01 // PREVENTAS</span>
+              <span class="status-live"></span>
+            </div>
+            <div class="hud-card-title">ARUZ Desarrolladora</div>
+            <div class="hud-card-desc">Proyectos propios de autor con diseño bioclimático y acabados de lujo regional.</div>
+            <a href="desarrolladora.html" class="hud-card-link-act">
+              <span>Explorar 4 Preventas</span> &rarr;
+            </a>
           </div>
 
-          <div class="flow-grid">
-            
-            <!-- Submarca 1: ARUZ Desarrolladora -->
-            <div class="flow-card active" data-subbrand="1">
-              <div class="flow-step-num">SUBMARCA 01</div>
-              <svg class="flow-icon" viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
-              <h4>ARUZ Desarrolladora</h4>
-              <p>Desarrollo propio de proyectos de autor en preventa con arquitectura bioclimática.</p>
+          <!-- Node 2: ARUZ Inmobiliaria -->
+          <a href="inmobiliaria.html" class="hud-orbit-node" id="node2" title="Explorar ARUZ Inmobiliaria">
+            <div class="node-emblem">
+              <div class="node-ring-pulse"></div>
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/></svg>
             </div>
+          </a>
 
-            <!-- Submarca 2: ARUZ Inmobiliaria -->
-            <div class="flow-card" data-subbrand="2">
-              <div class="flow-step-num">SUBMARCA 02</div>
-              <svg class="flow-icon" viewBox="0 0 24 24"><path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/></svg>
-              <h4>ARUZ Inmobiliaria</h4>
-              <p>Asesoría experta y comercialización de propiedades auditadas de terceros.</p>
+          <!-- Callout Card 2 -->
+          <div class="hud-callout-card" id="card2">
+            <div class="hud-card-sys-tag">
+              <span>SYS.02 // AUDITADO</span>
+              <span class="status-live"></span>
             </div>
-
-            <!-- Submarca 3: CADE Constructora -->
-            <div class="flow-card" data-subbrand="3">
-              <div class="flow-step-num">SUBMARCA 03</div>
-              <svg class="flow-icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1.4c0-2 4-3.1 6-3.1s6 1.1 6 3.1V18z"/></svg>
-              <h4>CADE Constructora</h4>
-              <p>Brazo ejecutor de obra, ingeniería y +12 años de trayectoria en Mayakoba.</p>
-            </div>
-
-            <!-- Submarca 4: ARUZ Maquinaria Pesada -->
-            <div class="flow-card" data-subbrand="4">
-              <div class="flow-step-num">SUBMARCA 04</div>
-              <svg class="flow-icon" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
-              <h4>ARUZ Maquinaria</h4>
-              <p>Flota pesada propia para terracerías, plataformas y cimentaciones sin demoras.</p>
-            </div>
-
+            <div class="hud-card-title">ARUZ Inmobiliaria</div>
+            <div class="hud-card-desc">Asesoría experta y catálogo de terceros verificado técnica y jurídicamente.</div>
+            <a href="inmobiliaria.html" class="hud-card-link-act">
+              <span>Ver Catálogo Certificado</span> &rarr;
+            </a>
           </div>
 
-          <!-- Dynamic Detail Banner -->
-          <div class="flow-detail-banner">
-            <div class="flow-detail-text">
-              <strong id="flowActiveTitle">ARUZ Desarrolladora — Proyectos Propios de Autor</strong>
-              <p id="flowActiveDesc">División de desarrollo inmobiliario de Grupo Ruiz. Concepción y ejecución de proyectos residenciales de alta gama con diseño bioclimático y acabados de lujo regional.</p>
+          <!-- Node 3: CADE Constructora -->
+          <a href="landings/cade-constructora.html" class="hud-orbit-node" id="node3" title="Explorar CADE Constructora">
+            <div class="node-emblem">
+              <div class="node-ring-pulse" style="border-color: #5BA36F;"></div>
+              <svg viewBox="0 0 24 24" style="fill: #5BA36F;"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1.4c0-2 4-3.1 6-3.1s6 1.1 6 3.1V18z"/></svg>
             </div>
-            <a href="desarrolladora.html" id="flowActiveBtn" class="btn-card-primary">Explorar Desarrolladora & Preventas</a>
+          </a>
+
+          <!-- Callout Card 3 -->
+          <div class="hud-callout-card" id="card3">
+            <div class="hud-card-sys-tag">
+              <span style="color: #7BD195;">SYS.03 // ESTRUCTURAL</span>
+              <span class="status-live"></span>
+            </div>
+            <div class="hud-card-title">CADE Constructora</div>
+            <div class="hud-card-desc">Brazo ejecutor con Sello CADE y +12 años de trayectoria comprobada en Mayakoba.</div>
+            <a href="landings/cade-constructora.html" class="hud-card-link-act" style="color: #7BD195;">
+              <span>Ficha Técnica CADE</span> &rarr;
+            </a>
+          </div>
+
+          <!-- Node 4: ARUZ Maquinaria Pesada -->
+          <a href="landings/aruz-maquinaria.html" class="hud-orbit-node" id="node4" title="Explorar ARUZ Maquinaria">
+            <div class="node-emblem">
+              <div class="node-ring-pulse"></div>
+              <svg viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+            </div>
+          </a>
+
+          <!-- Callout Card 4 -->
+          <div class="hud-callout-card" id="card4">
+            <div class="hud-card-sys-tag">
+              <span>SYS.04 // LOGÍSTICA</span>
+              <span class="status-live"></span>
+            </div>
+            <div class="hud-card-title">ARUZ Maquinaria</div>
+            <div class="hud-card-desc">Flota pesada propia para terracerías, cimentaciones y urbanización integral.</div>
+            <a href="landings/aruz-maquinaria.html" class="hud-card-link-act">
+              <span>Ver Flota y Equipo</span> &rarr;
+            </a>
           </div>
 
         </div>
 
       </div>
+
     </div>
   </section>
 

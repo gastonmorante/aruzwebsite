@@ -1,11 +1,13 @@
 /**
- * ARUZ CORE 360 DIGITAL ECOSYSTEM - JAVASCRIPT CONTROLLER
- * High-Tech Minimalist Interactive Experience & WhatsApp Lead Pre-qualifier
+ * ARUZ CORE 360 DIGITAL ECOSYSTEM - 3D INTERACTIVE CORE & HUD ENGINE
+ * Luxury High-Tech Minimalist (Iron Man / After Effects Concept)
+ * Paleta: Carbon & Gold (#161213 y #EEB623)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
-  initSubbrand360();
+  initParticleCanvas();
+  init3DHudOrbit();
   initPropertyFilters();
   initAdvisorForm();
   initIntersectionAnimations();
@@ -20,7 +22,6 @@ function initNavbar() {
   const navMenu = document.querySelector('.nav-menu');
   const navLinks = document.querySelectorAll('.nav-link, .dropdown-link');
 
-  // Scroll glass state
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
       header.classList.add('scrolled');
@@ -29,7 +30,6 @@ function initNavbar() {
     }
   });
 
-  // Mobile menu toggle
   if (toggle && navMenu) {
     toggle.addEventListener('click', () => {
       toggle.classList.toggle('active');
@@ -37,7 +37,6 @@ function initNavbar() {
       document.body.classList.toggle('no-scroll');
     });
 
-    // Close when clicking link
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         toggle.classList.remove('active');
@@ -49,63 +48,261 @@ function initNavbar() {
 }
 
 /* --------------------------------------------------------------------------
-   HERO 360 ECOSYSTEM - 4 SUBMARCAS INTEGRADAS
+   CANVAS 3D PARTICLES FIELD (SUSPENDED GOLDEN DUST)
    -------------------------------------------------------------------------- */
-const subbrandData = {
-  1: {
-    title: "ARUZ Desarrolladora — Proyectos Propios de Autor",
-    desc: "División de desarrollo inmobiliario de Grupo Ruiz. Concepción y ejecución de proyectos residenciales de alta gama con diseño bioclimático y acabados de lujo regional.",
-    badge: "4 Preventas Exclusivas",
-    linkUrl: "desarrolladora.html",
-    linkText: "Explorar Desarrolladora & Preventas"
-  },
-  2: {
-    title: "ARUZ Inmobiliaria — Asesoría & Propiedades Verificadas",
-    desc: "Comercialización y asesoría patrimonial basada en evidencia real. Portafolio de inmuebles de terceros auditados rigurosamente en dictamen técnico y certeza jurídica.",
-    badge: "Portafolio Certificado",
-    linkUrl: "inmobiliaria.html",
-    linkText: "Ver Catálogo Inmobiliario"
-  },
-  3: {
-    title: "CADE Diseño y Construcción — Brazo Constructor Oficial",
-    desc: "Ejecución técnica y control de calidad de Grupo Ruiz. Más de 12 años construyendo con los expertos de Ciudad Mayakoba, Valle Aurora y Xpuha bajo el Sello CADE.",
-    badge: "+12 Años de Trayectoria",
-    linkUrl: "landings/cade-constructora.html",
-    linkText: "Conocer División CADE"
-  },
-  4: {
-    title: "ARUZ Maquinaria Pesada — Flota Propia & Terracerías",
-    desc: "Infraestructura operativa con excavadoras, retroexcavadoras y camiones propios para garantizar que las terracerías y cimentaciones nunca dependan de terceros.",
-    badge: "Flota Operativa Activa",
-    linkUrl: "landings/aruz-maquinaria.html",
-    linkText: "Ver Flota de Maquinaria"
+function initParticleCanvas() {
+  const canvas = document.getElementById('heroParticleCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  let width, height;
+  let particles = [];
+  const particleCount = 70;
+  let mouse = { x: 0, y: 0, targetX: 0, targetY: 0 };
+
+  function resize() {
+    width = canvas.width = canvas.parentElement.offsetWidth || window.innerWidth;
+    height = canvas.height = canvas.parentElement.offsetHeight || window.innerHeight;
   }
-};
 
-function initSubbrand360() {
-  const cards = document.querySelectorAll('.flow-card');
-  const bannerTitle = document.getElementById('flowActiveTitle');
-  const bannerDesc = document.getElementById('flowActiveDesc');
-  const bannerBtn = document.getElementById('flowActiveBtn');
+  window.addEventListener('resize', resize);
+  resize();
 
-  if (!cards.length || !bannerTitle || !bannerDesc) return;
+  window.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.targetX = (e.clientX - rect.left - width / 2) * 0.0008;
+    mouse.targetY = (e.clientY - rect.top - height / 2) * 0.0008;
+  });
+
+  // Create particles with 3D depth (x, y, z)
+  for (let i = 0; i < particleCount; i++) {
+    particles.push({
+      x: (Math.random() - 0.5) * width * 1.2,
+      y: (Math.random() - 0.5) * height * 1.2,
+      z: Math.random() * 800 + 200,
+      radius: Math.random() * 1.8 + 0.6,
+      alpha: Math.random() * 0.6 + 0.2,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      color: Math.random() > 0.3 ? '#EEB623' : '#D8C9AE'
+    });
+  }
+
+  function render() {
+    ctx.clearRect(0, 0, width, height);
+
+    // Smooth mouse damping
+    mouse.x += (mouse.targetX - mouse.x) * 0.05;
+    mouse.y += (mouse.targetY - mouse.y) * 0.05;
+
+    const cx = width / 2;
+    const cy = height / 2;
+    const fov = 450;
+
+    for (let i = 0; i < particleCount; i++) {
+      const p = particles[i];
+
+      p.x += p.vx + mouse.x * 20;
+      p.y += p.vy + mouse.y * 20;
+
+      // Wrap around bounds
+      if (p.x < -width) p.x = width;
+      if (p.x > width) p.x = -width;
+      if (p.y < -height) p.y = height;
+      if (p.y > height) p.y = -height;
+
+      // Perspective projection
+      const scale = fov / (fov + p.z);
+      const projX = cx + p.x * scale;
+      const projY = cy + p.y * scale;
+      const projRadius = Math.max(0.4, p.radius * scale);
+
+      if (projX >= 0 && projX <= width && projY >= 0 && projY <= height) {
+        ctx.beginPath();
+        ctx.arc(projX, projY, projRadius, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.alpha * scale * 1.2;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = '#EEB623';
+        ctx.fill();
+      }
+    }
+
+    ctx.shadowBlur = 0;
+    requestAnimationFrame(render);
+  }
+
+  render();
+}
+
+/* --------------------------------------------------------------------------
+   3D HUD ORBIT ENGINE & REAL-TIME CALLOUT LEADER LINES
+   -------------------------------------------------------------------------- */
+function init3DHudOrbit() {
+  const stage = document.getElementById('hudStage');
+  const svg = document.getElementById('hudCalloutSvg');
+  const nodes = document.querySelectorAll('.hud-orbit-node');
+  const cards = document.querySelectorAll('.hud-callout-card');
+
+  if (!stage || !svg || !nodes.length) return;
+
+  // 4 Integrated Sub-brands initial orbital angles
+  let currentAngle = 0;
+  let targetSpeed = 0.0032;
+  let currentSpeed = 0.0032;
+  let isHovered = false;
+
+  const nodeOffsets = [
+    0,                  // 0 rad (ARUZ Desarrolladora)
+    Math.PI / 2,        // PI/2 rad (ARUZ Inmobiliaria)
+    Math.PI,            // PI rad (CADE Constructora)
+    (3 * Math.PI) / 2   // 3PI/2 rad (ARUZ Maquinaria)
+  ];
+
+  // Pause/slow speed on hover
+  nodes.forEach(node => {
+    node.addEventListener('mouseenter', () => {
+      isHovered = true;
+      targetSpeed = 0.0004; // Gentle slow motion inspection
+    });
+    node.addEventListener('mouseleave', () => {
+      isHovered = false;
+      targetSpeed = 0.0032;
+    });
+  });
 
   cards.forEach(card => {
-    card.addEventListener('click', () => {
-      cards.forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
+    card.addEventListener('mouseenter', () => {
+      isHovered = true;
+      targetSpeed = 0.0004;
+    });
+    card.addEventListener('mouseleave', () => {
+      isHovered = false;
+      targetSpeed = 0.0032;
+    });
+  });
 
-      const id = card.getAttribute('data-subbrand');
-      if (subbrandData[id]) {
-        bannerTitle.textContent = subbrandData[id].title;
-        bannerDesc.textContent = subbrandData[id].desc;
-        if (bannerBtn) {
-          bannerBtn.href = subbrandData[id].linkUrl;
-          bannerBtn.textContent = subbrandData[id].linkText;
+  // Mouse tilt parallax on the 3D stage
+  let stageTiltX = 0;
+  let stageTiltY = 0;
+  let targetTiltX = 0;
+  let targetTiltY = 0;
+
+  window.addEventListener('mousemove', (e) => {
+    const rect = stage.getBoundingClientRect();
+    const nx = (e.clientX - (rect.left + rect.width / 2)) / (window.innerWidth / 2);
+    const ny = (e.clientY - (rect.top + rect.height / 2)) / (window.innerHeight / 2);
+    targetTiltY = nx * 7;  // Rotate Y in deg
+    targetTiltX = -ny * 6; // Rotate X in deg
+  });
+
+  function updateOrbit() {
+    // Smooth speed interpolation
+    currentSpeed += (targetSpeed - currentSpeed) * 0.08;
+    currentAngle += currentSpeed;
+
+    // Smooth stage 3D tilt
+    stageTiltX += (targetTiltX - stageTiltX) * 0.06;
+    stageTiltY += (targetTiltY - stageTiltY) * 0.06;
+    stage.style.transform = `rotateX(${stageTiltX}deg) rotateY(${stageTiltY}deg)`;
+
+    const stageWidth = stage.offsetWidth;
+    const stageHeight = stage.offsetHeight;
+    const centerX = stageWidth / 2;
+    const centerY = stageHeight / 2;
+
+    // Elliptical 3D radii responsive to container width
+    const isMobile = window.innerWidth <= 768;
+    const rx = isMobile ? stageWidth * 0.38 : Math.min(380, stageWidth * 0.34);
+    const ry = isMobile ? stageHeight * 0.32 : Math.min(140, stageHeight * 0.28);
+
+    // Callout fixed anchor quadrant offsets relative to center
+    const cardPositions = [
+      { x: centerX + rx * 0.88, y: centerY - ry * 1.35 }, // Top Right (Desarrolladora)
+      { x: centerX + rx * 0.88, y: centerY + ry * 0.85 }, // Bottom Right (Inmobiliaria)
+      { x: centerX - rx * 1.35, y: centerY + ry * 0.85 }, // Bottom Left (CADE)
+      { x: centerX - rx * 1.35, y: centerY - ry * 1.35 }  // Top Left (Maquinaria)
+    ];
+
+    // Clear SVG dynamic lines
+    while (svg.firstChild) {
+      svg.removeChild(svg.firstChild);
+    }
+
+    // Update each node in 3D orbit
+    nodes.forEach((node, idx) => {
+      const angle = currentAngle + nodeOffsets[idx];
+      const cosA = Math.cos(angle);
+      const sinA = Math.sin(angle);
+
+      const nodeX = centerX + cosA * rx;
+      const nodeY = centerY + sinA * ry;
+
+      // 3D Depth: sinA maps from -1 (back/top) to +1 (front/bottom)
+      const depthFactor = (sinA + 1) / 2; // 0 (far) to 1 (near)
+      const scale = 0.85 + depthFactor * 0.35; // 0.85x to 1.2x
+      const opacity = 0.65 + depthFactor * 0.35;
+      const zIndex = Math.round(5 + depthFactor * 15);
+
+      node.style.left = `${nodeX}px`;
+      node.style.top = `${nodeY}px`;
+      node.style.transform = `translate(-50%, -50%) scale(${scale})`;
+      node.style.opacity = opacity;
+      node.style.zIndex = zIndex;
+
+      // Card position for this sub-brand
+      const card = cards[idx];
+      if (card) {
+        let cardX, cardY;
+        if (!isMobile) {
+          cardX = cardPositions[idx].x;
+          cardY = cardPositions[idx].y;
+          card.style.left = `${cardX}px`;
+          card.style.top = `${cardY}px`;
+        } else {
+          // In mobile, cards arrange cleanly below
+          cardX = centerX;
+          cardY = centerY;
+        }
+
+        // Draw Real-Time Technical Callout Leader Line
+        if (!isMobile) {
+          const cardAnchorX = idx < 2 ? cardX : cardX + card.offsetWidth;
+          const cardAnchorY = cardY + card.offsetHeight / 2;
+
+          const kneeX = nodeX + (cardAnchorX > nodeX ? 35 : -35);
+          const kneeY = cardAnchorY;
+
+          // Leader Polyline: (nodeX, nodeY) -> (kneeX, nodeY) -> (kneeX, kneeY) -> (cardAnchorX, cardAnchorY)
+          const polyline = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          const d = `M ${nodeX} ${nodeY} L ${kneeX} ${nodeY} L ${kneeX} ${kneeY} L ${cardAnchorX} ${cardAnchorY}`;
+          polyline.setAttribute('d', d);
+          polyline.setAttribute('class', `hud-leader-line ${node.classList.contains('active') ? 'active' : ''}`);
+          svg.appendChild(polyline);
+
+          // Node Anchor Dot
+          const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          dot.setAttribute('cx', nodeX);
+          dot.setAttribute('cy', nodeY);
+          dot.setAttribute('r', 3.5);
+          dot.setAttribute('class', 'hud-leader-dot');
+          svg.appendChild(dot);
+
+          // Card Anchor Dot
+          const dotCard = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+          dotCard.setAttribute('cx', cardAnchorX);
+          dotCard.setAttribute('cy', cardAnchorY);
+          dotCard.setAttribute('r', 2.5);
+          dotCard.setAttribute('class', 'hud-leader-dot');
+          svg.appendChild(dotCard);
         }
       }
     });
-  });
+
+    requestAnimationFrame(updateOrbit);
+  }
+
+  updateOrbit();
 }
 
 /* --------------------------------------------------------------------------
@@ -128,7 +325,6 @@ function initPropertyFilters() {
         const cardCat = card.getAttribute('data-category');
         if (targetCategory === 'all' || cardCat === targetCategory) {
           card.style.display = 'flex';
-          card.style.animation = 'fadeInCard 0.4s ease forwards';
         } else {
           card.style.display = 'none';
         }
@@ -153,7 +349,6 @@ function initAdvisorForm() {
     const budget = document.getElementById('advBudget')?.value || '$2.5M - $5M MXN';
     const message = document.getElementById('advMessage')?.value.trim() || '';
 
-    // Official WhatsApp format adhering to Brand Manual v2.0
     const directorPhone = '5216674069523'; // Carlos Alfredo Ruiz Ramos
     
     let text = `Hola Carlos Alfredo Ruiz Ramos (Director de Operaciones ARUZ),\n\n`;
@@ -169,7 +364,6 @@ function initAdvisorForm() {
     const encodedText = encodeURIComponent(text);
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${directorPhone}&text=${encodedText}`;
 
-    // Open WhatsApp
     window.open(whatsappUrl, '_blank');
   });
 }
@@ -179,7 +373,6 @@ function initAdvisorForm() {
    -------------------------------------------------------------------------- */
 function initIntersectionAnimations() {
   const elements = document.querySelectorAll('.section-spacing, .division-card, .property-card, .pilar-card');
-  
   if (!('IntersectionObserver' in window)) return;
 
   const observer = new IntersectionObserver((entries) => {
