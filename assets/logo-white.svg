@@ -1,19 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 180" width="100%" height="100%">
-  <!-- ARUZ Official Logo Vector - Monochrome White -->
-  <g id="icon" transform="translate(15, 10)">
-    <!-- Left Pillar -->
-    <path d="M 0 160 L 0 75 L 42 42 L 42 160 Z" fill="#FFFFFF"/>
-    <!-- Center Left Sloped Facet -->
-    <path d="M 42 42 L 68 22 L 68 160 L 42 160 Z" fill="#EEB623"/>
-    <!-- Center Tall Pillar -->
-    <path d="M 68 22 L 95 0 L 115 16 L 115 160 L 95 160 Z" fill="#EEB623"/>
-    <!-- Right Tall Pillar -->
-    <path d="M 148 50 L 190 85 L 190 160 L 148 160 Z" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 190" width="100%" height="100%">
+  <defs>
+    <!-- Facet Gold Gradients -->
+    <linearGradient id="goldFacetLeftW" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7C844"/>
+      <stop offset="100%" stop-color="#EEB623"/>
+    </linearGradient>
+    <linearGradient id="goldFacetCenterW" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5A718"/>
+      <stop offset="100%" stop-color="#D49610"/>
+    </linearGradient>
+    <linearGradient id="goldFacetTallW" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD65E"/>
+      <stop offset="60%" stop-color="#EEB623"/>
+      <stop offset="100%" stop-color="#C79215"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ARUZ Isotype Emblem -->
+  <g id="aruz-isotype" transform="translate(10, 10)">
+    <!-- Left Lower Facet -->
+    <polygon points="0,80 44,46 44,170 0,170" fill="url(#goldFacetLeftW)"/>
+    <!-- Center Sloped Intermediate Facet -->
+    <polygon points="44,46 70,26 70,170 44,170" fill="url(#goldFacetCenterW)"/>
+    <!-- Tall Golden Crown Peak -->
+    <polygon points="70,26 118,0 118,170 94,170 94,64 70,44" fill="url(#goldFacetTallW)"/>
+    <!-- Right Monolith Column -->
+    <polygon points="144,48 182,78 182,170 144,170" fill="#FFFFFF"/>
   </g>
 
-  <!-- Wordmark ARUZ INMOBILIARIA -->
-  <g id="wordmark" transform="translate(210, 20)">
-    <text x="0" y="92" font-family="'Poppins', 'Montserrat', 'Arial Black', sans-serif" font-size="82" font-weight="900" letter-spacing="-1px" fill="#FFFFFF">ARUZ</text>
-    <text x="3" y="138" font-family="'Work Sans', 'Helvetica Neue', Arial, sans-serif" font-size="34" font-weight="300" letter-spacing="9.5px" fill="#D8C9AE">INMOBILIARIA</text>
+  <!-- Wordmark: ARUZ -->
+  <g id="aruz-wordmark" transform="translate(216, 25)">
+    <!-- ARUZ Bold Title -->
+    <text x="0" y="98" font-family="'Montserrat', 'Poppins', sans-serif" font-size="96" font-weight="900" letter-spacing="-1px" fill="#FFFFFF">ARUZ</text>
+    <!-- ECOSYSTEM Subtitle -->
+    <text x="4" y="146" font-family="'Montserrat', 'Work Sans', sans-serif" font-size="28" font-weight="600" letter-spacing="8.5px" fill="#EEB623">HOLDING</text>
   </g>
 </svg>

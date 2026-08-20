@@ -1,15 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 220" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 220" width="100%" height="100%">
   <defs>
-    <!-- Facet Gold Gradients matching official brand manual and photographic asset -->
-    <linearGradient id="goldFacetLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+    <!-- Facet Gold Gradients -->
+    <linearGradient id="goldFacetLeftInm" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#F7C844"/>
       <stop offset="100%" stop-color="#EEB623"/>
     </linearGradient>
-    <linearGradient id="goldFacetCenter" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="goldFacetCenterInm" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#E5A718"/>
       <stop offset="100%" stop-color="#D49610"/>
     </linearGradient>
-    <linearGradient id="goldFacetTall" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="goldFacetTallInm" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FFD65E"/>
       <stop offset="60%" stop-color="#EEB623"/>
       <stop offset="100%" stop-color="#C79215"/>
@@ -18,21 +18,20 @@
 
   <g id="aruz-isotype" transform="translate(15, 10)">
     <!-- Left Lower Facet -->
-    <polygon points="0,85 45,50 45,190 0,190" fill="url(#goldFacetLeft)"/>
+    <polygon points="0,85 45,50 45,190 0,190" fill="url(#goldFacetLeftInm)"/>
     <!-- Center Sloped Intermediate Facet -->
-    <polygon points="45,50 72,28 72,190 45,190" fill="url(#goldFacetCenter)"/>
+    <polygon points="45,50 72,28 72,190 45,190" fill="url(#goldFacetCenterInm)"/>
     <!-- Tall Golden Crown Peak -->
-    <polygon points="72,28 122,0 122,190 98,190 98,70 72,48" fill="url(#goldFacetTall)"/>
-    
-    <!-- Central Black/Carbon Monolith Column -->
+    <polygon points="72,28 122,0 122,190 98,190 98,70 72,48" fill="url(#goldFacetTallInm)"/>
+    <!-- Central White Monolith Column -->
     <polygon points="150,55 188,88 188,190 150,190" fill="#FFFFFF"/>
   </g>
 
   <!-- Wordmark: ARUZ INMOBILIARIA -->
   <g id="aruz-wordmark" transform="translate(225, 25)">
     <!-- ARUZ Main Bold Title -->
-    <text x="0" y="102" font-family="'Montserrat', 'Poppins', 'Arial Black', sans-serif" font-size="94" font-weight="900" letter-spacing="-1px" fill="#FFFFFF">ARUZ</text>
-    <!-- INMOBILIARIA Thin Tracking Subtitle -->
-    <text x="2" y="152" font-family="'Montserrat', 'Work Sans', sans-serif" font-size="34" font-weight="300" letter-spacing="10.5px" fill="#FFFFFF">INMOBILIARIA</text>
+    <text x="0" y="102" font-family="'Montserrat', 'Poppins', sans-serif" font-size="94" font-weight="900" letter-spacing="-1px" fill="#FFFFFF">ARUZ</text>
+    <!-- INMOBILIARIA Tracking Subtitle -->
+    <text x="2" y="152" font-family="'Montserrat', 'Work Sans', sans-serif" font-size="31" font-weight="400" letter-spacing="8px" fill="#FFFFFF">INMOBILIARIA</text>
   </g>
 </svg>
