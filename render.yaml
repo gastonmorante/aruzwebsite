@@ -1,6 +1,7 @@
 services:
+  # Option A: Static Site runtime
   - type: web
-    name: aruz-ecosistema-360
+    name: aruzwebsite
     runtime: static
     buildCommand: ""
     staticPublishPath: .

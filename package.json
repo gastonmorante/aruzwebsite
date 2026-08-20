@@ -1,0 +1,15 @@
+{
+  "name": "aruz-website",
+  "version": "1.0.0",
+  "description": "Ecosistema Digital ARUZ 360",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "echo 'Build complete'"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Grupo Ruiz México",
+  "license": "ISC"
+}
