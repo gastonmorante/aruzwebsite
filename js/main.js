@@ -5,7 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
-  initFlow360();
+  initSubbrand360();
   initPropertyFilters();
   initAdvisorForm();
   initIntersectionAnimations();
@@ -49,35 +49,44 @@ function initNavbar() {
 }
 
 /* --------------------------------------------------------------------------
-   HERO 360 ECOSYSTEM INTERACTIVE FLOW
+   HERO 360 ECOSYSTEM - 4 SUBMARCAS INTEGRADAS
    -------------------------------------------------------------------------- */
-const flowData = {
+const subbrandData = {
   1: {
-    title: "1. Diseño & Planeación Arquitectónica",
-    desc: "Desarrollo conceptual bioclimático, análisis topográfico hiperlocal y modelado BIM de alta precisión para optimizar costos y tiempos de ejecución desde el día cero.",
-    evidence: "Estudios estructurales y de impacto ambiental integrados antes de mover un solo metro cúbico."
+    title: "ARUZ Desarrolladora — Proyectos Propios de Autor",
+    desc: "División de desarrollo inmobiliario de Grupo Ruiz. Concepción y ejecución de proyectos residenciales de alta gama con diseño bioclimático y acabados de lujo regional.",
+    badge: "4 Preventas Exclusivas",
+    linkUrl: "desarrolladora.html",
+    linkText: "Explorar Desarrolladora & Preventas"
   },
   2: {
-    title: "2. CADE Construcción & Control de Calidad",
-    desc: "Ejecución de obra directa con cuadrillas y maquinaria pesada propia. Más de 12 años trabajando con los expertos de Ciudad Mayakoba respaldan cada colado.",
-    evidence: "Supervisión diaria, bitácora digital de obra y cero intermediarios en la cadena de suministro."
+    title: "ARUZ Inmobiliaria — Asesoría & Propiedades Verificadas",
+    desc: "Comercialización y asesoría patrimonial basada en evidencia real. Portafolio de inmuebles de terceros auditados rigurosamente en dictamen técnico y certeza jurídica.",
+    badge: "Portafolio Certificado",
+    linkUrl: "inmobiliaria.html",
+    linkText: "Ver Catálogo Inmobiliario"
   },
   3: {
-    title: "3. ARUZ Inmobiliaria & Criterio Experto",
-    desc: "Asesoría patrimonial y de inversión con ticket mínimo de $2.5M MXN. Análisis financiero honesto sin falsas promesas de 'paraíso'.",
-    evidence: "Acompañamiento legal, dictamen de certeza jurídica y asesoría para clientes locales e internacionales."
+    title: "CADE Diseño y Construcción — Brazo Constructor Oficial",
+    desc: "Ejecución técnica y control de calidad de Grupo Ruiz. Más de 12 años construyendo con los expertos de Ciudad Mayakoba, Valle Aurora y Xpuha bajo el Sello CADE.",
+    badge: "+12 Años de Trayectoria",
+    linkUrl: "landings/cade-constructora.html",
+    linkText: "Conocer División CADE"
   },
   4: {
-    title: "4. Entrega & Programa Círculo ARUZ",
-    desc: "La relación no termina con la llave en mano. Seguimiento estructurado a 30, 90 y 180 días con garantías de vicios ocultos y mantenimiento preventivo.",
-    evidence: "Inspecciones técnicas post-entrega coordinadas directamente por el Gerente de Construcción."
+    title: "ARUZ Maquinaria Pesada — Flota Propia & Terracerías",
+    desc: "Infraestructura operativa con excavadoras, retroexcavadoras y camiones propios para garantizar que las terracerías y cimentaciones nunca dependan de terceros.",
+    badge: "Flota Operativa Activa",
+    linkUrl: "landings/aruz-maquinaria.html",
+    linkText: "Ver Flota de Maquinaria"
   }
 };
 
-function initFlow360() {
+function initSubbrand360() {
   const cards = document.querySelectorAll('.flow-card');
   const bannerTitle = document.getElementById('flowActiveTitle');
   const bannerDesc = document.getElementById('flowActiveDesc');
+  const bannerBtn = document.getElementById('flowActiveBtn');
 
   if (!cards.length || !bannerTitle || !bannerDesc) return;
 
@@ -86,10 +95,14 @@ function initFlow360() {
       cards.forEach(c => c.classList.remove('active'));
       card.classList.add('active');
 
-      const step = card.getAttribute('data-step');
-      if (flowData[step]) {
-        bannerTitle.textContent = flowData[step].title;
-        bannerDesc.textContent = `${flowData[step].desc} — Evidencia: ${flowData[step].evidence}`;
+      const id = card.getAttribute('data-subbrand');
+      if (subbrandData[id]) {
+        bannerTitle.textContent = subbrandData[id].title;
+        bannerDesc.textContent = subbrandData[id].desc;
+        if (bannerBtn) {
+          bannerBtn.href = subbrandData[id].linkUrl;
+          bannerBtn.textContent = subbrandData[id].linkText;
+        }
       }
     });
   });
@@ -136,7 +149,7 @@ function initAdvisorForm() {
 
     const name = document.getElementById('advName')?.value.trim() || 'Inversionista';
     const motivation = document.getElementById('advMotivation')?.value || 'Patrimonial / Inversión';
-    const division = document.getElementById('advDivision')?.value || 'Desarrollos ARUZ';
+    const division = document.getElementById('advDivision')?.value || 'ARUZ Desarrolladora';
     const budget = document.getElementById('advBudget')?.value || '$2.5M - $5M MXN';
     const message = document.getElementById('advMessage')?.value.trim() || '';
 
@@ -146,7 +159,7 @@ function initAdvisorForm() {
     let text = `Hola Carlos Alfredo Ruiz Ramos (Director de Operaciones ARUZ),\n\n`;
     text += `Mi nombre es *${name}* y solicito asesoría técnica y comercial:\n`;
     text += `• *Objetivo:* ${motivation}\n`;
-    text += `• *División de Interés:* ${division}\n`;
+    text += `• *Submarca de Interés:* ${division}\n`;
     text += `• *Rango de Presupuesto:* ${budget}\n`;
     if (message) {
       text += `• *Comentarios específicos:* ${message}\n`;
