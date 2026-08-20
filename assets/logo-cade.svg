@@ -1,26 +1,44 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 220" width="100%" height="100%">
   <!-- CADE Official Logo Vector based on attached Image 4 -->
+  
+  <!-- Left Emblem: Architectural High-Tech Buildings & Crane Beam -->
   <g id="cade-emblem" transform="translate(10, 15)">
+    <!-- Left Crane / Beam Line -->
     <line x1="0" y1="75" x2="45" y2="45" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
     <line x1="16" y1="55" x2="16" y2="155" stroke="#FFFFFF" stroke-width="6"/>
+    
+    <!-- Left Mid-Rise Tower -->
     <path d="M 28 85 L 50 85 L 50 155 L 28 155 Z" fill="#FFFFFF"/>
+    
+    <!-- Center Tall Skyscraper with Windows -->
     <path d="M 58 10 L 105 45 L 105 155 L 58 155 Z" fill="none" stroke="#FFFFFF" stroke-width="7"/>
     <path d="M 58 10 L 105 45 L 105 155 L 58 155 Z" fill="#161213"/>
+    
+    <!-- Windows Grid on Tall Skyscraper (2 columns of 3) -->
     <rect x="70" y="55" width="8" height="9" fill="#FFFFFF"/>
     <rect x="85" y="66" width="8" height="9" fill="#FFFFFF"/>
     <rect x="70" y="73" width="8" height="9" fill="#FFFFFF"/>
     <rect x="85" y="84" width="8" height="9" fill="#FFFFFF"/>
     <rect x="70" y="91" width="8" height="9" fill="#FFFFFF"/>
     <rect x="85" y="102" width="8" height="9" fill="#FFFFFF"/>
+    
+    <!-- Foreground Angled Luxury Building with Facade Lines -->
     <path d="M 88 88 L 138 65 L 138 155 L 88 155 Z" fill="#FFFFFF"/>
     <path d="M 115 90 L 138 78 L 138 155 L 115 155 Z" fill="#161213" stroke="#FFFFFF" stroke-width="2"/>
+    <!-- Louver Facade Lines -->
     <line x1="118" y1="108" x2="135" y2="100" stroke="#FFFFFF" stroke-width="3"/>
     <line x1="118" y1="124" x2="135" y2="116" stroke="#FFFFFF" stroke-width="3"/>
     <line x1="118" y1="140" x2="135" y2="132" stroke="#FFFFFF" stroke-width="3"/>
+    
+    <!-- Base Foundation Line -->
     <line x1="16" y1="155" x2="140" y2="155" stroke="#FFFFFF" stroke-width="6"/>
   </g>
+
+  <!-- Right Wordmark: CADE DISEÑO Y CONSTRUCCIÓN -->
   <g id="cade-wordmark" transform="translate(180, 20)">
+    <!-- CADE Display Bold Wordmark -->
     <text x="0" y="104" font-family="'Montserrat', 'Arial Black', sans-serif" font-size="108" font-weight="900" letter-spacing="4px" fill="#FFFFFF">CADE</text>
+    <!-- Subtitle: DISEÑO Y CONSTRUCCIÓN -->
     <text x="5" y="152" font-family="'Montserrat', 'Work Sans', sans-serif" font-size="28" font-weight="400" letter-spacing="9px" fill="#FFFFFF">DISEÑO Y CONSTRUCCIÓN</text>
   </g>
 </svg>

@@ -1,11 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
-  <!-- ARUZ Maquinaria Node Emblem -->
-  <g transform="translate(24, 16)">
-    <path d="M 6 36 L 18 16 L 34 16 L 42 36 L 36 36 L 30 22 L 18 22 L 12 36 Z" fill="#EEB623"/>
-    <circle cx="14" cy="40" r="4.5" fill="#FFFFFF"/>
-    <circle cx="26" cy="40" r="4.5" fill="#FFFFFF"/>
-    <circle cx="38" cy="40" r="4.5" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="nGoldLeftMaq" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7C844"/>
+      <stop offset="100%" stop-color="#EEB623"/>
+    </linearGradient>
+    <linearGradient id="nGoldCenterMaq" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5A718"/>
+      <stop offset="100%" stop-color="#D49610"/>
+    </linearGradient>
+    <linearGradient id="nGoldTallMaq" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD65E"/>
+      <stop offset="60%" stop-color="#EEB623"/>
+      <stop offset="100%" stop-color="#C79215"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(26, 12)">
+    <polygon points="0,32 15,19 15,68 0,68" fill="url(#nGoldLeftMaq)"/>
+    <polygon points="15,19 25,10 25,68 15,68" fill="url(#nGoldCenterMaq)"/>
+    <polygon points="25,10 42,0 42,68 33,68 33,26 25,18" fill="url(#nGoldTallMaq)"/>
+    <polygon points="52,20 65,32 65,68 52,68" fill="#FFFFFF"/>
   </g>
-  <text x="50" y="78" text-anchor="middle" font-family="'Montserrat', 'Poppins', sans-serif" font-size="11" font-weight="900" letter-spacing="1px" fill="#FFFFFF">ARUZ</text>
-  <text x="50" y="90" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="6.5" font-weight="700" letter-spacing="1.2px" fill="#EEB623">MAQUINARIA</text>
+
+  <text x="60" y="94" text-anchor="middle" font-family="'Montserrat', 'Poppins', sans-serif" font-size="12" font-weight="900" letter-spacing="0.5px" fill="#FFFFFF">ARUZ</text>
+  <text x="60" y="106" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="6.8" font-weight="400" letter-spacing="1.5px" fill="#EEB623">MAQUINARIA</text>
 </svg>
