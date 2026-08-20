@@ -10,11 +10,14 @@
   <!-- Tailwind CSS CDN with Container Queries & Forms -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   
-  <!-- Google Fonts: Libre Caslon Text (Editorial Luxury), Plus Jakarta Sans & Material Symbols -->
+  <!-- Google Fonts: Libre Caslon Text (Editorial Luxury), Plus Jakarta Sans, Montserrat & Material Symbols -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Site Stylesheet for 3D HUD Orbit Engine & Components -->
+  <link rel="stylesheet" href="css/style.css">
 
   <!-- Google Stitch Theme Config -->
   <script id="tailwind-config">
@@ -101,16 +104,6 @@
             "display-lg": ["Libre Caslon Text", "serif"],
             "button": ["Plus Jakarta Sans", "sans-serif"],
             "title-tech": ["Montserrat", "sans-serif"]
-          },
-          fontSize: {
-            "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
-            "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "700" }],
-            "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "400" }],
-            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0.01em", "fontWeight": "400" }],
-            "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }],
-            "headline-md": ["30px", { "lineHeight": "38px", "fontWeight": "400" }],
-            "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
-            "button": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }]
           }
         }
       }
@@ -120,16 +113,12 @@
   <style>
     body { scroll-behavior: smooth; }
     .glass-panel { 
-      background: rgba(255, 255, 255, 0.75); 
+      background: rgba(255, 255, 255, 0.82); 
       backdrop-filter: blur(14px); 
-      border: 1px solid rgba(238, 182, 35, 0.18); 
-    }
-    .dark .glass-panel {
-      background: rgba(35, 31, 32, 0.75);
-      border-color: rgba(238, 182, 35, 0.25);
+      border: 1px solid rgba(238, 182, 35, 0.22); 
     }
     .ambient-shadow { 
-      box-shadow: 0 12px 35px rgba(35, 31, 32, 0.06); 
+      box-shadow: 0 12px 35px rgba(35, 31, 32, 0.07); 
     }
     .gold-glow {
       box-shadow: 0 0 25px rgba(238, 182, 35, 0.35);
@@ -156,11 +145,11 @@
     </a>
 
     <div class="hidden lg:flex gap-6 items-center">
-      <a class="text-dorado-profundo font-bold border-b-2 border-dorado-profundo pb-1 font-label-caps uppercase hover:text-dorado-aruz transition-colors duration-300 text-xs" href="desarrolladora.html">Desarrolladora (4 Preventas)</a>
+      <a class="text-dorado-profundo font-bold border-b-2 border-dorado-profundo pb-1 font-label-caps uppercase hover:text-dorado-aruz transition-colors duration-300 text-xs" href="desarrolladora.html">Desarrolladora</a>
       <a class="text-carbon-aruz font-label-caps uppercase hover:text-dorado-aruz transition-colors duration-300 text-xs font-semibold" href="inmobiliaria.html">Inmobiliaria</a>
       <a class="text-carbon-aruz font-label-caps uppercase hover:text-dorado-aruz transition-colors duration-300 text-xs font-semibold" href="landings/cade-constructora.html">CADE Construcción</a>
       <a class="text-carbon-aruz font-label-caps uppercase hover:text-dorado-aruz transition-colors duration-300 text-xs font-semibold" href="landings/aruz-maquinaria.html">Maquinaria</a>
-      <a class="text-carbon-aruz font-label-caps uppercase hover:text-dorado-aruz transition-colors duration-300 text-xs font-semibold" href="#preventas-mayakoba">Colección</a>
+      <a class="text-carbon-aruz font-label-caps uppercase hover:text-dorado-aruz transition-colors duration-300 text-xs font-semibold" href="#preventas-mayakoba">Colección Mayakoba</a>
       <a class="text-carbon-aruz font-label-caps uppercase hover:text-dorado-aruz transition-colors duration-300 text-xs font-semibold" href="#contacto-hub">Contacto</a>
       <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20sobre%20las%20preventas%20de%20ARUZ." target="_blank" class="bg-dorado-profundo text-white font-button px-5 py-2.5 rounded font-label-caps uppercase hover:bg-dorado-aruz transition-all duration-300 ml-2 shadow-md hover:shadow-lg flex items-center gap-1.5 text-xs">
         <span>Invertir Ahora</span>
@@ -187,10 +176,10 @@
   <!-- ==========================================================================
        1. HERO SECTION WITH GOOGLE STITCH WEBGL SHADER
        ========================================================================== -->
-  <section class="relative w-full min-h-[92vh] flex items-center justify-center pt-24 px-margin-mobile md:px-margin-desktop overflow-hidden">
+  <section class="relative w-full min-h-[90vh] flex items-center justify-center pt-24 pb-12 px-margin-mobile md:px-margin-desktop overflow-hidden">
     
     <!-- STITCH_SHADER_START:ANIMATION_5 -->
-    <div class="absolute inset-0 w-full h-full object-cover -z-10 opacity-70" style="display:block;">
+    <div class="absolute inset-0 w-full h-full object-cover -z-10 opacity-60" style="display:block;">
       <canvas id="shader-canvas-ANIMATION_5" style="display:block;width:100%;height:100%"></canvas>
       <script>
       (function() {
@@ -256,7 +245,6 @@
           vec2 uv = v_texCoord;
           vec2 mouse = u_mouse / u_resolution;
           
-          // Aesthetic: Caribbean Sand & Tech Glow
           vec3 color_sand = vec3(0.847, 0.788, 0.682); // Piedra Maya #D8C9AE
           vec3 color_gold = vec3(0.933, 0.714, 0.137); // Dorado ARUZ #EEB623
           vec3 color_dark = vec3(0.137, 0.122, 0.125); // Carbón ARUZ #231F20
@@ -320,37 +308,161 @@
     </div>
     <!-- STITCH_SHADER_END:ANIMATION_5 -->
 
-    <div class="relative z-10 max-w-4xl mx-auto text-center animate-fade-up py-12">
-      <span class="font-label-caps text-xs md:text-sm text-dorado-profundo uppercase tracking-widest mb-6 block font-bold">
+    <div class="relative z-10 max-w-4xl mx-auto text-center animate-fade-up py-8">
+      <span class="font-label-caps text-xs md:text-sm text-dorado-profundo uppercase tracking-widest mb-4 block font-bold">
         ARUZ ECOSYSTEM HUB // 3D INTERACTIVE CORE · GRUPO RUIZ MÉXICO
       </span>
-      <h1 class="font-display-lg text-4xl sm:text-5xl md:text-6xl text-carbon-aruz mb-8 leading-tight font-serif">
+      <h1 class="font-display-lg text-4xl sm:text-5xl md:text-6xl text-carbon-aruz mb-6 leading-tight font-serif">
         Control total, desde el diseño hasta la entrega.
       </h1>
-      <p class="font-body-lg text-base md:text-lg text-gris-grafito mb-10 max-w-2xl mx-auto leading-relaxed">
+      <p class="font-body-lg text-base md:text-lg text-gris-grafito mb-8 max-w-2xl mx-auto leading-relaxed">
         ARUZ es la única firma en la Riviera Maya que asesora, construye y da seguimiento a tu propiedad bajo una misma estructura familiar. No dependes de varios proveedores: dependes de un solo equipo que responde por todo el proceso.
       </p>
       
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <span class="inline-flex items-center gap-2 bg-white/70 backdrop-blur-md px-5 py-2.5 rounded-full border border-outline-variant/40 font-label-caps text-xs text-verde-manglar font-bold shadow-sm">
+        <span class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-md px-5 py-2 rounded-full border border-outline-variant/40 font-label-caps text-xs text-verde-manglar font-bold shadow-sm">
           <span class="material-symbols-outlined text-base">verified</span>
           +12 años trabajando con los expertos de Ciudad Mayakoba.
         </span>
-        <a href="#divisiones-core" class="inline-flex items-center gap-2 bg-carbon-aruz text-white hover:bg-dorado-profundo px-6 py-2.5 rounded-full font-label-caps text-xs uppercase font-bold transition-all shadow-md">
-          <span>Explorar Ecosistema 360</span>
-          <span class="material-symbols-outlined text-sm">arrow_downward</span>
+        <a href="#interactive-hub-3d" class="inline-flex items-center gap-2 bg-carbon-aruz text-white hover:bg-dorado-profundo px-6 py-2.5 rounded-full font-label-caps text-xs uppercase font-bold transition-all shadow-md">
+          <span>Ver Núcleo 3D Interactivo</span>
+          <span class="material-symbols-outlined text-sm">orbit</span>
         </a>
       </div>
-    </div>
-
-    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center gap-1 opacity-60">
-      <span class="font-label-caps text-[10px] uppercase tracking-widest text-carbon-aruz">Descubre el Core 360</span>
-      <span class="material-symbols-outlined text-carbon-aruz text-sm">arrow_downward</span>
     </div>
   </section>
 
   <!-- ==========================================================================
-       2. CORE 360 DIVISIONS (ESTRUCTURA CORPORATIVA)
+       2. ARUZ ECOSYSTEM HUB - 3D INTERACTIVE CORE ANIMATION (ORBIT ENGINE)
+       ========================================================================== -->
+  <section class="py-12 md:py-20 px-margin-mobile md:px-margin-desktop bg-carbon-aruz text-white relative overflow-hidden" id="interactive-hub-3d">
+    
+    <!-- Background Technical Grid & Particle Glow -->
+    <div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: linear-gradient(to right, rgba(238,182,35,0.15) 1px, transparent 1px), linear-gradient(to bottom, rgba(238,182,35,0.15) 1px, transparent 1px); background-size: 40px 40px;"></div>
+    <div class="absolute inset-0 bg-radial-gradient from-dorado-aruz/10 via-transparent to-transparent pointer-events-none"></div>
+
+    <div class="max-w-[1420px] mx-auto relative z-10">
+      
+      <div class="text-center mb-8">
+        <span class="font-label-caps text-xs text-dorado-aruz uppercase tracking-widest mb-2 block font-bold">
+          Núcleo Central en Movimiento
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-white mb-3">
+          4 Nodos Orbitando el Ecosistema ARUZ
+        </h2>
+        <p class="text-xs sm:text-sm text-piedra-maya/80 max-w-xl mx-auto font-body-md">
+          Pasa el cursor sobre los logos vectoriales para desacelerar la órbita e inspeccionar cada división en tiempo real.
+        </p>
+      </div>
+
+      <!-- 3D Orbit Stage Container -->
+      <div class="hud-orbit-stage" id="hudStage" style="height: 520px; max-width: 1000px; margin: 0 auto; position: relative;">
+        
+        <!-- SVG Dynamic Leader Lines -->
+        <svg class="hud-callout-svg" id="hudCalloutSvg" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10;"></svg>
+
+        <!-- Orbit Elliptical Rings -->
+        <div class="hud-orbit-track" style="border-color: rgba(238, 182, 35, 0.22); border-style: dashed;"></div>
+        <div class="hud-orbit-track inner" style="border-color: rgba(216, 201, 174, 0.15);"></div>
+
+        <!-- Central Core: Master ARUZ Gold Logo -->
+        <div class="hud-central-core" style="background: radial-gradient(circle at 35% 35%, #2A2224 0%, #161213 85%); border-color: #EEB623; box-shadow: 0 0 50px rgba(238, 182, 35, 0.45);">
+          <div class="core-logo-wrap" style="padding: 14px;">
+            <img src="assets/logo-white.svg" alt="ARUZ Core" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
+          <div class="core-pulse-ring" style="border-color: rgba(238, 182, 35, 0.6);"></div>
+          <div class="core-pulse-ring delay" style="border-color: rgba(238, 182, 35, 0.3);"></div>
+        </div>
+
+        <!-- Orbiting Nodes (4 Integrated Sub-brands with Official SVGs) -->
+        <div class="hud-orbit-plane">
+          
+          <!-- Node 0: ARUZ Desarrolladora -->
+          <div class="hud-orbit-node" data-subbrand="desarrolladora" data-url="desarrolladora.html">
+            <div class="node-emblem" style="background: #1F191B; border-color: #EEB623;">
+              <img src="assets/node-desarrolladora.svg" alt="ARUZ Desarrolladora" class="node-logo-svg">
+              <div class="node-ring-pulse"></div>
+            </div>
+          </div>
+
+          <!-- Node 1: ARUZ Inmobiliaria -->
+          <div class="hud-orbit-node" data-subbrand="inmobiliaria" data-url="inmobiliaria.html">
+            <div class="node-emblem" style="background: #1F191B; border-color: #EEB623;">
+              <img src="assets/node-inmobiliaria.svg" alt="ARUZ Inmobiliaria" class="node-logo-svg">
+              <div class="node-ring-pulse"></div>
+            </div>
+          </div>
+
+          <!-- Node 2: CADE Constructora -->
+          <div class="hud-orbit-node" data-subbrand="cade" data-url="landings/cade-constructora.html">
+            <div class="node-emblem" style="background: #1F191B; border-color: #EEB623;">
+              <img src="assets/node-cade.svg" alt="CADE Constructora" class="node-logo-svg">
+              <div class="node-ring-pulse"></div>
+            </div>
+          </div>
+
+          <!-- Node 3: ARUZ Maquinaria Pesada -->
+          <div class="hud-orbit-node" data-subbrand="maquinaria" data-url="landings/aruz-maquinaria.html">
+            <div class="node-emblem" style="background: #1F191B; border-color: #EEB623;">
+              <img src="assets/node-maquinaria.svg" alt="ARUZ Maquinaria" class="node-logo-svg">
+              <div class="node-ring-pulse"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive HUD Callout Inspection Cards (Reveal on Node Hover) -->
+        <div class="hud-callouts-container">
+          
+          <!-- Card 0: ARUZ Desarrolladora -->
+          <a href="desarrolladora.html" class="hud-callout-card" id="hudCard-0">
+            <div class="hud-card-corner tl"></div>
+            <div class="hud-card-corner br"></div>
+            <div class="mb-2">
+              <img src="assets/logo-aruz-desarrolladora.svg" alt="ARUZ Desarrolladora" style="height: 32px; width: auto;">
+            </div>
+            <p class="hud-card-desc">Concepción de 4 proyectos residenciales de autor en preventa con arquitectura bioclimática en Ciudad Mayakoba.</p>
+          </a>
+
+          <!-- Card 1: ARUZ Inmobiliaria -->
+          <a href="inmobiliaria.html" class="hud-callout-card" id="hudCard-1">
+            <div class="hud-card-corner tl"></div>
+            <div class="hud-card-corner br"></div>
+            <div class="mb-2">
+              <img src="assets/logo-aruz-inmobiliaria.svg" alt="ARUZ Inmobiliaria" style="height: 32px; width: auto;">
+            </div>
+            <p class="hud-card-desc">Asesoría hiperlocal y catálogo seleccionado de propiedades de terceros con estricto dictamen técnico y legal.</p>
+          </a>
+
+          <!-- Card 2: CADE Constructora -->
+          <a href="landings/cade-constructora.html" class="hud-callout-card" id="hudCard-2">
+            <div class="hud-card-corner tl"></div>
+            <div class="hud-card-corner br"></div>
+            <div class="mb-2">
+              <img src="assets/logo-cade.svg" alt="CADE Diseño y Construcción" style="height: 32px; width: auto;">
+            </div>
+            <p class="hud-card-desc">Brazo técnico ejecutor con +12 años de experiencia. Cálculo estructural y dirección de obra de alto nivel.</p>
+          </a>
+
+          <!-- Card 3: ARUZ Maquinaria Pesada -->
+          <a href="landings/aruz-maquinaria.html" class="hud-callout-card" id="hudCard-3">
+            <div class="hud-card-corner tl"></div>
+            <div class="hud-card-corner br"></div>
+            <div class="mb-2">
+              <img src="assets/logo-aruz-maquinaria.svg" alt="ARUZ Maquinaria" style="height: 32px; width: auto;">
+            </div>
+            <p class="hud-card-desc">Flota pesada propia de excavadoras y camiones para terracerías, cimentaciones profundas y urbanización.</p>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       3. CORE 360 DIVISIONS - CARDS WITH OFFICIAL SVG LOGOS
        ========================================================================== -->
   <section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface-bright relative border-t border-outline-variant/20" id="divisiones-core">
     <div class="max-w-[1420px] mx-auto">
@@ -371,12 +483,11 @@
         
         <!-- 1. ARUZ Desarrolladora -->
         <div class="glass-panel rounded-xl p-7 ambient-shadow hover:shadow-xl transition-all duration-300 animate-fade-up group flex flex-col h-full border-t-4 border-t-transparent hover:border-t-dorado-profundo hover:-translate-y-1">
-          <div class="w-12 h-12 bg-piedra-maya/30 rounded-full flex items-center justify-center mb-6 text-dorado-profundo group-hover:bg-dorado-profundo group-hover:text-white transition-colors">
-            <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">architecture</span>
+          <div class="h-14 mb-4 flex items-center">
+            <img src="assets/logo-aruz-desarrolladora.svg" alt="ARUZ Desarrolladora" class="h-11 w-auto object-contain">
           </div>
-          <span class="font-label-caps text-xs text-gris-grafito mb-2 block uppercase font-bold tracking-wider">Desarrollo Propio</span>
-          <h3 class="font-headline-md text-2xl text-carbon-aruz mb-3 font-serif">ARUZ Desarrolladora</h3>
-          <p class="font-body-md text-sm text-gris-grafito mb-6 flex-grow leading-relaxed">
+          <span class="font-label-caps text-[11px] text-dorado-profundo mb-2 block uppercase font-bold tracking-wider">Desarrollo Propio</span>
+          <p class="font-body-md text-xs sm:text-sm text-gris-grafito mb-6 flex-grow leading-relaxed">
             Concepción y desarrollo de proyectos residenciales de alta gama en Ciudad Mayakoba. Calidad constructiva de autor con entrega y acabados garantizados.
           </p>
           <ul class="space-y-2 mb-6">
@@ -393,12 +504,11 @@
 
         <!-- 2. ARUZ Inmobiliaria -->
         <div class="glass-panel rounded-xl p-7 ambient-shadow hover:shadow-xl transition-all duration-300 animate-fade-up delay-100 group flex flex-col h-full border-t-4 border-t-transparent hover:border-t-dorado-profundo hover:-translate-y-1">
-          <div class="w-12 h-12 bg-piedra-maya/30 rounded-full flex items-center justify-center mb-6 text-dorado-profundo group-hover:bg-dorado-profundo group-hover:text-white transition-colors">
-            <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">real_estate_agent</span>
+          <div class="h-14 mb-4 flex items-center">
+            <img src="assets/logo-aruz-inmobiliaria.svg" alt="ARUZ Inmobiliaria" class="h-11 w-auto object-contain">
           </div>
-          <span class="font-label-caps text-xs text-gris-grafito mb-2 block uppercase font-bold tracking-wider">Comercialización</span>
-          <h3 class="font-headline-md text-2xl text-carbon-aruz mb-3 font-serif">ARUZ Inmobiliaria</h3>
-          <p class="font-body-md text-sm text-gris-grafito mb-6 flex-grow leading-relaxed">
+          <span class="font-label-caps text-[11px] text-dorado-profundo mb-2 block uppercase font-bold tracking-wider">Comercialización</span>
+          <p class="font-body-md text-xs sm:text-sm text-gris-grafito mb-6 flex-grow leading-relaxed">
             Asesoría hiperlocal y comercialización de propiedades de terceros rigurosamente auditadas técnica y jurídicamente antes de entrar a nuestro catálogo.
           </p>
           <ul class="space-y-2 mb-6">
@@ -415,12 +525,11 @@
 
         <!-- 3. CADE Constructora -->
         <div class="glass-panel rounded-xl p-7 ambient-shadow hover:shadow-xl transition-all duration-300 animate-fade-up delay-200 group flex flex-col h-full border-t-4 border-t-transparent hover:border-t-dorado-profundo hover:-translate-y-1">
-          <div class="w-12 h-12 bg-piedra-maya/30 rounded-full flex items-center justify-center mb-6 text-dorado-profundo group-hover:bg-dorado-profundo group-hover:text-white transition-colors">
-            <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">construction</span>
+          <div class="h-14 mb-4 flex items-center">
+            <img src="assets/logo-cade.svg" alt="CADE Diseño y Construcción" class="h-11 w-auto object-contain">
           </div>
-          <span class="font-label-caps text-xs text-gris-grafito mb-2 block uppercase font-bold tracking-wider">Brazo Constructor</span>
-          <h3 class="font-headline-md text-2xl text-carbon-aruz mb-3 font-serif">CADE Diseño</h3>
-          <p class="font-body-md text-sm text-gris-grafito mb-6 flex-grow leading-relaxed">
+          <span class="font-label-caps text-[11px] text-dorado-profundo mb-2 block uppercase font-bold tracking-wider">Brazo Constructor</span>
+          <p class="font-body-md text-xs sm:text-sm text-gris-grafito mb-6 flex-grow leading-relaxed">
             El brazo técnico y ejecutor del grupo. Más de una década ejecutando proyectos residenciales e industriales en Ciudad Mayakoba, Valle Aurora y Xpuha.
           </p>
           <ul class="space-y-2 mb-6">
@@ -437,12 +546,11 @@
 
         <!-- 4. ARUZ Maquinaria -->
         <div class="glass-panel rounded-xl p-7 ambient-shadow hover:shadow-xl transition-all duration-300 animate-fade-up delay-300 group flex flex-col h-full border-t-4 border-t-transparent hover:border-t-dorado-profundo hover:-translate-y-1">
-          <div class="w-12 h-12 bg-piedra-maya/30 rounded-full flex items-center justify-center mb-6 text-dorado-profundo group-hover:bg-dorado-profundo group-hover:text-white transition-colors">
-            <span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+          <div class="h-14 mb-4 flex items-center">
+            <img src="assets/logo-aruz-maquinaria.svg" alt="ARUZ Maquinaria" class="h-11 w-auto object-contain">
           </div>
-          <span class="font-label-caps text-xs text-gris-grafito mb-2 block uppercase font-bold tracking-wider">Infraestructura</span>
-          <h3 class="font-headline-md text-2xl text-carbon-aruz mb-3 font-serif">ARUZ Maquinaria</h3>
-          <p class="font-body-md text-sm text-gris-grafito mb-6 flex-grow leading-relaxed">
+          <span class="font-label-caps text-[11px] text-dorado-profundo mb-2 block uppercase font-bold tracking-wider">Infraestructura</span>
+          <p class="font-body-md text-xs sm:text-sm text-gris-grafito mb-6 flex-grow leading-relaxed">
             Parque propio de excavadoras, retroexcavadoras, camiones de volteo y equipo de compactación para terracerías, cimentaciones y urbanización integral.
           </p>
           <ul class="space-y-2 mb-6">
@@ -462,7 +570,7 @@
   </section>
 
   <!-- ==========================================================================
-       3. 4 REAL PRE-SALE HOUSES IN CIUDAD MAYAKOBA (4-COLUMN HORIZONTAL GRID)
+       4. 4 REAL PRE-SALE HOUSES IN CIUDAD MAYAKOBA (4-COLUMN HORIZONTAL GRID)
        ========================================================================== -->
   <section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-carbon-aruz text-white relative" id="preventas-mayakoba">
     <div class="max-w-[1420px] mx-auto">
@@ -654,7 +762,7 @@
   </section>
 
   <!-- ==========================================================================
-       4. CIRCLO ARUZ & CONTACT MODULE
+       5. CIRCLO ARUZ & CONTACT MODULE
        ========================================================================== -->
   <section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface relative" id="contacto-hub">
     <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -765,5 +873,7 @@
     </div>
   </footer>
 
+  <!-- Main JavaScript Engine for 3D Orbit Hub, Particle Field & Callout Lines -->
+  <script src="js/main.js"></script>
 </body>
 </html>
