@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Casa Sak Lu'um | Residencia de Autor en Preventa · Senderos Poniente Ciudad Mayakoba · ARUZ Desarrolladora</title>
-  <meta name="description" content="Casa Sak Lu'um en Senderos Poniente Mz 14 Lt 04, Ciudad Mayakoba, Playa del Carmen. Inspirada en la tierra blanca maya, acabados en chukum, alberca privada y sello CADE.">
+  <title>Casa Sak Lu'um | Preventa de Autor · Senderos Poniente Mz 14 Lt 04 · ARUZ Desarrolladora</title>
+  <meta name="description" content="Casa Sak Lu'um en Senderos Poniente Mz 14 Lt 04, Ciudad Mayakoba, Playa del Carmen. Residencia de autor de 333.59 m² de construcción total en 3 niveles, 3 recámaras en suite, biblioteca, alberca Chukum, roof top con asador y respaldo CADE.">
   <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
-    <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
   <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -18,6 +17,7 @@
                     "colors": {
                         "surface": "#fff8f2",
                         "surface-bright": "#fff8f2",
+                        "surface-card": "#faf4eb",
                         "carbon-aruz": "#231F20",
                         "dorado-aruz": "#EEB623",
                         "dorado-profundo": "#C79215",
@@ -35,11 +35,28 @@
         }
   </script>
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .gallery-filter-btn.active {
+      background: #C79215;
+      color: #FFFFFF;
+      border-color: #C79215;
+      box-shadow: 0 4px 15px rgba(199, 146, 21, 0.35);
+    }
+    .gallery-item {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(35, 31, 32, 0.15);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
-<body>
+<body class="bg-surface text-carbon-aruz font-sans antialiased">
 
-  <!-- Site Header -->
-    <!-- Site Header (Identical Standard Header) -->
+  <!-- Site Header (Identical Standard Header) -->
   <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-20 max-w-[1440px] left-1/2 -translate-x-1/2 bg-surface/85 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm shadow-carbon-aruz/5 transition-all duration-300">
     <a href="../index.html" class="flex items-center gap-3">
       <img src="../assets/logo.svg" alt="ARUZ" class="h-10 w-auto object-contain">
@@ -52,7 +69,7 @@
       <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="aruz-maquinaria.html">Maquinaria</a>
       <a class="text-dorado-profundo font-bold border-b-2 border-dorado-profundo pb-1 font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz" href="../index.html#preventas-mayakoba">Colección Mayakoba</a>
       <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="../index.html#contacto-hub">Contacto</a>
-      <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20sobre%20las%20preventas%20de%20ARUZ." target="_blank" class="bg-dorado-profundo text-white font-button px-5 py-2.5 rounded font-label-caps uppercase hover:bg-dorado-aruz transition-all duration-300 ml-2 shadow-md hover:shadow-lg flex items-center gap-1.5 text-xs">
+      <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20sobre%20Casa%20Sak%20Lu%27um%20en%20Senderos%20Mayakoba." target="_blank" class="bg-dorado-profundo text-white font-button px-5 py-2.5 rounded font-label-caps uppercase hover:bg-dorado-aruz transition-all duration-300 ml-2 shadow-md hover:shadow-lg flex items-center gap-1.5 text-xs font-bold">
         <span>Invertir Ahora</span>
         <span class="material-symbols-outlined text-sm">arrow_forward</span>
       </a>
@@ -74,183 +91,526 @@
     <a href="https://api.whatsapp.com/send?phone=5216674069523" target="_blank" class="bg-dorado-aruz text-carbon-aruz font-button py-3 rounded text-center uppercase font-bold mt-4">WhatsApp Directo</a>
   </div>
 
-  <!-- Hero Section -->
-  <section class="hero-section" style="padding-top: 140px; min-height: 80vh;">
-    <div class="hero-backdrop"></div>
-    <div class="container">
+  <!-- Hero Section with Architectural Showcase -->
+  <section class="pt-28 pb-16 px-6 md:px-12 max-w-[1440px] mx-auto">
+    
+    <!-- Breadcrumb & Badges -->
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+      <div class="text-xs md:text-sm text-gris-grafito flex items-center gap-2">
+        <a href="../index.html" class="hover:text-dorado-profundo">Inicio</a> &gt; 
+        <a href="../desarrolladora.html" class="hover:text-dorado-profundo">ARUZ Desarrolladora</a> &gt; 
+        <span class="text-dorado-profundo font-bold">Casa Sak Lu'um</span>
+      </div>
+
+      <div class="flex flex-wrap gap-2 items-center">
+        <span class="bg-dorado-profundo text-white text-xs font-bold px-3 py-1 rounded tracking-wider uppercase font-label-caps">Preventa de Autor</span>
+        <span class="bg-verde-manglar text-white text-xs font-bold px-3 py-1 rounded tracking-wider uppercase font-label-caps">Construcción CADE</span>
+        <span class="bg-surface-card border border-outline-variant text-carbon-aruz text-xs font-semibold px-3 py-1 rounded">Senderos Poniente · Mz 14 Lt 04</span>
+      </div>
+    </div>
+
+    <!-- Title & Presentation Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-10">
+      <div class="lg:col-span-7">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-carbon-aruz leading-tight mb-4">
+          Casa <span class="text-dorado-profundo">Sak Lu'um</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gris-grafito leading-relaxed mb-6 font-light">
+          Inspirada en la pureza de la tierra blanca maya. Residencia de <strong>333.59 m²</strong> de construcción total en 3 niveles con suites privadas, biblioteca, alberca artesanal en Chukum y roof top panorámico con asador.
+        </p>
+        <div class="flex flex-wrap gap-4 items-center">
+          <a href="#galeria" class="bg-dorado-profundo text-white font-bold px-6 py-3.5 rounded text-xs uppercase font-label-caps tracking-wider hover:bg-dorado-aruz transition-all shadow-md flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">photo_library</span>
+            <span>Ver Galería Fotográfica (18 Renders)</span>
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20la%20ficha%20t%C3%A9cnica%2C%20planos%20y%20esquema%20de%20pagos%20de%20Casa%20Sak%20Lu%27um%20en%20Senderos%20Mayakoba." target="_blank" class="bg-surface-card border border-dorado-profundo text-dorado-profundo font-bold px-6 py-3.5 rounded text-xs uppercase font-label-caps tracking-wider hover:bg-dorado-profundo hover:text-white transition-all flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">download</span>
+            <span>Solicitar Dossier & Planos</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Main Showcase Image -->
+      <div class="lg:col-span-5">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-outline-variant group">
+          <img src="../assets/properties/sak-luum/exteriores/fachada_frontal.webp" alt="Fachada Frontal Casa Sak Lu'um" class="w-full h-[380px] md:h-[430px] object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-carbon-aruz/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4 text-white flex justify-between items-end">
+            <div>
+              <div class="text-xs uppercase tracking-widest text-dorado-aruz font-bold font-label-caps">Fachada Frontal</div>
+              <div class="text-sm font-serif">Estuco Chukum Blanco, Madera Tropical y Piedra Maya</div>
+            </div>
+            <span class="bg-carbon-aruz/80 text-dorado-aruz text-xs font-mono px-2.5 py-1 rounded border border-dorado-aruz/30">Render 4K Oficial</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Metrics Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 md:p-8 rounded-2xl bg-white/80 backdrop-blur-xl border border-dorado-aruz/25 shadow-lg shadow-carbon-aruz/5">
+      <div class="border-r border-outline-variant/40 pr-4">
+        <div class="text-xs uppercase font-label-caps tracking-wider text-gris-grafito mb-1">Construcción Total</div>
+        <div class="text-2xl md:text-3xl font-bold font-serif text-carbon-aruz">333.59 m²</div>
+        <div class="text-xs text-gris-grafito font-mono mt-1">258.51 m² Int + 75.08 m² Terrazas</div>
+      </div>
+
+      <div class="border-r border-outline-variant/40 pr-4 pl-2 md:pl-4">
+        <div class="text-xs uppercase font-label-caps tracking-wider text-gris-grafito mb-1">Distribución</div>
+        <div class="text-2xl md:text-3xl font-bold font-serif text-carbon-aruz">3 Rec / 4.5 Baños</div>
+        <div class="text-xs text-gris-grafito font-mono mt-1">+ Biblioteca & Estudio Roof Top</div>
+      </div>
+
+      <div class="border-r border-outline-variant/40 pr-4 pl-2 md:pl-4">
+        <div class="text-xs uppercase font-label-caps tracking-wider text-gris-grafito mb-1">Amenidades</div>
+        <div class="text-2xl md:text-3xl font-bold font-serif text-carbon-aruz">Alberca Chukum</div>
+        <div class="text-xs text-gris-grafito font-mono mt-1">Roof Top + Asador + Terraza Techada</div>
+      </div>
+
+      <div class="pl-2 md:pl-4">
+        <div class="text-xs uppercase font-label-caps tracking-wider text-gris-grafito mb-1">Inversión Preventa</div>
+        <div class="text-2xl md:text-3xl font-bold font-serif text-dorado-profundo">$5,290,000 MXN</div>
+        <div class="text-xs text-verde-manglar font-bold mt-1">30% Enganche · Pagos a Obra</div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ==========================================================================
+       PHOTO GALLERY (18 HIGH RESOLUTION RENDERS)
+       ========================================================================== -->
+  <section class="py-16 bg-surface-card border-y border-outline-variant/30" id="galeria">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       
-      <div style="font-size: 0.85rem; color: var(--color-grafito); margin-bottom: 1.2rem;">
-        <a href="../index.html" style="color: var(--color-text-muted);">Inicio</a> &gt; 
-        <a href="../desarrolladora.html" style="color: var(--color-text-muted);">ARUZ Desarrolladora</a> &gt; 
-        <span style="color: var(--color-gold-deep); font-weight: 700;">Casa Sak Lu'um</span>
-      </div>
-
-      <div style="display: flex; gap: 0.8rem; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap;">
-        <span class="prop-tag preventa">Preventa de Autor</span>
-        <span class="prop-tag cade-seal">Construido por CADE</span>
-        <span class="prop-tag">Senderos Poniente · Mz 14 Lt 04</span>
-        <span class="prop-tag" style="background: rgba(238, 182, 35, 0.15); color: var(--color-gold-deep); font-weight: 700; border-color: var(--color-gold-deep); font-weight: 700;">Ciudad Mayakoba</span>
-      </div>
-
-      <h1 class="hero-title" style="text-align: left; margin-bottom: 0.6rem;">
-        <span>Casa Sak Lu'um</span>
-      </h1>
-      <p style="font-size: 1.25rem; color: var(--color-grafito); margin-bottom: 2rem; max-width: 800px;">
-        Inspirada en la pureza de la tierra blanca maya ("Sak Lu'um"), con acabados orgánicos en estuco chukum, pérgolas de madera y patios de luz vegetal.
-      </p>
-
-      <div class="advisor-box" style="padding: 2.2rem; margin-top: 1.5rem;">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.8rem;">
-          <div>
-            <div class="spec-label">Ubicación Exacta</div>
-            <div style="font-family: var(--font-title); font-size: 1.35rem; font-weight: 800; color: #FFFFFF;">Mz 14 · Lote 04</div>
-            <div style="font-size: 0.78rem; color: var(--color-text-muted);">Senderos Poniente Mayakoba</div>
-          </div>
-          <div>
-            <div class="spec-label">Construcción</div>
-            <div style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 800; color: #FFFFFF;">275 m²</div>
-            <div style="font-size: 0.78rem; color: var(--color-text-muted);">En 2 Niveles + Solárium</div>
-          </div>
-          <div>
-            <div class="spec-label">Distribución</div>
-            <div style="font-family: var(--font-title); font-size: 1.45rem; font-weight: 800; color: #FFFFFF;">3 Rec / 3.5 Baños</div>
-            <div style="font-size: 0.78rem; color: var(--color-text-muted);">+ Terraza Lounge & Alberca</div>
-          </div>
-          <div>
-            <div class="spec-label">Inversión Preventa</div>
-            <div style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 800; color: var(--color-gold-deep); font-weight: 700;">$5,290,000 MXN</div>
-            <div style="font-size: 0.78rem; color: #5BA36F;">30% Enganche / Pagos a Obra</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Memoria Descriptiva & Distribución Arquitectónica -->
-  <section class="section-spacing">
-    <div class="container">
-      <div class="section-head-wrap">
-        <span class="section-tag">Memoria de Autor</span>
-        <h2>Espacios Orgánicos & Iluminación Cenital</h2>
-        <p>Una residencia que celebra la naturaleza de Quintana Roo a través de texturas minerales y vegetación endémica.</p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 2.5rem;">
-        
-        <div style="background: var(--color-bg-card); border: 1px solid var(--color-border-gold); border-radius: var(--radius-lg); padding: 2rem;">
-          <div style="font-family: var(--font-title); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; color: var(--color-gold-deep); font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">NIVEL 01</div>
-          <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">Estancia, Cocina & Alberca</h3>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.7rem; font-size: 0.88rem; color: var(--color-piedra);">
-            <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-              <span style="color: var(--color-gold-deep); font-weight: 700;">✓</span>
-              <span>Vestíbulo con muro llorón de piedra laja maya</span>
-            </li>
-            <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-              <span style="color: var(--color-gold-deep); font-weight: 700;">✓</span>
-              <span>Sala de estar conectada a la terraza mediante canceles corredizos embutidos</span>
-            </li>
-            <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-              <span style="color: var(--color-gold-deep); font-weight: 700;">✓</span>
-              <span>Cocina integral de concepto abierto con mesetas de granito negro san gabriel</span>
-            </li>
-            <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-              <span style="color: var(--color-gold-deep); font-weight: 700;">✓</span>
-              <span>Alberca privada en chukum con banca de hidromasaje</span>
-            </li>
-            <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-              <span style="color: var(--color-gold-deep); font-weight: 700;">✓</span>
-              <span>Área de lavandería cerrada y cuarto de servicio independiente</span>
-            </li>
-          </ul>
-        </div>
-
-        <div style="background: var(--color-bg-card); border: 1px solid var(--color-border-gold); border-radius: var(--radius-lg); padding: 2rem;">
-          <div style="font-family: var(--font-title); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; color: var(--color-gold-deep); font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">NIVEL 02</div>
-          <h3 style="color: #FFFFFF; font-size: 1.3rem; margin-bottom: 1rem;">Recámaras & Suites</h3>
-          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.7rem; font-size: 0.88rem; color: var(--color-piedra);">
-            <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-              <span style="color: var(--color-gold-deep); font-weight: 700;">✓</span>
-              <span>Suite Principal con terraza techada, vestidor con isla y baño doble ovalín</span>
-            </li>
-            <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-              <span style="color: var(--color-gold-deep); font-weight: 700;">✓</span>
-              <span>2 Recámaras secundarias amplias con clóset de tzalam y baño completo cada una</span>
-            </li>
-            <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-              <span style="color: var(--color-gold-deep); font-weight: 700;">✓</span>
-              <span>Área de estar / TV Room con iluminación indirecta LED</span>
-            </li>
-            <li style="display: flex; gap: 0.6rem; align-items: flex-start;">
-              <span style="color: var(--color-gold-deep); font-weight: 700;">✓</span>
-              <span>Pisos de porcelanato de gran formato 60x120 con textura mate</span>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Especificaciones Técnicas & Contacto -->
-  <section class="section-spacing" style="background: var(--color-carbon-light);">
-    <div class="container">
-      <div class="technical-backing-grid">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
         <div>
-          <div style="margin-bottom: 1rem;">
-            <img src="../assets/logo-cade.svg" alt="CADE Diseño y Construcción" style="height: 36px; width: auto;">
-          </div>
-          <span class="section-tag">Garantía Estructural</span>
-          <h2>Memoria Constructiva & Calidad Certificada</h2>
-          <p>
-            Supervisada directamente por ingenieros de CADE Diseño y Construcción con más de una década edificando en Ciudad Mayakoba.
-          </p>
-          <div class="technical-bullets">
-            <div class="tech-bullet-item">
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <div><strong>Estructura Antisísmica</strong><span>Zapatas aisladas y losa de cimentación calculada con estudio de mecánica de suelos.</span></div>
-            </div>
-            <div class="tech-bullet-item">
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <div><strong>Maderas Regionales Certificadas</strong><span>Puertas y carpintería en madera maciza de tzalam con barniz poliuretano marino.</span></div>
-            </div>
-            <div class="tech-bullet-item">
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <div><strong>Garantía de Entrega y Post-Venta</strong><span>Auditorías a 30, 90 y 180 días con el equipo de arquitectos e ingenieros.</span></div>
-            </div>
-          </div>
+          <span class="text-xs md:text-sm font-bold uppercase tracking-widest text-dorado-profundo font-label-caps block mb-2">
+            Portafolio Visual Oficial
+          </span>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-carbon-aruz">
+            Galería de Renders Casa Sak Lu'um
+          </h2>
         </div>
 
-        <div style="background: var(--color-bg-card); border: 1px solid var(--color-border-gold); border-radius: var(--radius-lg); padding: 2.5rem;" id="contacto-landing">
-          <div style="font-family: var(--font-title); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; color: var(--color-gold-deep); font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">ATENCIÓN DIRECTA</div>
-          <h3 style="margin-bottom: 0.5rem; color: #FFFFFF; font-size: 1.4rem;">Ficha Técnica de Casa Sak Lu'um</h3>
-          <p style="margin-bottom: 1.5rem; font-size: 0.88rem; color: var(--color-stone);">Contacta a Carlos Alfredo Ruiz Ramos (Director de Operaciones).</p>
-
-          <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20el%20brochure%20y%20planos%20arquitect%C3%B3nicos%20de%20Casa%20Sak%20Lu%27um%20en%20Senderos%20Poniente%20Mayakoba." target="_blank" class="btn-cta-gold" style="width: 100%; margin-bottom: 1rem; text-align: center; justify-content: center;">
-            <span>Solicitar Dossier & Planos por WhatsApp</span>
-          </a>
-
-          <a href="tel:+526674069523" class="btn-secondary-outline" style="width: 100%; text-align: center; justify-content: center;">
-            <span>Llamar al Director: 667 406 9523</span>
-          </a>
-
-          <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(238, 182, 35, 0.15); font-size: 0.78rem; color: var(--color-text-muted); text-align: center;">
-            Entrega programada: <strong>Enero 2027</strong> · Respaldo Grupo Ruiz México
-          </div>
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2">
+          <button onclick="filterGallery('all')" id="btn-all" class="gallery-filter-btn active px-4 py-2 rounded text-xs font-bold uppercase font-label-caps border border-outline-variant transition-all">
+            Todos (18)
+          </button>
+          <button onclick="filterGallery('exterior')" id="btn-exterior" class="gallery-filter-btn px-4 py-2 rounded text-xs font-bold uppercase font-label-caps border border-outline-variant bg-white text-carbon-aruz transition-all hover:border-dorado-profundo">
+            Exteriores & Volumetría (8)
+          </button>
+          <button onclick="filterGallery('interior')" id="btn-interior" class="gallery-filter-btn px-4 py-2 rounded text-xs font-bold uppercase font-label-caps border border-outline-variant bg-white text-carbon-aruz transition-all hover:border-dorado-profundo">
+            Interiores & Suites (10)
+          </button>
         </div>
       </div>
+
+      <!-- Gallery Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+        
+        <!-- 1. Fachada Frontal -->
+        <div class="gallery-item exterior relative rounded-xl overflow-hidden border border-outline-variant/40 bg-white group cursor-pointer" onclick="openLightbox('../assets/properties/sak-luum/exteriores/fachada_frontal.webp', 'Fachada Frontal Principal')">
+          <div class="h-64 overflow-hidden">
+            <img src="../assets/properties/sak-luum/exteriores/fachada_frontal.webp" alt="Fachada Frontal" class="w-full h-full object-cover transition-transform duration-500">
+          </div>
+          <div class="p-4 bg-white flex justify-between items-center border-t border-outline-variant/20">
+            <div>
+              <div class="text-xs uppercase font-bold text-dorado-profundo font-label-caps">Exterior</div>
+              <h4 class="text-base font-serif text-carbon-aruz font-bold">Fachada Frontal</h4>
+            </div>
+            <span class="material-symbols-outlined text-gris-grafito text-lg group-hover:text-dorado-profundo transition-colors">zoom_in</span>
+          </div>
+        </div>
+
+        <!-- 2. Fachada Posterior & Alberca -->
+        <div class="gallery-item exterior relative rounded-xl overflow-hidden border border-outline-variant/40 bg-white group cursor-pointer" onclick="openLightbox('../assets/properties/sak-luum/exteriores/fachada_posterior.webp', 'Fachada Posterior & Alberca')">
+          <div class="h-64 overflow-hidden">
+            <img src="../assets/properties/sak-luum/exteriores/fachada_posterior.webp" alt="Fachada Posterior" class="w-full h-full object-cover transition-transform duration-500">
+          </div>
+          <div class="p-4 bg-white flex justify-between items-center border-t border-outline-variant/20">
+            <div>
+              <div class="text-xs uppercase font-bold text-dorado-profundo font-label-caps">Exterior</div>
+              <h4 class="text-base font-serif text-carbon-aruz font-bold">Fachada Posterior & Alberca</h4>
+            </div>
+            <span class="material-symbols-outlined text-gris-grafito text-lg group-hover:text-dorado-profundo transition-colors">zoom_in</span>
+          </div>
+        </div>
+
+        <!-- 3. Perspectiva Lateral Derecha -->
+        <div class="gallery-item exterior relative rounded-xl overflow-hidden border border-outline-variant/40 bg-white group cursor-pointer" onclick="openLightbox('../assets/properties/sak-luum/exteriores/fachada_lateral_derecha.webp', 'Perspectiva Lateral Derecha')">
+          <div class="h-64 overflow-hidden">
+            <img src="../assets/properties/sak-luum/exteriores/fachada_lateral_derecha.webp" alt="Lateral Derecha" class="w-full h-full object-cover transition-transform duration-500">
+          </div>
+          <div class="p-4 bg-white flex justify-between items-center border-t border-outline-variant/20">
+            <div>
+              <div class="text-xs uppercase font-bold text-dorado-profundo font-label-caps">Exterior</div>
+              <h4 class="text-base font-serif text-carbon-aruz font-bold">Perspectiva Lateral</h4>
+            </div>
+            <span class="material-symbols-outlined text-gris-grafito text-lg group-hover:text-dorado-profundo transition-colors">zoom_in</span>
+          </div>
+        </div>
+
+        <!-- 4. Terraza Posterior & Jardín -->
+        <div class="gallery-item exterior relative rounded-xl overflow-hidden border border-outline-variant/40 bg-white group cursor-pointer" onclick="openLightbox('../assets/properties/sak-luum/exteriores/fachada_posterior_interior.webp', 'Terraza Posterior & Alberca')">
+          <div class="h-64 overflow-hidden">
+            <img src="../assets/properties/sak-luum/exteriores/fachada_posterior_interior.webp" alt="Terraza Posterior" class="w-full h-full object-cover transition-transform duration-500">
+          </div>
+          <div class="p-4 bg-white flex justify-between items-center border-t border-outline-variant/20">
+            <div>
+              <div class="text-xs uppercase font-bold text-dorado-profundo font-label-caps">Exterior</div>
+              <h4 class="text-base font-serif text-carbon-aruz font-bold">Terraza Social Techada</h4>
+            </div>
+            <span class="material-symbols-outlined text-gris-grafito text-lg group-hover:text-dorado-profundo transition-colors">zoom_in</span>
+          </div>
+        </div>
+
+        <!-- 5. Volumetría y Celosías -->
+        <div class="gallery-item exterior relative rounded-xl overflow-hidden border border-outline-variant/40 bg-white group cursor-pointer" onclick="openLightbox('../assets/properties/sak-luum/exteriores/3_1.webp', 'Volumetría Arquitectónica & Celosías')">
+          <div class="h-64 overflow-hidden">
+            <img src="../assets/properties/sak-luum/exteriores/3_1.webp" alt="Volumetría" class="w-full h-full object-cover transition-transform duration-500">
+          </div>
+          <div class="p-4 bg-white flex justify-between items-center border-t border-outline-variant/20">
+            <div>
+              <div class="text-xs uppercase font-bold text-dorado-profundo font-label-caps">Exterior</div>
+              <h4 class="text-base font-serif text-carbon-aruz font-bold">Volumetría Bioclimática</h4>
+            </div>
+            <span class="material-symbols-outlined text-gris-grafito text-lg group-hover:text-dorado-profundo transition-colors">zoom_in</span>
+          </div>
+        </div>
+
+        <!-- 6. Detalle de Cubiertas -->
+        <div class="gallery-item exterior relative rounded-xl overflow-hidden border border-outline-variant/40 bg-white group cursor-pointer" onclick="openLightbox('../assets/properties/sak-luum/exteriores/3_4.webp', 'Detalle de Pérgolas & Roof Deck')">
+          <div class="h-64 overflow-hidden">
+            <img src="../assets/properties/sak-luum/exteriores/3_4.webp" alt="Roof Deck" class="w-full h-full object-cover transition-transform duration-500">
+          </div>
+          <div class="p-4 bg-white flex justify-between items-center border-t border-outline-variant/20">
+            <div>
+              <div class="text-xs uppercase font-bold text-dorado-profundo font-label-caps">Roof Deck</div>
+              <h4 class="text-base font-serif text-carbon-aruz font-bold">Roof Top & Pérgolas</h4>
+            </div>
+            <span class="material-symbols-outlined text-gris-grafito text-lg group-hover:text-dorado-profundo transition-colors">zoom_in</span>
+          </div>
+        </div>
+
+        <!-- 7. Interior: Estancia Social -->
+        <div class="gallery-item interior relative rounded-xl overflow-hidden border border-outline-variant/40 bg-white group cursor-pointer" onclick="openLightbox('../assets/properties/sak-luum/interiores/zz_1.webp', 'Estancia & Sala de Estar')">
+          <div class="h-64 overflow-hidden">
+            <img src="../assets/properties/sak-luum/interiores/zz_1.webp" alt="Estancia" class="w-full h-full object-cover transition-transform duration-500">
+          </div>
+          <div class="p-4 bg-white flex justify-between items-center border-t border-outline-variant/20">
+            <div>
+              <div class="text-xs uppercase font-bold text-dorado-profundo font-label-caps">Interior</div>
+              <h4 class="text-base font-serif text-carbon-aruz font-bold">Estancia Social</h4>
+            </div>
+            <span class="material-symbols-outlined text-gris-grafito text-lg group-hover:text-dorado-profundo transition-colors">zoom_in</span>
+          </div>
+        </div>
+
+        <!-- 8. Interior: Cocina con Isla -->
+        <div class="gallery-item interior relative rounded-xl overflow-hidden border border-outline-variant/40 bg-white group cursor-pointer" onclick="openLightbox('../assets/properties/sak-luum/interiores/zz_2.webp', 'Cocina Integral de Autor')">
+          <div class="h-64 overflow-hidden">
+            <img src="../assets/properties/sak-luum/interiores/zz_2.webp" alt="Cocina Integral" class="w-full h-full object-cover transition-transform duration-500">
+          </div>
+          <div class="p-4 bg-white flex justify-between items-center border-t border-outline-variant/20">
+            <div>
+              <div class="text-xs uppercase font-bold text-dorado-profundo font-label-caps">Interior</div>
+              <h4 class="text-base font-serif text-carbon-aruz font-bold">Cocina de Autor con Isla</h4>
+            </div>
+            <span class="material-symbols-outlined text-gris-grafito text-lg group-hover:text-dorado-profundo transition-colors">zoom_in</span>
+          </div>
+        </div>
+
+        <!-- 9. Interior: Master Suite -->
+        <div class="gallery-item interior relative rounded-xl overflow-hidden border border-outline-variant/40 bg-white group cursor-pointer" onclick="openLightbox('../assets/properties/sak-luum/interiores/zz_3.webp', 'Recámara Principal Master Suite')">
+          <div class="h-64 overflow-hidden">
+            <img src="../assets/properties/sak-luum/interiores/zz_3.webp" alt="Master Suite" class="w-full h-full object-cover transition-transform duration-500">
+          </div>
+          <div class="p-4 bg-white flex justify-between items-center border-t border-outline-variant/20">
+            <div>
+              <div class="text-xs uppercase font-bold text-dorado-profundo font-label-caps">Interior</div>
+              <h4 class="text-base font-serif text-carbon-aruz font-bold">Master Suite Principal</h4>
+            </div>
+            <span class="material-symbols-outlined text-gris-grafito text-lg group-hover:text-dorado-profundo transition-colors">zoom_in</span>
+          </div>
+        </div>
+
+        <!-- 10. Interior: Baño Master Chukum -->
+        <div class="gallery-item interior relative rounded-xl overflow-hidden border border-outline-variant/40 bg-white group cursor-pointer" onclick="openLightbox('../assets/properties/sak-luum/interiores/zz_4.webp', 'Baño Master en Chukum & Mármol')">
+          <div class="h-64 overflow-hidden">
+            <img src="../assets/properties/sak-luum/interiores/zz_4.webp" alt="Baño Master" class="w-full h-full object-cover transition-transform duration-500">
+          </div>
+          <div class="p-4 bg-white flex justify-between items-center border-t border-outline-variant/20">
+            <div>
+              <div class="text-xs uppercase font-bold text-dorado-profundo font-label-caps">Interior</div>
+              <h4 class="text-base font-serif text-carbon-aruz font-bold">Baño Master Chukum</h4>
+            </div>
+            <span class="material-symbols-outlined text-gris-grafito text-lg group-hover:text-dorado-profundo transition-colors">zoom_in</span>
+          </div>
+        </div>
+
+        <!-- 11. Interior: Biblioteca / Estudio -->
+        <div class="gallery-item interior relative rounded-xl overflow-hidden border border-outline-variant/40 bg-white group cursor-pointer" onclick="openLightbox('../assets/properties/sak-luum/interiores/zz_5.webp', 'Biblioteca & Espacio Home Office')">
+          <div class="h-64 overflow-hidden">
+            <img src="../assets/properties/sak-luum/interiores/zz_5.webp" alt="Biblioteca" class="w-full h-full object-cover transition-transform duration-500">
+          </div>
+          <div class="p-4 bg-white flex justify-between items-center border-t border-outline-variant/20">
+            <div>
+              <div class="text-xs uppercase font-bold text-dorado-profundo font-label-caps">Interior</div>
+              <h4 class="text-base font-serif text-carbon-aruz font-bold">Biblioteca & Estudio</h4>
+            </div>
+            <span class="material-symbols-outlined text-gris-grafito text-lg group-hover:text-dorado-profundo transition-colors">zoom_in</span>
+          </div>
+        </div>
+
+        <!-- 12. Interior: Recámara Secundaria -->
+        <div class="gallery-item interior relative rounded-xl overflow-hidden border border-outline-variant/40 bg-white group cursor-pointer" onclick="openLightbox('../assets/properties/sak-luum/interiores/zz_6.webp', 'Recámara Secundaria en Suite')">
+          <div class="h-64 overflow-hidden">
+            <img src="../assets/properties/sak-luum/interiores/zz_6.webp" alt="Recámara Secundaria" class="w-full h-full object-cover transition-transform duration-500">
+          </div>
+          <div class="p-4 bg-white flex justify-between items-center border-t border-outline-variant/20">
+            <div>
+              <div class="text-xs uppercase font-bold text-dorado-profundo font-label-caps">Interior</div>
+              <h4 class="text-base font-serif text-carbon-aruz font-bold">Recámara en Suite</h4>
+            </div>
+            <span class="material-symbols-outlined text-gris-grafito text-lg group-hover:text-dorado-profundo transition-colors">zoom_in</span>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-bottom">
-        <div class="legal-text">&copy; 2026 Consortium GPRuiz S.A. de C.V. · Casa Sak Lu'um · ARUZ Desarrolladora</div>
-        <div class="legal-text"><a href="../desarrolladora.html" style="color: var(--color-gold-deep); font-weight: 700;">Ver Todas las Preventas de Autor</a></div>
+  <!-- ==========================================================================
+       DISTRIBUTION BY FLOORS (333.59 M2 TOTAL)
+       ========================================================================== -->
+  <section class="py-20 max-w-[1440px] mx-auto px-6 md:px-12">
+    
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-xs md:text-sm font-bold uppercase tracking-widest text-dorado-profundo font-label-caps block mb-2">
+        Memoria Arquitectónica Oficial
+      </span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-carbon-aruz mb-4">
+        Distribución Espacial por Niveles (333.59 m²)
+      </h2>
+      <p class="text-base md:text-lg text-gris-grafito font-light">
+        Datos oficiales extraídos del proyecto arquitectónico registrado de Senderos Poniente Manzana 14 Lote 04.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      <!-- Nivel 01: Planta Baja -->
+      <div class="rounded-2xl p-8 bg-white border border-outline-variant/40 shadow-xl relative overflow-hidden flex flex-col justify-between">
+        <div class="absolute top-0 left-0 right-0 h-1.5 bg-dorado-profundo"></div>
+        <div>
+          <div class="flex justify-between items-center mb-4">
+            <span class="text-xs uppercase tracking-widest text-dorado-profundo font-bold font-label-caps">Nivel 01</span>
+            <span class="bg-surface-card px-3 py-1 rounded text-xs font-mono font-bold text-carbon-aruz border border-outline-variant">Planta Baja</span>
+          </div>
+          <h3 class="text-2xl font-serif text-carbon-aruz mb-4">Área Social & Alberca</h3>
+          
+          <ul class="space-y-3 text-sm text-carbon-aruz">
+            <li class="flex items-start gap-2.5"><span class="text-dorado-profundo font-bold">✓</span><span><strong>Cochera pergolada</strong> para 2 autos</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-dorado-profundo font-bold">✓</span><span><strong>Acceso & Lobby</strong> de recepción</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-dorado-profundo font-bold">✓</span><span><strong>Cocina / Comedor</strong> en concepto abierto</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-dorado-profundo font-bold">✓</span><span><strong>Sala de estar</strong> con vista al jardín tropical</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-dorado-profundo font-bold">✓</span><span><strong>Terraza exterior techada (18.64 m²)</strong></span></li>
+            <li class="flex items-start gap-2.5"><span class="text-dorado-profundo font-bold">✓</span><span><strong>Alberca exterior (8.95 m²)</strong> con regadera</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-dorado-profundo font-bold">✓</span><span><strong>Baño de visitas</strong>, lavandería y cto. de máquinas</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nivel 02: Primer Nivel -->
+      <div class="rounded-2xl p-8 bg-white border border-outline-variant/40 shadow-xl relative overflow-hidden flex flex-col justify-between">
+        <div class="absolute top-0 left-0 right-0 h-1.5 bg-dorado-aruz"></div>
+        <div>
+          <div class="flex justify-between items-center mb-4">
+            <span class="text-xs uppercase tracking-widest text-dorado-profundo font-bold font-label-caps">Nivel 02</span>
+            <span class="bg-surface-card px-3 py-1 rounded text-xs font-mono font-bold text-carbon-aruz border border-outline-variant">Primer Nivel</span>
+          </div>
+          <h3 class="text-2xl font-serif text-carbon-aruz mb-4">Suites & Biblioteca</h3>
+          
+          <ul class="space-y-3 text-sm text-carbon-aruz">
+            <li class="flex items-start gap-2.5"><span class="text-dorado-profundo font-bold">✓</span><span><strong>Recámara Principal</strong> con walk-in closet</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-dorado-profundo font-bold">✓</span><span><strong>Baño Principal</strong> de autor en Chukum</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-dorado-profundo font-bold">✓</span><span><strong>Recámara 1</strong> con baño completo privado</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-dorado-profundo font-bold">✓</span><span><strong>Recámara 2</strong> con baño completo privado</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-dorado-profundo font-bold">✓</span><span><strong>Biblioteca / Estudio</strong> de lectura</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-dorado-profundo font-bold">✓</span><span><strong>Cubo de escaleras</strong> iluminado</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Nivel 03: Roof Top -->
+      <div class="rounded-2xl p-8 bg-white border border-outline-variant/40 shadow-xl relative overflow-hidden flex flex-col justify-between">
+        <div class="absolute top-0 left-0 right-0 h-1.5 bg-verde-manglar"></div>
+        <div>
+          <div class="flex justify-between items-center mb-4">
+            <span class="text-xs uppercase tracking-widest text-verde-manglar font-bold font-label-caps">Nivel 03</span>
+            <span class="bg-surface-card px-3 py-1 rounded text-xs font-mono font-bold text-carbon-aruz border border-outline-variant">Roof Deck</span>
+          </div>
+          <h3 class="text-2xl font-serif text-carbon-aruz mb-4">Roof Top & Usos Múltiples</h3>
+          
+          <ul class="space-y-3 text-sm text-carbon-aruz">
+            <li class="flex items-start gap-2.5"><span class="text-verde-manglar font-bold">✓</span><span><strong>Terraza pergolada</strong> panorámica</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-verde-manglar font-bold">✓</span><span><strong>Asador y tarja</strong> de convivencia</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-verde-manglar font-bold">✓</span><span><strong>Cuarto de usos múltiples / Estudio</strong></span></li>
+            <li class="flex items-start gap-2.5"><span class="text-verde-manglar font-bold">✓</span><span><strong>Baño completo</strong> en Roof Top</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-verde-manglar font-bold">✓</span><span><strong>Terraza exterior</strong> descubierta</span></li>
+            <li class="flex items-start gap-2.5"><span class="text-verde-manglar font-bold">✓</span><span><strong>Área técnica para servicios A/C</strong></span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ==========================================================================
+       TECHNICAL BACKING, CERTAINTY & DIRECT CONTACT
+       ========================================================================== -->
+  <section class="py-20 bg-carbon-aruz text-white relative">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-12">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: CADE Warranty -->
+        <div class="lg:col-span-7">
+          <div class="mb-4">
+            <img src="../assets/logo-cade.svg" alt="CADE Diseño y Construcción" class="h-10 w-auto">
+          </div>
+          <span class="text-xs uppercase tracking-widest text-dorado-aruz font-bold font-label-caps block mb-2">
+            Garantía Estructural Directa
+          </span>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-white mb-6">
+            Construcción sin Intermediarios por CADE
+          </h2>
+          <p class="text-base md:text-lg text-piedra-maya font-light leading-relaxed mb-8">
+            Diseñada y construida por CADE Diseño y Construcción (+12 años en Mayakoba) y maquinaria pesada propia de Grupo Ruiz México.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <div class="text-dorado-aruz font-bold text-sm mb-1 font-label-caps">Zapata Corrida f'c=250</div>
+              <div class="text-xs text-piedra-maya">Cimentación excavada en roca sólida supervisada directamente en bitácora.</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <div class="text-dorado-aruz font-bold text-sm mb-1 font-label-caps">Estuco Chukum Blanco</div>
+              <div class="text-xs text-piedra-maya">Acabado orgánico térmico de alta durabilidad regional.</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <div class="text-dorado-aruz font-bold text-sm mb-1 font-label-caps">Carpintería de Tzalam</div>
+              <div class="text-xs text-piedra-maya">Maderas macizas tratadas con sellador hidrófugo.</div>
+            </div>
+            <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+              <div class="text-dorado-aruz font-bold text-sm mb-1 font-label-caps">Auditoría Notarial</div>
+              <div class="text-xs text-piedra-maya">Certeza jurídica con títulos de propiedad y licencias de obra al día.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Contact Dossier Box -->
+        <div class="lg:col-span-5" id="contacto-landing">
+          <div class="p-8 rounded-2xl bg-gradient-to-b from-[#2A2325] to-[#1A1517] border border-dorado-aruz/40 shadow-2xl">
+            <span class="text-xs uppercase tracking-widest text-dorado-aruz font-bold font-label-caps block mb-1">
+              Atención Directa del Director
+            </span>
+            <h3 class="text-2xl font-serif text-white mb-2">
+              Solicitar Dossier & Planos
+            </h3>
+            <p class="text-sm text-piedra-maya mb-6">
+              Recibe la ficha técnica completa, memoria de cálculo, corrida financiera y planos ejecutivos de <strong>Casa Sak Lu'um</strong>.
+            </p>
+
+            <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20la%20ficha%20t%C3%A9cnica%2C%20planos%20y%20esquema%20de%20pagos%20de%20Casa%20Sak%20Lu%27um%20en%20Senderos%20Mayakoba." target="_blank" class="w-full bg-gradient-to-r from-dorado-aruz to-dorado-profundo text-carbon-aruz font-bold py-3.5 px-6 rounded text-xs uppercase font-label-caps tracking-wider flex items-center justify-center gap-2 hover:opacity-95 transition-all shadow-lg mb-3">
+              <span class="material-symbols-outlined text-base">chat</span>
+              <span>Solicitar Planos por WhatsApp</span>
+            </a>
+
+            <a href="tel:+526674069523" class="w-full bg-white/5 border border-white/20 text-white font-semibold py-3 px-6 rounded text-xs uppercase font-label-caps tracking-wider flex items-center justify-center gap-2 hover:bg-white/10 transition-all mb-6">
+              <span class="material-symbols-outlined text-base">call</span>
+              <span>Llamar al Director: 667 406 9523</span>
+            </a>
+
+            <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-piedra-maya">
+              <div>Entrega: <strong>Enero 2027</strong></div>
+              <div class="text-dorado-aruz font-bold">Senderos Poniente Mz 14 Lt 04</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden flex items-center justify-center p-4 md:p-12" onclick="closeLightbox()">
+    <div class="relative max-w-5xl w-full max-h-full flex flex-col items-center" onclick="event.stopPropagation()">
+      <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-white hover:text-dorado-aruz text-3xl font-light">
+        ✕
+      </button>
+      <img id="lightbox-img" src="" alt="" class="max-h-[80vh] w-auto max-w-full rounded-xl object-contain shadow-2xl border border-dorado-aruz/30">
+      <div id="lightbox-caption" class="text-white text-base font-serif mt-4 text-center"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-carbon-aruz text-white py-12 border-t border-white/10">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <img src="../assets/logo-white.svg" alt="ARUZ" class="h-8 w-auto">
+        <span class="text-xs text-piedra-maya font-light">&copy; 2026 Consortium GPRuiz S.A. de C.V. · Casa Sak Lu'um</span>
+      </div>
+      <div class="flex items-center gap-6 text-xs text-piedra-maya uppercase font-label-caps">
+        <a href="../desarrolladora.html" class="hover:text-dorado-aruz">Ver Preventas de Autor</a>
+        <a href="../inmobiliaria.html" class="hover:text-dorado-aruz">Inmobiliaria</a>
+        <a href="cade-constructora.html" class="hover:text-dorado-aruz">CADE</a>
       </div>
     </div>
   </footer>
 
-  <script src="../js/main.js"></script>
+  <!-- Interactive Scripts -->
+  <script>
+    function filterGallery(category) {
+      const items = document.querySelectorAll('.gallery-item');
+      const buttons = document.querySelectorAll('.gallery-filter-btn');
+      
+      buttons.forEach(btn => {
+        btn.classList.remove('active', 'bg-dorado-profundo', 'text-white');
+        btn.classList.add('bg-white', 'text-carbon-aruz');
+      });
+
+      const activeBtn = document.getElementById('btn-' + category);
+      if (activeBtn) {
+        activeBtn.classList.add('active', 'bg-dorado-profundo', 'text-white');
+        activeBtn.classList.remove('bg-white', 'text-carbon-aruz');
+      }
+
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function openLightbox(src, caption) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox-caption').innerText = caption;
+      document.getElementById('lightbox-modal').classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox-modal').classList.add('hidden');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 </body>
 </html>
