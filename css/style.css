@@ -72,14 +72,14 @@ html {
 body {
   font-family: var(--font-body);
   font-size: 1.05rem;
-  line-height: 1.45;
-  letter-spacing: 0.015em;
-  color: var(--color-text-light);
-  background-color: var(--color-bg-body);
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  color: var(--color-carbon);
+  background-color: var(--color-surface-bright);
   background-image: 
-    radial-gradient(circle at 50% 15%, rgba(238, 182, 35, 0.07) 0%, transparent 55%),
-    radial-gradient(circle at 85% 70%, rgba(63, 93, 72, 0.05) 0%, transparent 60%),
-    linear-gradient(to bottom, #161213 0%, #0D0B0C 100%);
+    radial-gradient(circle at 50% 10%, rgba(238, 182, 35, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 85% 60%, rgba(216, 201, 174, 0.25) 0%, transparent 60%),
+    linear-gradient(to bottom, #FFF8F2 0%, #FAF4EB 100%);
   background-attachment: fixed;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -110,7 +110,7 @@ button, input, select, textarea {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-title);
   line-height: 1.18;
-  color: #FFFFFF;
+  color: var(--color-carbon);
   letter-spacing: -0.01em;
 }
 
@@ -137,17 +137,17 @@ h4 {
 }
 
 p {
-  color: var(--color-text-muted);
+  color: var(--color-grafito);
   font-size: 1.02rem;
   line-height: 1.6;
 }
 
 .gold-accent {
-  color: var(--color-gold);
+  color: var(--color-gold-deep);
 }
 
 .manglar-accent {
-  color: #5BA36F;
+  color: var(--color-manglar);
 }
 
 .piedra-accent {
@@ -172,13 +172,13 @@ p {
 }
 
 .section-spacing {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
   position: relative;
 }
 
 /* ==========================================================================
-   HEADER & NAVBAR (Glassmorphism + 1X Protection Zone)
+   HEADER & NAVBAR (Light Luxury Glassmorphism)
    ========================================================================== */
 
 .site-header {
@@ -187,16 +187,17 @@ p {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border-bottom: 1px solid var(--glass-border);
+  background: rgba(255, 248, 242, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(216, 201, 174, 0.35);
+  box-shadow: 0 4px 20px rgba(35, 31, 32, 0.04);
   transition: var(--transition-smooth);
 }
 
 .site-header.scrolled {
-  background: rgba(18, 14, 15, 0.96);
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
+  background: rgba(255, 248, 242, 0.96);
+  box-shadow: 0 10px 30px rgba(35, 31, 32, 0.08);
   border-bottom-color: rgba(238, 182, 35, 0.4);
 }
 
@@ -204,15 +205,14 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 90px;
+  height: 80px;
   gap: 1.5rem;
 }
 
 .brand-logo-link {
   display: flex;
   align-items: center;
-  padding: 0.3rem 0.4rem;
-  border-radius: var(--radius-sm);
+  padding: 0.2rem 0.3rem;
   background: transparent;
   border: none;
   transition: var(--transition-smooth);
@@ -220,13 +220,13 @@ p {
 
 .brand-logo-link:hover {
   opacity: 0.92;
-  filter: drop-shadow(0 0 14px rgba(238, 182, 35, 0.45));
+  filter: drop-shadow(0 0 10px rgba(238, 182, 35, 0.35));
 }
 
 .brand-logo-img {
-  height: 50px;
+  height: 42px;
   width: auto;
-  max-height: 54px;
+  max-height: 48px;
   object-fit: contain;
   display: block;
 }
@@ -1130,12 +1130,15 @@ p {
 }
 
 .division-card {
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border-subtle);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(238, 182, 35, 0.25);
   border-radius: var(--radius-lg);
   padding: 2.5rem;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 12px 35px rgba(35, 31, 32, 0.07);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   transition: var(--transition-smooth);
   display: flex;
   flex-direction: column;
@@ -1148,22 +1151,21 @@ p {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: var(--color-border-subtle);
+  height: 4px;
+  background: transparent;
   transition: var(--transition-smooth);
 }
 
 .division-card.aruz-dev {
-  border-color: var(--color-border-gold);
-  box-shadow: 0 12px 35px -10px rgba(238, 182, 35, 0.15);
+  border-top-color: var(--color-gold-deep);
 }
 
 .division-card.aruz-dev::before {
-  background: linear-gradient(90deg, var(--color-gold), #FFF);
+  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-deep));
 }
 
 .division-card.cade {
-  border-color: rgba(63, 93, 72, 0.45);
+  border-top-color: var(--color-manglar);
 }
 
 .division-card.cade::before {
@@ -1172,12 +1174,8 @@ p {
 
 .division-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-card);
-}
-
-.division-card.aruz-dev:hover {
-  border-color: var(--color-gold);
-  box-shadow: 0 20px 50px -10px rgba(238, 182, 35, 0.3);
+  box-shadow: 0 20px 45px rgba(35, 31, 32, 0.12);
+  border-color: var(--color-gold-deep);
 }
 
 .division-header {
@@ -1194,7 +1192,7 @@ p {
 }
 
 .division-logo-slot img, .division-logo-slot svg {
-  height: 38px;
+  height: 40px;
   width: auto;
 }
 
@@ -1206,14 +1204,14 @@ p {
   padding: 4px 10px;
   border-radius: 4px;
   text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--color-piedra);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(238, 182, 35, 0.12);
+  color: var(--color-gold-deep);
+  border: 1px solid rgba(238, 182, 35, 0.3);
 }
 
 .division-type-badge.dev {
   background: rgba(238, 182, 35, 0.18);
-  color: var(--color-gold);
+  color: var(--color-gold-deep);
   border-color: var(--color-border-gold);
 }
 
@@ -1229,7 +1227,8 @@ p {
   align-items: center;
   gap: 0.7rem;
   font-size: 0.92rem;
-  color: var(--color-text-light);
+  color: var(--color-carbon);
+  font-weight: 500;
 }
 
 .division-feature-item svg {
@@ -1366,38 +1365,42 @@ p {
 }
 
 .pilar-card {
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border-subtle);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(238, 182, 35, 0.25);
   border-radius: var(--radius-md);
-  padding: 2rem 1.4rem;
+  padding: 2rem 1.6rem;
+  box-shadow: 0 12px 35px rgba(35, 31, 32, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   transition: var(--transition-smooth);
 }
 
 .pilar-card:hover {
-  border-color: var(--color-gold);
+  border-color: var(--color-gold-deep);
   transform: translateY(-4px);
-  background: rgba(30, 24, 26, 0.9);
-  box-shadow: 0 10px 30px rgba(238, 182, 35, 0.15);
+  box-shadow: 0 15px 40px rgba(35, 31, 32, 0.12);
 }
 
 .pilar-index {
-  font-family: var(--font-title);
+  font-family: var(--font-sans);
   font-size: 1.9rem;
   font-weight: 900;
-  color: var(--color-gold);
-  opacity: 0.7;
+  color: var(--color-gold-deep);
   margin-bottom: 0.6rem;
 }
 
 .pilar-card h4 {
-  font-size: 1.05rem;
+  font-size: 1.12rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
   margin-bottom: 0.6rem;
-  color: #FFFFFF;
+  color: var(--color-carbon);
 }
 
 .pilar-card p {
-  font-size: 0.88rem;
-  line-height: 1.5;
+  font-size: 0.90rem;
+  color: var(--color-grafito);
+  line-height: 1.6;
 }
 
 .circulo-banner {
