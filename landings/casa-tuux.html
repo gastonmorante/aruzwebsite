@@ -6,31 +6,73 @@
   <title>Casa Tu'ux | Residencia de Autor en Preventa · Senderos Poniente Ciudad Mayakoba · ARUZ Desarrolladora</title>
   <meta name="description" content="Casa Tu'ux en Senderos Poniente Mz 11 Lt 18, Ciudad Mayakoba, Playa del Carmen. Arquitectura contemporánea con volumetría de autor, 3 recámaras, alberca privada y sello CADE.">
   <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+    <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#fff8f2",
+                        "surface-bright": "#fff8f2",
+                        "carbon-aruz": "#231F20",
+                        "dorado-aruz": "#EEB623",
+                        "dorado-profundo": "#C79215",
+                        "piedra-maya": "#D8C9AE",
+                        "verde-manglar": "#3F5D48",
+                        "gris-grafito": "#59555A",
+                        "outline-variant": "rgba(216, 201, 174, 0.4)"
+                    },
+                    "fontFamily": {
+                        "serif": ["Libre Caslon Text", "serif"],
+                        "sans": ["Plus Jakarta Sans", "sans-serif"]
+                    }
+                }
+            }
+        }
+  </script>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
   <!-- Site Header -->
-  <header class="site-header">
-    <div class="container">
-      <div class="nav-wrapper">
-        <a href="../index.html" class="brand-logo-link">
-          <img src="../assets/logo.svg" alt="ARUZ" class="brand-logo-img">
-        </a>
-        <nav class="nav-menu">
-          <div class="nav-item"><a href="../index.html" class="nav-link">Inicio 360</a></div>
-          <div class="nav-item"><a href="../desarrolladora.html" class="nav-link" style="color: var(--color-gold-deep); font-weight: 700;">Desarrolladora</a></div>
-          <div class="nav-item"><a href="../inmobiliaria.html" class="nav-link">Inmobiliaria</a></div>
-          <div class="nav-item"><a href="cade-constructora.html" class="nav-link">CADE</a></div>
-          <div class="nav-item"><a href="aruz-maquinaria.html" class="nav-link">Maquinaria</a></div>
-          <div class="nav-item">
-            <a href="#contacto-landing" class="btn-cta-gold">Solicitar Ficha</a>
-          </div>
-        </nav>
-        <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-      </div>
+    <!-- Site Header (Identical Standard Header) -->
+  <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-20 max-w-[1440px] left-1/2 -translate-x-1/2 bg-surface/85 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm shadow-carbon-aruz/5 transition-all duration-300">
+    <a href="../index.html" class="flex items-center gap-3">
+      <img src="../assets/logo.svg" alt="ARUZ" class="h-10 w-auto object-contain">
+    </a>
+
+    <div class="hidden lg:flex gap-6 items-center">
+      <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="../desarrolladora.html">Desarrolladora</a>
+      <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="../inmobiliaria.html">Inmobiliaria</a>
+      <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="cade-constructora.html">CADE Construcción</a>
+      <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="aruz-maquinaria.html">Maquinaria</a>
+      <a class="text-dorado-profundo font-bold border-b-2 border-dorado-profundo pb-1 font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz" href="../index.html#preventas-mayakoba">Colección Mayakoba</a>
+      <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="../index.html#contacto-hub">Contacto</a>
+      <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20sobre%20las%20preventas%20de%20ARUZ." target="_blank" class="bg-dorado-profundo text-white font-button px-5 py-2.5 rounded font-label-caps uppercase hover:bg-dorado-aruz transition-all duration-300 ml-2 shadow-md hover:shadow-lg flex items-center gap-1.5 text-xs">
+        <span>Invertir Ahora</span>
+        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </a>
     </div>
-  </header>
+
+    <button class="lg:hidden flex items-center text-carbon-aruz p-2" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')">
+      <span class="material-symbols-outlined text-2xl">menu</span>
+    </button>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer" class="hidden fixed inset-0 z-40 bg-carbon-aruz/95 backdrop-blur-2xl pt-24 px-8 text-white flex flex-col gap-6">
+    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="../desarrolladora.html">ARUZ Desarrolladora</a>
+    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="../inmobiliaria.html">ARUZ Inmobiliaria</a>
+    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="cade-constructora.html">CADE Construcción</a>
+    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="aruz-maquinaria.html">ARUZ Maquinaria Pesada</a>
+    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="../index.html#preventas-mayakoba">Colección Mayakoba</a>
+    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="../index.html#contacto-hub">Contacto</a>
+    <a href="https://api.whatsapp.com/send?phone=5216674069523" target="_blank" class="bg-dorado-aruz text-carbon-aruz font-button py-3 rounded text-center uppercase font-bold mt-4">WhatsApp Directo</a>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero-section" style="padding-top: 140px; min-height: 80vh;">
