@@ -1,47 +1,72 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="light" lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>ARUZ Inmobiliaria | Asesoría Experta y Propiedades Auditadas</title>
-  <meta name="description" content="División de asesoría y comercialización inmobiliaria de ARUZ. Propiedades de terceros verificadas técnica y jurídicamente en la Riviera Maya.">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>ARUZ Inmobiliaria | Criterio Inmobiliario Real & Propiedades Auditadas · Riviera Maya</title>
+  <meta name="description" content="División de asesoría y comercialización inmobiliaria de ARUZ. Comercializamos propiedades con certeza jurídica notarial por Consortium GPRuiz y dictamen técnico CADE.">
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
-    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  
+  <!-- Tailwind CSS with Stitch Theme Tokens -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
   <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "surface": "#fff8f2",
-                        "surface-bright": "#fff8f2",
-                        "carbon-aruz": "#231F20",
-                        "dorado-aruz": "#EEB623",
-                        "dorado-profundo": "#C79215",
-                        "piedra-maya": "#D8C9AE",
-                        "verde-manglar": "#3F5D48",
-                        "gris-grafito": "#59555A",
-                        "outline-variant": "rgba(216, 201, 174, 0.4)"
-                    },
-                    "fontFamily": {
-                        "serif": ["Libre Caslon Text", "serif"],
-                        "sans": ["Plus Jakarta Sans", "sans-serif"]
-                    }
-                }
-            }
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#FFF8F2",
+            "surface-bright": "#FFF8F2",
+            "surface-container-lowest": "#FFFFFF",
+            "surface-container": "#FCECD0",
+            "surface-container-high": "#F6E6CA",
+            "surface-container-highest": "#F0E1C5",
+            "carbon-aruz": "#231F20",
+            "on-background": "#231F20",
+            "dorado-aruz": "#EEB623",
+            "dorado-profundo": "#C79215",
+            "primary-container": "#EEB623",
+            "piedra-maya": "#D8C9AE",
+            "verde-manglar": "#3F5D48",
+            "gris-grafito": "#59555A",
+            "surface-variant": "#59555A",
+            "outline-variant": "rgba(216, 201, 174, 0.45)"
+          },
+          spacing: {
+            "margin-mobile": "20px",
+            "margin-desktop": "64px",
+            "section-gap": "96px",
+            "gutter": "24px"
+          },
+          fontFamily: {
+            "serif": ["Libre Caslon Text", "serif"],
+            "sans": ["Plus Jakarta Sans", "sans-serif"],
+            "title": ["Montserrat", "sans-serif"],
+            "label-caps": ["Plus Jakarta Sans", "sans-serif"]
+          }
         }
+      }
+    }
   </script>
+  
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/aruz-ai.css">
+  
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-surface text-carbon-aruz font-sans antialiased overflow-x-hidden">
 
-  <!-- Site Header -->
-    <!-- Site Header (Identical Standard Header) -->
-  <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-20 max-w-[1440px] left-1/2 -translate-x-1/2 bg-surface/85 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm shadow-carbon-aruz/5 transition-all duration-300">
+  <!-- ==========================================================================
+       TOP NAVIGATION (Standardized Universal Header)
+       ========================================================================== -->
+  <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-20 max-w-[1440px] left-1/2 -translate-x-1/2 bg-surface/90 backdrop-blur-xl border-b border-outline-variant shadow-sm shadow-carbon-aruz/5 transition-all duration-300">
     <a href="index.html" class="flex items-center gap-3">
       <img src="assets/logo.svg" alt="ARUZ" class="h-10 w-auto object-contain">
     </a>
@@ -51,274 +76,490 @@
       <a class="text-dorado-profundo font-bold border-b-2 border-dorado-profundo pb-1 font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz" href="inmobiliaria.html">Inmobiliaria</a>
       <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="landings/cade-constructora.html">CADE Construcción</a>
       <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="landings/aruz-maquinaria.html">Maquinaria</a>
-      <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="#preventas-mayakoba">Colección Mayakoba</a>
-      <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="#contacto-hub">Contacto</a>
-      <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20sobre%20las%20preventas%20de%20ARUZ." target="_blank" class="bg-dorado-profundo text-white font-button px-5 py-2.5 rounded font-label-caps uppercase hover:bg-dorado-aruz transition-all duration-300 ml-2 shadow-md hover:shadow-lg flex items-center gap-1.5 text-xs">
+      <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="index.html#preventas-mayakoba">Colección Mayakoba</a>
+      <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="index.html#contacto-hub">Contacto</a>
+      <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20sobre%20las%20propiedades%20de%20ARUZ%20Inmobiliaria." target="_blank" class="bg-dorado-profundo text-white font-button px-5 py-2.5 rounded font-label-caps uppercase hover:bg-dorado-aruz transition-all duration-300 ml-2 shadow-md hover:shadow-lg flex items-center gap-1.5 text-xs font-bold">
         <span>Invertir Ahora</span>
         <span class="material-symbols-outlined text-sm">arrow_forward</span>
       </a>
     </div>
 
-    <button class="lg:hidden flex items-center text-carbon-aruz p-2" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')">
+    <button class="lg:hidden flex items-center justify-center w-11 h-11 rounded-lg text-carbon-aruz hover:text-dorado-profundo hover:bg-black/5 active:scale-95 transition-all p-2" onclick="toggleMobileDrawer()" aria-label="Abrir Menú Móvil">
       <span class="material-symbols-outlined text-2xl">menu</span>
     </button>
   </nav>
 
-  <!-- Mobile Drawer -->
-  <div id="mobile-drawer" class="hidden fixed inset-0 z-40 bg-carbon-aruz/95 backdrop-blur-2xl pt-24 px-8 text-white flex flex-col gap-6">
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="desarrolladora.html">ARUZ Desarrolladora</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="inmobiliaria.html">ARUZ Inmobiliaria</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="landings/cade-constructora.html">CADE Construcción</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="landings/aruz-maquinaria.html">ARUZ Maquinaria Pesada</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="#preventas-mayakoba">Colección Mayakoba</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="#contacto-hub">Contacto</a>
-    <a href="https://api.whatsapp.com/send?phone=5216674069523" target="_blank" class="bg-dorado-aruz text-carbon-aruz font-button py-3 rounded text-center uppercase font-bold mt-4">WhatsApp Directo</a>
+  <!-- Mobile Drawer with Safe Area & Native Touch UX -->
+  <div id="mobile-drawer" class="hidden fixed inset-0 z-50 bg-carbon-aruz/95 backdrop-blur-2xl text-white flex flex-col justify-between p-6 sm:p-8 transition-all duration-300">
+    <div>
+      <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+        <a href="index.html" onclick="closeMobileDrawer()" class="flex items-center gap-3">
+          <img src="assets/logo-white.svg" alt="ARUZ" class="h-8 w-auto">
+        </a>
+        <button onclick="closeMobileDrawer()" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:text-dorado-aruz active:scale-90 transition-all text-xl" aria-label="Cerrar Menú">
+          ✕
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-4 text-base font-label-caps uppercase tracking-wider">
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="desarrolladora.html" onclick="closeMobileDrawer()">
+          <span>ARUZ Desarrolladora</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-dorado-aruz font-bold hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="inmobiliaria.html" onclick="closeMobileDrawer()">
+          <span>ARUZ Inmobiliaria</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="landings/cade-constructora.html" onclick="closeMobileDrawer()">
+          <span>CADE Construcción</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="landings/aruz-maquinaria.html" onclick="closeMobileDrawer()">
+          <span>ARUZ Maquinaria Pesada</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="index.html#preventas-mayakoba" onclick="closeMobileDrawer()">
+          <span class="text-dorado-aruz font-bold">Colección Mayakoba (4 Preventas)</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors pb-3 flex justify-between items-center" href="index.html#contacto-hub" onclick="closeMobileDrawer()">
+          <span>Contacto & Asesoría</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="space-y-3 pt-6 border-t border-white/10">
+      <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20personalizada%20con%20el%20Director%20de%20ARUZ." target="_blank" rel="noopener" class="w-full bg-gradient-to-r from-dorado-aruz to-dorado-profundo text-carbon-aruz font-bold py-3.5 px-4 rounded-xl text-center text-xs uppercase font-label-caps tracking-wider flex items-center justify-center gap-2 active:scale-95 transition-all shadow-lg">
+        <span class="material-symbols-outlined text-lg">chat</span>
+        <span>WhatsApp Director: 667 406 9523</span>
+      </a>
+      <a href="tel:+526674069523" class="w-full bg-white/10 text-white font-semibold py-3 px-4 rounded-xl text-center text-xs uppercase font-label-caps tracking-wider flex items-center justify-center gap-2 active:scale-95 transition-all">
+        <span class="material-symbols-outlined text-lg">call</span>
+        <span>Llamada Telefónica Directa</span>
+      </a>
+    </div>
   </div>
 
-  <!-- Hero Inmobiliaria -->
-  <section class="hero-section" style="min-height: 65vh; padding-top: 140px; padding-bottom: 3rem;">
-    <div class="hero-backdrop"></div>
-    <div class="container">
-      <div class="hero-content">
-        <div style="margin-bottom: 1.2rem;">
-          <img src="assets/logo-aruz-inmobiliaria-dark.svg" alt="ARUZ Inmobiliaria" style="height: 50px; width: auto;">
+  <!-- ==========================================================================
+       HERO SECTION - CRITERIO INMOBILIARIO REAL
+       ========================================================================== -->
+  <section class="relative w-full min-h-[75vh] flex items-center justify-center pt-28 pb-16 px-margin-mobile md:px-margin-desktop overflow-hidden bg-carbon-aruz text-white">
+    <div class="absolute inset-0 z-0">
+      <img alt="Arquitectura contemporánea residencial en la Riviera Maya" class="w-full h-full object-cover opacity-35 filter brightness-90" src="assets/properties/eternity-jol/exteriores/fachada_principal.webp" fetchpriority="high">
+      <div class="absolute inset-0 bg-gradient-to-t from-carbon-aruz via-carbon-aruz/60 to-carbon-aruz/40"></div>
+    </div>
+    
+    <div class="relative z-10 text-center max-w-[1280px] mx-auto w-full flex flex-col items-center animate-fade-up">
+      <div class="mb-4">
+        <span class="inline-flex items-center gap-2 bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full border border-dorado-aruz/40 font-label-caps text-xs text-dorado-aruz font-bold uppercase tracking-widest">
+          <span class="material-symbols-outlined text-sm">verified</span>
+          División 02 · ARUZ Inmobiliaria & Certeza Notarial
+        </span>
+      </div>
+      
+      <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-6 max-w-4xl leading-tight">
+        Criterio Inmobiliario Real,<br/>
+        <span class="text-dorado-aruz">Cero Especulación.</span>
+      </h1>
+      
+      <p class="font-body-md text-base sm:text-lg text-[#E8E4DF] max-w-2xl mx-auto mb-8 leading-relaxed font-light">
+        En un mercado saturado de promesas irreales, ARUZ Inmobiliaria actúa como tu asesor técnico y legal experto. Solo comercializamos propiedades con certeza jurídica notarial por <strong>Consortium GPRuiz S.A. de C.V.</strong>, dictamen estructural <strong>CADE</strong> y precios avalados por el mercado real de la Riviera Maya.
+      </p>
+      
+      <div class="flex flex-wrap gap-4 justify-center items-center">
+        <a class="inline-flex items-center justify-center px-8 py-3.5 bg-dorado-profundo text-white font-label-caps uppercase text-xs font-bold rounded hover:bg-dorado-aruz hover:text-carbon-aruz transition-all duration-300 shadow-lg" href="#portfolio">
+          <span>Ver Portafolio Certificado</span>
+          <span class="material-symbols-outlined ml-2 text-sm">arrow_downward</span>
+        </a>
+        <a class="inline-flex items-center justify-center px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-label-caps uppercase text-xs font-bold rounded transition-all duration-300" href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20deseo%20asesor%C3%ADa%20para%20adquirir%20propiedad%20en%20la%20Riviera%20Maya." target="_blank" rel="noopener">
+          <span>Hablar con el Director</span>
+          <span class="material-symbols-outlined ml-2 text-sm">chat</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SERVICE PILLARS (3 Pilares del Criterio Inmobiliario)
+       ========================================================================== -->
+  <section class="py-16 md:py-24 bg-surface-container-highest border-y border-outline-variant/30">
+    <div class="max-w-[1420px] mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="text-center mb-14">
+        <span class="font-label-caps text-xs text-dorado-profundo uppercase tracking-widest mb-2 block font-bold">
+          Metodología ARUZ
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl text-carbon-aruz font-bold">
+          Por Qué Nuestro Filtro Protege tu Patrimonio
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Pillar 1 -->
+        <div class="p-8 border border-piedra-maya/60 bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <span class="font-serif text-4xl text-dorado-profundo mb-4 block font-bold opacity-80">01</span>
+            <h3 class="font-serif text-xl text-carbon-aruz font-bold mb-3">Auditoría Legal Rigurosa</h3>
+            <p class="text-gris-grafito text-sm leading-relaxed mb-4">
+              Revisión exhaustiva de títulos de propiedad, régimen en condominio, licencias de construcción y estatus fiscal ante el Registro Público de la Propiedad respaldada por Consortium GPRuiz S.A. de C.V. antes de publicar cualquier inmueble.
+            </p>
+          </div>
+          <div class="flex items-center gap-2 text-xs font-bold text-dorado-profundo uppercase tracking-wider">
+            <span class="material-symbols-outlined text-sm">gavel</span>
+            <span>Certeza Jurídica Total</span>
+          </div>
         </div>
-        <div class="hero-badge">
-          <span class="pulse-dot"></span>
-          <span>División 02 · ARUZ Inmobiliaria</span>
+
+        <!-- Pillar 2 -->
+        <div class="p-8 border border-dorado-aruz/40 bg-surface-container-lowest rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 group flex flex-col justify-between md:-translate-y-2">
+          <div>
+            <span class="font-serif text-4xl text-dorado-profundo mb-4 block font-bold opacity-80">02</span>
+            <h3 class="font-serif text-xl text-carbon-aruz font-bold mb-3">Inspección Técnica CADE</h3>
+            <p class="text-gris-grafito text-sm leading-relaxed mb-4">
+              A diferencia de las agencias tradicionales, nuestros ingenieros y arquitectos de CADE evalúan físicamente la cimentación en roca, calidad de losa, presiones hidrosanitarias y acabados de cada propiedad de terceros.
+            </p>
+          </div>
+          <div class="flex items-center gap-2 text-xs font-bold text-verde-manglar uppercase tracking-wider">
+            <span class="material-symbols-outlined text-sm">verified_user</span>
+            <span>Dictamen Estructural Favorable</span>
+          </div>
         </div>
-        <h1 class="hero-title">
-          <span>Criterio Inmobiliario Real,</span>
-          <span class="gold-accent">Cero Especulación.</span>
-        </h1>
-        <p class="hero-evp">
-          En un mercado saturado de promesas irreales, ARUZ Inmobiliaria actúa como tu asesor experto. Solo comercializamos propiedades con certeza jurídica comprobada, dictamen estructural y precios avalados por el mercado real.
+
+        <!-- Pillar 3 -->
+        <div class="p-8 border border-piedra-maya/60 bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <span class="font-serif text-4xl text-dorado-profundo mb-4 block font-bold opacity-80">03</span>
+            <h3 class="font-serif text-xl text-carbon-aruz font-bold mb-3">Asesoría a Distancia</h3>
+            <p class="text-gris-grafito text-sm leading-relaxed mb-4">
+              El 70% de nuestros clientes invierte desde el interior de la república o el extranjero (EE.UU. y Canadá). Facilitamos recorridos virtuales 360°, cálculos de rentabilidad neta (ROI) y trámites notariales seguros sin traslados innecesarios.
+            </p>
+          </div>
+          <div class="flex items-center gap-2 text-xs font-bold text-dorado-profundo uppercase tracking-wider">
+            <span class="material-symbols-outlined text-sm">public</span>
+            <span>Atención Global Hiperlocal</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       PORTFOLIO SECTION - PROPIEDADES SELECCIONADAS DE TERCEROS (BENTO GRID)
+       ========================================================================== -->
+  <section class="py-16 md:py-24 bg-surface" id="portfolio">
+    <div class="max-w-[1420px] mx-auto px-margin-mobile md:px-margin-desktop">
+      
+      <div class="mb-14 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-outline-variant pb-8">
+        <div>
+          <span class="font-label-caps text-xs text-dorado-profundo uppercase tracking-widest mb-2 block font-bold">
+            Portafolio Certificado · Riviera Maya
+          </span>
+          <h2 class="font-serif text-3xl sm:text-4xl text-carbon-aruz font-bold">
+            Propiedades Seleccionadas de Terceros
+          </h2>
+        </div>
+        <p class="text-gris-grafito text-sm max-w-md">
+          Inmuebles listos para escrituración y entrega inmediata con dictamen técnico favorable y precios avalados contra avalúo comercial.
         </p>
       </div>
-    </div>
-  </section>
 
-  <!-- Método de Asesoría -->
-  <section class="section-spacing" style="padding-top: 2rem;">
-    <div class="container">
-      <div class="holding-grid" style="grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-        <div class="pilar-card">
-          <div class="pilar-index">01</div>
-          <h4>Auditoría Legal Rigurosa</h4>
-          <p>Revisión exhaustiva de títulos de propiedad, licencias y estatus fiscal ante registro público antes de publicar cualquier inmueble.</p>
-        </div>
-        <div class="pilar-card">
-          <div class="pilar-index">02</div>
-          <h4>Inspección Técnica CADE</h4>
-          <p>Nuestros ingenieros evalúan las instalaciones físicas, calidad de cimentación y acabados de cada propiedad de terceros.</p>
-        </div>
-        <div class="pilar-card">
-          <div class="pilar-index">03</div>
-          <h4>Asesoría a Distancia</h4>
-          <p>El 70% de nuestros clientes compra desde el interior de la república o el extranjero. Facilitamos recorridos virtuales y contratos transparentes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Catálogo de 4 Propiedades -->
-  <section class="section-spacing" id="catalogo">
-    <div class="container">
-      <div class="section-head-wrap">
-        <span class="section-tag">Portafolio Certificado</span>
-        <h2>Propiedades Seleccionadas de Terceros</h2>
-        <p>Inmuebles listos para escrituración y entrega inmediata con dictamen técnico favorable.</p>
-      </div>
-
-      <div class="properties-grid">
+      <!-- Bento Grid Layout -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6">
         
-        <!-- 1. Casa del Sol -->
-        <div class="property-card">
-          <div class="property-img-wrap">
-            <div class="property-badge-top">
-              <span class="prop-tag">Certificado ARUZ</span>
-              <span class="prop-tag">Llave en Mano</span>
-            </div>
-            <svg viewBox="0 0 400 240" class="property-img">
-              <rect width="400" height="240" fill="#242120"/>
-              <polygon points="120,160 200,80 280,160" fill="#363231" stroke="#D8C9AE" stroke-width="1.2"/>
-              <text x="30" y="215" fill="#D8C9AE" font-family="'Poppins', sans-serif" font-size="14" font-weight="600">CASA DEL SOL · RESIDENCIA</text>
-            </svg>
+        <!-- Property Card 1: Casa del Sol (Large Bento Card) -->
+        <article class="col-span-1 md:col-span-2 lg:col-span-8 group relative overflow-hidden bg-carbon-aruz rounded-2xl border border-dorado-aruz/30 flex flex-col justify-end shadow-md hover:shadow-2xl transition-all duration-500 min-h-[460px]">
+          <div class="absolute inset-0">
+            <img alt="Casa del Sol en Valle Aurora Playa del Carmen" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-70" src="assets/properties/sak-luum/exteriores/fachada_frontal.webp" loading="lazy" decoding="async">
+            <div class="absolute inset-0 bg-gradient-to-t from-carbon-aruz via-carbon-aruz/40 to-transparent"></div>
           </div>
-          <div class="property-body">
-            <div class="property-title-wrap">
-              <div class="property-location">Playa del Carmen / Valle Aurora</div>
-              <h3 class="property-title">Casa del Sol</h3>
+          <div class="relative z-10 p-8 flex flex-col justify-between h-full">
+            <div class="flex items-center gap-2">
+              <span class="px-3 py-1 bg-dorado-aruz text-carbon-aruz font-label-caps text-[10px] font-bold uppercase rounded">Certificado ARUZ · Llave en Mano</span>
+              <span class="px-3 py-1 bg-verde-manglar text-white font-label-caps text-[10px] font-bold uppercase rounded">Entrega Inmediata</span>
             </div>
-            <p>Residencia familiar en privada con seguridad 24/7, paneles solares y alberca propia.</p>
-            <div class="property-specs">
-              <div class="spec-box"><div class="spec-val">250 m²</div><div class="spec-label">Construcción</div></div>
-              <div class="spec-box"><div class="spec-val">3 Rec</div><div class="spec-label">3.5 Baños</div></div>
-              <div class="spec-box"><div class="spec-val">Inmediata</div><div class="spec-label">Entrega</div></div>
-            </div>
-            <div class="property-pricing">
-              <div class="price-label">Precio avalado</div>
-              <div class="price-value">$4,200,000 MXN</div>
-            </div>
-            <div class="property-actions">
-              <a href="landings/casa-del-sol.html" class="btn-card-primary">Ver Landing Dedicada</a>
+            <div>
+              <p class="font-label-caps text-xs text-dorado-aruz mb-1 uppercase font-bold">Playa del Carmen / Valle Aurora</p>
+              <h3 class="font-serif text-2xl sm:text-3xl text-white font-bold mb-2">Casa del Sol</h3>
+              <p class="text-sm text-[#E8E4DF] max-w-lg mb-6 leading-relaxed">
+                Residencia familiar en privada con seguridad 24/7, paneles solares, alberca propia y acabados en madera de tzalam.
+              </p>
+              
+              <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/15">
+                <div class="flex gap-6">
+                  <div>
+                    <span class="block text-lg font-bold text-white font-serif">250 m²</span>
+                    <span class="text-[10px] text-piedra-maya uppercase tracking-wider">Construcción</span>
+                  </div>
+                  <div>
+                    <span class="block text-lg font-bold text-white font-serif">3R / 3.5B</span>
+                    <span class="text-[10px] text-piedra-maya uppercase tracking-wider">Distribución</span>
+                  </div>
+                  <div>
+                    <span class="block text-lg font-bold text-dorado-aruz font-serif">$4,200,000 MXN</span>
+                    <span class="text-[10px] text-piedra-maya uppercase tracking-wider">Precio Avalado</span>
+                  </div>
+                </div>
+                
+                <a class="inline-flex items-center bg-dorado-profundo hover:bg-dorado-aruz text-white hover:text-carbon-aruz font-label-caps text-xs uppercase px-5 py-2.5 rounded font-bold transition-all shadow-md gap-1.5" href="landings/casa-del-sol.html">
+                  <span>Ver Ficha Dedicada</span>
+                  <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+              </div>
             </div>
           </div>
+        </article>
+
+        <!-- Property Card 2: Condo Marina (Vertical Bento Card) -->
+        <article class="col-span-1 lg:col-span-4 group bg-surface-container-lowest rounded-2xl border border-piedra-maya flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="h-56 overflow-hidden relative">
+            <img alt="Condo Marina Puerto Aventuras frente al canal náutico" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/properties/kaak-naajal/interiores/img_0.webp" loading="lazy" decoding="async">
+            <div class="absolute top-4 left-4 inline-block px-3 py-1 bg-carbon-aruz/85 backdrop-blur-md text-dorado-aruz font-label-caps text-[10px] font-bold uppercase rounded border border-dorado-aruz/30">
+              Alta Rentabilidad Náutica
+            </div>
+          </div>
+          <div class="p-6 flex-grow flex flex-col justify-between">
+            <div>
+              <p class="font-label-caps text-xs text-dorado-profundo mb-1 uppercase font-bold">Puerto Aventuras / Marina</p>
+              <h3 class="font-serif text-xl text-carbon-aruz font-bold mb-2">Condo Marina</h3>
+              <p class="text-gris-grafito text-xs leading-relaxed mb-4">
+                Departamento completamente amueblado con vista al canal náutico. Llave en mano para operación en plataformas vacacionales.
+              </p>
+            </div>
+            <div>
+              <div class="grid grid-cols-2 gap-2 bg-surface-container/60 p-2.5 rounded border border-outline-variant/30 mb-4 text-center">
+                <div>
+                  <span class="block text-sm font-bold text-carbon-aruz font-serif">110 m²</span>
+                  <span class="text-[9px] text-gris-grafito uppercase">Superficie</span>
+                </div>
+                <div>
+                  <span class="block text-sm font-bold text-carbon-aruz font-serif">2 Recámaras</span>
+                  <span class="text-[9px] text-gris-grafito uppercase">Distribución</span>
+                </div>
+              </div>
+              <div class="mb-4">
+                <span class="text-[10px] text-gris-grafito uppercase font-semibold block">Inversión</span>
+                <span class="text-xl font-bold text-dorado-profundo font-serif">$3,100,000 MXN</span>
+              </div>
+              <a class="block w-full text-center py-2.5 border border-carbon-aruz text-carbon-aruz font-label-caps text-xs uppercase font-bold rounded hover:bg-carbon-aruz hover:text-white transition-all" href="landings/condo-marina.html">
+                Ver Detalles & Ficha
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Property Card 3: Lote Inversión (Card de Terreno) -->
+        <article class="col-span-1 lg:col-span-6 group bg-surface-container-lowest rounded-2xl border border-piedra-maya p-7 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-0.5 bg-dorado-aruz/20 text-dorado-profundo font-label-caps text-[10px] font-bold uppercase rounded border border-dorado-aruz/40">
+                Reserva Patrimonial
+              </span>
+              <span class="text-xs text-gris-grafito">Playa del Carmen / Zona Crecimiento</span>
+            </div>
+            <h3 class="font-serif text-2xl text-carbon-aruz font-bold mb-2">Lote Inversión</h3>
+            <p class="text-gris-grafito text-xs leading-relaxed mb-6">
+              Terreno unifamiliar con uso de suelo regularizado H3, servicios al pie del predio y certeza jurídica notarial listo para construir residencia privada o desarrollo vertical boutique.
+            </p>
+          </div>
+          
+          <div>
+            <div class="grid grid-cols-3 gap-3 bg-surface-container/60 p-3 rounded-lg border border-outline-variant/30 mb-6 text-center">
+              <div>
+                <span class="block text-base font-bold text-carbon-aruz font-serif">600 m²</span>
+                <span class="text-[9px] text-gris-grafito uppercase">Superficie</span>
+              </div>
+              <div>
+                <span class="block text-base font-bold text-carbon-aruz font-serif">H3</span>
+                <span class="text-[9px] text-gris-grafito uppercase">Uso de Suelo</span>
+              </div>
+              <div>
+                <span class="block text-base font-bold text-dorado-profundo font-serif">$2,500,000</span>
+                <span class="text-[9px] text-gris-grafito uppercase">MXN</span>
+              </div>
+            </div>
+            
+            <a class="inline-flex items-center text-dorado-profundo hover:text-carbon-aruz font-label-caps text-xs uppercase font-bold transition-colors gap-1.5" href="landings/lote-inversion.html">
+              <span>Ver Ficha Técnica y Régimen del Lote</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Property Card 4: Penthouse Sky (Card con Rooftop Render) -->
+        <article class="col-span-1 lg:col-span-6 group relative overflow-hidden bg-carbon-aruz text-white rounded-2xl border border-dorado-aruz/30 flex flex-col justify-end shadow-md hover:shadow-2xl transition-all duration-300 min-h-[340px]">
+          <div class="absolute inset-0">
+            <img alt="Penthouse Sky con rooftop y alberca privada" class="w-full h-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-105" src="assets/properties/tuux/exteriores/img_4.webp" loading="lazy" decoding="async">
+            <div class="absolute inset-0 bg-gradient-to-t from-carbon-aruz via-carbon-aruz/60 to-transparent"></div>
+          </div>
+          <div class="relative z-10 p-7 flex flex-col justify-between h-full">
+            <div class="inline-block px-3 py-1 bg-dorado-profundo text-white font-label-caps text-[10px] uppercase font-bold rounded self-start">
+              Certificado ARUZ · Rooftop Privado
+            </div>
+            <div>
+              <p class="font-label-caps text-xs text-dorado-aruz mb-1 uppercase font-bold">Playa del Carmen / Centro Norte</p>
+              <h3 class="font-serif text-2xl text-white font-bold mb-1">Penthouse Sky</h3>
+              <p class="text-xs text-[#E8E4DF] mb-4">Penthouse de 180 m² con solárium privado, asador integrado y vistas panorámicas hacia el Mar Caribe.</p>
+              <div class="flex items-center justify-between pt-3 border-t border-white/20">
+                <span class="text-xl font-bold text-dorado-aruz font-serif">$5,800,000 MXN</span>
+                <a class="px-5 py-2 bg-dorado-aruz text-carbon-aruz font-label-caps text-xs uppercase font-bold rounded hover:bg-white transition-colors" href="landings/penthouse-sky.html">
+                  Ver Penthouse
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Additional Secondary Portfolio Strip -->
+        <div class="col-span-1 md:col-span-2 lg:col-span-12 grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4">
+          
+          <!-- Item 5: Torre Lúmina -->
+          <div class="bg-surface-container-lowest border border-piedra-maya/80 rounded-xl p-5 hover:border-dorado-aruz transition-all group">
+            <span class="text-[10px] font-bold text-dorado-profundo uppercase tracking-wider block mb-1 font-label-caps">Preventa Urbana</span>
+            <h4 class="font-serif text-lg text-carbon-aruz font-bold mb-1">Torre Lúmina</h4>
+            <p class="text-xs text-gris-grafito mb-3">Departamentos boutique de 95 m² con terraza privada en zona residencial de alta plusvalía.</p>
+            <div class="flex items-center justify-between pt-2 border-t border-outline-variant/40">
+              <span class="text-sm font-bold text-carbon-aruz font-serif">$3,450,000 MXN</span>
+              <a href="landings/torre-lumina.html" class="text-xs text-dorado-profundo font-bold uppercase hover:underline">Ver Ficha →</a>
+            </div>
+          </div>
+
+          <!-- Item 6: Villa Anthia -->
+          <div class="bg-surface-container-lowest border border-piedra-maya/80 rounded-xl p-5 hover:border-dorado-aruz transition-all group">
+            <span class="text-[10px] font-bold text-dorado-profundo uppercase tracking-wider block mb-1 font-label-caps">Residencial Exclusivo</span>
+            <h4 class="font-serif text-lg text-carbon-aruz font-bold mb-1">Villa Anthia</h4>
+            <p class="text-xs text-gris-grafito mb-3">Residencia de 280 m² con 4 suites, jardín interior, alberca privada y cochera doble.</p>
+            <div class="flex items-center justify-between pt-2 border-t border-outline-variant/40">
+              <span class="text-sm font-bold text-carbon-aruz font-serif">$6,200,000 MXN</span>
+              <a href="landings/villa-anthia.html" class="text-xs text-dorado-profundo font-bold uppercase hover:underline">Ver Ficha →</a>
+            </div>
+          </div>
+
+          <!-- Item 7: Zenith Residencial -->
+          <div class="bg-surface-container-lowest border border-piedra-maya/80 rounded-xl p-5 hover:border-dorado-aruz transition-all group">
+            <span class="text-[10px] font-bold text-dorado-profundo uppercase tracking-wider block mb-1 font-label-caps">Residencial Familiar</span>
+            <h4 class="font-serif text-lg text-carbon-aruz font-bold mb-1">Zenith Residencial</h4>
+            <p class="text-xs text-gris-grafito mb-3">Condominio de 135 m² con amenidades familiares, casa club, alberca semiolímpica y gimnasio.</p>
+            <div class="flex items-center justify-between pt-2 border-t border-outline-variant/40">
+              <span class="text-sm font-bold text-carbon-aruz font-serif">$3,850,000 MXN</span>
+              <a href="landings/zenith-residencial.html" class="text-xs text-dorado-profundo font-bold uppercase hover:underline">Ver Ficha →</a>
+            </div>
+          </div>
+
         </div>
 
-        <!-- 2. Condo Marina -->
-        <div class="property-card">
-          <div class="property-img-wrap">
-            <div class="property-badge-top">
-              <span class="prop-tag">Certificado ARUZ</span>
-              <span class="prop-tag">Rentabilidad</span>
-            </div>
-            <svg viewBox="0 0 400 240" class="property-img">
-              <rect width="400" height="240" fill="#1C242A"/>
-              <rect x="100" y="60" width="200" height="120" fill="#293740" stroke="#D8C9AE" stroke-width="1.2"/>
-              <text x="30" y="215" fill="#D8C9AE" font-family="'Poppins', sans-serif" font-size="14" font-weight="600">CONDO MARINA · PUERTO AVENTURAS</text>
-            </svg>
-          </div>
-          <div class="property-body">
-            <div class="property-title-wrap">
-              <div class="property-location">Puerto Aventuras / Marina</div>
-              <h3 class="property-title">Condo Marina</h3>
-            </div>
-            <p>Departamento amueblado frente al canal náutico, ideal para portafolio de renta vacacional.</p>
-            <div class="property-specs">
-              <div class="spec-box"><div class="spec-val">110 m²</div><div class="spec-label">Superficie</div></div>
-              <div class="spec-box"><div class="spec-val">2 Rec</div><div class="spec-label">2 Baños</div></div>
-              <div class="spec-box"><div class="spec-val">Inmediata</div><div class="spec-label">Entrega</div></div>
-            </div>
-            <div class="property-pricing">
-              <div class="price-label">Precio avalado</div>
-              <div class="price-value">$3,100,000 MXN</div>
-            </div>
-            <div class="property-actions">
-              <a href="landings/condo-marina.html" class="btn-card-primary">Ver Landing Dedicada</a>
-            </div>
-          </div>
-        </div>
+      </div>
 
-        <!-- 3. Lote Inversión -->
-        <div class="property-card">
-          <div class="property-img-wrap">
-            <div class="property-badge-top">
-              <span class="prop-tag">Certeza Jurídica</span>
-              <span class="prop-tag">Escriturado</span>
-            </div>
-            <svg viewBox="0 0 400 240" class="property-img">
-              <rect width="400" height="240" fill="#1C231E"/>
-              <polygon points="80,180 140,80 320,90 280,190" fill="#28352B" stroke="#D8C9AE" stroke-width="1.2"/>
-              <text x="30" y="215" fill="#D8C9AE" font-family="'Poppins', sans-serif" font-size="14" font-weight="600">LOTE RESIDENCIAL · PLAYA DEL CARMEN</text>
-            </svg>
-          </div>
-          <div class="property-body">
-            <div class="property-title-wrap">
-              <div class="property-location">Playa del Carmen / Zona Crecimiento</div>
-              <h3 class="property-title">Lote Inversión</h3>
-            </div>
-            <p>Terreno unifamiliar con uso de suelo regularizado, listo para construir o mantener en reserva patrimonial.</p>
-            <div class="property-specs">
-              <div class="spec-box"><div class="spec-val">600 m²</div><div class="spec-label">Superficie</div></div>
-              <div class="spec-box"><div class="spec-val">H3</div><div class="spec-label">Uso Suelo</div></div>
-              <div class="spec-box"><div class="spec-val">Inmediata</div><div class="spec-label">Escritura</div></div>
-            </div>
-            <div class="property-pricing">
-              <div class="price-label">Precio avalado</div>
-              <div class="price-value">$2,500,000 MXN</div>
-            </div>
-            <div class="property-actions">
-              <a href="landings/lote-inversion.html" class="btn-card-primary">Ver Landing Dedicada</a>
-            </div>
-          </div>
-        </div>
+    </div>
+  </section>
 
-        <!-- 4. Penthouse Sky -->
-        <div class="property-card">
-          <div class="property-img-wrap">
-            <div class="property-badge-top">
-              <span class="prop-tag">Certificado ARUZ</span>
-              <span class="prop-tag">Rooftop Privado</span>
-            </div>
-            <svg viewBox="0 0 400 240" class="property-img">
-              <rect width="400" height="240" fill="#28221D"/>
-              <rect x="90" y="40" width="220" height="140" fill="#3D342C" stroke="#EEB623" stroke-width="1.2"/>
-              <text x="30" y="215" fill="#D8C9AE" font-family="'Poppins', sans-serif" font-size="14" font-weight="600">PENTHOUSE SKY · ROOFTOP</text>
-            </svg>
-          </div>
-          <div class="property-body">
-            <div class="property-title-wrap">
-              <div class="property-location">Playa del Carmen / Centro Norte</div>
-              <h3 class="property-title">Penthouse Sky</h3>
-            </div>
-            <p>Penthouse dúplex con terraza panorámica, alberca privada y excelente conectividad urbana.</p>
-            <div class="property-specs">
-              <div class="spec-box"><div class="spec-val">215 m²</div><div class="spec-label">Superficie</div></div>
-              <div class="spec-box"><div class="spec-val">3 Rec</div><div class="spec-label">3 Baños</div></div>
-              <div class="spec-box"><div class="spec-val">Inmediata</div><div class="spec-label">Entrega</div></div>
-            </div>
-            <div class="property-pricing">
-              <div class="price-label">Precio avalado</div>
-              <div class="price-value">$5,800,000 MXN</div>
-            </div>
-            <div class="property-actions">
-              <a href="landings/penthouse-sky.html" class="btn-card-primary">Ver Landing Dedicada</a>
-            </div>
-          </div>
+  <!-- ==========================================================================
+       CONEXIÓN DIRECTA CON PREVENTAS MAYAKOBA
+       ========================================================================== -->
+  <section class="py-16 bg-surface-container-high border-t border-outline-variant">
+    <div class="max-w-[1420px] mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="bg-carbon-aruz text-white rounded-2xl p-8 md:p-12 border border-dorado-aruz/30 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div class="max-w-2xl">
+          <span class="font-label-caps text-xs text-dorado-aruz uppercase tracking-widest mb-2 block font-bold">
+            Desarrollos Propios Insignia · Grupo Ruiz
+          </span>
+          <h3 class="font-serif text-2xl sm:text-3xl md:text-4xl text-white font-bold mb-4">
+            ¿Buscas Preventas de Autor en Ciudad Mayakoba?
+          </h3>
+          <p class="text-sm text-[#E8E4DF] leading-relaxed">
+            Conoce nuestra colección de 4 residencias concebidas y construidas directamente por ARUZ y CADE (Eternity Jol, Tu'ux, Sak Lu'um y K'áak Náajal) con bonos de muebles de hasta $450,000 MXN y 305 a 334 m² de construcción.
+          </p>
         </div>
-
+        <div class="flex flex-col sm:flex-row gap-4 w-full lg:w-auto flex-shrink-0">
+          <a href="index.html#preventas-mayakoba" class="bg-dorado-aruz hover:bg-white text-carbon-aruz font-bold py-3.5 px-6 rounded text-xs uppercase font-label-caps tracking-wider text-center transition-all shadow-md">
+            Explorar Colección Mayakoba
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20informaci%C3%B3n%20sobre%20las%20preventas%20en%20Mayakoba." target="_blank" rel="noopener" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 py-3.5 px-6 rounded text-xs uppercase font-label-caps tracking-wider text-center transition-all">
+            WhatsApp con Director
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html"><img src="assets/logo-white.svg" alt="ARUZ" style="height: 44px;"></a>
-          <p>ARUZ Inmobiliaria · Asesoría comercial y dictamen de certeza jurídica en la Riviera Maya.</p>
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="w-full bg-carbon-aruz text-white border-t border-white/10 py-16">
+    <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        
+        <div>
+          <div class="mb-5">
+            <img src="assets/logo-white.svg" alt="ARUZ" class="h-8 w-auto">
+          </div>
+          <p class="text-xs text-piedra-maya leading-relaxed mb-4">
+            Consortium GPRuiz S.A. de C.V. Asesoría comercial, comercialización de propiedades de terceros auditadas y estructuración patrimonial en la Riviera Maya.
+          </p>
+          <span class="text-[11px] text-dorado-aruz font-bold uppercase tracking-wider font-label-caps block">
+            "Construimos Confianza" · 2025-2026
+          </span>
         </div>
-        <div class="footer-col">
-          <h4>Propiedades</h4>
-          <div class="footer-links">
-            <a href="landings/casa-del-sol.html">Casa del Sol</a>
-            <a href="landings/condo-marina.html">Condo Marina</a>
-            <a href="landings/lote-inversion.html">Lote Inversión</a>
-            <a href="landings/penthouse-sky.html">Penthouse Sky</a>
+
+        <div>
+          <h4 class="font-label-caps text-xs text-dorado-aruz uppercase tracking-widest mb-4 font-bold">Divisiones ARUZ</h4>
+          <ul class="space-y-2 text-xs text-piedra-maya">
+            <li><a href="desarrolladora.html" class="hover:text-dorado-aruz transition-colors">ARUZ Desarrolladora</a></li>
+            <li><a href="inmobiliaria.html" class="text-white font-bold hover:text-dorado-aruz transition-colors">ARUZ Inmobiliaria</a></li>
+            <li><a href="landings/cade-constructora.html" class="hover:text-dorado-aruz transition-colors">CADE Construcción</a></li>
+            <li><a href="landings/aruz-maquinaria.html" class="hover:text-dorado-aruz transition-colors">ARUZ Maquinaria Pesada</a></li>
+            <li><a href="index.html#preventas-mayakoba" class="hover:text-dorado-aruz transition-colors">Colección Preventas Mayakoba</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-label-caps text-xs text-dorado-aruz uppercase tracking-widest mb-4 font-bold">Catálogo Seleccionado</h4>
+          <ul class="space-y-2 text-xs text-piedra-maya">
+            <li><a href="landings/casa-del-sol.html" class="hover:text-dorado-aruz transition-colors">Casa del Sol (Valle Aurora)</a></li>
+            <li><a href="landings/condo-marina.html" class="hover:text-dorado-aruz transition-colors">Condo Marina (Puerto Aventuras)</a></li>
+            <li><a href="landings/lote-inversion.html" class="hover:text-dorado-aruz transition-colors">Lote Inversión (600 m²)</a></li>
+            <li><a href="landings/penthouse-sky.html" class="hover:text-dorado-aruz transition-colors">Penthouse Sky (Centro Norte)</a></li>
+            <li><a href="landings/torre-lumina.html" class="hover:text-dorado-aruz transition-colors">Torre Lúmina</a></li>
+            <li><a href="landings/villa-anthia.html" class="hover:text-dorado-aruz transition-colors">Villa Anthia</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-label-caps text-xs text-dorado-aruz uppercase tracking-widest mb-4 font-bold">Contacto Corporativo</h4>
+          <div class="space-y-2 text-xs text-piedra-maya">
+            <p><strong class="text-white">Carlos Alfredo Ruiz Ramos</strong><br>Director de Operaciones</p>
+            <p>
+              <a href="mailto:c.ruiz@aruzinmobiliaria.com" class="hover:text-dorado-aruz transition-colors">c.ruiz@aruzinmobiliaria.com</a>
+            </p>
+            <p>
+              <a href="tel:+526674069523" class="text-dorado-aruz font-bold hover:underline">+52 (667) 406 9523</a>
+            </p>
+            <p class="text-[11px] text-piedra-maya/80 pt-2">
+              Plaza Palmeras Local 212, Carr. Federal Chetumal - Puerto Juárez Km 230, Playa del Carmen, Q. Roo.
+            </p>
           </div>
         </div>
-        <div class="footer-col">
-          <h4>Otras Divisiones</h4>
-          <div class="footer-links">
-            <a href="desarrolladora.html">ARUZ Desarrolladora</a>
-            <a href="landings/cade-constructora.html">CADE Constructora</a>
-            <a href="landings/aruz-maquinaria.html">ARUZ Maquinaria</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Contacto Asesor</h4>
-          <div class="footer-links">
-            <a href="tel:+526674069523">Carlos Alfredo Ruiz (667 406 9523)</a>
-            <a href="mailto:c.ruiz@aruzinmobiliaria.com">c.ruiz@aruzinmobiliaria.com</a>
-            <a href="index.html#contacto">Oficinas Playa del Carmen</a>
-          </div>
-        </div>
+
       </div>
-      <div class="footer-bottom">
-        <div class="legal-text">&copy; 2026 Consortium GPRuiz S.A. de C.V. Todos los derechos reservados.</div>
+
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-piedra-maya/70">
+        <p>© 2026 ARUZ Inmobiliaria · Consortium GPRuiz S.A. de C.V. Todos los derechos reservados.</p>
+        <p>Garantía Técnica CADE · Certidumbre Jurídica Notarial</p>
       </div>
+
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
-  <!-- Floating Mobile WhatsApp Quick Contact Button -->
-  <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20personalizada%20con%20el%20Director%20de%20ARUZ." target="_blank" rel="noopener" class="floating-whatsapp-btn lg:hidden flex items-center justify-center" aria-label="Contactar por WhatsApp">
+  <!-- Floating Mobile / Desktop WhatsApp Quick Contact Button (Bottom-Right) -->
+  <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20personalizada%20con%20el%20Director%20de%20ARUZ." target="_blank" rel="noopener" class="floating-whatsapp-btn" aria-label="Contactar a Carlos Ruiz por WhatsApp">
     <svg class="w-7 h-7 fill-white" viewBox="0 0 24 24">
       <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
     </svg>
   </a>
+
+  <!-- Mobile Drawer Toggle Script -->
   <script>
     function toggleMobileDrawer() {
       const drawer = document.getElementById('mobile-drawer');
@@ -335,6 +576,7 @@
       }
     }
   </script>
+
   <!-- ARUZ AI Advisor (Gemini API Integration) -->
   <script src="js/aruz-ai-agent.js" defer></script>
 </body>
