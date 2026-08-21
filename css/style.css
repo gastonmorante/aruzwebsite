@@ -1946,3 +1946,54 @@ button, a, input, select, textarea, .gallery-item, .property-card, .hud-orbit-no
     padding-bottom: 3.5rem;
   }
 }
+
+/* ==========================================================================
+   DYNAMIC KPI COUNTER & INTERACTIVE TELEMETRY STYLES
+   ========================================================================== */
+
+.dynamic-kpi {
+  font-variant-numeric: tabular-nums;
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.3s ease, color 0.3s ease;
+  position: relative;
+  will-change: transform, opacity;
+}
+
+.dynamic-kpi.counting {
+  text-shadow: 0 0 16px rgba(238, 182, 35, 0.45);
+  transform: scale(1.02);
+}
+
+.dynamic-kpi.counted {
+  animation: kpiPulsePop 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dynamic-kpi:hover {
+  transform: scale(1.06);
+  cursor: pointer;
+  text-shadow: 0 0 20px rgba(238, 182, 35, 0.55);
+}
+
+@keyframes kpiPulsePop {
+  0% {
+    transform: scale(1.08);
+  }
+  50% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* KPI Card container hover glow */
+.kpi-card, .metric-box {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.kpi-card:hover, .metric-box:hover {
+  transform: translateY(-3px);
+  border-color: rgba(238, 182, 35, 0.5) !important;
+  box-shadow: 0 10px 25px -5px rgba(238, 182, 35, 0.15);
+}
+

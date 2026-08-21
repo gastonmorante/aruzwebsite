@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPropertyFilters();
   initAdvisorForm();
   initIntersectionAnimations();
+  initDynamicKPIs();
 });
 
 /* --------------------------------------------------------------------------
@@ -489,3 +490,138 @@ function handleLeadSubmit(event) {
 
 // Make handleLeadSubmit globally accessible
 window.handleLeadSubmit = handleLeadSubmit;
+
+/* --------------------------------------------------------------------------
+   HIGH-PRECISION DYNAMIC KPI COUNTER ENGINE & INTERACTIVE TELEMETRY
+   -------------------------------------------------------------------------- */
+function initDynamicKPIs() {
+  const kpiElements = document.querySelectorAll('.dynamic-kpi, [data-counter], [data-target]');
+  
+  if (!kpiElements.length) return;
+
+  function parseKPIValue(text, el) {
+    const rawTarget = (el.getAttribute('data-target') || el.getAttribute('data-counter') || text).trim();
+    
+    // Prefix extraction (+, $, >, ~, etc.)
+    let prefix = el.getAttribute('data-prefix');
+    if (prefix === null) {
+      const matchPrefix = rawTarget.match(/^[+$><~]/);
+      prefix = matchPrefix ? matchPrefix[0] : '';
+    }
+
+    // Suffix extraction (%, /7, m², MXN, Años, k, K, +, etc.)
+    let suffix = el.getAttribute('data-suffix');
+    if (suffix === null) {
+      const matchSuffix = rawTarget.match(/(%|\/7|m²|MXN|Años|k|K|\+|Cuadrillas|Desarrollos|Unidades)$/i);
+      suffix = matchSuffix ? matchSuffix[0] : '';
+    }
+
+    // Clean numeric extraction
+    let clean = rawTarget;
+    if (prefix && clean.startsWith(prefix)) {
+      clean = clean.substring(prefix.length).trim();
+    }
+    if (suffix && clean.endsWith(suffix)) {
+      clean = clean.substring(0, clean.length - suffix.length).trim();
+    }
+    clean = clean.replace(/,/g, '').trim();
+
+    const targetNum = parseFloat(clean);
+    
+    // Decimal precision
+    let decimals = 0;
+    if (el.getAttribute('data-decimals')) {
+      decimals = parseInt(el.getAttribute('data-decimals'), 10);
+    } else if (clean.includes('.')) {
+      decimals = clean.split('.')[1].length;
+    }
+
+    const useCommas = rawTarget.includes(',') || targetNum >= 1000;
+
+    return {
+      raw: rawTarget,
+      target: isNaN(targetNum) ? 0 : targetNum,
+      prefix: prefix || '',
+      suffix: suffix || '',
+      decimals: decimals,
+      useCommas: useCommas
+    };
+  }
+
+  function formatValue(current, config) {
+    let numStr = config.decimals > 0 
+      ? current.toFixed(config.decimals) 
+      : Math.round(current).toString();
+
+    if (config.useCommas) {
+      const parts = numStr.split('.');
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      numStr = parts.join('.');
+    }
+
+    const s = config.suffix;
+    const space = (s && !s.startsWith('%') && !s.startsWith('/7') && !s.startsWith('m²')) ? ' ' : '';
+    return `${config.prefix}${numStr}${s ? space + s : ''}`;
+  }
+
+  function animateKPI(el) {
+    if (el.dataset.animating === 'true') return;
+    el.dataset.animating = 'true';
+
+    const text = el.textContent.trim();
+    const config = parseKPIValue(text, el);
+    const duration = parseInt(el.getAttribute('data-duration'), 10) || 1900;
+    const startTime = performance.now();
+
+    el.classList.add('counting');
+    el.classList.remove('counted');
+
+    function update(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // High-luxury easeOutExpo
+      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      const currentVal = config.target * ease;
+
+      el.textContent = formatValue(currentVal, config);
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = formatValue(config.target, config);
+        el.classList.remove('counting');
+        el.classList.add('counted');
+        el.dataset.animating = 'false';
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  // Use IntersectionObserver with threshold
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateKPI(entry.target);
+          // Interactive hover to re-trigger
+          entry.target.addEventListener('mouseenter', () => {
+            if (entry.target.dataset.animating !== 'true') {
+              animateKPI(entry.target);
+            }
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    kpiElements.forEach(el => observer.observe(el));
+  } else {
+    kpiElements.forEach(el => animateKPI(el));
+  }
+}
+
+// Make initDynamicKPIs globally accessible
+window.initDynamicKPIs = initDynamicKPIs;
+

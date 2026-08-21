@@ -183,17 +183,27 @@
         </div>
       </div>
 
-      <!-- Quick Metrics Bar -->
-      <div class="w-full md:w-auto flex flex-row sm:flex-row gap-8 border-l-2 border-dorado-aruz pl-6">
-        <div>
-          <p class="font-serif text-4xl sm:text-5xl font-bold text-white">100%</p>
+      <!-- Quick Metrics Bar (4 Dynamic KPIs) -->
+      <div class="w-full md:w-auto grid grid-cols-2 sm:grid-cols-4 gap-6 border-l-2 border-dorado-aruz pl-6">
+        <div class="kpi-card">
+          <p class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white dynamic-kpi" data-target="100" data-suffix="%">100%</p>
           <p class="font-label-caps text-xs text-dorado-aruz uppercase font-bold tracking-wider mt-1">Flota Propia</p>
           <span class="text-[10px] text-piedra-maya">Cero Dependencia</span>
         </div>
-        <div>
-          <p class="font-serif text-4xl sm:text-5xl font-bold text-white">24/7</p>
+        <div class="kpi-card">
+          <p class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white dynamic-kpi" data-target="24" data-suffix="/7">24/7</p>
           <p class="font-label-caps text-xs text-dorado-aruz uppercase font-bold tracking-wider mt-1">Operación</p>
           <span class="text-[10px] text-piedra-maya">Disponibilidad en Obra</span>
+        </div>
+        <div class="kpi-card">
+          <p class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-dorado-aruz dynamic-kpi" data-prefix="+" data-target="15" data-suffix="Equipos">+15 Equipos</p>
+          <p class="font-label-caps text-xs text-dorado-aruz uppercase font-bold tracking-wider mt-1">Unidades Pesadas</p>
+          <span class="text-[10px] text-piedra-maya">Excavadoras & Camiones</span>
+        </div>
+        <div class="kpi-card">
+          <p class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white dynamic-kpi" data-target="100" data-suffix="%">100%</p>
+          <p class="font-label-caps text-xs text-dorado-aruz uppercase font-bold tracking-wider mt-1">Operadores DC-3</p>
+          <span class="text-[10px] text-piedra-maya">Seguridad Certificada</span>
         </div>
       </div>
     </div>
@@ -307,7 +317,7 @@
         <div class="pt-4 md:pt-0 md:px-6 text-center">
           <span class="material-symbols-outlined text-4xl text-dorado-profundo mb-3">verified</span>
           <h4 class="font-label-caps text-xs text-gris-grafito mb-1 uppercase font-bold tracking-wider">Disponibilidad</h4>
-          <p class="font-serif text-xl sm:text-2xl font-bold text-carbon-aruz">Flota Activa 100%</p>
+          <p class="font-serif text-xl sm:text-2xl font-bold text-carbon-aruz dynamic-kpi" data-target="100" data-suffix="%">Flota Activa 100%</p>
         </div>
 
         <div class="pt-4 md:pt-0 md:px-6 text-center">
@@ -460,6 +470,7 @@
   </script>
 
   <!-- ARUZ AI Advisor (Gemini API Integration) -->
+  <script src="../js/main.js"></script>
   <script src="../js/aruz-ai-agent.js" defer></script>
 </body>
 </html>
