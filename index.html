@@ -2,7 +2,7 @@
 <html class="light" lang="es">
 <head>
   <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>ARUZ Ecosystem Hub | Control Total en Real Estate & Construcción · Riviera Maya</title>
   <meta name="description" content="ARUZ Core Holding: 4 divisiones integradas (Desarrolladora, Inmobiliaria, CADE Construcción y Maquinaria Pesada) bajo el respaldo familiar de Grupo Ruiz México en Ciudad Mayakoba.">
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
@@ -163,185 +163,57 @@
     </button>
   </nav>
 
-  <!-- Mobile Drawer -->
-  <div id="mobile-drawer" class="hidden fixed inset-0 z-40 bg-carbon-aruz/95 backdrop-blur-2xl pt-24 px-8 text-white flex flex-col gap-6">
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="desarrolladora.html">ARUZ Desarrolladora</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="inmobiliaria.html">ARUZ Inmobiliaria</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="landings/cade-constructora.html">CADE Construcción</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="landings/aruz-maquinaria.html">ARUZ Maquinaria Pesada</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="#preventas-mayakoba">Colección Mayakoba</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="#contacto-hub">Contacto</a>
-    <a href="https://api.whatsapp.com/send?phone=5216674069523" target="_blank" class="bg-dorado-aruz text-carbon-aruz font-button py-3 rounded text-center uppercase font-bold mt-4">WhatsApp Directo</a>
-  </div>
-
-
-  <section class="relative w-full min-h-screen flex flex-col items-center justify-start pt-24 pb-12 px-margin-mobile md:px-margin-desktop overflow-hidden">
-    
-    <!-- STITCH_SHADER_START:ANIMATION_5 -->
-    <div class="absolute inset-0 w-full h-full object-cover -z-10 opacity-60" style="display:block;">
-      <canvas id="shader-canvas-ANIMATION_5" style="display:block;width:100%;height:100%"></canvas>
-      <script>
-      (function() {
-        const canvas = document.getElementById('shader-canvas-ANIMATION_5');
-
-        function syncSize() {
-          const w = canvas.clientWidth  || 1280;
-          const h = canvas.clientHeight || 720;
-          if (canvas.width !== w || canvas.height !== h) {
-            canvas.width  = w;
-            canvas.height = h;
-          }
-        }
-        if (typeof ResizeObserver !== 'undefined') {
-          new ResizeObserver(syncSize).observe(canvas);
-        }
-        syncSize();
-
-        const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-        if (!gl) return;
-        const vs = `attribute vec2 a_position;
-      varying vec2 v_texCoord;
-      void main() {
-        v_texCoord = a_position * 0.5 + 0.5;
-        gl_Position = vec4(a_position, 0.0, 1.0);
-      }`;
-        const fs = `precision highp float;
-      varying vec2 v_texCoord;
-      uniform float u_time;
-      uniform vec2 u_resolution;
-      uniform vec2 u_mouse;
-
-      // Simplex 2D noise
-      vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
-      float snoise(vec2 v){
-        const vec4 C = vec4(0.211324865405187, 0.366025403784439,
-                 -0.577350269189626, 0.024390243902439);
-        vec2 i  = floor(v + dot(v, C.yy) );
-        vec2 x0 = v -   i + dot(i, C.xx);
-        vec2 i1;
-        i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
-        vec4 x12 = x0.xyxy + C.xxzz;
-        x12.xy -= i1;
-        i = mod(i, 289.0);
-        vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
-        + i.x + vec3(0.0, i1.x, 1.0 ));
-        vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy),
-          dot(x12.zw,x12.zw)), 0.0);
-        m = m*m ;
-        m = m*m ;
-        vec3 x = 2.0 * fract(p * C.www) - 1.0;
-        vec3 h = abs(x) - 0.5;
-        vec3 ox = floor(x + 0.5);
-        vec3 a0 = x - ox;
-        m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
-        vec3 g;
-        g.x  = a0.x  * x0.x  + h.x  * x0.y;
-        g.yz = a0.yz * x12.xz + h.yz * x12.yw;
-        return 130.0 * dot(m, g);
-      }
-
-      void main() {
-          vec2 uv = v_texCoord;
-          vec2 mouse = u_mouse / u_resolution;
-          
-          vec3 color_sand = vec3(0.847, 0.788, 0.682); // Piedra Maya #D8C9AE
-          vec3 color_gold = vec3(0.933, 0.714, 0.137); // Dorado ARUZ #EEB623
-          vec3 color_dark = vec3(0.137, 0.122, 0.125); // Carbón ARUZ #231F20
-          
-          float n = snoise(uv * 3.0 + u_time * 0.1);
-          n += 0.5 * snoise(uv * 6.0 - u_time * 0.2);
-          
-          float dist = distance(uv, mouse);
-          float glow = smoothstep(0.5, 0.0, dist) * 0.2;
-          
-          vec3 final_color = mix(color_sand, color_gold, n * 0.5 + 0.5);
-          final_color = mix(final_color, color_dark, smoothstep(0.4, 0.6, uv.y) * 0.1);
-          final_color += glow * color_gold;
-          
-          gl_FragColor = vec4(final_color, 1.0);
-      }`;
-        function cs(type, src) {
-          const s = gl.createShader(type);
-          gl.shaderSource(s, src);
-          gl.compileShader(s);
-          return s;
-        }
-        const prog = gl.createProgram();
-        gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
-        gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
-        gl.linkProgram(prog);
-        gl.useProgram(prog);
-        const buf = gl.createBuffer();
-        gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
-        const pos = gl.getAttribLocation(prog, 'a_position');
-        gl.enableVertexAttribArray(pos);
-        gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
-        const uTime = gl.getUniformLocation(prog, 'u_time');
-        const uRes = gl.getUniformLocation(prog, 'u_resolution');
-        const uMouse = gl.getUniformLocation(prog, 'u_mouse');
-
-        let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
-        window.addEventListener('mousemove', (event) => {
-          const rect = canvas.getBoundingClientRect();
-          if (rect.width && rect.height) {
-            const nx = (event.clientX - rect.left) / rect.width;
-            const ny = 1.0 - (event.clientY - rect.top) / rect.height;
-            mouse.x = nx * canvas.width;
-            mouse.y = ny * canvas.height;
-          }
-        });
-
-        function render(t) {
-          if (typeof ResizeObserver === 'undefined') syncSize();
-          gl.viewport(0, 0, canvas.width, canvas.height);
-          if (uTime) gl.uniform1f(uTime, t * 0.001);
-          if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
-          if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
-          gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-          requestAnimationFrame(render);
-        }
-        render(0);
-      })();
-      </script>
-    </div>
-    <!-- STITCH_SHADER_END:ANIMATION_5 -->
-
-    <!-- Top Headline Content -->
-    <div class="relative z-10 max-w-4xl mx-auto text-center animate-fade-up pt-2 pb-4">
-      <div class="mb-4 flex justify-center">
-        <span class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-md px-5 py-2 rounded-full border border-outline-variant/40 font-label-caps text-xs text-verde-manglar font-bold shadow-sm">
-          <span class="material-symbols-outlined text-base">verified</span>
-          +12 años trabajando con los expertos de Ciudad Mayakoba.
-        </span>
+    <!-- Mobile Drawer with Safe Area & Native Touch UX -->
+  <div id="mobile-drawer" class="hidden fixed inset-0 z-50 bg-carbon-aruz/95 backdrop-blur-2xl text-white flex flex-col justify-between p-6 sm:p-8 transition-all duration-300">
+    <div>
+      <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+        <a href="index.html" onclick="closeMobileDrawer()" class="flex items-center gap-3">
+          <img src="assets/logo-white.svg" alt="ARUZ" class="h-8 w-auto">
+        </a>
+        <button onclick="closeMobileDrawer()" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:text-dorado-aruz active:scale-90 transition-all text-xl" aria-label="Cerrar Menú">
+          ✕
+        </button>
       </div>
-      <h1 class="font-display-lg text-4xl sm:text-5xl md:text-6xl text-carbon-aruz mb-4 leading-tight font-serif">
-        Control total, desde el diseño hasta la entrega.
-      </h1>
-      <p class="font-body-lg text-base md:text-lg text-gris-grafito mb-6 max-w-2xl mx-auto leading-relaxed">
-        ARUZ es la única firma en la Riviera Maya que asesora, construye y da seguimiento a tu propiedad bajo una misma estructura familiar. No dependes de varios proveedores: dependes de un solo equipo que responde por todo el proceso.
-      </p>
+
+      <nav class="flex flex-col gap-4 text-base font-label-caps uppercase tracking-wider">
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="desarrolladora.html" onclick="closeMobileDrawer()">
+          <span>ARUZ Desarrolladora</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="inmobiliaria.html" onclick="closeMobileDrawer()">
+          <span>ARUZ Inmobiliaria</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="landings/cade-constructora.html" onclick="closeMobileDrawer()">
+          <span>CADE Construcción</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="landings/aruz-maquinaria.html" onclick="closeMobileDrawer()">
+          <span>ARUZ Maquinaria Pesada</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="index.html#preventas-mayakoba" onclick="closeMobileDrawer()">
+          <span class="text-dorado-aruz font-bold">Colección Mayakoba (4 Preventas)</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors pb-3 flex justify-between items-center" href="index.html#contacto-hub" onclick="closeMobileDrawer()">
+          <span>Contacto & Asesoría</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+      </nav>
     </div>
 
-    <!-- Integrated 3D Interactive Orbit Hub (Centerpiece of the Hero) -->
-    <div class="relative z-10 w-full max-w-[1280px] mx-auto mt-2">
-      <div class="hud-orbit-stage" id="hudStage" style="height: 480px; max-width: 1100px; margin: 0 auto; position: relative;">
-        
-        <!-- SVG Dynamic Leader Lines -->
-        <svg class="hud-callout-svg" id="hudCalloutSvg" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10;"></svg>
-
-        <!-- Orbit Elliptical Rings -->
-        <div class="hud-orbit-track"></div>
-        <div class="hud-orbit-track inner"></div>
-
-        <!-- Central Core: Compact Master ARUZ Gold Medallion -->
-        <div class="hud-central-core">
-          <div class="core-hologram-disk"></div>
-          <div class="core-hologram-ticks"></div>
-          <div class="core-logo-wrap" style="padding: 10px; display: flex; align-items: center; justify-content: center;">
-            <img src="assets/logo-white.svg" alt="ARUZ Core" style="width: 82px; height: auto; object-fit: contain;">
-          </div>
-        </div>
+    <div class="space-y-3 pt-6 border-t border-white/10">
+      <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20personalizada%20con%20el%20Director%20de%20ARUZ." target="_blank" rel="noopener" class="w-full bg-gradient-to-r from-dorado-aruz to-dorado-profundo text-carbon-aruz font-bold py-3.5 px-4 rounded-xl text-center text-xs uppercase font-label-caps tracking-wider flex items-center justify-center gap-2 active:scale-95 transition-all shadow-lg">
+        <span class="material-symbols-outlined text-lg">chat</span>
+        <span>WhatsApp Director: 667 406 9523</span>
+      </a>
+      <a href="tel:+526674069523" class="w-full bg-white/10 text-white font-semibold py-3 px-4 rounded-xl text-center text-xs uppercase font-label-caps tracking-wider flex items-center justify-center gap-2 active:scale-95 transition-all">
+        <span class="material-symbols-outlined text-lg">call</span>
+        <span>Llamada Telefónica Directa</span>
+      </a>
+    </div>
+  </div>
 
         <!-- Orbiting Nodes (4 Integrated Sub-brands with Official SVGs) -->
         <div class="hud-orbit-plane">
@@ -849,5 +721,29 @@
 
   <!-- Main JavaScript Engine for 3D Orbit Hub, Particle Field & Callout Lines -->
   <script src="js/main.js"></script>
+  <!-- Floating Mobile WhatsApp Quick Contact Button -->
+  <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20personalizada%20con%20el%20Director%20de%20ARUZ." target="_blank" rel="noopener" class="floating-whatsapp-btn lg:hidden flex items-center justify-center" aria-label="Contactar por WhatsApp">
+    <svg class="w-7 h-7 fill-white" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
+
+  <script>
+    function toggleMobileDrawer() {
+      const drawer = document.getElementById('mobile-drawer');
+      if (drawer) {
+        drawer.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden');
+      }
+    }
+    function closeMobileDrawer() {
+      const drawer = document.getElementById('mobile-drawer');
+      if (drawer) {
+        drawer.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    }
+  </script>
+
 </body>
 </html>

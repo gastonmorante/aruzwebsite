@@ -1769,15 +1769,6 @@ p {
     box-shadow: none;
   }
 
-  .hud-interactive-stage {
-    height: 640px;
-  }
-
-  .hud-callout-card {
-    width: 200px;
-    padding: 0.6rem 0.75rem;
-  }
-
   .timeline-circulo {
     flex-direction: column;
     gap: 1.6rem;
@@ -1803,3 +1794,107 @@ p {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   MOBILE NATIVE LUXURY UX & TOUCH SYSTEM
+   ========================================================================== */
+
+/* Fast Tap & Hardware Acceleration */
+button, a, input, select, textarea, .gallery-item, .property-card, .hud-orbit-node {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Safe Area Insets Support */
+:root {
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+}
+
+/* Floating Mobile WhatsApp Quick Button */
+.floating-whatsapp-btn {
+  position: fixed;
+  bottom: max(1.25rem, calc(env(safe-area-inset-bottom) + 0.75rem));
+  right: 1.25rem;
+  z-index: 45;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #FFFFFF;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5), 0 4px 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
+  text-decoration: none;
+}
+
+.floating-whatsapp-btn:active {
+  transform: scale(0.92);
+}
+
+@media (min-width: 1024px) {
+  .floating-whatsapp-btn {
+    display: none !important;
+  }
+}
+
+/* Mobile 3D Orbit Hub Enhancements */
+@media (max-width: 768px) {
+  #hudStage {
+    height: 420px !important;
+    min-height: 420px !important;
+  }
+
+  .node-emblem {
+    width: 60px !important;
+    height: 60px !important;
+    padding: 5px !important;
+  }
+
+  /* Docked HUD Callout Card on Mobile */
+  .hud-callout-card {
+    width: 92% !important;
+    max-width: 340px !important;
+    left: 50% !important;
+    top: auto !important;
+    bottom: 8px !important;
+    transform: translate(-50%, 15px) scale(0.95) !important;
+    padding: 1rem 1.2rem !important;
+    z-index: 40 !important;
+    background: rgba(22, 17, 18, 0.98) !important;
+    border: 1px solid #EEB623 !important;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.95), 0 0 25px rgba(238, 182, 35, 0.25) !important;
+  }
+
+  .hud-callout-card.visible {
+    transform: translate(-50%, 0) scale(1) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .hud-leader-line, .hud-leader-dot {
+    display: none !important;
+  }
+
+  /* Lightbox Modal on Mobile */
+  #lightbox-modal {
+    padding: 0.75rem !important;
+  }
+
+  #lightbox-modal button {
+    top: 1rem !important;
+    right: 1rem !important;
+    width: 44px !important;
+    height: 44px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(35, 31, 32, 0.85) !important;
+    border-radius: 50% !important;
+    border: 1px solid rgba(238, 182, 35, 0.4) !important;
+  }
+}
+
