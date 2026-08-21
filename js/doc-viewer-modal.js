@@ -591,6 +591,15 @@
           </div>
         `;
       }
+
+      // Re-apply active translation if modal content is updated
+      if (window.AruzI18nInstance && window.AruzI18nInstance.currentLang && window.AruzI18nInstance.currentLang !== 'es') {
+        setTimeout(() => {
+          if (window.AruzI18nInstance && !window.AruzI18nInstance.isTranslating) {
+            window.AruzI18nInstance.applyLanguage(window.AruzI18nInstance.currentLang);
+          }
+        }, 10);
+      }
     }
   }
 
