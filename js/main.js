@@ -502,6 +502,13 @@ function initDynamicKPIs() {
   function parseKPIValue(text, el) {
     const rawTarget = (el.getAttribute('data-target') || el.getAttribute('data-counter') || text).trim();
     
+    // Start value extraction for countdown animations (e.g. starting at 10,000,000)
+    let startVal = null;
+    if (el.getAttribute('data-start') !== null) {
+      const cleanStart = el.getAttribute('data-start').replace(/[$,\sMXN]/gi, '').trim();
+      startVal = parseFloat(cleanStart);
+    }
+
     // Prefix extraction (+, $, >, ~, etc.)
     let prefix = el.getAttribute('data-prefix');
     if (prefix === null) {
@@ -536,10 +543,11 @@ function initDynamicKPIs() {
       decimals = clean.split('.')[1].length;
     }
 
-    const useCommas = rawTarget.includes(',') || targetNum >= 1000;
+    const useCommas = rawTarget.includes(',') || targetNum >= 1000 || (startVal !== null && startVal >= 1000);
 
     return {
       raw: rawTarget,
+      start: startVal !== null && !isNaN(startVal) ? startVal : 0,
       target: isNaN(targetNum) ? 0 : targetNum,
       prefix: prefix || '',
       suffix: suffix || '',
@@ -570,7 +578,7 @@ function initDynamicKPIs() {
 
     const text = el.textContent.trim();
     const config = parseKPIValue(text, el);
-    const duration = parseInt(el.getAttribute('data-duration'), 10) || 1900;
+    const duration = parseInt(el.getAttribute('data-duration'), 10) || 2200;
     const startTime = performance.now();
 
     el.classList.add('counting');
@@ -580,9 +588,9 @@ function initDynamicKPIs() {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
       
-      // High-luxury easeOutExpo
-      const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-      const currentVal = config.target * ease;
+      // High-luxury smooth cubic-out easing
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const currentVal = config.start + (config.target - config.start) * ease;
 
       el.textContent = formatValue(currentVal, config);
 
