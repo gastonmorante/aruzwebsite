@@ -1,47 +1,75 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="light" lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>ARUZ Desarrolladora | Colección de Proyectos Propios en Preventa</title>
-  <meta name="description" content="División de desarrollo inmobiliario de ARUZ & Grupo Ruiz México. Proyectos residenciales de autor con ejecución técnica directa de CADE en la Riviera Maya.">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>ARUZ Desarrolladora | Arquitectura de Autor & Preventas en Mayakoba · Riviera Maya</title>
+  <meta name="description" content="ARUZ Desarrolladora. Proyectos residenciales de autor con diseño bioclimático, respaldo estructural de CADE y garantía notarial de Grupo Ruiz México en Ciudad Mayakoba.">
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
-    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  
+  <!-- Tailwind CSS with Stitch Theme Tokens -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
   <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "surface": "#fff8f2",
-                        "surface-bright": "#fff8f2",
-                        "carbon-aruz": "#231F20",
-                        "dorado-aruz": "#EEB623",
-                        "dorado-profundo": "#C79215",
-                        "piedra-maya": "#D8C9AE",
-                        "verde-manglar": "#3F5D48",
-                        "gris-grafito": "#59555A",
-                        "outline-variant": "rgba(216, 201, 174, 0.4)"
-                    },
-                    "fontFamily": {
-                        "serif": ["Libre Caslon Text", "serif"],
-                        "sans": ["Plus Jakarta Sans", "sans-serif"]
-                    }
-                }
-            }
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#FFF8F2",
+            "surface-bright": "#FFF8F2",
+            "surface-container-lowest": "#FFFFFF",
+            "surface-container-low": "#FFF2DD",
+            "surface-container": "#FCECD0",
+            "surface-container-high": "#F6E6CA",
+            "surface-container-highest": "#F0E1C5",
+            "carbon-aruz": "#231F20",
+            "on-background": "#231F20",
+            "dorado-aruz": "#EEB623",
+            "dorado-profundo": "#C79215",
+            "primary-container": "#EEB623",
+            "on-primary-container": "#634900",
+            "piedra-maya": "#D8C9AE",
+            "verde-manglar": "#3F5D48",
+            "tertiary": "#476550",
+            "gris-grafito": "#59555A",
+            "on-surface-variant": "#4F4633",
+            "outline-variant": "rgba(216, 201, 174, 0.45)"
+          },
+          spacing: {
+            "margin-mobile": "20px",
+            "margin-desktop": "64px",
+            "section-gap": "96px",
+            "gutter": "24px"
+          },
+          fontFamily: {
+            "serif": ["Libre Caslon Text", "serif"],
+            "sans": ["Plus Jakarta Sans", "sans-serif"],
+            "title": ["Montserrat", "sans-serif"],
+            "label-caps": ["Plus Jakarta Sans", "sans-serif"]
+          }
         }
+      }
+    }
   </script>
+  
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/aruz-ai.css">
+  
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-surface text-carbon-aruz font-sans antialiased overflow-x-hidden">
 
-  <!-- Site Header -->
-    <!-- Site Header (Identical Standard Header) -->
-  <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-20 max-w-[1440px] left-1/2 -translate-x-1/2 bg-surface/85 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm shadow-carbon-aruz/5 transition-all duration-300">
+  <!-- ==========================================================================
+       TOP NAVIGATION (Standardized Universal Header)
+       ========================================================================== -->
+  <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-20 max-w-[1440px] left-1/2 -translate-x-1/2 bg-surface/90 backdrop-blur-xl border-b border-outline-variant shadow-sm shadow-carbon-aruz/5 transition-all duration-300">
     <a href="index.html" class="flex items-center gap-3">
       <img src="assets/logo.svg" alt="ARUZ" class="h-10 w-auto object-contain">
     </a>
@@ -51,204 +79,159 @@
       <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="inmobiliaria.html">Inmobiliaria</a>
       <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="landings/cade-constructora.html">CADE Construcción</a>
       <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="landings/aruz-maquinaria.html">Maquinaria</a>
-      <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="#preventas-mayakoba">Colección Mayakoba</a>
-      <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="#contacto-hub">Contacto</a>
-      <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20sobre%20las%20preventas%20de%20ARUZ." target="_blank" class="bg-dorado-profundo text-white font-button px-5 py-2.5 rounded font-label-caps uppercase hover:bg-dorado-aruz transition-all duration-300 ml-2 shadow-md hover:shadow-lg flex items-center gap-1.5 text-xs">
+      <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="index.html#preventas-mayakoba">Colección Mayakoba</a>
+      <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="index.html#contacto-hub">Contacto</a>
+      <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20sobre%20las%20preventas%20de%20ARUZ%20Desarrolladora." target="_blank" class="bg-dorado-profundo text-white font-button px-5 py-2.5 rounded font-label-caps uppercase hover:bg-dorado-aruz hover:text-carbon-aruz transition-all duration-300 ml-2 shadow-md hover:shadow-lg flex items-center gap-1.5 text-xs font-bold">
         <span>Invertir Ahora</span>
         <span class="material-symbols-outlined text-sm">arrow_forward</span>
       </a>
     </div>
 
-    <button class="lg:hidden flex items-center text-carbon-aruz p-2" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')">
+    <button class="lg:hidden flex items-center justify-center w-11 h-11 rounded-lg text-carbon-aruz hover:text-dorado-profundo hover:bg-black/5 active:scale-95 transition-all p-2" onclick="toggleMobileDrawer()" aria-label="Abrir Menú Móvil">
       <span class="material-symbols-outlined text-2xl">menu</span>
     </button>
   </nav>
 
-  <!-- Mobile Drawer -->
-  <div id="mobile-drawer" class="hidden fixed inset-0 z-40 bg-carbon-aruz/95 backdrop-blur-2xl pt-24 px-8 text-white flex flex-col gap-6">
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="desarrolladora.html">ARUZ Desarrolladora</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="inmobiliaria.html">ARUZ Inmobiliaria</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="landings/cade-constructora.html">CADE Construcción</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="landings/aruz-maquinaria.html">ARUZ Maquinaria Pesada</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="#preventas-mayakoba">Colección Mayakoba</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="#contacto-hub">Contacto</a>
-    <a href="https://api.whatsapp.com/send?phone=5216674069523" target="_blank" class="bg-dorado-aruz text-carbon-aruz font-button py-3 rounded text-center uppercase font-bold mt-4">WhatsApp Directo</a>
+  <!-- Mobile Drawer with Safe Area & Native Touch UX -->
+  <div id="mobile-drawer" class="hidden fixed inset-0 z-50 bg-carbon-aruz/95 backdrop-blur-2xl text-white flex flex-col justify-between p-6 sm:p-8 transition-all duration-300">
+    <div>
+      <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+        <a href="index.html" onclick="closeMobileDrawer()" class="flex items-center gap-3">
+          <img src="assets/logo-white.svg" alt="ARUZ" class="h-8 w-auto">
+        </a>
+        <button onclick="closeMobileDrawer()" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:text-dorado-aruz active:scale-90 transition-all text-xl" aria-label="Cerrar Menú">
+          ✕
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-4 text-base font-label-caps uppercase tracking-wider">
+        <a class="text-dorado-aruz font-bold hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="desarrolladora.html" onclick="closeMobileDrawer()">
+          <span>ARUZ Desarrolladora</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="inmobiliaria.html" onclick="closeMobileDrawer()">
+          <span>ARUZ Inmobiliaria</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="landings/cade-constructora.html" onclick="closeMobileDrawer()">
+          <span>CADE Construcción</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="landings/aruz-maquinaria.html" onclick="closeMobileDrawer()">
+          <span>ARUZ Maquinaria Pesada</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="index.html#preventas-mayakoba" onclick="closeMobileDrawer()">
+          <span class="text-dorado-aruz font-bold">Colección Mayakoba (4 Preventas)</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors pb-3 flex justify-between items-center" href="index.html#contacto-hub" onclick="closeMobileDrawer()">
+          <span>Contacto & Asesoría</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="space-y-3 pt-6 border-t border-white/10">
+      <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20personalizada%20con%20el%20Director%20de%20ARUZ." target="_blank" rel="noopener" class="w-full bg-gradient-to-r from-dorado-aruz to-dorado-profundo text-carbon-aruz font-bold py-3.5 px-4 rounded-xl text-center text-xs uppercase font-label-caps tracking-wider flex items-center justify-center gap-2 active:scale-95 transition-all shadow-lg">
+        <span class="material-symbols-outlined text-lg">chat</span>
+        <span>WhatsApp Director: 667 406 9523</span>
+      </a>
+      <a href="tel:+526674069523" class="w-full bg-white/10 text-white font-semibold py-3 px-4 rounded-xl text-center text-xs uppercase font-label-caps tracking-wider flex items-center justify-center gap-2 active:scale-95 transition-all">
+        <span class="material-symbols-outlined text-lg">call</span>
+        <span>Llamada Telefónica Directa</span>
+      </a>
+    </div>
   </div>
 
-  <!-- Hero Desarrolladora -->
-  <section class="hero-section" style="min-height: 65vh; padding-top: 140px; padding-bottom: 3rem;">
-    <div class="hero-backdrop"></div>
-    <div class="container">
-      <div class="hero-content">
-        <div style="margin-bottom: 1.2rem;">
-          <img src="assets/logo-aruz-desarrolladora-dark.svg" alt="ARUZ Desarrolladora" style="height: 50px; width: auto;">
-        </div>
-        <div class="hero-badge">
-          <span class="pulse-dot"></span>
-          <span>División 01 · ARUZ Desarrolladora</span>
-        </div>
-        <h1 class="hero-title">
-          <span>Arquitectura de Autor,</span>
-          <span class="gold-accent">Ejecución sin Intermediarios.</span>
-        </h1>
-        <p class="hero-evp">
-          En ARUZ Desarrolladora conceptualizamos y construimos proyectos residenciales que responden al entorno natural de la Riviera Maya. Cada desarrollo cuenta con el respaldo estructural de CADE y la garantía corporativa de Grupo Ruiz México.
-        </p>
+  <!-- ==========================================================================
+       HERO SECTION - ARUZ DESARROLLADORA
+       ========================================================================== -->
+  <section class="relative w-full min-h-[75vh] flex items-center justify-center pt-28 pb-16 px-margin-mobile md:px-margin-desktop overflow-hidden bg-carbon-aruz text-white">
+    <div class="absolute inset-0 z-0">
+      <img alt="Arquitectura residencial de autor en Ciudad Mayakoba" class="w-full h-full object-cover opacity-35 filter brightness-90" src="assets/properties/eternity-jol/exteriores/fachada_principal.webp" fetchpriority="high">
+      <div class="absolute inset-0 bg-gradient-to-t from-carbon-aruz via-carbon-aruz/60 to-carbon-aruz/40"></div>
+    </div>
+    
+    <div class="relative z-10 text-center max-w-[1280px] mx-auto w-full flex flex-col items-center animate-fade-up">
+      <div class="mb-4">
+        <span class="inline-flex items-center gap-2 bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full border border-dorado-aruz/40 font-label-caps text-xs text-dorado-aruz font-bold uppercase tracking-widest">
+          <span class="material-symbols-outlined text-sm">architecture</span>
+          División 01 · ARUZ Desarrolladora
+        </span>
+      </div>
+      
+      <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-6 max-w-4xl leading-tight">
+        Arquitectura de Autor,<br/>
+        <span class="text-dorado-aruz">Ejecución sin Intermediarios.</span>
+      </h1>
+      
+      <p class="font-body-md text-base sm:text-lg text-[#E8E4DF] max-w-2xl mx-auto mb-8 leading-relaxed font-light">
+        En ARUZ Desarrolladora conceptualizamos y construimos proyectos residenciales que responden al entorno natural de la Riviera Maya. Cada desarrollo cuenta con el respaldo estructural de <strong>CADE</strong> y la garantía corporativa de <strong>Grupo Ruiz México</strong>.
+      </p>
+      
+      <div class="flex flex-wrap gap-4 justify-center items-center">
+        <a class="inline-flex items-center justify-center px-8 py-3.5 bg-dorado-profundo text-white font-label-caps uppercase text-xs font-bold rounded hover:bg-dorado-aruz hover:text-carbon-aruz transition-all duration-300 shadow-lg" href="#preventas">
+          <span>Explorar 4 Desarrollos Insignia</span>
+          <span class="material-symbols-outlined ml-2 text-sm">arrow_downward</span>
+        </a>
+        <a class="inline-flex items-center justify-center px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 font-label-caps uppercase text-xs font-bold rounded transition-all duration-300" href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20informaci%C3%B3n%20sobre%20las%20preventas%20de%20ARUZ." target="_blank" rel="noopener">
+          <span>Hablar con el Director</span>
+          <span class="material-symbols-outlined ml-2 text-sm">chat</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Criterio de Desarrollo -->
-  <section class="section-spacing" style="padding-top: 2rem;">
-    <div class="container">
-      <div class="holding-grid" style="grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
-        <div class="pilar-card">
-          <div class="pilar-index">01</div>
-          <h4>Diseño Bioclimático</h4>
-          <p>Orientación solar inteligente, ventilación cruzada y aprovechamiento de materiales endémicos como la piedra maya y maderas tropicales certificadas.</p>
-        </div>
-        <div class="pilar-card">
-          <div class="pilar-index">02</div>
-          <h4>Cálculo Estructural CADE</h4>
-          <p>Cada losa y cimentación es ejecutada por nuestro propio brazo constructor, supervisada por Antonio Carreón García (+12 años de experiencia).</p>
-        </div>
-        <div class="pilar-card">
-          <div class="pilar-index">03</div>
-          <h4>Certeza de Entrega</h4>
-          <p>Cronogramas auditables con bitácora abierta y esquemas de pago estructurados que garantizan el flujo de obra hasta la entrega final.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portafolio de 4 Preventas -->
-  <section class="section-spacing" id="preventas">
-    <div class="container">
-      <div class="section-head-wrap">
-        <span class="section-tag">Colección en Preventa</span>
-        <h2>4 Desarrollos Insignia ARUZ</h2>
-        <p>Explora cada proyecto en detalle, descarga fichas técnicas y conoce las especificaciones de entrega.</p>
-      </div>
-
-      <div class="properties-grid">
+  <!-- ==========================================================================
+       PILLARS SECTION (3 Pilares de la Desarrolladora)
+       ========================================================================== -->
+  <section class="py-16 md:py-24 bg-white border-y border-outline-variant">
+    <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        <!-- 1. Casa Eternity Jol -->
-        <div class="property-card flagship">
-          <div class="property-img-wrap">
-            <div class="property-badge-top">
-              <span class="prop-tag preventa">Preventa</span>
-              <span class="prop-tag cade-seal">Sello CADE</span>
-            </div>
-            <img src="assets/properties/eternity-jol/exteriores/fachada_principal.webp" alt="Casa Eternity Jol Fachada Principal" class="property-img">
+        <!-- Pillar 1 -->
+        <div class="p-8 border border-outline-variant hover:border-dorado-profundo transition-all duration-300 group rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl flex flex-col justify-between">
+          <div>
+            <span class="font-serif text-4xl text-dorado-profundo mb-4 block group-hover:scale-110 transition-transform origin-left font-bold">01</span>
+            <h4 class="font-serif text-xl text-carbon-aruz font-bold mb-3">Diseño Bioclimático</h4>
+            <p class="text-gris-grafito text-sm leading-relaxed mb-4">
+              Orientación solar inteligente, ventilación cruzada y aprovechamiento de materiales endémicos como la piedra maya, maderas tropicales certificadas y estuco Chukum.
+            </p>
           </div>
-          <div class="property-body">
-            <div class="property-title-wrap">
-              <div class="property-location">Senderos Mayakoba · Mz 18 Lt 03</div>
-              <h3 class="property-title">Casa Eternity Jol</h3>
-            </div>
-            <p style="color: #E8E4DF;">Residencia bioclimática de autor con luz cenital, alberca privada en Chukum, roof top con asador y cine al aire libre.</p>
-            <div class="property-specs">
-              <div class="spec-box"><div class="spec-val">305 m²</div><div class="spec-label">Const.</div></div>
-              <div class="spec-box"><div class="spec-val">3 Rec / 4.5 B</div><div class="spec-label">Distrib.</div></div>
-              <div class="spec-box"><div class="spec-val">Dic 2026</div><div class="spec-label">Entrega</div></div>
-            </div>
-            <div class="property-pricing">
-              <div class="price-label">Inversión Preventa</div>
-              <div class="price-value">$5,450,000 MXN</div>
-            </div>
-            <div class="property-actions">
-              <a href="landings/casa-eternity-jol.html" class="btn-card-primary"><span>Ver Landing & Planos</span> &rarr;</a>
-            </div>
+          <div class="flex items-center gap-2 text-xs font-bold text-verde-manglar uppercase font-label-caps">
+            <span class="material-symbols-outlined text-sm">eco</span>
+            <span>Eficiencia Energética & Térmica</span>
           </div>
         </div>
 
-        <!-- 2. Casa Tu'ux -->
-        <div class="property-card flagship">
-          <div class="property-img-wrap">
-            <div class="property-badge-top">
-              <span class="prop-tag preventa">Preventa</span>
-              <span class="prop-tag cade-seal">Sello CADE</span>
-            </div>
-            <img src="assets/properties/tuux/exteriores/img_1.webp" alt="Casa Tu'ux Fachada Principal" class="property-img" loading="lazy" decoding="async">
+        <!-- Pillar 2 -->
+        <div class="p-8 border border-outline-variant hover:border-dorado-profundo transition-all duration-300 group rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl flex flex-col justify-between">
+          <div>
+            <span class="font-serif text-4xl text-dorado-profundo mb-4 block group-hover:scale-110 transition-transform origin-left font-bold">02</span>
+            <h4 class="font-serif text-xl text-carbon-aruz font-bold mb-3">Cálculo Estructural CADE</h4>
+            <p class="text-gris-grafito text-sm leading-relaxed mb-4">
+              Cada losa y cimentación profunda es ejecutada por nuestro propio brazo constructor, supervisada directamente por el Ing. Antonio Carreón García (+12 años de experiencia).
+            </p>
           </div>
-          <div class="property-body">
-            <div class="property-title-wrap">
-              <div class="property-location">Senderos Poniente · Mz 11 Lt 18</div>
-              <h3 class="property-title">Casa Tu'ux</h3>
-            </div>
-            <p style="color: #E8E4DF;">Volumetría contemporánea escultórica, sala a doble altura, alberca privada en Chukum y roof top panorámico con asador.</p>
-            <div class="property-specs">
-              <div class="spec-box"><div class="spec-val">334 m²</div><div class="spec-label">Const.</div></div>
-              <div class="spec-box"><div class="spec-val">3 Rec / 4.5 B</div><div class="spec-label">Distrib.</div></div>
-              <div class="spec-box"><div class="spec-val">Nov 2026</div><div class="spec-label">Entrega</div></div>
-            </div>
-            <div class="property-pricing">
-              <div class="price-label">Inversión Preventa</div>
-              <div class="price-value">$5,150,000 MXN</div>
-            </div>
-            <div class="property-actions">
-              <a href="landings/casa-tuux.html" class="btn-card-primary"><span>Ver Landing & Planos</span> &rarr;</a>
-            </div>
+          <div class="flex items-center gap-2 text-xs font-bold text-dorado-profundo uppercase font-label-caps">
+            <span class="material-symbols-outlined text-sm">verified_user</span>
+            <span>Sello CADE de Calidad</span>
           </div>
         </div>
 
-        <!-- 3. Casa Sak Lu'um -->
-        <div class="property-card flagship">
-          <div class="property-img-wrap">
-            <div class="property-badge-top">
-              <span class="prop-tag preventa">Preventa</span>
-              <span class="prop-tag cade-seal">Sello CADE</span>
-            </div>
-            <img src="assets/properties/sak-luum/exteriores/fachada_frontal.webp" alt="Casa Sak Lu'um Fachada Frontal" class="property-img">
+        <!-- Pillar 3 -->
+        <div class="p-8 border border-outline-variant hover:border-dorado-profundo transition-all duration-300 group rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-xl flex flex-col justify-between">
+          <div>
+            <span class="font-serif text-4xl text-dorado-profundo mb-4 block group-hover:scale-110 transition-transform origin-left font-bold">03</span>
+            <h4 class="font-serif text-xl text-carbon-aruz font-bold mb-3">Certeza de Entrega</h4>
+            <p class="text-gris-grafito text-sm leading-relaxed mb-4">
+              Cronogramas auditables con bitácora abierta y esquemas de pago estructurados que garantizan el flujo continuo de obra hasta la entrega final y escrituración notarial.
+            </p>
           </div>
-          <div class="property-body">
-            <div class="property-title-wrap">
-              <div class="property-location">Senderos Poniente · Mz 14 Lt 04</div>
-              <h3 class="property-title">Casa Sak Lu'um</h3>
-            </div>
-            <p style="color: #E8E4DF;">Inspirada en la pureza de la tierra blanca maya, con estuco chukum orgánico, biblioteca privada y roof top con asador.</p>
-            <div class="property-specs">
-              <div class="spec-box"><div class="spec-val">334 m²</div><div class="spec-label">Const.</div></div>
-              <div class="spec-box"><div class="spec-val">3 Rec / 4.5 B</div><div class="spec-label">Distrib.</div></div>
-              <div class="spec-box"><div class="spec-val">Ene 2027</div><div class="spec-label">Entrega</div></div>
-            </div>
-            <div class="property-pricing">
-              <div class="price-label">Inversión Preventa</div>
-              <div class="price-value">$5,290,000 MXN</div>
-            </div>
-            <div class="property-actions">
-              <a href="landings/casa-sak-luum.html" class="btn-card-primary"><span>Ver Landing & Planos</span> &rarr;</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. Casa K'aak Náajal -->
-        <div class="property-card flagship">
-          <div class="property-img-wrap">
-            <div class="property-badge-top">
-              <span class="prop-tag preventa">Signature</span>
-              <span class="prop-tag cade-seal">Sello CADE</span>
-            </div>
-            <img src="assets/properties/kaak-naajal/exteriores/img_0.webp" alt="Casa K'áak Náajal Fachada Principal" class="property-img">
-          </div>
-          <div class="property-body">
-            <div class="property-title-wrap">
-              <div class="property-location">Senderos Poniente · Mz 12 Lt 08</div>
-              <h3 class="property-title">Casa K'aak Náajal</h3>
-            </div>
-            <p style="color: #E8E4DF;">Residencia de 3 niveles con recámara completa en planta baja, 4 suites privadas, alberca Chukum y roof top panorámico.</p>
-            <div class="property-specs">
-              <div class="spec-box"><div class="spec-val">310 m²</div><div class="spec-label">Const.</div></div>
-              <div class="spec-box"><div class="spec-val">4 Rec / 4.5 B</div><div class="spec-label">Distrib.</div></div>
-              <div class="spec-box"><div class="spec-val">Mar 2027</div><div class="spec-label">Entrega</div></div>
-            </div>
-            <div class="property-pricing">
-              <div class="price-label">Inversión Preventa</div>
-              <div class="price-value">$5,650,000 MXN</div>
-            </div>
-            <div class="property-actions">
-              <a href="landings/casa-kaak-naajal.html" class="btn-card-primary"><span>Ver Landing & Planos</span> &rarr;</a>
-            </div>
+          <div class="flex items-center gap-2 text-xs font-bold text-dorado-profundo uppercase font-label-caps">
+            <span class="material-symbols-outlined text-sm">gavel</span>
+            <span>Garantía Notarial Grupo Ruiz</span>
           </div>
         </div>
 
@@ -256,53 +239,296 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html"><img src="assets/logo-white.svg" alt="ARUZ" style="height: 44px;"></a>
-          <p>ARUZ Desarrolladora · División de desarrollo y proyectos residenciales de Grupo Ruiz México.</p>
-        </div>
-        <div class="footer-col">
-          <h4>Preventas</h4>
-          <div class="footer-links">
-            <a href="landings/villa-anthia.html">Villa Anthia</a>
-            <a href="landings/torre-lumina.html">Torre Lúmina</a>
-            <a href="landings/zenith-residencial.html">Zenith Residencial</a>
-            <a href="landings/iconic-bay.html">Iconic Bay</a>
+  <!-- ==========================================================================
+       COLLECTION SECTION - 4 DESARROLLOS INSIGNIA ARUZ (MAYAKOBA)
+       ========================================================================== -->
+  <section class="py-16 md:py-24 bg-surface" id="preventas">
+    <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop mb-14">
+      <span class="font-label-caps text-xs text-dorado-profundo uppercase tracking-widest block mb-2 font-bold">Colección en Preventa</span>
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-carbon-aruz font-bold mb-4">4 Desarrollos Insignia ARUZ</h2>
+      <p class="text-gris-grafito text-base max-w-xl">Explora cada proyecto en detalle, descarga fichas técnicas oficiales y conoce las especificaciones de entrega de autor.</p>
+    </div>
+
+    <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Card 1: Casa Eternity Jol -->
+      <div class="group border border-outline-variant bg-white rounded-2xl overflow-hidden hover:border-dorado-profundo transition-all duration-500 shadow-sm hover:shadow-2xl flex flex-col justify-between">
+        <div>
+          <div class="relative h-[340px] sm:h-[380px] overflow-hidden">
+            <img alt="Casa Eternity Jol Fachada Principal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="assets/properties/eternity-jol/exteriores/fachada_frontal.webp" loading="lazy" decoding="async">
+            <div class="absolute top-4 left-4 flex gap-2">
+              <span class="bg-dorado-aruz text-carbon-aruz font-bold px-3 py-1 font-label-caps text-[10px] uppercase rounded">Preventa</span>
+              <span class="bg-verde-manglar text-white font-bold px-3 py-1 font-label-caps text-[10px] uppercase rounded">Sello CADE</span>
+            </div>
+            <div class="absolute bottom-3 left-4 bg-carbon-aruz/85 backdrop-blur-md px-3 py-1 rounded text-dorado-aruz text-xs font-mono font-bold">
+              Bono Muebles: $400,000 MXN
+            </div>
+          </div>
+          
+          <div class="p-6 sm:p-8">
+            <span class="font-label-caps text-xs text-dorado-profundo block mb-1 uppercase font-bold">Senderos Mayakoba · Mz 18 Lt 03</span>
+            <h3 class="font-serif text-2xl sm:text-3xl text-carbon-aruz font-bold mb-3">Casa Eternity Jol</h3>
+            <p class="text-gris-grafito text-sm mb-6 leading-relaxed line-clamp-2">
+              Residencia bioclimática de autor con luz cenital, alberca privada en Chukum, roof top con asador y cine al aire libre.
+            </p>
+            
+            <div class="grid grid-cols-2 gap-y-4 gap-x-4 pt-5 border-t border-outline-variant text-center bg-surface-container/40 p-4 rounded-xl mb-6">
+              <div>
+                <span class="font-label-caps text-[10px] text-gris-grafito uppercase block mb-0.5">Construcción</span>
+                <span class="font-serif text-lg font-bold text-carbon-aruz">305 m²</span>
+              </div>
+              <div>
+                <span class="font-label-caps text-[10px] text-gris-grafito uppercase block mb-0.5">Distribución</span>
+                <span class="font-serif text-lg font-bold text-carbon-aruz">3 Rec / 4.5 B</span>
+              </div>
+              <div>
+                <span class="font-label-caps text-[10px] text-gris-grafito uppercase block mb-0.5">Entrega</span>
+                <span class="font-serif text-lg font-bold text-carbon-aruz">Dic 2026</span>
+              </div>
+              <div>
+                <span class="font-label-caps text-[10px] text-dorado-profundo uppercase font-bold block mb-0.5">Inversión Preventa</span>
+                <span class="font-serif text-lg font-bold text-dorado-profundo">$5,450,000 MXN</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="footer-col">
-          <h4>Otras Divisiones</h4>
-          <div class="footer-links">
-            <a href="inmobiliaria.html">ARUZ Inmobiliaria</a>
-            <a href="landings/cade-constructora.html">CADE Constructora</a>
-            <a href="landings/aruz-maquinaria.html">ARUZ Maquinaria</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Contacto Directo</h4>
-          <div class="footer-links">
-            <a href="tel:+526674069523">Carlos Alfredo Ruiz (667 406 9523)</a>
-            <a href="mailto:c.ruiz@aruzinmobiliaria.com">c.ruiz@aruzinmobiliaria.com</a>
-            <a href="index.html#contacto">Oficinas Playa del Carmen</a>
-          </div>
+
+        <div class="px-6 sm:px-8 pb-6 sm:pb-8">
+          <a class="w-full inline-flex items-center justify-center gap-2 font-label-caps text-xs uppercase font-bold bg-dorado-profundo hover:bg-dorado-aruz text-white hover:text-carbon-aruz py-3 px-4 rounded-xl transition-all shadow-md" href="landings/casa-eternity-jol.html">
+            <span>Ver Landing & Planos</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
         </div>
       </div>
-      <div class="footer-bottom">
-        <div class="legal-text">&copy; 2026 Consortium GPRuiz S.A. de C.V. Todos los derechos reservados.</div>
+
+      <!-- Card 2: Casa Tu'ux -->
+      <div class="group border border-outline-variant bg-white rounded-2xl overflow-hidden hover:border-dorado-profundo transition-all duration-500 shadow-sm hover:shadow-2xl flex flex-col justify-between">
+        <div>
+          <div class="relative h-[340px] sm:h-[380px] overflow-hidden">
+            <img alt="Casa Tu'ux Fachada Principal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="assets/properties/tuux/exteriores/img_1.webp" loading="lazy" decoding="async">
+            <div class="absolute top-4 left-4 flex gap-2">
+              <span class="bg-dorado-aruz text-carbon-aruz font-bold px-3 py-1 font-label-caps text-[10px] uppercase rounded">Preventa</span>
+              <span class="bg-verde-manglar text-white font-bold px-3 py-1 font-label-caps text-[10px] uppercase rounded">Sello CADE</span>
+            </div>
+            <div class="absolute bottom-3 left-4 bg-carbon-aruz/85 backdrop-blur-md px-3 py-1 rounded text-dorado-aruz text-xs font-mono font-bold">
+              Bono Muebles: $450,000 MXN
+            </div>
+          </div>
+          
+          <div class="p-6 sm:p-8">
+            <span class="font-label-caps text-xs text-dorado-profundo block mb-1 uppercase font-bold">Senderos Poniente · Mz 11 Lt 18</span>
+            <h3 class="font-serif text-2xl sm:text-3xl text-carbon-aruz font-bold mb-3">Casa Tu'ux</h3>
+            <p class="text-gris-grafito text-sm mb-6 leading-relaxed line-clamp-2">
+              Volumetría contemporánea escultórica, sala a doble altura, alberca privada en Chukum y roof top panorámico con asador.
+            </p>
+            
+            <div class="grid grid-cols-2 gap-y-4 gap-x-4 pt-5 border-t border-outline-variant text-center bg-surface-container/40 p-4 rounded-xl mb-6">
+              <div>
+                <span class="font-label-caps text-[10px] text-gris-grafito uppercase block mb-0.5">Construcción</span>
+                <span class="font-serif text-lg font-bold text-carbon-aruz">334 m²</span>
+              </div>
+              <div>
+                <span class="font-label-caps text-[10px] text-gris-grafito uppercase block mb-0.5">Distribución</span>
+                <span class="font-serif text-lg font-bold text-carbon-aruz">3 Rec / 4.5 B</span>
+              </div>
+              <div>
+                <span class="font-label-caps text-[10px] text-gris-grafito uppercase block mb-0.5">Entrega</span>
+                <span class="font-serif text-lg font-bold text-carbon-aruz">Nov 2026</span>
+              </div>
+              <div>
+                <span class="font-label-caps text-[10px] text-dorado-profundo uppercase font-bold block mb-0.5">Inversión Preventa</span>
+                <span class="font-serif text-lg font-bold text-dorado-profundo">$5,150,000 MXN</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="px-6 sm:px-8 pb-6 sm:pb-8">
+          <a class="w-full inline-flex items-center justify-center gap-2 font-label-caps text-xs uppercase font-bold bg-dorado-profundo hover:bg-dorado-aruz text-white hover:text-carbon-aruz py-3 px-4 rounded-xl transition-all shadow-md" href="landings/casa-tuux.html">
+            <span>Ver Landing & Planos</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
       </div>
+
+      <!-- Card 3: Casa Sak Lu'um -->
+      <div class="group border border-outline-variant bg-white rounded-2xl overflow-hidden hover:border-dorado-profundo transition-all duration-500 shadow-sm hover:shadow-2xl flex flex-col justify-between">
+        <div>
+          <div class="relative h-[340px] sm:h-[380px] overflow-hidden">
+            <img alt="Casa Sak Lu'um Fachada Frontal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="assets/properties/sak-luum/exteriores/fachada_frontal.webp" loading="lazy" decoding="async">
+            <div class="absolute top-4 left-4 flex gap-2">
+              <span class="bg-dorado-aruz text-carbon-aruz font-bold px-3 py-1 font-label-caps text-[10px] uppercase rounded">Preventa</span>
+              <span class="bg-verde-manglar text-white font-bold px-3 py-1 font-label-caps text-[10px] uppercase rounded">Sello CADE</span>
+            </div>
+            <div class="absolute bottom-3 left-4 bg-carbon-aruz/85 backdrop-blur-md px-3 py-1 rounded text-dorado-aruz text-xs font-mono font-bold">
+              Bono Muebles: $250,000 MXN
+            </div>
+          </div>
+          
+          <div class="p-6 sm:p-8">
+            <span class="font-label-caps text-xs text-dorado-profundo block mb-1 uppercase font-bold">Senderos Poniente · Mz 14 Lt 04</span>
+            <h3 class="font-serif text-2xl sm:text-3xl text-carbon-aruz font-bold mb-3">Casa Sak Lu'um</h3>
+            <p class="text-gris-grafito text-sm mb-6 leading-relaxed line-clamp-2">
+              Inspirada en la pureza de la tierra blanca maya, con estuco chukum orgánico, biblioteca privada y roof top con asador.
+            </p>
+            
+            <div class="grid grid-cols-2 gap-y-4 gap-x-4 pt-5 border-t border-outline-variant text-center bg-surface-container/40 p-4 rounded-xl mb-6">
+              <div>
+                <span class="font-label-caps text-[10px] text-gris-grafito uppercase block mb-0.5">Construcción</span>
+                <span class="font-serif text-lg font-bold text-carbon-aruz">334 m²</span>
+              </div>
+              <div>
+                <span class="font-label-caps text-[10px] text-gris-grafito uppercase block mb-0.5">Distribución</span>
+                <span class="font-serif text-lg font-bold text-carbon-aruz">3 Rec / 4.5 B</span>
+              </div>
+              <div>
+                <span class="font-label-caps text-[10px] text-gris-grafito uppercase block mb-0.5">Entrega</span>
+                <span class="font-serif text-lg font-bold text-carbon-aruz">Ene 2027</span>
+              </div>
+              <div>
+                <span class="font-label-caps text-[10px] text-dorado-profundo uppercase font-bold block mb-0.5">Inversión Preventa</span>
+                <span class="font-serif text-lg font-bold text-dorado-profundo">$5,290,000 MXN</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="px-6 sm:px-8 pb-6 sm:pb-8">
+          <a class="w-full inline-flex items-center justify-center gap-2 font-label-caps text-xs uppercase font-bold bg-dorado-profundo hover:bg-dorado-aruz text-white hover:text-carbon-aruz py-3 px-4 rounded-xl transition-all shadow-md" href="landings/casa-sak-luum.html">
+            <span>Ver Landing & Planos</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 4: Casa K'áak Náajal -->
+      <div class="group border border-outline-variant bg-white rounded-2xl overflow-hidden hover:border-dorado-profundo transition-all duration-500 shadow-sm hover:shadow-2xl flex flex-col justify-between">
+        <div>
+          <div class="relative h-[340px] sm:h-[380px] overflow-hidden">
+            <img alt="Casa K'áak Náajal Fachada Principal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="assets/properties/kaak-naajal/exteriores/img_0.webp" loading="lazy" decoding="async">
+            <div class="absolute top-4 left-4 flex gap-2">
+              <span class="bg-carbon-aruz text-white font-bold px-3 py-1 font-label-caps text-[10px] uppercase rounded border border-dorado-aruz/40">Signature</span>
+              <span class="bg-verde-manglar text-white font-bold px-3 py-1 font-label-caps text-[10px] uppercase rounded">Sello CADE</span>
+            </div>
+            <div class="absolute bottom-3 left-4 bg-carbon-aruz/85 backdrop-blur-md px-3 py-1 rounded text-dorado-aruz text-xs font-mono font-bold">
+              Bono Muebles: $400,000 MXN
+            </div>
+          </div>
+          
+          <div class="p-6 sm:p-8">
+            <span class="font-label-caps text-xs text-dorado-profundo block mb-1 uppercase font-bold">Senderos Poniente · Mz 12 Lt 08</span>
+            <h3 class="font-serif text-2xl sm:text-3xl text-carbon-aruz font-bold mb-3">Casa K'áak Náajal</h3>
+            <p class="text-gris-grafito text-sm mb-6 leading-relaxed line-clamp-2">
+              Residencia de 3 niveles con recámara completa en planta baja, 4 suites privadas, alberca Chukum ampliada de 20 m² y roof top panorámico.
+            </p>
+            
+            <div class="grid grid-cols-2 gap-y-4 gap-x-4 pt-5 border-t border-outline-variant text-center bg-surface-container/40 p-4 rounded-xl mb-6">
+              <div>
+                <span class="font-label-caps text-[10px] text-gris-grafito uppercase block mb-0.5">Construcción</span>
+                <span class="font-serif text-lg font-bold text-carbon-aruz">310 m²</span>
+              </div>
+              <div>
+                <span class="font-label-caps text-[10px] text-gris-grafito uppercase block mb-0.5">Distribución</span>
+                <span class="font-serif text-lg font-bold text-carbon-aruz">4 Rec / 4.5 B</span>
+              </div>
+              <div>
+                <span class="font-label-caps text-[10px] text-gris-grafito uppercase block mb-0.5">Entrega</span>
+                <span class="font-serif text-lg font-bold text-carbon-aruz">Mar 2027</span>
+              </div>
+              <div>
+                <span class="font-label-caps text-[10px] text-dorado-profundo uppercase font-bold block mb-0.5">Inversión Preventa</span>
+                <span class="font-serif text-lg font-bold text-dorado-profundo">$5,650,000 MXN</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="px-6 sm:px-8 pb-6 sm:pb-8">
+          <a class="w-full inline-flex items-center justify-center gap-2 font-label-caps text-xs uppercase font-bold bg-dorado-profundo hover:bg-dorado-aruz text-white hover:text-carbon-aruz py-3 px-4 rounded-xl transition-all shadow-md" href="landings/casa-kaak-naajal.html">
+            <span>Ver Landing & Planos</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="w-full bg-surface-container-highest border-t border-outline-variant py-16">
+    <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-outline-variant/60">
+        
+        <div>
+          <div class="mb-5">
+            <img src="assets/logo.svg" alt="ARUZ" class="h-8 w-auto">
+          </div>
+          <p class="text-xs text-gris-grafito leading-relaxed mb-4">
+            ARUZ Desarrolladora · Consortium GPRuiz S.A. de C.V. Concepción, diseño bioclimático y ejecución de residencias de autor en Ciudad Mayakoba.
+          </p>
+          <span class="text-[11px] text-dorado-profundo font-bold uppercase tracking-wider font-label-caps block">
+            "Construimos Confianza" · 2025-2026
+          </span>
+        </div>
+
+        <div>
+          <h4 class="font-label-caps text-xs text-dorado-profundo uppercase tracking-widest mb-4 font-bold">Divisiones ARUZ</h4>
+          <ul class="space-y-2 text-xs text-gris-grafito">
+            <li><a href="desarrolladora.html" class="text-carbon-aruz font-bold hover:text-dorado-profundo transition-colors">ARUZ Desarrolladora</a></li>
+            <li><a href="inmobiliaria.html" class="hover:text-dorado-profundo transition-colors">ARUZ Inmobiliaria</a></li>
+            <li><a href="landings/cade-constructora.html" class="hover:text-dorado-profundo transition-colors">CADE Construcción</a></li>
+            <li><a href="landings/aruz-maquinaria.html" class="hover:text-dorado-profundo transition-colors">ARUZ Maquinaria Pesada</a></li>
+            <li><a href="index.html#preventas-mayakoba" class="hover:text-dorado-profundo transition-colors">Preventas Mayakoba</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-label-caps text-xs text-dorado-profundo uppercase tracking-widest mb-4 font-bold">Preventas Mayakoba</h4>
+          <ul class="space-y-2 text-xs text-gris-grafito">
+            <li><a href="landings/casa-eternity-jol.html" class="hover:text-dorado-profundo transition-colors">Casa Eternity Jol (305 m²)</a></li>
+            <li><a href="landings/casa-tuux.html" class="hover:text-dorado-profundo transition-colors">Casa Tu'ux (334 m²)</a></li>
+            <li><a href="landings/casa-sak-luum.html" class="hover:text-dorado-profundo transition-colors">Casa Sak Lu'um (334 m²)</a></li>
+            <li><a href="landings/casa-kaak-naajal.html" class="hover:text-dorado-profundo transition-colors">Casa K'áak Náajal (310 m²)</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-label-caps text-xs text-dorado-profundo uppercase tracking-widest mb-4 font-bold">Dirección de Operaciones</h4>
+          <div class="space-y-2 text-xs text-gris-grafito">
+            <p><strong class="text-carbon-aruz">Carlos Alfredo Ruiz Ramos</strong><br>Director de Operaciones</p>
+            <p>
+              <a href="mailto:c.ruiz@aruzinmobiliaria.com" class="hover:text-dorado-profundo transition-colors">c.ruiz@aruzinmobiliaria.com</a>
+            </p>
+            <p>
+              <a href="tel:+526674069523" class="text-dorado-profundo font-bold hover:underline">+52 (667) 406 9523</a>
+            </p>
+            <p class="text-[11px] text-gris-grafito pt-2">
+              Plaza Palmeras Local 212, Playa del Carmen, Quintana Roo.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-gris-grafito">
+        <p>© 2026 ARUZ Desarrolladora · Consortium GPRuiz S.A. de C.V. Todos los derechos reservados.</p>
+        <p>Arquitectura de Autor · Sello CADE · Garantía Notarial</p>
+      </div>
+
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
-  <!-- Floating Mobile WhatsApp Quick Contact Button -->
-  <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20personalizada%20con%20el%20Director%20de%20ARUZ." target="_blank" rel="noopener" class="floating-whatsapp-btn lg:hidden flex items-center justify-center" aria-label="Contactar por WhatsApp">
+  <!-- Floating Mobile / Desktop WhatsApp Quick Contact Button (Bottom-Right) -->
+  <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20personalizada%20con%20el%20Director%20de%20ARUZ." target="_blank" rel="noopener" class="floating-whatsapp-btn" aria-label="Contactar a Carlos Ruiz por WhatsApp">
     <svg class="w-7 h-7 fill-white" viewBox="0 0 24 24">
       <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
     </svg>
   </a>
+
+  <!-- Mobile Drawer Toggle Script -->
   <script>
     function toggleMobileDrawer() {
       const drawer = document.getElementById('mobile-drawer');
@@ -319,6 +545,7 @@
       }
     }
   </script>
+
   <!-- ARUZ AI Advisor (Gemini API Integration) -->
   <script src="js/aruz-ai-agent.js" defer></script>
 </body>
