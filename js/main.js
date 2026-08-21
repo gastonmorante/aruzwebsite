@@ -234,15 +234,16 @@ function init3DHudOrbit() {
     const centerY = stageHeight / 2;
 
     const isMobile = window.innerWidth <= 768;
-    const rx = isMobile ? stageWidth * 0.42 : Math.min(410, stageWidth * 0.38);
-    const ry = isMobile ? stageHeight * 0.34 : Math.min(165, stageHeight * 0.30);
+    const isTablet = window.innerWidth > 768 && window.innerWidth <= 1024;
+    const rx = isMobile ? stageWidth * 0.40 : isTablet ? Math.min(320, stageWidth * 0.35) : Math.min(410, stageWidth * 0.38);
+    const ry = isMobile ? stageHeight * 0.30 : isTablet ? Math.min(140, stageHeight * 0.28) : Math.min(165, stageHeight * 0.30);
 
     // Dynamic quadrant anchor positions for Callout Cards
     const cardPositions = [
-      { x: centerX + rx * 0.92, y: centerY - ry * 1.30 }, // Top Right (Desarrolladora)
-      { x: centerX + rx * 0.92, y: centerY + ry * 0.90 }, // Bottom Right (Inmobiliaria)
-      { x: centerX - rx * 1.38, y: centerY + ry * 0.90 }, // Bottom Left (CADE)
-      { x: centerX - rx * 1.38, y: centerY - ry * 1.30 }  // Top Left (Maquinaria)
+      { x: centerX + rx * 0.85, y: centerY - ry * 1.25 }, // Top Right (Desarrolladora)
+      { x: centerX + rx * 0.85, y: centerY + ry * 0.85 }, // Bottom Right (Inmobiliaria)
+      { x: centerX - rx * 1.35, y: centerY + ry * 0.85 }, // Bottom Left (CADE)
+      { x: centerX - rx * 1.35, y: centerY - ry * 1.25 }  // Top Left (Maquinaria)
     ];
 
     // Clear SVG dynamic lines
@@ -275,20 +276,25 @@ function init3DHudOrbit() {
       const card = cards[idx];
       if (card) {
         if (!isMobile) {
-          const cardX = cardPositions[idx].x;
-          const cardY = cardPositions[idx].y;
+          const cardW = card.offsetWidth || 280;
+          const rawX = cardPositions[idx].x;
+          // Clamp cardX within stage bounds with margin
+          const cardX = Math.max(8, Math.min(rawX, stageWidth - cardW - 8));
+          const cardY = Math.max(8, Math.min(cardPositions[idx].y, stageHeight - card.offsetHeight - 8));
           card.style.left = `${cardX}px`;
           card.style.top = `${cardY}px`;
         }
 
         // ONLY draw Technical Callout Leader Line if this node/card is currently active/hovered!
         if (!isMobile && idx === activeHoverIndex) {
-          const cardX = cardPositions[idx].x;
-          const cardY = cardPositions[idx].y;
-          const cardAnchorX = idx < 2 ? cardX : cardX + card.offsetWidth;
+          const cardW = card.offsetWidth || 280;
+          const rawX = cardPositions[idx].x;
+          const cardX = Math.max(8, Math.min(rawX, stageWidth - cardW - 8));
+          const cardY = Math.max(8, Math.min(cardPositions[idx].y, stageHeight - card.offsetHeight - 8));
+          const cardAnchorX = idx < 2 ? cardX : cardX + cardW;
           const cardAnchorY = cardY + card.offsetHeight / 2;
 
-          const kneeX = nodeX + (cardAnchorX > nodeX ? 40 : -40);
+          const kneeX = nodeX + (cardAnchorX > nodeX ? 35 : -35);
           const kneeY = cardAnchorY;
 
           // Leader Polyline

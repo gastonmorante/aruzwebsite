@@ -1898,3 +1898,47 @@ button, a, input, select, textarea, .gallery-item, .property-card, .hud-orbit-no
   }
 }
 
+/* ==========================================================================
+   LANDING HERO & ADVISOR BOX LUXURY STYLING
+   ========================================================================== */
+
+.advisor-box {
+  background: #181415 !important;
+  border: 1px solid rgba(238, 182, 35, 0.3) !important;
+  border-radius: var(--radius-md);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(238, 182, 35, 0.08);
+}
+
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(238, 182, 35, 0.06) 0%, rgba(22, 18, 19, 0) 70%);
+  pointer-events: none;
+}
+
+.hero-title span {
+  background: linear-gradient(135deg, #231F20 0%, #161213 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #231F20;
+}
+
+.hero-section.dark .hero-title span {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E8E4DF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #FFFFFF;
+}
+
+@media (max-width: 1024px) {
+  .site-header, nav.fixed {
+    height: 72px;
+  }
+  
+  .hero-section {
+    padding-top: 100px !important;
+  }
+  
+  .section-spacing {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
