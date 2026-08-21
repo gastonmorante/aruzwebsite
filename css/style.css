@@ -1834,12 +1834,6 @@ button, a, input, select, textarea, .gallery-item, .property-card, .hud-orbit-no
   transform: scale(0.92);
 }
 
-@media (min-width: 1024px) {
-  .floating-whatsapp-btn {
-    display: none !important;
-  }
-}
-
 /* Mobile 3D Orbit Hub Enhancements */
 @media (max-width: 768px) {
   #hudStage {
