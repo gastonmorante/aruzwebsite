@@ -2,12 +2,13 @@
  * ============================================================================
  * ARUZ 3D ARCHITECTURAL CAD BLUEPRINT & HOLOGRAPHIC TECH HUB ENGINE
  * ============================================================================
- * Dynamic background canvas featuring:
- * - Architectural technical CAD blueprint grid & metric rulers
- * - 3D Isometric Villa & Structural Wireframes (Mayakoba elevations & floorplans)
- * - Rotating technical compass / protractor dials and degree scales
- * - 360° Laser radar scanner with subtle golden luminescence
- * - Interactive mouse parallax with smooth damping physics
+ * Authentic Architectural Blueprints & Engineering CAD Schematics:
+ * - CASA TU'UX (Senderos Poniente Mz 11 Lt 18 - 333.59 m²)
+ * - CASA ETERNITY JOL (Senderos Norte Mz 18 Lt 03 - 305.31 m²)
+ * - Real Engineering Stamps (CADE Diseño y Construcción & Grupo Ruiz)
+ * - Detailed Dimensions, Material Callouts (Chukum, Piedra Maya, Tzalam)
+ * - Metric Axes (A-B-C, 1-2-3), Elevation Markers (+0.15m, +3.40m, +9.80m)
+ * - 360° Radar Scanning Beam & Interactive 3D Mouse Parallax
  * ============================================================================
  */
 
@@ -21,7 +22,7 @@
     let height = 0;
     let dpr = 1;
 
-    // Mouse coordinates with damping
+    // Mouse coordinates with smooth damping
     const mouse = {
       x: 0,
       y: 0,
@@ -54,99 +55,238 @@
 
       mouse.targetX = clientX;
       mouse.targetY = clientY;
-      mouse.targetNormX = (clientX / width - 0.5) * 2; // -1 to 1
+      mouse.targetNormX = (clientX / width - 0.5) * 2;
       mouse.targetNormY = (clientY / height - 0.5) * 2;
     });
 
-    // Time and rotation state
     let time = 0;
 
-    // Floating technical particles
+    // Floating technical particles with ARUZ coordinates
     const particles = [];
-    const particleCount = 45;
+    const particleCount = 40;
+    const elevationTags = [
+      "N.P.T. +0.15m",
+      "N.I.P. +3.40m",
+      "N.C.T. +6.65m",
+      "ROOF +9.80m",
+      "ALBERCA -1.40m",
+      "f'c=250kg/cm²",
+      "CHUKUM ORG.",
+      "VIGA IPR-12"
+    ];
+
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        z: Math.random() * 0.8 + 0.2, // Depth factor
-        vx: (Math.random() - 0.5) * 0.25,
-        vy: (Math.random() - 0.5) * 0.25,
+        z: Math.random() * 0.8 + 0.2,
+        vx: (Math.random() - 0.5) * 0.2,
+        vy: (Math.random() - 0.5) * 0.2,
         size: Math.random() * 2 + 1,
         alpha: Math.random() * 0.5 + 0.2,
-        label: i % 8 === 0 ? `+${(Math.random() * 8 + 1).toFixed(2)}m` : null
+        label: i % 5 === 0 ? elevationTags[i % elevationTags.length] : null
       });
     }
 
-    // Blueprint Architectural Structures (Isometric Wireframe Coordinates)
-    function drawIsometricBlueprint(cx, cy, scale, rot, alpha) {
+    // DRAW LEFT BLUEPRINT: CASA TU'UX (Senderos Poniente Mz 11 Lt 18)
+    function drawTuuxBlueprint(cx, cy, scale, alpha) {
+      if (width < 900) return; // Only show on desktop/tablet for visual elegance
       ctx.save();
       ctx.translate(cx, cy);
-      ctx.rotate(rot);
-      ctx.scale(scale, scale * 0.58); // Isometric perspective flatten
+      ctx.scale(scale, scale);
 
-      ctx.strokeStyle = `rgba(200, 150, 25, ${alpha * 0.6})`;
+      // Blueprint Card Container Frame
+      ctx.strokeStyle = `rgba(200, 146, 21, ${alpha * 0.5})`;
       ctx.lineWidth = 1.2;
-      ctx.fillStyle = `rgba(238, 182, 35, ${alpha * 0.04})`;
-
-      // Villa Base Slab
+      ctx.fillStyle = `rgba(255, 252, 245, ${alpha * 0.75})`;
+      
       ctx.beginPath();
-      ctx.moveTo(-140, -80);
-      ctx.lineTo(140, -80);
-      ctx.lineTo(140, 80);
-      ctx.lineTo(-140, 80);
-      ctx.closePath();
-      ctx.stroke();
+      ctx.rect(-170, -140, 340, 280);
       ctx.fill();
-
-      // Subdivision Rooms / Walls
-      ctx.beginPath();
-      ctx.moveTo(-140, 0);
-      ctx.lineTo(140, 0);
-      ctx.moveTo(0, -80);
-      ctx.lineTo(0, 80);
-      ctx.moveTo(60, 0);
-      ctx.lineTo(60, 80);
       ctx.stroke();
 
-      // Chukum Pool Outline
-      ctx.strokeStyle = `rgba(63, 93, 72, ${alpha * 0.8})`; // Verde Manglar
-      ctx.fillStyle = `rgba(63, 93, 72, ${alpha * 0.12})`;
-      ctx.beginPath();
-      ctx.rect(-120, 20, 80, 45);
-      ctx.stroke();
-      ctx.fill();
+      // Top Title Bar
+      ctx.fillStyle = `rgba(35, 31, 32, ${alpha * 0.9})`;
+      ctx.fillRect(-170, -140, 340, 26);
 
-      // Architectural Dimension Lines
-      ctx.strokeStyle = `rgba(120, 100, 70, ${alpha * 0.4})`;
-      ctx.lineWidth = 0.8;
-      ctx.setLineDash([3, 3]);
-      ctx.beginPath();
-      ctx.moveTo(-155, -80);
-      ctx.lineTo(-155, 80);
-      ctx.moveTo(-140, 95);
-      ctx.lineTo(140, 95);
-      ctx.stroke();
-      ctx.setLineDash([]);
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = 'bold 10px "Montserrat", sans-serif';
+      ctx.fillText("ARUZ · PLANO ARQ-01 · CASA TU'UX (333.59 m²)", -160, -123);
 
-      // Elevation Pillars
-      ctx.strokeStyle = `rgba(238, 182, 35, ${alpha * 0.7})`;
+      ctx.fillStyle = `rgba(238, 182, 35, ${alpha * 0.95})`;
+      ctx.font = '9px "Plus Jakarta Sans", sans-serif';
+      ctx.textAlign = 'right';
+      ctx.fillText("SENDEROS PONIENTE MZ 11 LT 18", 160, -123);
+      ctx.textAlign = 'left';
+
+      // Isometric Floorplan Wireframe
+      ctx.save();
+      ctx.translate(0, 15);
+      ctx.scale(1, 0.58);
+      ctx.rotate(-Math.PI / 6);
+
+      // Outer Slab
+      ctx.strokeStyle = `rgba(35, 31, 32, ${alpha * 0.7})`;
+      ctx.lineWidth = 1.6;
+      ctx.beginPath();
+      ctx.rect(-100, -65, 200, 130);
+      ctx.stroke();
+
+      // Internal Room Partitions
+      ctx.strokeStyle = `rgba(89, 85, 90, ${alpha * 0.6})`;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      // Double height living room
+      ctx.rect(-100, -65, 110, 75);
+      // Kitchen / Dining
+      ctx.rect(10, -65, 90, 75);
+      // Terrace & Chukum Pool
+      ctx.stroke();
+
+      // Alberca Chukum Highlight
+      ctx.fillStyle = `rgba(63, 93, 72, ${alpha * 0.35})`; // Verde Manglar
+      ctx.strokeStyle = `rgba(63, 93, 72, ${alpha * 0.9})`;
       ctx.lineWidth = 1.4;
-      const pillars = [[-140, -80], [140, -80], [140, 80], [-140, 80], [0, 0]];
-      pillars.forEach(([px, py]) => {
+      ctx.beginPath();
+      ctx.rect(-85, 20, 65, 38);
+      ctx.fill();
+      ctx.stroke();
+
+      // Columns & Pillars
+      ctx.fillStyle = `rgba(200, 146, 21, ${alpha * 0.9})`;
+      const cols = [[-100, -65], [100, -65], [100, 65], [-100, 65], [10, -65], [10, 65]];
+      cols.forEach(([x, y]) => {
         ctx.beginPath();
-        ctx.moveTo(px, py);
-        ctx.lineTo(px, py - 45);
-        ctx.stroke();
+        ctx.arc(x, y, 2.5, 0, Math.PI * 2);
+        ctx.fill();
       });
 
-      // Upper Roof Outline
+      ctx.restore();
+
+      // Architectural Labels & Notes
+      ctx.font = '9px "Plus Jakarta Sans", sans-serif';
+      ctx.fillStyle = `rgba(35, 31, 32, ${alpha * 0.85})`;
+      ctx.fillText("• SALA A DOBLE ALTURA (VENTILACIÓN CRUZADA)", -155, 65);
+      ctx.fillText("• ALBERCA PRIVADA EN ESTUCO CHUKUM (-1.40m)", -155, 80);
+      ctx.fillText("• 3 SUITES + ESTUDIO HOME OFFICE (NIVEL 1)", -155, 95);
+      ctx.fillText("• ROOF TOP PANORÁMICO CON ASADOR MASTER", -155, 110);
+
+      // Dimension Callouts
+      ctx.fillStyle = `rgba(199, 146, 21, ${alpha * 0.95})`;
+      ctx.font = 'bold 9px monospace';
+      ctx.fillText("TERRENO: 185.45 m² | CONST: 333.59 m²", -155, 126);
+
+      // CADE Engineering Seal (Bottom Right)
+      ctx.strokeStyle = `rgba(63, 93, 72, ${alpha * 0.7})`;
+      ctx.lineWidth = 1;
+      ctx.strokeRect(60, 60, 95, 68);
+      ctx.fillStyle = `rgba(63, 93, 72, ${alpha * 0.9})`;
+      ctx.font = 'bold 8px "Montserrat", sans-serif';
+      ctx.fillText("SELLO CADE", 72, 75);
+      ctx.font = '7.5px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText("CÁLCULO ESTRUCTURAL", 65, 89);
+      ctx.fillText("ING. A. CARREÓN", 65, 102);
+      ctx.fillText("CONCRETO f'c=250", 65, 115);
+
+      ctx.restore();
+    }
+
+    // DRAW RIGHT BLUEPRINT: CASA ETERNITY JOL (Senderos Norte Mz 18 Lt 03)
+    function drawEternityBlueprint(cx, cy, scale, alpha) {
+      if (width < 900) return;
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.scale(scale, scale);
+
+      // Blueprint Card Container Frame
+      ctx.strokeStyle = `rgba(200, 146, 21, ${alpha * 0.5})`;
+      ctx.lineWidth = 1.2;
+      ctx.fillStyle = `rgba(255, 252, 245, ${alpha * 0.75})`;
+      
       ctx.beginPath();
-      ctx.moveTo(-140, -125);
-      ctx.lineTo(140, -125);
-      ctx.lineTo(140, 35);
-      ctx.lineTo(-140, 35);
-      ctx.closePath();
+      ctx.rect(-170, -140, 340, 280);
+      ctx.fill();
       ctx.stroke();
+
+      // Top Title Bar
+      ctx.fillStyle = `rgba(35, 31, 32, ${alpha * 0.9})`;
+      ctx.fillRect(-170, -140, 340, 26);
+
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = 'bold 10px "Montserrat", sans-serif';
+      ctx.fillText("ARUZ · PLANO EST-02 · ETERNITY JOL (305.31 m²)", -160, -123);
+
+      ctx.fillStyle = `rgba(238, 182, 35, ${alpha * 0.95})`;
+      ctx.font = '9px "Plus Jakarta Sans", sans-serif';
+      ctx.textAlign = 'right';
+      ctx.fillText("SENDEROS NORTE MZ 18 LT 03", 160, -123);
+      ctx.textAlign = 'left';
+
+      // Elevation Schematic
+      ctx.save();
+      ctx.translate(0, -10);
+
+      // Ground Line
+      ctx.strokeStyle = `rgba(35, 31, 32, ${alpha * 0.8})`;
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(-130, 45);
+      ctx.lineTo(130, 45);
+      ctx.stroke();
+
+      // 3 Levels Elevation Outlines
+      ctx.strokeStyle = `rgba(200, 146, 21, ${alpha * 0.75})`;
+      ctx.lineWidth = 1.2;
+      // Level 1: Ground Floor
+      ctx.strokeRect(-100, 5, 200, 40);
+      // Level 2: First Level
+      ctx.strokeRect(-90, -35, 180, 40);
+      // Level 3: Roof Top Pergolado
+      ctx.strokeRect(-70, -75, 140, 40);
+
+      // Cantilever Pergola Beams
+      ctx.strokeStyle = `rgba(63, 93, 72, ${alpha * 0.8})`;
+      for (let bx = -60; bx <= 60; bx += 20) {
+        ctx.beginPath();
+        ctx.moveTo(bx, -75);
+        ctx.lineTo(bx + 8, -85);
+        ctx.stroke();
+      }
+
+      // Height Marker Levels
+      ctx.font = '8px monospace';
+      ctx.fillStyle = `rgba(89, 85, 90, ${alpha * 0.9})`;
+      ctx.fillText("+9.80m ROOF CINEMA", 75, -70);
+      ctx.fillText("+6.65m MASTER SUITE", 95, -30);
+      ctx.fillText("+3.40m RECÁMARAS 1-2", 105, 10);
+      ctx.fillText("+0.15m ALBERCA CHUKUM", 105, 42);
+
+      ctx.restore();
+
+      // Specifications & Notes
+      ctx.font = '9px "Plus Jakarta Sans", sans-serif';
+      ctx.fillStyle = `rgba(35, 31, 32, ${alpha * 0.85})`;
+      ctx.fillText("• ÁREA PARA PROYECTOR DE CINE EN ROOF TOP", -155, 65);
+      ctx.fillText("• MASTER SUITE CON VESTIDOR & BALCÓN PRIVADO", -155, 80);
+      ctx.fillText("• ALBERCA CHUKUM & COCHERA PERGOLADA", -155, 95);
+      ctx.fillText("• ACABADOS: PIEDRA MAYA & MADERA TZALAM", -155, 110);
+
+      // Dimension Callouts
+      ctx.fillStyle = `rgba(199, 146, 21, ${alpha * 0.95})`;
+      ctx.font = 'bold 9px monospace';
+      ctx.fillText("TERRENO: 179.25 m² | CONST: 305.31 m²", -155, 126);
+
+      // Grupo Ruiz Warranty Seal (Bottom Right)
+      ctx.strokeStyle = `rgba(200, 146, 21, ${alpha * 0.8})`;
+      ctx.lineWidth = 1;
+      ctx.strokeRect(60, 60, 95, 68);
+      ctx.fillStyle = `rgba(200, 146, 21, ${alpha * 0.95})`;
+      ctx.font = 'bold 8px "Montserrat", sans-serif';
+      ctx.fillText("GRUPO RUIZ", 72, 75);
+      ctx.font = '7.5px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText("GARANTÍA NOTARIAL", 65, 89);
+      ctx.fillText("CONSTRUCTIVO CADE", 65, 102);
+      ctx.fillText("ENTREGA DIC 2026", 65, 115);
 
       ctx.restore();
     }
@@ -162,17 +302,17 @@
 
       ctx.clearRect(0, 0, width, height);
 
-      const centerX = width / 2 + mouse.normX * 25;
-      const centerY = height / 2 + mouse.normY * 20;
+      const centerX = width / 2 + mouse.normX * 22;
+      const centerY = height / 2 + mouse.normY * 18;
 
       // 1. Soft Warm Sand & Amber Gradient Backdrop
       const bgGrad = ctx.createRadialGradient(
         centerX, centerY, 50,
         centerX, centerY, Math.max(width, height) * 0.75
       );
-      bgGrad.addColorStop(0, 'rgba(255, 245, 230, 0.95)');
-      bgGrad.addColorStop(0.45, 'rgba(252, 236, 208, 0.7)');
-      bgGrad.addColorStop(1, 'rgba(255, 248, 242, 0.3)');
+      bgGrad.addColorStop(0, 'rgba(255, 246, 232, 0.95)');
+      bgGrad.addColorStop(0.45, 'rgba(252, 236, 208, 0.75)');
+      bgGrad.addColorStop(1, 'rgba(255, 248, 242, 0.35)');
       ctx.fillStyle = bgGrad;
       ctx.fillRect(0, 0, width, height);
 
@@ -181,7 +321,7 @@
       const offsetX = (mouse.normX * 15) % gridSize;
       const offsetY = (mouse.normY * 15) % gridSize;
 
-      ctx.strokeStyle = 'rgba(180, 150, 100, 0.12)';
+      ctx.strokeStyle = 'rgba(180, 150, 100, 0.13)';
       ctx.lineWidth = 0.8;
       ctx.beginPath();
 
@@ -212,7 +352,7 @@
       // Outer Dial (Slow Counter-Clockwise)
       ctx.save();
       ctx.rotate(-time * 0.08);
-      ctx.strokeStyle = 'rgba(216, 201, 174, 0.35)';
+      ctx.strokeStyle = 'rgba(216, 201, 174, 0.4)';
       ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.arc(0, 0, 290, 0, Math.PI * 2);
@@ -221,9 +361,9 @@
       // Degree Ticks along Outer Dial
       for (let deg = 0; deg < 360; deg += 15) {
         const rad = (deg * Math.PI) / 180;
-        const r1 = deg % 45 === 0 ? 280 : 285;
+        const r1 = deg % 45 === 0 ? 278 : 284;
         const r2 = 290;
-        ctx.strokeStyle = deg % 45 === 0 ? 'rgba(200, 146, 21, 0.6)' : 'rgba(180, 150, 100, 0.25)';
+        ctx.strokeStyle = deg % 45 === 0 ? 'rgba(200, 146, 21, 0.65)' : 'rgba(180, 150, 100, 0.25)';
         ctx.lineWidth = deg % 45 === 0 ? 1.5 : 0.8;
         ctx.beginPath();
         ctx.moveTo(Math.cos(rad) * r1, Math.sin(rad) * r1);
@@ -235,7 +375,7 @@
       // Inner Technical Dial (Clockwise)
       ctx.save();
       ctx.rotate(time * 0.12);
-      ctx.strokeStyle = 'rgba(238, 182, 35, 0.25)';
+      ctx.strokeStyle = 'rgba(238, 182, 35, 0.3)';
       ctx.setLineDash([8, 6, 2, 6]);
       ctx.lineWidth = 1.2;
       ctx.beginPath();
@@ -250,7 +390,7 @@
       const radarGrad = ctx.createLinearGradient(0, 0, 320, 0);
       radarGrad.addColorStop(0, 'rgba(238, 182, 35, 0)');
       radarGrad.addColorStop(0.7, 'rgba(238, 182, 35, 0.08)');
-      radarGrad.addColorStop(1, 'rgba(238, 182, 35, 0.4)');
+      radarGrad.addColorStop(1, 'rgba(238, 182, 35, 0.45)');
 
       ctx.fillStyle = radarGrad;
       ctx.beginPath();
@@ -260,7 +400,7 @@
       ctx.fill();
 
       // Scan Laser Leading Edge
-      ctx.strokeStyle = 'rgba(238, 182, 35, 0.7)';
+      ctx.strokeStyle = 'rgba(238, 182, 35, 0.75)';
       ctx.lineWidth = 1.5;
       ctx.shadowBlur = 8;
       ctx.shadowColor = '#EEB623';
@@ -273,24 +413,40 @@
 
       ctx.restore();
 
-      // 4. Floating Isometric CAD Blueprints on Left and Right Wings
-      const leftBpX = width * 0.16 + mouse.normX * 35;
-      const leftBpY = height * 0.48 + mouse.normY * 25;
-      drawIsometricBlueprint(leftBpX, leftBpY, 0.75, Math.sin(time * 0.2) * 0.03, 0.55);
+      // 4. Authentic ARUZ Blueprints Placed on Wings
+      const leftBpX = width * 0.16 + mouse.normX * 30;
+      const leftBpY = height * 0.52 + mouse.normY * 20;
+      drawTuuxBlueprint(leftBpX, leftBpY, 0.88, 0.78);
 
-      const rightBpX = width * 0.84 + mouse.normX * 35;
-      const rightBpY = height * 0.52 + mouse.normY * 25;
-      drawIsometricBlueprint(rightBpX, rightBpY, 0.75, -Math.sin(time * 0.2) * 0.03, 0.55);
+      const rightBpX = width * 0.84 + mouse.normX * 30;
+      const rightBpY = height * 0.52 + mouse.normY * 20;
+      drawEternityBlueprint(rightBpX, rightBpY, 0.88, 0.78);
 
-      // 5. Technical CAD Annotation Labels
-      ctx.font = '10px "Plus Jakarta Sans", sans-serif';
-      ctx.fillStyle = 'rgba(89, 85, 90, 0.55)'; // Gris grafito
-      ctx.fillText(`SYS.COORD: 20°37'38"N 87°04'48"W`, 30, height - 25);
-      ctx.fillText(`CIUDAD MAYAKOBA · CAD EJE-04 · TOLERANCIA ±1mm`, 30, height - 40);
+      // 5. Technical CAD Header & Footer Information Bars
+      ctx.font = 'bold 9.5px "Montserrat", sans-serif';
+      ctx.fillStyle = 'rgba(35, 31, 32, 0.7)';
+      ctx.fillText("ARUZ ECOSISTEMA DIGITAL 360 · ARQUITECTURA DE AUTOR & INGENIERÍA", 30, 32);
+
+      ctx.font = '9px "Plus Jakarta Sans", sans-serif';
+      ctx.fillStyle = 'rgba(89, 85, 90, 0.65)';
+      ctx.fillText("CIUDAD MAYAKOBA · PLAYA DEL CARMEN, Q. ROO · CP 77728 | CONSORTIUM GPRUIZ S.A. DE C.V.", 30, 47);
 
       ctx.textAlign = 'right';
-      ctx.fillText(`CÁLCULO ESTRUCTURAL CADE · S100`, width - 30, height - 25);
-      ctx.fillText(`ARUZ ECOSYSTEM HUB · BIM 4D READY`, width - 30, height - 40);
+      ctx.font = 'bold 9.5px monospace';
+      ctx.fillStyle = 'rgba(199, 146, 21, 0.85)';
+      ctx.fillText("SYS.GPS: 20°37'38.2\"N 87°04'48.6\"W", width - 30, 32);
+      ctx.font = '9px "Plus Jakarta Sans", sans-serif';
+      ctx.fillStyle = 'rgba(89, 85, 90, 0.65)';
+      ctx.fillText("COTA N.M.M: +8.45m | TOLERANCIA BIM ±1mm", width - 30, 47);
+      ctx.textAlign = 'left';
+
+      // Footer CAD Specs
+      ctx.font = '9px monospace';
+      ctx.fillStyle = 'rgba(89, 85, 90, 0.65)';
+      ctx.fillText("CÁLCULO ESTRUCTURAL CADE · ING. ANTONIO CARREÓN | SUPERVISIÓN HIDROSANITARIA 2017-2026", 30, height - 25);
+      
+      ctx.textAlign = 'right';
+      ctx.fillText("ARUZ MAQUINARIA: VOLTEOS 14m³ · EXCAVADORAS ORUGA · TRITURACIÓN 15 HA", width - 30, height - 25);
       ctx.textAlign = 'left';
 
       // 6. Floating Technical Particles & Elevation Markers
@@ -312,9 +468,9 @@
         ctx.fill();
 
         if (p.label) {
-          ctx.font = '9px monospace';
-          ctx.fillStyle = 'rgba(120, 95, 30, ' + (p.alpha * 0.7) + ')';
-          ctx.fillText(p.label, pX + 5, pY + 3);
+          ctx.font = 'bold 8.5px monospace';
+          ctx.fillStyle = 'rgba(120, 95, 30, ' + (p.alpha * 0.85) + ')';
+          ctx.fillText(p.label, pX + 6, pY + 3);
         }
       });
 
