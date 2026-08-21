@@ -1,46 +1,75 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="light" lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>ARUZ Maquinaria Pesada | Flota Propia & Infraestructura · Grupo Ruiz México</title>
-  <meta name="description" content="ARUZ Maquinaria Pesada. Flota propia de excavadoras, retroexcavadoras y camiones para terracerías, cimentaciones y urbanización en Quintana Roo.">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>ARUZ Maquinaria Pesada | Flota Propia, Terracerías & Infraestructura · Grupo Ruiz</title>
+  <meta name="description" content="ARUZ Maquinaria Pesada. Flota propia de excavadoras de oruga, motoconformadoras, vibrocompactadores y camiones de volteo en Quintana Roo, Yucatán y Jalisco.">
   <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
-    <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+  
+  <!-- Tailwind CSS with Stitch Theme Tokens -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
   <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "surface": "#fff8f2",
-                        "surface-bright": "#fff8f2",
-                        "carbon-aruz": "#231F20",
-                        "dorado-aruz": "#EEB623",
-                        "dorado-profundo": "#C79215",
-                        "piedra-maya": "#D8C9AE",
-                        "verde-manglar": "#3F5D48",
-                        "gris-grafito": "#59555A",
-                        "outline-variant": "rgba(216, 201, 174, 0.4)"
-                    },
-                    "fontFamily": {
-                        "serif": ["Libre Caslon Text", "serif"],
-                        "sans": ["Plus Jakarta Sans", "sans-serif"]
-                    }
-                }
-            }
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#FFF8F2",
+            "surface-bright": "#FFF8F2",
+            "surface-container-lowest": "#FFFFFF",
+            "surface-container-low": "#FFF2DD",
+            "surface-container": "#FCECD0",
+            "surface-container-high": "#F6E6CA",
+            "surface-container-highest": "#F0E1C5",
+            "carbon-aruz": "#231F20",
+            "on-background": "#231F20",
+            "dorado-aruz": "#EEB623",
+            "dorado-profundo": "#C79215",
+            "primary-container": "#EEB623",
+            "on-primary-container": "#634900",
+            "piedra-maya": "#D8C9AE",
+            "verde-manglar": "#3F5D48",
+            "tertiary": "#476550",
+            "gris-grafito": "#59555A",
+            "on-surface-variant": "#4F4633",
+            "outline-variant": "rgba(216, 201, 174, 0.45)"
+          },
+          spacing: {
+            "margin-mobile": "20px",
+            "margin-desktop": "64px",
+            "section-gap": "96px",
+            "gutter": "24px"
+          },
+          fontFamily: {
+            "serif": ["Libre Caslon Text", "serif"],
+            "sans": ["Plus Jakarta Sans", "sans-serif"],
+            "title": ["Montserrat", "sans-serif"],
+            "label-caps": ["Plus Jakarta Sans", "sans-serif"]
+          }
         }
+      }
+    }
   </script>
+  
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/aruz-ai.css">
+  
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
 </head>
-<body>
-  <!-- Header -->
-    <!-- Site Header (Identical Standard Header) -->
-  <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-20 max-w-[1440px] left-1/2 -translate-x-1/2 bg-surface/85 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm shadow-carbon-aruz/5 transition-all duration-300">
+<body class="bg-surface text-carbon-aruz font-sans antialiased overflow-x-hidden">
+
+  <!-- ==========================================================================
+       TOP NAVIGATION (Standardized Universal Header)
+       ========================================================================== -->
+  <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-20 max-w-[1440px] left-1/2 -translate-x-1/2 bg-surface/90 backdrop-blur-xl border-b border-outline-variant shadow-sm shadow-carbon-aruz/5 transition-all duration-300">
     <a href="../index.html" class="flex items-center gap-3">
       <img src="../assets/logo.svg" alt="ARUZ" class="h-10 w-auto object-contain">
     </a>
@@ -52,145 +81,364 @@
       <a class="text-dorado-profundo font-bold border-b-2 border-dorado-profundo pb-1 font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz" href="aruz-maquinaria.html">Maquinaria</a>
       <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="../index.html#preventas-mayakoba">Colección Mayakoba</a>
       <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="../index.html#contacto-hub">Contacto</a>
-      <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20sobre%20las%20preventas%20de%20ARUZ." target="_blank" class="bg-dorado-profundo text-white font-button px-5 py-2.5 rounded font-label-caps uppercase hover:bg-dorado-aruz transition-all duration-300 ml-2 shadow-md hover:shadow-lg flex items-center gap-1.5 text-xs">
-        <span>Invertir Ahora</span>
+      <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20cotizaci%C3%B3n%20de%20flota%20y%20terracer%C3%ADas%20con%20ARUZ%20Maquinaria." target="_blank" class="bg-dorado-profundo text-white font-button px-5 py-2.5 rounded font-label-caps uppercase hover:bg-dorado-aruz hover:text-carbon-aruz transition-all duration-300 ml-2 shadow-md hover:shadow-lg flex items-center gap-1.5 text-xs font-bold">
+        <span>Cotizar Flota</span>
         <span class="material-symbols-outlined text-sm">arrow_forward</span>
       </a>
     </div>
 
-    <button class="lg:hidden flex items-center text-carbon-aruz p-2" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')">
+    <button class="lg:hidden flex items-center justify-center w-11 h-11 rounded-lg text-carbon-aruz hover:text-dorado-profundo hover:bg-black/5 active:scale-95 transition-all p-2" onclick="toggleMobileDrawer()" aria-label="Abrir Menú Móvil">
       <span class="material-symbols-outlined text-2xl">menu</span>
     </button>
   </nav>
 
-  <!-- Mobile Drawer -->
-  <div id="mobile-drawer" class="hidden fixed inset-0 z-40 bg-carbon-aruz/95 backdrop-blur-2xl pt-24 px-8 text-white flex flex-col gap-6">
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="../desarrolladora.html">ARUZ Desarrolladora</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="../inmobiliaria.html">ARUZ Inmobiliaria</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="cade-constructora.html">CADE Construcción</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="aruz-maquinaria.html">ARUZ Maquinaria Pesada</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="../index.html#preventas-mayakoba">Colección Mayakoba</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="../index.html#contacto-hub">Contacto</a>
-    <a href="https://api.whatsapp.com/send?phone=5216674069523" target="_blank" class="bg-dorado-aruz text-carbon-aruz font-button py-3 rounded text-center uppercase font-bold mt-4">WhatsApp Directo</a>
+  <!-- Mobile Drawer with Safe Area & Native Touch UX -->
+  <div id="mobile-drawer" class="hidden fixed inset-0 z-50 bg-carbon-aruz/95 backdrop-blur-2xl text-white flex flex-col justify-between p-6 sm:p-8 transition-all duration-300">
+    <div>
+      <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+        <a href="../index.html" onclick="closeMobileDrawer()" class="flex items-center gap-3">
+          <img src="../assets/logo-white.svg" alt="ARUZ" class="h-8 w-auto">
+        </a>
+        <button onclick="closeMobileDrawer()" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:text-dorado-aruz active:scale-90 transition-all text-xl" aria-label="Cerrar Menú">
+          ✕
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-4 text-base font-label-caps uppercase tracking-wider">
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="../desarrolladora.html" onclick="closeMobileDrawer()">
+          <span>ARUZ Desarrolladora</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="../inmobiliaria.html" onclick="closeMobileDrawer()">
+          <span>ARUZ Inmobiliaria</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="cade-constructora.html" onclick="closeMobileDrawer()">
+          <span>CADE Construcción</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-dorado-aruz font-bold hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="aruz-maquinaria.html" onclick="closeMobileDrawer()">
+          <span>ARUZ Maquinaria Pesada</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="../index.html#preventas-mayakoba" onclick="closeMobileDrawer()">
+          <span class="text-dorado-aruz font-bold">Colección Mayakoba (4 Preventas)</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors pb-3 flex justify-between items-center" href="../index.html#contacto-hub" onclick="closeMobileDrawer()">
+          <span>Contacto & Asesoría</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="space-y-3 pt-6 border-t border-white/10">
+      <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20cotizaci%C3%B3n%20de%20flota%20y%20terracer%C3%ADas%20con%20ARUZ%20Maquinaria." target="_blank" rel="noopener" class="w-full bg-gradient-to-r from-dorado-aruz to-dorado-profundo text-carbon-aruz font-bold py-3.5 px-4 rounded-xl text-center text-xs uppercase font-label-caps tracking-wider flex items-center justify-center gap-2 active:scale-95 transition-all shadow-lg">
+        <span class="material-symbols-outlined text-lg">local_shipping</span>
+        <span>WhatsApp Operaciones: 667 406 9523</span>
+      </a>
+      <a href="tel:+526674069523" class="w-full bg-white/10 text-white font-semibold py-3 px-4 rounded-xl text-center text-xs uppercase font-label-caps tracking-wider flex items-center justify-center gap-2 active:scale-95 transition-all">
+        <span class="material-symbols-outlined text-lg">call</span>
+        <span>Llamada Telefónica Directa</span>
+      </a>
+    </div>
   </div>
 
-  <!-- Hero Maquinaria -->
-  <section class="hero-section" style="padding-top: 140px; min-height: 75vh;">
-    <div class="hero-backdrop"></div>
-    <div class="container">
-      <div style="font-size: 0.85rem; color: var(--color-grafito); margin-bottom: 1rem;">
-        <a href="../index.html" style="color: var(--color-grafito);">Inicio</a> &gt; 
-        <span style="color: var(--color-gold-deep); font-weight: 700;">ARUZ Maquinaria Pesada</span>
-      </div>
-
-      <div style="margin-bottom: 1.2rem;">
-        <img src="../assets/logo-aruz-maquinaria-dark.svg" alt="ARUZ Maquinaria" style="height: 52px; width: auto;">
-      </div>
-
-      <div style="display: flex; gap: 0.8rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap;">
-        <span class="prop-tag preventa">Flota Propia</span>
-        <span class="prop-tag">Operación Inmediata</span>
-        <span class="prop-tag">Quintana Roo · Yucatán</span>
-      </div>
-
-      <h1 class="hero-title" style="text-align: left; margin-bottom: 0.5rem;">
-        <span>ARUZ Maquinaria Pesada</span>
-      </h1>
-      <p style="font-size: 1.3rem; color: var(--color-grafito); margin-bottom: 1.5rem;">
-        Infraestructura, movimiento de tierras y logística pesada para proyectos de alta escala.
-      </p>
-
-      <div class="advisor-box" style="padding: 2rem; margin-top: 2rem;">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
-          <div>
-            <div class="spec-label">Disponibilidad</div>
-            <div style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 800; color: #FFFFFF;">Flota Activa</div>
-          </div>
-          <div>
-            <div class="spec-label">Operadores</div>
-            <div style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 800; color: #FFFFFF;">Certificados DC-3</div>
-          </div>
-          <div>
-            <div class="spec-label">Servicios</div>
-            <div style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 800; color: #FFFFFF;">Terracerías & Obra</div>
-          </div>
-          <div>
-            <div class="spec-label">Cobertura</div>
-            <div style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 800; color: var(--color-gold-deep); font-weight: 700;">Riviera Maya</div>
-          </div>
-        </div>
-      </div>
+  <!-- ==========================================================================
+       HERO SECTION - ARUZ MAQUINARIA PESADA
+       ========================================================================== -->
+  <section class="relative w-full min-h-[80vh] flex items-end bg-carbon-aruz overflow-hidden pt-32 pb-16 md:pb-24 px-margin-mobile md:px-margin-desktop text-white">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <img alt="Maquinaria pesada y excavadoras de oruga en obra de infraestructura en la Riviera Maya" class="w-full h-full object-cover opacity-50 mix-blend-luminosity filter brightness-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy66E3ggHPPWhYL1g-RyRSiaYX2jTZ9bFLud--9jvheQwVAIBJYETxZNTGGGA2P1Ndgu7c0LXKHUeoD0cM81Ow-cr2QG46gKqDLvhBuovhUVQ96VAMp0mLHJmo3VC4fG324vnIY3ou08iK_ajGbjFHzZiSCWtgmC_0my7C54HP3jk6uDmMvljfNDSsa1FywQhc_ODQc2nM0xQsOtIYKEuA3l6qu-5dlF87jytlFxlNk2-UvRK-tGO4Vg" fetchpriority="high">
+      <div class="absolute inset-0 bg-gradient-to-t from-carbon-aruz via-carbon-aruz/75 to-carbon-aruz/40"></div>
     </div>
-  </section>
 
-  <!-- Catálogo de Maquinaria y Servicios -->
-  <section class="section-spacing">
-    <div class="container">
-      <div class="technical-backing-grid">
-        <div>
-          <span class="section-tag">Capacidad Operativa</span>
-          <h2>Garantía de Avance sin Dependencia Externa</h2>
-          <p>
-            Tener maquinaria pesada propia es la razón por la que en ARUZ y CADE cumplimos los tiempos de entrega. No dependemos de que un tercero libere equipo para arrancar cimentaciones o urbanizaciones.
-          </p>
-
-          <div class="technical-bullets">
-            <div class="tech-bullet-item">
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <div>
-                <strong>Excavaciones y Cimentaciones Profundas</strong>
-                <span>Excavadoras de oruga para corte en roca caliza, banqueo y apertura de cepas de cimentación.</span>
-              </div>
-            </div>
-            <div class="tech-bullet-item">
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <div>
-                <strong>Nivelación y Terracerías</strong>
-                <span>Motoniveladoras y vibrocompactadores de alta tonelada para plataformas y vialidades certificadas.</span>
-              </div>
-            </div>
-            <div class="tech-bullet-item">
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <div>
-                <strong>Acarreo y Logística de Materiales</strong>
-                <span>Camiones de volteo de 14m³ para retiro de escombro y suministro de agregados pétreos.</span>
-              </div>
-            </div>
-          </div>
+    <div class="relative z-10 w-full max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-end gap-10 animate-fade-up">
+      <div class="w-full md:w-2/3">
+        <div class="mb-4">
+          <span class="bg-black/50 backdrop-blur-md text-dorado-aruz px-3.5 py-1 font-label-caps text-[11px] font-bold border border-dorado-aruz/40 rounded uppercase tracking-wider inline-flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-sm">precision_manufacturing</span>
+            Operación Inmediata · Quintana Roo · Yucatán · Jalisco
+          </span>
         </div>
+        
+        <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl text-white mb-4 leading-tight">
+          ARUZ Maquinaria Pesada
+        </h1>
+        
+        <p class="font-sans text-base sm:text-xl text-[#E8E4DF] max-w-2xl leading-relaxed font-light mb-6">
+          Infraestructura, movimiento de tierras, trituración de roca y logística pesada para proyectos de alta escala.
+        </p>
 
-        <div style="background: var(--color-bg-card); border: 1px solid var(--color-border-gold); border-radius: var(--radius-lg); padding: 2.5rem;" id="contacto-maquinaria">
-          <span class="prop-tag preventa" style="margin-bottom: 1rem; display: inline-block;">Cotizaciones de Flota</span>
-          <h3 style="margin-bottom: 0.5rem; color: #FFFFFF;">Renta & Servicios de Terracería</h3>
-          <p style="margin-bottom: 1.5rem; font-size: 0.9rem;">Consulta de tarifas por hora, día o volumen de obra.</p>
-          
-          <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20cotizaci%C3%B3n%20para%20servicios%20de%20ARUZ%20Maquinaria%20Pesada." target="_blank" class="btn-cta-gold" style="width: 100%; margin-bottom: 1rem;">
+        <div class="flex flex-wrap gap-4 items-center">
+          <a class="inline-flex items-center justify-center bg-dorado-aruz hover:bg-white text-carbon-aruz font-label-caps text-xs font-bold px-8 py-4 uppercase tracking-widest rounded transition-all duration-300 shadow-xl gap-2" href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20cotizaci%C3%B3n%20de%20maquinaria%20pesada." target="_blank" rel="noopener">
             <span>Cotizar Flota por WhatsApp</span>
+            <span class="material-symbols-outlined text-sm">chat</span>
           </a>
-          <a href="tel:+526674069523" class="btn-secondary-outline" style="width: 100%;">
-            <span>Llamar a Operaciones: 667 406 9523</span>
+          <a class="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white border border-white/20 font-label-caps text-xs font-bold px-6 py-4 uppercase tracking-widest rounded transition-all duration-300 gap-2" href="#servicios-flota">
+            <span>Ver Maquinaria</span>
+            <span class="material-symbols-outlined text-sm">expand_more</span>
           </a>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Bar -->
+      <div class="w-full md:w-auto flex flex-row sm:flex-row gap-8 border-l-2 border-dorado-aruz pl-6">
+        <div>
+          <p class="font-serif text-4xl sm:text-5xl font-bold text-white">100%</p>
+          <p class="font-label-caps text-xs text-dorado-aruz uppercase font-bold tracking-wider mt-1">Flota Propia</p>
+          <span class="text-[10px] text-piedra-maya">Cero Dependencia</span>
+        </div>
+        <div>
+          <p class="font-serif text-4xl sm:text-5xl font-bold text-white">24/7</p>
+          <p class="font-label-caps text-xs text-dorado-aruz uppercase font-bold tracking-wider mt-1">Operación</p>
+          <span class="text-[10px] text-piedra-maya">Disponibilidad en Obra</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-bottom">
-        <div class="legal-text">&copy; 2026 Consortium GPRuiz S.A. de C.V. · ARUZ Maquinaria Pesada · Grupo Ruiz México</div>
-        <div class="legal-text"><a href="../index.html" style="color: var(--color-gold-deep); font-weight: 700;">Volver al Portal 360</a></div>
+  <!-- ==========================================================================
+       VALUE PROPOSITION & BENTO GRID DE MAQUINARIA
+       ========================================================================== -->
+  <section class="w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24" id="servicios-flota">
+    
+    <div class="mb-14 max-w-3xl">
+      <span class="font-label-caps text-xs text-dorado-profundo uppercase tracking-widest mb-2 block font-bold">
+        Capacidad Operativa Directa
+      </span>
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-carbon-aruz font-bold mb-4">
+        Garantía de Avance sin Dependencia Externa
+      </h2>
+      <p class="text-gris-grafito text-base leading-relaxed">
+        Tener maquinaria pesada propia es la razón por la que en <strong>ARUZ Desarrolladora</strong> y <strong>CADE Construcción</strong> cumplimos rigurosamente los tiempos de entrega. No dependemos de que un tercero libere equipo para arrancar cimentaciones, apertura de caminos o urbanizaciones.
+      </p>
+    </div>
+
+    <!-- Bento Grid for Features -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Feature 1: Excavaciones y Cimentaciones -->
+      <div class="group bg-surface-container-highest rounded-2xl border border-outline-variant flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+        <div class="h-64 w-full relative overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Excavadora de oruga realizando corte en roca caliza" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaEO-UjEJ1Kyhsp4CBroRqrnXs4OmTRH7pwx-a5xzcp-Q5y5Yja7TjrxCeYtaeeXJI8cIIQsCJ3J-egQIry7KsTfsKCJqhQqt0BhWFwZ0WZwv_HLm9gcGu2kNkyggxg7j9Xj-N99N3m-Sd4gtHj-xMWz-XuvQ3Sp5ka7KARqRpp9zG5nQy0DwQBrPMtCYWySrJZ0NJqOZoXCeqVDcdfPw_RR6vU2499gPDxBw-B3FMn34cuYdfC9RM-g" loading="lazy" decoding="async">
+          <div class="absolute top-4 left-4 inline-block px-3 py-1 bg-carbon-aruz/85 backdrop-blur-md text-dorado-aruz font-label-caps text-[10px] font-bold uppercase rounded border border-dorado-aruz/30">
+            Excavación Pesada
+          </div>
+        </div>
+        <div class="p-8 flex-grow flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-dorado-profundo/15 text-dorado-profundo flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-2xl">engineering</span>
+            </div>
+            <h3 class="font-serif text-xl sm:text-2xl text-carbon-aruz font-bold mb-3">Excavaciones & Cimentaciones Profundas</h3>
+            <p class="text-gris-grafito text-sm leading-relaxed mb-4">
+              Excavadoras de oruga equipadas para corte de roca caliza y sascab, banqueo de terrenos, apertura de cepas y cimentaciones estructurales en toda la península.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-outline-variant/50 flex justify-between items-center text-xs font-bold text-dorado-profundo uppercase font-label-caps">
+            <span>Corte en Roca Caliza</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </div>
+        </div>
       </div>
+
+      <!-- Feature 2: Nivelación y Terracerías -->
+      <div class="group bg-surface-container-highest rounded-2xl border border-outline-variant flex flex-col justify-between overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 md:-translate-y-4">
+        <div class="h-64 w-full relative overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Motoniveladora perfilando rasantes en obra de terracerías" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2iPg2toBoF0-Njyap2P0UVSCrh6pCPY9jRfUXkznS2k9tmF6A3Y-FHZvrpyXwTD7TZ5WxsaoOACKvMy2_nAOqLKMqbxFgMe-I7t1qaOkMb9MDxsR__UxIASUCAaApkTp3kmCS378DWcb8W0rxIg4iY9x-gt6ZILwA-0WcxDK-27HU6iB1EP4nQRt-4zCXCA0WrYVjf9zpjyhOC2ePozJgI60pVAvqqRx1An4jsjo3wXI7h_IOueFdxQ" loading="lazy" decoding="async">
+          <div class="absolute top-4 left-4 inline-block px-3 py-1 bg-carbon-aruz/85 backdrop-blur-md text-dorado-aruz font-label-caps text-[10px] font-bold uppercase rounded border border-dorado-aruz/30">
+            Terracerías & Vialidades
+          </div>
+        </div>
+        <div class="p-8 flex-grow flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-dorado-profundo/15 text-dorado-profundo flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-2xl">landscape</span>
+            </div>
+            <h3 class="font-serif text-xl sm:text-2xl text-carbon-aruz font-bold mb-3">Nivelación & Terracerías Certificadas</h3>
+            <p class="text-gris-grafito text-sm leading-relaxed mb-4">
+              Motoniveladoras y vibrocompactadores de alta tonelada para conformación de plataformas residenciales, caminos de acceso y vialidades de urbanización.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-outline-variant/50 flex justify-between items-center text-xs font-bold text-dorado-profundo uppercase font-label-caps">
+            <span>Compactación & Rasantes</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature 3: Acarreo y Logística de Materiales -->
+      <div class="group bg-surface-container-highest rounded-2xl border border-outline-variant flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+        <div class="h-64 w-full relative overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Camiones de volteo de 14m3 alineados para transporte de agregados" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4deYc_idbNAKxQ9pib2PZiddwOJZi-gMgeniCO5ZIcCOeKvcpuHMhZmKz_npQVRMOp7_lfJxW8wniSR_x_BkSAkFe__7bHefyq7_2NtB9TA60aVTBK0kQweDlmwQUYmw4BcaveGoGlt6yefCaIMjv9lAqqKeYs8azWubQJsmCzyNuMmNcizuMWEfeh3KZF35Zc8ESJ4d_7b0O984V1v4jxwDqPC8vnrCCmPkzNV_-w1jTPy07_DCEyg" loading="lazy" decoding="async">
+          <div class="absolute top-4 left-4 inline-block px-3 py-1 bg-carbon-aruz/85 backdrop-blur-md text-dorado-aruz font-label-caps text-[10px] font-bold uppercase rounded border border-dorado-aruz/30">
+            Transporte & Acarreo
+          </div>
+        </div>
+        <div class="p-8 flex-grow flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-dorado-profundo/15 text-dorado-profundo flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-2xl">local_shipping</span>
+            </div>
+            <h3 class="font-serif text-xl sm:text-2xl text-carbon-aruz font-bold mb-3">Acarreo & Logística de Materiales</h3>
+            <p class="text-gris-grafito text-sm leading-relaxed mb-4">
+              Camiones de volteo de 14 m³ y tractocamiones para suministro de agregados pétreos, arena, sascab triturado y desalojo continuo de escombro.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-outline-variant/50 flex justify-between items-center text-xs font-bold text-dorado-profundo uppercase font-label-caps">
+            <span>Flota de Volteos 14 m³</span>
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CAPACITY METRICS GRID
+       ========================================================================== -->
+  <section class="bg-surface-container-highest border-y border-outline-variant py-16 md:py-20">
+    <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-y md:divide-y-0 md:divide-x divide-outline-variant/50">
+        
+        <div class="pt-4 md:pt-0 md:px-6 text-center">
+          <span class="material-symbols-outlined text-4xl text-dorado-profundo mb-3">verified</span>
+          <h4 class="font-label-caps text-xs text-gris-grafito mb-1 uppercase font-bold tracking-wider">Disponibilidad</h4>
+          <p class="font-serif text-xl sm:text-2xl font-bold text-carbon-aruz">Flota Activa 100%</p>
+        </div>
+
+        <div class="pt-4 md:pt-0 md:px-6 text-center">
+          <span class="material-symbols-outlined text-4xl text-dorado-profundo mb-3">school</span>
+          <h4 class="font-label-caps text-xs text-gris-grafito mb-1 uppercase font-bold tracking-wider">Operadores</h4>
+          <p class="font-serif text-xl sm:text-2xl font-bold text-carbon-aruz">Certificados DC-3</p>
+        </div>
+
+        <div class="pt-6 md:pt-0 md:px-6 text-center">
+          <span class="material-symbols-outlined text-4xl text-dorado-profundo mb-3">construction</span>
+          <h4 class="font-label-caps text-xs text-gris-grafito mb-1 uppercase font-bold tracking-wider">Servicios</h4>
+          <p class="font-serif text-xl sm:text-2xl font-bold text-carbon-aruz">Terracerías & Obra</p>
+        </div>
+
+        <div class="pt-6 md:pt-0 md:px-6 text-center">
+          <span class="material-symbols-outlined text-4xl text-dorado-profundo mb-3">map</span>
+          <h4 class="font-label-caps text-xs text-gris-grafito mb-1 uppercase font-bold tracking-wider">Cobertura</h4>
+          <p class="font-serif text-xl sm:text-2xl font-bold text-carbon-aruz">Riviera Maya & Península</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       DIRECT CTA / COTIZACIÓN CON DIRECCIÓN DE OPERACIONES
+       ========================================================================== -->
+  <section class="w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24">
+    <div class="bg-carbon-aruz text-white p-8 sm:p-12 md:p-16 rounded-2xl flex flex-col lg:flex-row items-center justify-between gap-10 border-t-4 border-dorado-aruz relative overflow-hidden shadow-2xl">
+      
+      <div class="relative z-10 w-full lg:w-1/2">
+        <span class="font-label-caps text-xs text-dorado-aruz mb-3 tracking-widest uppercase block font-bold">
+          Cotizaciones de Flota & Renta de Equipo
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold mb-4">
+          Renta & Servicios de Terracería Pesada
+        </h2>
+        <p class="text-sm sm:text-base text-[#E8E4DF] leading-relaxed">
+          Consulta de tarifas por hora, día o volumen cerrado de obra con <strong>Carlos Alfredo Ruiz Ramos (Director de Operaciones)</strong>.
+        </p>
+      </div>
+
+      <div class="relative z-10 w-full lg:w-auto flex flex-col sm:flex-row gap-4 flex-shrink-0">
+        <a class="bg-dorado-aruz hover:bg-white text-carbon-aruz font-label-caps text-xs uppercase tracking-widest px-8 py-4 rounded font-bold transition-all duration-300 text-center flex items-center justify-center gap-2 shadow-lg" href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20cotizaci%C3%B3n%20de%20flota%20y%20terracer%C3%ADas." target="_blank" rel="noopener">
+          <span class="material-symbols-outlined text-lg">chat</span>
+          <span>Cotizar Flota por WhatsApp</span>
+        </a>
+        <a class="bg-transparent border border-white/30 text-white font-label-caps text-xs uppercase tracking-widest px-8 py-4 rounded font-bold hover:border-dorado-aruz hover:text-dorado-aruz transition-all duration-300 text-center flex items-center justify-center gap-2" href="tel:+526674069523">
+          <span class="material-symbols-outlined text-lg">call</span>
+          <span>Llamar a Operaciones</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="w-full bg-carbon-aruz text-white border-t border-white/10 py-16">
+    <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        
+        <div>
+          <div class="mb-5">
+            <img src="../assets/logo-white.svg" alt="ARUZ" class="h-8 w-auto">
+          </div>
+          <p class="text-xs text-piedra-maya leading-relaxed mb-4">
+            ARUZ Maquinaria Pesada. Flota de excavación, terracerías y transporte de agregados en Quintana Roo, Yucatán y Jalisco.
+          </p>
+          <span class="text-[11px] text-dorado-aruz font-bold uppercase tracking-wider font-label-caps block">
+            Ecosistema Grupo Ruiz · "Construimos Confianza"
+          </span>
+        </div>
+
+        <div>
+          <h4 class="font-label-caps text-xs text-dorado-aruz uppercase tracking-widest mb-4 font-bold">Ecosistema ARUZ</h4>
+          <ul class="space-y-2 text-xs text-piedra-maya">
+            <li><a href="../desarrolladora.html" class="hover:text-dorado-aruz transition-colors">ARUZ Desarrolladora</a></li>
+            <li><a href="../inmobiliaria.html" class="hover:text-dorado-aruz transition-colors">ARUZ Inmobiliaria</a></li>
+            <li><a href="cade-constructora.html" class="hover:text-dorado-aruz transition-colors">CADE Construcción</a></li>
+            <li><a href="aruz-maquinaria.html" class="text-white font-bold hover:text-dorado-aruz transition-colors">ARUZ Maquinaria Pesada</a></li>
+            <li><a href="../index.html#preventas-mayakoba" class="hover:text-dorado-aruz transition-colors">Preventas Mayakoba</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-label-caps text-xs text-dorado-aruz uppercase tracking-widest mb-4 font-bold">Capacidades de Flota</h4>
+          <ul class="space-y-2 text-xs text-piedra-maya">
+            <li><span class="text-white font-medium">Excavadoras de Oruga CAT & Komatsu</span></li>
+            <li><span class="text-white font-medium">Motoniveladoras & Vibrocompactadores</span></li>
+            <li><span class="text-white font-medium">Camiones de Volteo de 14 m³</span></li>
+            <li><span class="text-white font-medium">Trituración de Roca & Sascab</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-label-caps text-xs text-dorado-aruz uppercase tracking-widest mb-4 font-bold">Dirección de Operaciones</h4>
+          <div class="space-y-2 text-xs text-piedra-maya">
+            <p><strong class="text-white">Carlos Alfredo Ruiz Ramos</strong><br>Director de Operaciones</p>
+            <p>
+              <a href="mailto:c.ruiz@aruzinmobiliaria.com" class="hover:text-dorado-aruz transition-colors">c.ruiz@aruzinmobiliaria.com</a>
+            </p>
+            <p>
+              <a href="tel:+526674069523" class="text-dorado-aruz font-bold hover:underline">+52 (667) 406 9523</a>
+            </p>
+            <p class="text-[11px] text-piedra-maya/80 pt-2">
+              Plaza Palmeras Local 212, Playa del Carmen, Quintana Roo.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-piedra-maya/70">
+        <p>© 2026 ARUZ Maquinaria Pesada · Grupo Ruiz. Todos los derechos reservados.</p>
+        <p>Operadores Certificados DC-3 · Flota Propia 24/7</p>
+      </div>
+
     </div>
   </footer>
-  <script src="../js/main.js"></script>
-  <!-- Floating Mobile WhatsApp Quick Contact Button -->
-  <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20personalizada%20con%20el%20Director%20de%20ARUZ." target="_blank" rel="noopener" class="floating-whatsapp-btn lg:hidden flex items-center justify-center" aria-label="Contactar por WhatsApp">
+
+  <!-- Floating Mobile / Desktop WhatsApp Quick Contact Button (Bottom-Right) -->
+  <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20cotizaci%C3%B3n%20de%20flota%20y%20terracer%C3%ADas%20con%20ARUZ%20Maquinaria." target="_blank" rel="noopener" class="floating-whatsapp-btn" aria-label="Contactar a Carlos Ruiz por WhatsApp">
     <svg class="w-7 h-7 fill-white" viewBox="0 0 24 24">
       <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
     </svg>
   </a>
+
+  <!-- Mobile Drawer Toggle Script -->
   <script>
     function toggleMobileDrawer() {
       const drawer = document.getElementById('mobile-drawer');
@@ -207,6 +455,7 @@
       }
     }
   </script>
+
   <!-- ARUZ AI Advisor (Gemini API Integration) -->
   <script src="../js/aruz-ai-agent.js" defer></script>
 </body>
