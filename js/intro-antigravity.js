@@ -1,15 +1,14 @@
 /**
- * ARUZ CORE 360 - LIGHT BLUEPRINT ARCHITECTURAL INTRO ENGINE
+ * ARUZ CORE 360 - LIGHT BLUEPRINT ARCHITECTURAL INTRO ENGINE (ZERO-FLASH GUARANTEE)
  * Native Mobile, Tablet & Desktop Motion Graphics
  *
- * Specifications:
- * 1. Warm Architectural Blueprint Canvas Background (#FAF8F5 / #F4EFE6)
- * 2. Subtle CAD Drafting Grid, Concentric Radius Rings & Precision Crosshairs
- * 3. 5 Clean Circular Nodes (Round Spheres) containing ONLY pristine Isologos
- * 4. Guaranteed 100% contained within circular boundaries (zero text spilling)
- * 5. Clean, Minimalist Layout: Removed all GPS and top-left HUD text
- * 6. Harmonic Antigravity Float & Damped Elastic Spring Entrance
- * 7. "The Glow" Golden Radial Dissolve at 6.5s
+ * Guaranteed Execution:
+ * 1. ZERO-FLASH: Overlays the entire screen immediately before DOM paint
+ * 2. Warm Architectural Blueprint Background (#FAF8F5) with CAD Grid & Crosshairs
+ * 3. 5 Clean Circular Nodes (Round Spheres) with pure, unclipped Isologos
+ * 4. Harmonic Antigravity Physics with Damped Elastic Spring Entrance
+ * 5. Minimalist Viewport (No GPS/HUD text, only clean Skip button)
+ * 6. "The Glow" Golden Radial Dissolve at 6.5s
  */
 
 (function () {
@@ -29,27 +28,25 @@
     }
 
     init() {
-      const existing = document.getElementById('aruz-intro-overlay');
-      if (existing && existing.parentNode) {
-        existing.parentNode.removeChild(existing);
-      }
-
-      // 1. Full Viewport Overlay Container with Warm Architectural Canvas
-      this.container = document.createElement('div');
+      // 1. Get or Create Full Viewport Overlay Container
+      this.container = document.getElementById('aruz-intro-overlay') || document.createElement('div');
       this.container.id = 'aruz-intro-overlay';
+      this.container.innerHTML = '';
       this.container.style.cssText = `
-        position: fixed;
-        inset: 0;
-        z-index: 999999;
-        background: #FAF8F5;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        touch-action: none;
-        user-select: none;
-        opacity: 1;
-        transition: opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 1.3s;
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        z-index: 999999 !important;
+        background: #FAF8F5 !important;
+        overflow: hidden !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        touch-action: none !important;
+        user-select: none !important;
+        opacity: 1 !important;
+        transition: opacity 1.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 1.3s !important;
       `;
 
       // 2. Hardware-accelerated Canvas Layer
@@ -86,7 +83,7 @@
       `;
       this.container.appendChild(this.glowLayer);
 
-      // 5. Clean Minimalist "Saltar Intro" Button (Adapted for Light Background)
+      // 5. Clean Minimalist "Saltar Intro" Button
       this.skipBtn = document.createElement('button');
       this.skipBtn.innerHTML = `
         <span>Saltar Intro</span>
@@ -97,7 +94,7 @@
         top: 24px;
         right: 24px;
         z-index: 10;
-        background: rgba(255,255,255,0.85);
+        background: rgba(255,255,255,0.9);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         border: 1px solid rgba(200,154,74,0.4);
@@ -123,7 +120,7 @@
         this.skipBtn.style.transform = 'scale(1.05)';
       });
       this.skipBtn.addEventListener('mouseleave', () => {
-        this.skipBtn.style.background = 'rgba(255,255,255,0.85)';
+        this.skipBtn.style.background = 'rgba(255,255,255,0.9)';
         this.skipBtn.style.color = '#1A1517';
         this.skipBtn.style.borderColor = 'rgba(200,154,74,0.4)';
         this.skipBtn.style.transform = 'scale(1)';
@@ -131,9 +128,13 @@
       this.skipBtn.addEventListener('click', () => this.dismiss());
       this.container.appendChild(this.skipBtn);
 
-      // Mount to body
-      document.body.appendChild(this.container);
-      document.body.style.overflow = 'hidden';
+      // Mount to body immediately at top
+      if (document.body) {
+        if (this.container.parentNode !== document.body) {
+          document.body.insertBefore(this.container, document.body.firstChild);
+        }
+        document.body.style.overflow = 'hidden';
+      }
 
       // Preload 5 Pure Isologos
       this.loadIsologos();
@@ -141,8 +142,10 @@
       // Setup 5 Circular Node Entities
       this.setupNodes();
 
-      // Resize & Event Listeners
+      // Resize & Initial Paint (Synchronous frame 0)
       this.handleResize();
+      this.render(performance.now());
+
       window.addEventListener('resize', () => this.handleResize());
       window.addEventListener('mousemove', (e) => this.handleMouseMove(e));
 
@@ -189,14 +192,13 @@
     }
 
     setupNodes() {
-      // 5 Pure Circular Nodes (Isologos strictly centered inside with generous safety margins)
       this.nodes = [
         {
-          index: 0, // Central ARUZ Core
+          index: 0,
           isCore: true,
           key: 'core',
-          radius: 60,
-          innerRatio: 0.65, // Isologo takes 65% of sphere radius (guaranteed 100% inside)
+          radius: 62,
+          innerRatio: 0.65,
           accentColor: '#EEB623',
           glowColor: 'rgba(238, 182, 35, 0.4)',
           zDist: 1.2,
@@ -204,10 +206,10 @@
           relY: 0
         },
         {
-          index: 1, // Desarrolladora (Top Left)
+          index: 1,
           isCore: false,
           key: 'desarrolladora',
-          radius: 46,
+          radius: 48,
           innerRatio: 0.62,
           accentColor: '#D4AF37',
           glowColor: 'rgba(212, 175, 55, 0.35)',
@@ -216,10 +218,10 @@
           dist: 180
         },
         {
-          index: 2, // Inmobiliaria (Top Right)
+          index: 2,
           isCore: false,
           key: 'inmobiliaria',
-          radius: 46,
+          radius: 48,
           innerRatio: 0.62,
           accentColor: '#C89A4A',
           glowColor: 'rgba(200, 154, 74, 0.35)',
@@ -228,10 +230,10 @@
           dist: 180
         },
         {
-          index: 3, // CADE (Bottom Right)
+          index: 3,
           isCore: false,
           key: 'cade',
-          radius: 46,
+          radius: 48,
           innerRatio: 0.62,
           accentColor: '#4E8752',
           glowColor: 'rgba(78, 135, 82, 0.4)',
@@ -240,10 +242,10 @@
           dist: 180
         },
         {
-          index: 4, // Maquinaria (Bottom Left)
+          index: 4,
           isCore: false,
           key: 'maquinaria',
-          radius: 46,
+          radius: 48,
           innerRatio: 0.62,
           accentColor: '#E6953B',
           glowColor: 'rgba(230, 149, 59, 0.4)',
@@ -285,9 +287,6 @@
       this.mouse.targetY = ((e.clientY - this.height / 2) / (this.height / 2)) * 22;
     }
 
-    /**
-     * Damped Elastic Reveal
-     */
     getElasticScale(nodeIndex, currentTime) {
       const delay = (nodeIndex === 0 ? 0 : nodeIndex) * 0.22;
       const startTime = 0.9 + delay;
@@ -306,9 +305,6 @@
       return 1.0;
     }
 
-    /**
-     * Harmonic Antigravity Position Physics
-     */
     getAntigravityPos(node, currentTime) {
       const speed = 0.52;
       const amp = 10;
@@ -333,7 +329,6 @@
       if (!this.startTime) this.startTime = timestamp;
       const elapsed = (timestamp - this.startTime) / 1000;
 
-      // Interpolate mouse & gyro smoothly
       this.mouse.x += (this.mouse.targetX - this.mouse.x) * 0.06;
       this.mouse.y += (this.mouse.targetY - this.mouse.y) * 0.06;
       this.gyro.x += (this.gyro.targetX - this.gyro.x) * 0.06;
@@ -345,7 +340,7 @@
 
       this.ctx.clearRect(0, 0, this.width, this.height);
 
-      // 1. Draw Architectural CAD White Blueprint (Grid, Concentric Circles & Crosshairs)
+      // 1. Draw Blueprint Background
       this.drawBlueprintBackground(elapsed);
 
       // 2. Compute Nodes Positions & Scales
@@ -372,7 +367,7 @@
         }
       }
 
-      // 4. Sort and Render 5 Clean Circular Nodes (Round Spheres) with Centered Isologos
+      // 4. Render 5 Clean Circular Nodes with Centered Isologos
       const sorted = [...calculatedNodes].sort((a, b) => a.zDist - b.zDist);
       sorted.forEach(node => {
         if (node.currentScale > 0.01) {
@@ -406,7 +401,7 @@
       this.ctx.fillStyle = '#FAF8F5';
       this.ctx.fillRect(0, 0, this.width, this.height);
 
-      // Fine Drafting Grid Lines (Subtle Gold / Light Carbon)
+      // Fine Drafting Grid Lines
       this.ctx.strokeStyle = 'rgba(216, 195, 157, 0.22)';
       this.ctx.lineWidth = 0.6;
       const gridSize = 45;
@@ -454,7 +449,7 @@
       }
       this.ctx.restore();
 
-      // Precision CAD Crosshairs at Center & Cardinal Positions
+      // Precision CAD Crosshairs
       this.ctx.strokeStyle = 'rgba(200, 154, 74, 0.5)';
       this.ctx.lineWidth = 1;
       const crosshairs = [
@@ -481,7 +476,6 @@
       
       this.ctx.save();
 
-      // Clean Direct Laser Blueprint Line
       this.ctx.beginPath();
       this.ctx.moveTo(core.currentX, core.currentY);
       this.ctx.lineTo(sat.currentX, sat.currentY);
@@ -526,7 +520,7 @@
       this.ctx.arc(x, y, r * 1.8, 0, Math.PI * 2);
       this.ctx.fill();
 
-      // 2. High-Contrast Dark Metallic Circular Body (Ensures bright isologos pop brilliantly!)
+      // 2. High-Contrast Dark Metallic Circular Body
       const sphereGrad = this.ctx.createRadialGradient(
         x - r * 0.3, y - r * 0.3, r * 0.08,
         x, y, r
@@ -560,7 +554,7 @@
       this.ctx.lineWidth = 0.8;
       this.ctx.stroke();
 
-      // 5. Draw Pristine 1:1 Isologo Strictly Centered Inside Circle (Never Overflowing!)
+      // 5. Draw Pristine 1:1 Isologo Strictly Centered Inside Circle
       const isologoImg = this.isologos[key];
       if (isologoImg && isologoImg.complete && scale > 0.15) {
         const iconSize = r * 2 * innerRatio;
@@ -588,11 +582,15 @@
       this.container.style.opacity = '0';
       this.container.style.pointerEvents = 'none';
 
+      // Unlock body scroll
+      if (document.body) {
+        document.body.style.overflow = '';
+      }
+
       setTimeout(() => {
         if (this.container && this.container.parentNode) {
           this.container.parentNode.removeChild(this.container);
         }
-        document.body.style.overflow = '';
       }, 1300);
     }
   }
@@ -616,6 +614,7 @@
     });
   }
 
+  // Execute immediately to prevent any flash of page content
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', launchIntro);
   } else {

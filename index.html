@@ -210,8 +210,25 @@
     ]
 }
   </script>
+  <!-- Zero-Flash Intro Lock: Guarantees 100% overlay coverage before DOM paints -->
+  <style id="aruz-intro-lock">
+    #aruz-intro-overlay {
+      position: fixed !important;
+      inset: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: 999999 !important;
+      background-color: #FAF8F5 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+  </style>
+  <script src="js/intro-antigravity.js"></script>
 </head>
 <body class="bg-surface text-carbon-aruz font-body-md overflow-x-hidden selection:bg-dorado-aruz selection:text-white">
+  <!-- Instant Intro Overlay (Zero-Flash Pre-DOM Root) -->
+  <div id="aruz-intro-overlay"></div>
 
   <!-- ==========================================================================
        TOP NAVIGATION
@@ -991,7 +1008,5 @@
   <!-- ARUZ AI Advisor (Gemini API Integration) -->
   <script src="js/aruz-ai-agent.js" defer></script>
   <script src="js/i18n.js"></script>
-  <!-- ARUZ Cinematic Antigravity Motion Graphics Intro -->
-  <script src="js/intro-antigravity.js"></script>
 </body>
 </html>
