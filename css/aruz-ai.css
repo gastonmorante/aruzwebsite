@@ -1,0 +1,525 @@
+/* ==========================================================================
+   ARUZ AI ADVISOR - LUXURY FLOATING UI & CHAT MODAL
+   ========================================================================== */
+
+/* Floating Left AI Assistant Button */
+.floating-ai-btn {
+  position: fixed;
+  bottom: max(1.25rem, calc(env(safe-area-inset-bottom, 0px) + 0.75rem));
+  left: 1.25rem;
+  z-index: 48;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.1rem 0.65rem 0.75rem;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #1F191B 0%, #120E10 100%);
+  border: 1.5px solid #EEB623;
+  color: #FFFFFF;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75), 0 0 20px rgba(238, 182, 35, 0.35);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.floating-ai-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: #FFFFFF;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.85), 0 0 30px rgba(238, 182, 35, 0.55);
+}
+
+.floating-ai-btn:active {
+  transform: scale(0.95);
+}
+
+.floating-ai-icon-wrap {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #EEB623 0%, #C79215 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #161213;
+  flex-shrink: 0;
+}
+
+.floating-ai-icon-wrap .ai-pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid #EEB623;
+  animation: aiPulse 2.5s ease-out infinite;
+}
+
+@keyframes aiPulse {
+  0% { transform: scale(0.9); opacity: 0.9; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.floating-ai-label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.floating-ai-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #EEB623;
+  line-height: 1.1;
+}
+
+.floating-ai-sub {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.65rem;
+  color: #D8C9AE;
+  opacity: 0.85;
+}
+
+/* Floating Right WhatsApp Button */
+.floating-whatsapp-btn {
+  position: fixed;
+  bottom: max(1.25rem, calc(env(safe-area-inset-bottom, 0px) + 0.75rem));
+  right: 1.25rem;
+  z-index: 48;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #FFFFFF;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45), 0 4px 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.floating-whatsapp-btn:hover {
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6), 0 0 20px rgba(37, 211, 102, 0.4);
+}
+
+.floating-whatsapp-btn:active {
+  transform: scale(0.92);
+}
+
+/* AI Chat Modal Dialog */
+.aruz-ai-modal {
+  position: fixed;
+  bottom: 5.25rem;
+  left: 1.25rem;
+  width: 410px;
+  max-width: calc(100vw - 2.5rem);
+  height: 580px;
+  max-height: calc(100vh - 7rem);
+  background: linear-gradient(170deg, #1B1517 0%, #120E0F 100%);
+  border: 1px solid rgba(238, 182, 35, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95), 0 0 35px rgba(238, 182, 35, 0.2);
+  z-index: 55;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.95);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.3s;
+}
+
+.aruz-ai-modal.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* Modal Header */
+.aruz-ai-header {
+  padding: 1rem 1.25rem;
+  background: rgba(35, 27, 29, 0.95);
+  border-bottom: 1px solid rgba(238, 182, 35, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.aruz-ai-header-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.aruz-ai-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #231F20;
+  border: 1.5px solid #EEB623;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.aruz-ai-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.aruz-ai-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.aruz-ai-status {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
+  color: #7BD195;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.aruz-ai-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #25D366;
+  box-shadow: 0 0 8px #25D366;
+}
+
+.aruz-ai-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.aruz-ai-btn-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #D8C9AE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.aruz-ai-btn-icon:hover {
+  background: rgba(238, 182, 35, 0.2);
+  color: #EEB623;
+  border-color: #EEB623;
+}
+
+/* Chat Messages Container */
+.aruz-ai-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #EEB623 rgba(0, 0, 0, 0.3);
+}
+
+.aruz-ai-messages::-webkit-scrollbar {
+  width: 5px;
+}
+.aruz-ai-messages::-webkit-scrollbar-thumb {
+  background: #EEB623;
+  border-radius: 4px;
+}
+
+/* Message Bubble */
+.aruz-msg {
+  display: flex;
+  gap: 0.65rem;
+  max-width: 90%;
+  animation: msgFadeIn 0.3s ease-out;
+}
+
+@keyframes msgFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.aruz-msg.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.aruz-msg.assistant {
+  align-self: flex-start;
+}
+
+.aruz-msg-content {
+  padding: 0.85rem 1.1rem;
+  border-radius: 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.aruz-msg.user .aruz-msg-content {
+  background: linear-gradient(135deg, #C79215 0%, #EEB623 100%);
+  color: #161213;
+  font-weight: 600;
+  border-bottom-right-radius: 2px;
+  box-shadow: 0 4px 15px rgba(238, 182, 35, 0.25);
+}
+
+.aruz-msg.assistant .aruz-msg-content {
+  background: rgba(35, 27, 29, 0.85);
+  border: 1px solid rgba(238, 182, 35, 0.25);
+  color: #E8E4DF;
+  border-bottom-left-radius: 2px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.aruz-msg-content p {
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  margin-bottom: 0.5rem;
+}
+.aruz-msg-content p:last-child {
+  margin-bottom: 0;
+}
+
+.aruz-msg-content strong {
+  color: #EEB623;
+  font-weight: 700;
+}
+.aruz-msg.user .aruz-msg-content strong {
+  color: #000000;
+}
+
+.aruz-msg-content ul, .aruz-msg-content ol {
+  margin: 0.4rem 0;
+  padding-left: 1.2rem;
+}
+.aruz-msg-content li {
+  list-style: disc;
+  margin-bottom: 0.3rem;
+}
+
+.aruz-msg-content a {
+  color: #EEB623;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* Quick Suggestion Chips */
+.aruz-ai-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+}
+
+.aruz-chip {
+  background: rgba(238, 182, 35, 0.1);
+  border: 1px solid rgba(238, 182, 35, 0.3);
+  color: #D8C9AE;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.aruz-chip:hover {
+  background: #EEB623;
+  color: #161213;
+  border-color: #EEB623;
+  transform: translateY(-1px);
+}
+
+/* Typing indicator */
+.aruz-typing {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.75rem 1rem;
+  background: rgba(35, 27, 29, 0.85);
+  border: 1px solid rgba(238, 182, 35, 0.25);
+  border-radius: 14px;
+  width: fit-content;
+}
+
+.aruz-typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #EEB623;
+  animation: typingBounce 1.4s infinite ease-in-out;
+}
+.aruz-typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.aruz-typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typingBounce {
+  0%, 80%, 100% { transform: scale(0); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+/* WhatsApp Direct Callout Banner inside chat */
+.aruz-chat-cta {
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.15) 0%, rgba(18, 140, 126, 0.15) 100%);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.aruz-chat-cta:hover {
+  background: rgba(37, 211, 102, 0.25);
+  border-color: #25D366;
+}
+
+.aruz-chat-cta-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.aruz-chat-cta-btn {
+  background: #25D366;
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+/* Modal Input Footer */
+.aruz-ai-footer {
+  padding: 0.85rem 1.1rem;
+  background: rgba(22, 17, 18, 0.98);
+  border-top: 1px solid rgba(238, 182, 35, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.aruz-ai-input {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(238, 182, 35, 0.3);
+  border-radius: 24px;
+  padding: 0.65rem 1.1rem;
+  color: #FFFFFF;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.aruz-ai-input:focus {
+  border-color: #EEB623;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.aruz-ai-input::placeholder {
+  color: rgba(216, 201, 174, 0.5);
+  font-size: 0.8rem;
+}
+
+.aruz-ai-send {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #C79215 0%, #EEB623 100%);
+  color: #161213;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.aruz-ai-send:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px rgba(238, 182, 35, 0.5);
+}
+
+.aruz-ai-send:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Mobile Responsiveness for Modal */
+@media (max-width: 640px) {
+  .floating-ai-btn {
+    padding: 0.55rem 0.85rem;
+    left: 0.85rem;
+    bottom: max(0.85rem, calc(env(safe-area-inset-bottom, 0px) + 0.5rem));
+  }
+  .floating-ai-title {
+    font-size: 0.70rem;
+  }
+  .floating-ai-sub {
+    display: none;
+  }
+
+  .floating-whatsapp-btn {
+    right: 0.85rem;
+    bottom: max(0.85rem, calc(env(safe-area-inset-bottom, 0px) + 0.5rem));
+    width: 48px;
+    height: 48px;
+  }
+
+  .aruz-ai-modal {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 82vh;
+    max-height: 82vh;
+    border-radius: 20px 20px 0 0;
+    border-bottom: none;
+  }
+}
