@@ -1,59 +1,150 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Casa Eternity Jol | Preventa de Autor · Senderos Mayakoba Mz 18 Lt 03 · ARUZ Desarrolladora</title>
   <meta name="description" content="Casa Eternity Jol en Senderos Mayakoba Mz 18 Lt 03, Ciudad Mayakoba, Playa del Carmen. Residencia de autor de 305.31 m² de construcción total, 3 recámaras en suite, alberca Chukum, roof top con asador y cine al aire libre, respaldo CADE.">
   <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+
+  <!-- Tailwind CSS CDN with forms & container queries -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+
+  <!-- Google Fonts: Manrope, Montserrat, Libre Caslon Text & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Google Stitch Tailwind Theme Configuration -->
   <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "surface": "#fff8f2",
-                        "surface-bright": "#fff8f2",
-                        "surface-card": "#faf4eb",
-                        "carbon-aruz": "#231F20",
-                        "dorado-aruz": "#EEB623",
-                        "dorado-profundo": "#C79215",
-                        "piedra-maya": "#D8C9AE",
-                        "verde-manglar": "#3F5D48",
-                        "gris-grafito": "#59555A",
-                        "outline-variant": "rgba(216, 201, 174, 0.4)"
-                    },
-                    "fontFamily": {
-                        "serif": ["Libre Caslon Text", "serif"],
-                        "sans": ["Plus Jakarta Sans", "sans-serif"]
-                    }
-                }
-            }
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#fcf9f5",
+            "inverse-primary": "#c8c6c5",
+            "primary-fixed-dim": "#c8c6c5",
+            "tertiary-fixed": "#e5e2db",
+            "on-tertiary": "#ffffff",
+            "secondary-fixed-dim": "#e9c349",
+            "on-secondary": "#ffffff",
+            "on-surface": "#1c1c1a",
+            "surface-dim": "#dcdad6",
+            "on-surface-variant": "#444748",
+            "on-primary-fixed": "#1c1b1b",
+            "on-tertiary-container": "#85847e",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#eae8e4",
+            "on-primary-fixed-variant": "#474746",
+            "surface-container-lowest": "#ffffff",
+            "secondary-container": "#fed65b",
+            "primary-fixed": "#e5e2e1",
+            "surface-container": "#f0ede9",
+            "on-error": "#ffffff",
+            "outline": "#747878",
+            "on-tertiary-fixed-variant": "#474742",
+            "tertiary": "#000000",
+            "inverse-surface": "#31302e",
+            "secondary": "#735c00",
+            "surface-container-highest": "#e5e2de",
+            "surface-container-low": "#f6f3ef",
+            "tertiary-container": "#1c1c18",
+            "surface-tint": "#5f5e5e",
+            "on-secondary-container": "#745c00",
+            "on-background": "#1c1c1a",
+            "outline-variant": "#c4c7c7",
+            "tertiary-fixed-dim": "#c9c6c0",
+            "primary-container": "#1c1b1b",
+            "secondary-fixed": "#ffe088",
+            "on-secondary-fixed": "#241a00",
+            "error-container": "#ffdad6",
+            "surface-bright": "#fcf9f5",
+            "on-secondary-fixed-variant": "#574500",
+            "on-tertiary-fixed": "#1c1c18",
+            "on-error-container": "#93000a",
+            "error": "#ba1a1a",
+            "on-primary-container": "#858383",
+            "primary": "#000000",
+            "inverse-on-surface": "#f3f0ec",
+            "background": "#fcf9f5",
+            "surface-variant": "#e5e2de",
+            "whatsapp": "#25D366",
+            "dorado-aruz": "#EEB623",
+            "dorado-profundo": "#C79215",
+            "carbon-aruz": "#1C1C1A",
+            "piedra-maya": "#D8C9AE",
+            "verde-manglar": "#3F5D48",
+            "gris-grafito": "#59555A"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1.25rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "24px",
+            "margin-mobile": "20px",
+            "section-gap": "120px",
+            "base": "8px",
+            "margin-desktop": "80px"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Montserrat", "sans-serif"],
+            "headline-lg": ["Montserrat", "sans-serif"],
+            "body-lg": ["Manrope", "sans-serif"],
+            "label-caps": ["Montserrat", "sans-serif"],
+            "body-md": ["Manrope", "sans-serif"],
+            "display-lg": ["Montserrat", "sans-serif"],
+            "nav-item": ["Montserrat", "sans-serif"],
+            "serif": ["Libre Caslon Text", "serif"],
+            "sans": ["Manrope", "sans-serif"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-caps": ["10px", { "lineHeight": "12px", "letterSpacing": "0.25em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "nav-item": ["11px", { "lineHeight": "14px", "letterSpacing": "0.25em", "fontWeight": "500" }]
+          }
         }
+      }
+    }
   </script>
+
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/aruz-ai.css">
+
   <style>
-    .gallery-filter-btn.active {
-      background: #C79215;
-      color: #FFFFFF;
-      border-color: #C79215;
-      box-shadow: 0 4px 15px rgba(199, 146, 21, 0.35);
+    .nav-link {
+      position: relative;
     }
-    .gallery-item {
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: currentColor;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
     }
-    .gallery-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(35, 31, 32, 0.15);
+    .nav-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
     }
-    .gallery-item:hover img {
-      transform: scale(1.05);
+    .nav-link.active::after {
+      transform: scaleX(1);
+      background-color: #e9c349;
     }
   </style>
-  <link rel="stylesheet" href="../css/aruz-ai.css">
 </head>
 <body class="bg-surface text-carbon-aruz font-sans antialiased">
 
