@@ -1954,6 +1954,7 @@ button, a, input, select, textarea, .gallery-item, .property-card, .hud-orbit-no
 .dynamic-kpi {
   font-variant-numeric: tabular-nums;
   display: inline-block;
+  white-space: nowrap;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), text-shadow 0.3s ease, color 0.3s ease;
   position: relative;
   will-change: transform, opacity;

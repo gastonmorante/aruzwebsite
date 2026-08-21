@@ -560,7 +560,7 @@ function initDynamicKPIs() {
     }
 
     const s = config.suffix;
-    const space = (s && !s.startsWith('%') && !s.startsWith('/7') && !s.startsWith('m²')) ? ' ' : '';
+    const space = (s && !s.startsWith('%') && !s.startsWith('/7') && !s.startsWith('m²') && !s.startsWith('K') && !s.startsWith('k')) ? ' ' : '';
     return `${config.prefix}${numStr}${s ? space + s : ''}`;
   }
 
