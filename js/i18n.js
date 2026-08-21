@@ -1,6 +1,6 @@
 /**
- * ARUZ CORE 360 DIGITAL ECOSYSTEM - UNIVERSAL LIVE DOM TRANSLATOR (i18n)
- * Full DOM Live TreeWalker & Phrase Engine (100% Page Content Translation)
+ * ARUZ CORE 360 - UNIVERSAL HIGH-PERFORMANCE I18N TRANSLATION ENGINE
+ * Full DOM Live Replacement, data-i18n Binding & Phrase TreeWalker
  * Languages: Spanish (es - Native Baseline), English (en), French (fr)
  */
 
@@ -1971,7 +1971,57 @@ const aruzPhrases = {
 }
 };
 
-// Pre-sorted phrase replacement entries by descending length for longest-match-first
+const aruzDataKeys = {
+  "en": {
+  "nav.desarrolladora": "Developer",
+  "nav.inmobiliaria": "Real Estate",
+  "nav.cade": "CADE Construction",
+  "nav.maquinaria": "Heavy Machinery",
+  "nav.mayakoba": "Mayakoba Collection",
+  "nav.contacto": "Contact",
+  "btn.ver_planos": "View Architectural Plans",
+  "btn.descargar_planos": "View Architectural Plans",
+  "btn.ver_ficha": "View Technical Datasheet",
+  "btn.descargar_ficha": "View Technical Datasheet",
+  "btn.ver_brochure": "View Signature Brochure",
+  "btn.ver_condiciones": "View Sales Terms",
+  "badge.vector_cad": "Vector CAD / PDF",
+  "badge.memoria_descriptiva": "Technical Dossier",
+  "badge.catalogo_editorial": "Editorial Catalogue",
+  "badge.holding_corporativo": "Consortium GPRuiz",
+  "badge.sello_cade": "CADE Structural Seal",
+  "docs.planos_title": "Architectural Floorplans",
+  "docs.ficha_title": "Official Technical Datasheet",
+  "docs.brochure_title": "Signature Brochure",
+  "docs.condiciones_title": "Sales Terms & Conditions",
+  "docs.advisory_title": "Would you like a customized financial plan or schedule an on-site tour?"
+},
+  "fr": {
+  "nav.desarrolladora": "Promoteur",
+  "nav.inmobiliaria": "Immobilier",
+  "nav.cade": "CADE Construction",
+  "nav.maquinaria": "Engins Lourds",
+  "nav.mayakoba": "Collection Mayakoba",
+  "nav.contacto": "Contact",
+  "btn.ver_planos": "Voir les Plans",
+  "btn.descargar_planos": "Voir les Plans",
+  "btn.ver_ficha": "Voir la Fiche Technique",
+  "btn.descargar_ficha": "Voir la Fiche Technique",
+  "btn.ver_brochure": "Voir la Brochure",
+  "btn.ver_condiciones": "Voir les Conditions",
+  "badge.vector_cad": "Vecteur CAD / PDF",
+  "badge.memoria_descriptiva": "Dossier Technique",
+  "badge.catalogo_editorial": "Catalogue Éditorial",
+  "badge.holding_corporativo": "Consortium GPRuiz",
+  "badge.sello_cade": "Label Structurel CADE",
+  "docs.planos_title": "Plans Architecturaux",
+  "docs.ficha_title": "Fiche Technique Officielle",
+  "docs.brochure_title": "Brochure d'Auteur",
+  "docs.condiciones_title": "Conditions de Vente",
+  "docs.advisory_title": "Souhaitez-vous un plan de financement personnalisé ou planifier une visite sur le chantier ?"
+}
+};
+
 const aruzSortedPhrases = {
   "en": Object.entries(aruzPhrases.en).sort((a, b) => b[0].length - a[0].length),
   "fr": Object.entries(aruzPhrases.fr).sort((a, b) => b[0].length - a[0].length)
@@ -2037,9 +2087,19 @@ class AruzI18nEngine {
     }
 
     const dict = aruzPhrases[lang] || {};
+    const dataKeys = aruzDataKeys[lang] || {};
     const sortedList = aruzSortedPhrases[lang] || [];
 
-    // 1. Translate inputs, textareas, and select options
+    // 1. Translate elements with data-i18n attributes
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dataKeys[key]) {
+        if (el._origText === undefined) el._origText = el.textContent;
+        el.textContent = dataKeys[key];
+      }
+    });
+
+    // 2. Translate form placeholders and select options
     document.querySelectorAll('input, textarea').forEach(el => {
       if (el.placeholder) {
         if (el._origPlaceholder === undefined) el._origPlaceholder = el.placeholder;
@@ -2058,7 +2118,39 @@ class AruzI18nEngine {
       }
     });
 
-    // 2. Walk all visible DOM text nodes
+    // 3. Direct Element-level translation for full headings, paragraphs, spans & buttons
+    document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, a, button, span, li, label').forEach(el => {
+      // Skip icons, scripts, language buttons
+      if (el.classList.contains('material-symbols-outlined') || el.classList.contains('lang-btn') || el.closest('.aruz-lang-switcher') || el.closest('#aruz-intro-overlay')) {
+        return;
+      }
+
+      // If element has no complex element children, or only text + simple spans
+      if (el._origHTML === undefined) {
+        el._origHTML = el.innerHTML;
+        el._origText = el.textContent;
+      }
+
+      const cleanText = el._origText.trim().replace(/\s+/g, ' ');
+      if (dict[cleanText] && !el.querySelector('div, section, article, nav, header, footer')) {
+        // If element had inner tags (like <strong>), do a smart replace in its HTML
+        if (el._origHTML.includes('<')) {
+          let translatedHTML = el._origHTML;
+          for (let i = 0; i < sortedList.length; i++) {
+            const es = sortedList[i][0];
+            const target = sortedList[i][1];
+            if (es.length > 2 && translatedHTML.includes(es)) {
+              translatedHTML = translatedHTML.split(es).join(target);
+            }
+          }
+          el.innerHTML = translatedHTML;
+        } else {
+          el.textContent = dict[cleanText];
+        }
+      }
+    });
+
+    // 4. Universal Live DOM TreeWalker for granular text nodes
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
         if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
@@ -2066,7 +2158,7 @@ class AruzI18nEngine {
         if (!parent) return NodeFilter.FILTER_REJECT;
         const tag = parent.tagName.toLowerCase();
         if (tag === 'script' || tag === 'style' || tag === 'svg' || tag === 'path' || tag === 'noscript') return NodeFilter.FILTER_REJECT;
-        if (parent.classList.contains('material-symbols-outlined') || parent.classList.contains('notranslate') || parent.classList.contains('lang-btn')) return NodeFilter.FILTER_REJECT;
+        if (parent.classList.contains('material-symbols-outlined') || parent.classList.contains('notranslate') || parent.classList.contains('lang-btn') || parent.closest('#aruz-intro-overlay')) return NodeFilter.FILTER_REJECT;
         return NodeFilter.FILTER_ACCEPT;
       }
     });
@@ -2109,6 +2201,14 @@ class AruzI18nEngine {
   }
 
   restoreSpanishDOM() {
+    // 1. Restore data-i18n elements
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      if (el._origText !== undefined) {
+        el.textContent = el._origText;
+      }
+    });
+
+    // 2. Restore placeholders and select options
     document.querySelectorAll('input, textarea').forEach(el => {
       if (el._origPlaceholder !== undefined) {
         el.placeholder = el._origPlaceholder;
@@ -2121,6 +2221,14 @@ class AruzI18nEngine {
       }
     });
 
+    // 3. Restore elements with stored _origHTML
+    document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, a, button, span, li, label').forEach(el => {
+      if (el._origHTML !== undefined) {
+        el.innerHTML = el._origHTML;
+      }
+    });
+
+    // 4. Restore TreeWalker text nodes
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
         if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
@@ -2145,12 +2253,12 @@ class AruzI18nEngine {
 
   renderLanguageSwitchers() {
     const switcherHTML = `
-      <div class="aruz-lang-switcher inline-flex items-center bg-black/40 border border-dorado-aruz/30 rounded-full px-2 py-1 text-[11px] font-sans font-bold tracking-wider backdrop-blur-md">
-        <button type="button" onclick="window.AruzI18nInstance.setLanguage('es')" class="lang-btn px-2 py-0.5 rounded-full transition-all ${this.currentLang === 'es' ? 'bg-dorado-aruz text-carbon-aruz font-extrabold shadow-sm' : 'text-white/70 hover:text-dorado-aruz'}" data-lang="es">ES</button>
-        <span class="text-white/20 mx-0.5">·</span>
-        <button type="button" onclick="window.AruzI18nInstance.setLanguage('en')" class="lang-btn px-2 py-0.5 rounded-full transition-all ${this.currentLang === 'en' ? 'bg-dorado-aruz text-carbon-aruz font-extrabold shadow-sm' : 'text-white/70 hover:text-dorado-aruz'}" data-lang="en">EN</button>
-        <span class="text-white/20 mx-0.5">·</span>
-        <button type="button" onclick="window.AruzI18nInstance.setLanguage('fr')" class="lang-btn px-2 py-0.5 rounded-full transition-all ${this.currentLang === 'fr' ? 'bg-dorado-aruz text-carbon-aruz font-extrabold shadow-sm' : 'text-white/70 hover:text-dorado-aruz'}" data-lang="fr">FR</button>
+      <div class="aruz-lang-switcher inline-flex items-center bg-black/70 border border-dorado-aruz/40 rounded-full px-2.5 py-1 text-[11px] font-sans font-bold tracking-wider backdrop-blur-md shadow-sm">
+        <button type="button" onclick="window.AruzI18nInstance.setLanguage('es')" class="lang-btn px-2.5 py-0.5 rounded-full transition-all ${this.currentLang === 'es' ? 'bg-dorado-aruz text-carbon-aruz font-extrabold shadow-sm scale-105' : 'text-white/75 hover:text-dorado-aruz'}" data-lang="es">ES</button>
+        <span class="text-white/25 mx-1">·</span>
+        <button type="button" onclick="window.AruzI18nInstance.setLanguage('en')" class="lang-btn px-2.5 py-0.5 rounded-full transition-all ${this.currentLang === 'en' ? 'bg-dorado-aruz text-carbon-aruz font-extrabold shadow-sm scale-105' : 'text-white/75 hover:text-dorado-aruz'}" data-lang="en">EN</button>
+        <span class="text-white/25 mx-1">·</span>
+        <button type="button" onclick="window.AruzI18nInstance.setLanguage('fr')" class="lang-btn px-2.5 py-0.5 rounded-full transition-all ${this.currentLang === 'fr' ? 'bg-dorado-aruz text-carbon-aruz font-extrabold shadow-sm scale-105' : 'text-white/75 hover:text-dorado-aruz'}" data-lang="fr">FR</button>
       </div>
     `;
 
@@ -2164,9 +2272,9 @@ class AruzI18nEngine {
       switcher.querySelectorAll('.lang-btn').forEach(btn => {
         const btnLang = btn.getAttribute('data-lang');
         if (btnLang === this.currentLang) {
-          btn.className = 'lang-btn px-2 py-0.5 rounded-full transition-all bg-dorado-aruz text-carbon-aruz font-extrabold shadow-sm';
+          btn.className = 'lang-btn px-2.5 py-0.5 rounded-full transition-all bg-dorado-aruz text-carbon-aruz font-extrabold shadow-sm scale-105';
         } else {
-          btn.className = 'lang-btn px-2 py-0.5 rounded-full transition-all text-white/70 hover:text-dorado-aruz';
+          btn.className = 'lang-btn px-2.5 py-0.5 rounded-full transition-all text-white/75 hover:text-dorado-aruz';
         }
       });
     });
