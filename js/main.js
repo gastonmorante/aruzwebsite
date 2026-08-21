@@ -263,9 +263,33 @@ function init3DHudOrbit() {
 
       // 3D Depth calculation
       const depthFactor = (sinA + 1) / 2; // 0 (far) to 1 (near)
-      const scale = (idx === activeHoverIndex ? 1.15 : 0.85) + depthFactor * 0.3;
-      const opacity = idx === activeHoverIndex ? 1.0 : (0.7 + depthFactor * 0.3);
-      const zIndex = Math.round((idx === activeHoverIndex ? 30 : 5) + depthFactor * 15);
+      const scale = (idx === activeHoverIndex ? 1.18 : 0.88) + depthFactor * 0.28;
+      const opacity = idx === activeHoverIndex ? 1.0 : (0.75 + depthFactor * 0.25);
+      const zIndex = Math.round((idx === activeHoverIndex ? 35 : 5) + depthFactor * 20);
+      const shadowBlur = Math.round(15 + depthFactor * 25);
+
+      // Draw 3D Energy Conduit from Center Core to Node
+      const conduit = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      conduit.setAttribute('x1', centerX);
+      conduit.setAttribute('y1', centerY);
+      conduit.setAttribute('x2', nodeX);
+      conduit.setAttribute('y2', nodeY);
+      conduit.setAttribute('stroke', idx === activeHoverIndex ? '#EEB623' : 'rgba(238, 182, 35, 0.32)');
+      conduit.setAttribute('stroke-width', idx === activeHoverIndex ? '2.2' : '1.2');
+      conduit.setAttribute('stroke-dasharray', idx === activeHoverIndex ? 'none' : '4 3');
+      svg.appendChild(conduit);
+
+      // Traveling Energy Photon Pulse
+      const pulseT = ((currentAngle * 2.2 + idx * 0.25) % 1);
+      const pulseX = centerX + (nodeX - centerX) * pulseT;
+      const pulseY = centerY + (nodeY - centerY) * pulseT;
+      const photon = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      photon.setAttribute('cx', pulseX);
+      photon.setAttribute('cy', pulseY);
+      photon.setAttribute('r', idx === activeHoverIndex ? 3.5 : 2.5);
+      photon.setAttribute('fill', '#EEB623');
+      photon.style.filter = 'drop-shadow(0 0 6px #EEB623)';
+      svg.appendChild(photon);
 
       node.style.left = `${nodeX}px`;
       node.style.top = `${nodeY}px`;
@@ -310,7 +334,7 @@ function init3DHudOrbit() {
           const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
           dot.setAttribute('cx', nodeX);
           dot.setAttribute('cy', nodeY);
-          dot.setAttribute('r', 4);
+          dot.setAttribute('r', 4.5);
           dot.setAttribute('class', 'hud-leader-dot');
           svg.appendChild(dot);
 
@@ -318,7 +342,7 @@ function init3DHudOrbit() {
           const dotCard = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
           dotCard.setAttribute('cx', cardAnchorX);
           dotCard.setAttribute('cy', cardAnchorY);
-          dotCard.setAttribute('r', 3);
+          dotCard.setAttribute('r', 3.5);
           dotCard.setAttribute('class', 'hud-leader-dot');
           svg.appendChild(dotCard);
         }

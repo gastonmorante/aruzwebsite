@@ -555,10 +555,12 @@ p {
   max-width: 1120px;
   height: 520px;
   margin: 0 auto;
-  perspective: 1200px;
+  perspective: 1400px;
+  transform-style: preserve-3d;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.15s cubic-bezier(0.2, 0, 0, 1);
 }
 
 .hud-orbit-track {
@@ -570,7 +572,8 @@ p {
   max-width: 92%;
   height: 330px;
   border-radius: 50%;
-  border: 1px dashed rgba(238, 182, 35, 0.25);
+  border: 1px dashed rgba(238, 182, 35, 0.35);
+  box-shadow: 0 0 35px rgba(238, 182, 35, 0.08), inset 0 0 35px rgba(238, 182, 35, 0.05);
   pointer-events: none;
   z-index: 2;
 }
@@ -578,7 +581,7 @@ p {
 .hud-orbit-track.inner {
   width: 660px;
   height: 250px;
-  border: 1px solid rgba(216, 201, 174, 0.12);
+  border: 1px solid rgba(216, 201, 174, 0.22);
 }
 
 /* Central Metallic Gold Core (Gravitational Anchor) */
@@ -599,14 +602,14 @@ p {
   border-radius: 50%;
   background: radial-gradient(circle at 35% 35%, #2A2224 0%, #161213 85%);
   border: 2px solid var(--color-gold);
-  box-shadow: 0 0 40px rgba(238, 182, 35, 0.4), inset 0 0 15px rgba(238, 182, 35, 0.2);
+  box-shadow: 0 0 45px rgba(238, 182, 35, 0.45), 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 18px rgba(238, 182, 35, 0.25);
   transition: var(--transition-smooth);
 }
 
 .hud-center-core:hover,
 .hud-central-core:hover {
-  transform: translate(-50%, -50%) scale(1.05);
-  box-shadow: 0 0 55px rgba(238, 182, 35, 0.65), inset 0 0 20px rgba(238, 182, 35, 0.35);
+  transform: translate(-50%, -50%) scale(1.06) translateZ(15px);
+  box-shadow: 0 0 65px rgba(238, 182, 35, 0.75), 0 20px 45px rgba(0, 0, 0, 0.5), inset 0 0 25px rgba(238, 182, 35, 0.4);
   border-color: #FFFFFF;
 }
 
@@ -702,8 +705,15 @@ p {
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: var(--transition-smooth);
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s ease, border-color 0.3s ease;
   padding: 6px;
+}
+
+.node-emblem:hover,
+.hud-orbit-node.active .node-emblem {
+  transform: scale(1.18);
+  border-color: #FFFFFF;
+  box-shadow: 0 0 35px rgba(238, 182, 35, 0.85), 0 15px 30px rgba(0, 0, 0, 0.6), inset 0 0 18px rgba(238, 182, 35, 0.4);
 }
 
 .node-logo-svg {
