@@ -436,3 +436,56 @@ function initIntersectionAnimations() {
 
   elements.forEach(el => observer.observe(el));
 }
+
+/* --------------------------------------------------------------------------
+   GLOBAL LEAD CAPTURE FORM SUBMISSION HANDLER
+   -------------------------------------------------------------------------- */
+function handleLeadSubmit(event) {
+  if (event) event.preventDefault();
+
+  const name = document.getElementById('leadName')?.value.trim() || '';
+  const phone = document.getElementById('leadPhone')?.value.trim() || '';
+  const email = document.getElementById('leadEmail')?.value.trim() || '';
+  const interest = document.getElementById('leadInterest')?.value || 'Preventas Ciudad Mayakoba';
+  const message = document.getElementById('leadMessage')?.value.trim() || '';
+
+  if (!name || !phone || !email) return;
+
+  const btn = document.getElementById('btnSubmitLead');
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = `<span>Procesando Solicitud...</span><span class="material-symbols-outlined text-sm animate-spin">refresh</span>`;
+  }
+
+  // Build WhatsApp payload for Director Carlos Ruiz
+  const directorPhone = '5216674069523';
+  let text = `*NUEVO LEAD DESDE SITIO WEB ARUZ*\n\n`;
+  text += `👤 *Nombre:* ${name}\n`;
+  text += `📱 *Tel / WhatsApp:* ${phone}\n`;
+  text += `📧 *Correo:* ${email}\n`;
+  text += `🏛️ *División / Interés:* ${interest}\n`;
+  if (message) {
+    text += `💬 *Mensaje:* ${message}\n`;
+  }
+  text += `\n_Solicito atención directa de la dirección operativa y envío de dossier técnico._`;
+
+  const encodedText = encodeURIComponent(text);
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${directorPhone}&text=${encodedText}`;
+
+  setTimeout(() => {
+    const successMsg = document.getElementById('leadSuccessMsg');
+    if (successMsg) {
+      successMsg.classList.remove('hidden');
+    }
+    if (btn) {
+      btn.innerHTML = `<span>Solicitud Enviada a Dirección</span><span class="material-symbols-outlined text-sm">check_circle</span>`;
+      btn.className = "w-full bg-verde-manglar text-white font-button py-3.5 px-6 rounded-lg font-label-caps uppercase text-xs font-bold tracking-wider transition-all duration-300 shadow-md flex items-center justify-center gap-2";
+    }
+
+    // Open WhatsApp in new tab with prefilled lead data
+    window.open(whatsappUrl, '_blank');
+  }, 500);
+}
+
+// Make handleLeadSubmit globally accessible
+window.handleLeadSubmit = handleLeadSubmit;
