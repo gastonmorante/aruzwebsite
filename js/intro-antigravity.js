@@ -9,21 +9,11 @@
  * 4. 2% Monochromatic Cinema Film Grain
  * 5. CC Radial Fast Blur Glow Dissolve at 6.5s
  * 6. Smooth Background Resource Preloading
+ * 7. Guaranteed Execution on Page Open, Reload, and Logo Click
  */
 
 (function () {
   'use strict';
-
-  // Check if intro has already run in this session (optional, allow replay or param ?intro=1)
-  const urlParams = new URLSearchParams(window.location.search);
-  const forceIntro = urlParams.get('intro') === '1';
-  const introSeen = sessionStorage.getItem('aruz_intro_seen');
-
-  // If already seen and not forced on root index, allow quick skip or run once per session
-  // Default: Run on index.html, provide skip button always
-  if (introSeen && !forceIntro && window.location.pathname.includes('landings/')) {
-    return;
-  }
 
   // Preload critical assets while intro is playing
   function preloadSiteAssets() {
@@ -55,6 +45,12 @@
     }
 
     init() {
+      // Remove any existing overlay if restarting
+      const existing = document.getElementById('aruz-intro-overlay');
+      if (existing && existing.parentNode) {
+        existing.parentNode.removeChild(existing);
+      }
+
       // 1. Create Overlay DOM Container
       this.container = document.createElement('div');
       this.container.id = 'aruz-intro-overlay';
@@ -69,6 +65,7 @@
         justify-content: center;
         touch-action: none;
         user-select: none;
+        opacity: 1;
         transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 1.2s;
       `;
 
@@ -173,7 +170,7 @@
       document.body.appendChild(this.container);
       document.body.style.overflow = 'hidden';
 
-      // Setup Node Entities (Index 0 = ARUZ Core, 1..4 = Divisions)
+      // Setup Node Entities (Index 0 = ARUZ Core, 1..4 = Verticals)
       this.setupNodes();
 
       // Resize & Event Listeners
@@ -212,16 +209,15 @@
     }
 
     setupNodes() {
-      // 5 Ecosystem Spheres (Core + 4 Verticals)
       this.nodes = [
         {
           index: 0, // Central Core
           name: 'ARUZ',
           subtitle: 'CORE HOLDING',
           color: '#E6C07B', // Dorado
-          glowColor: 'rgba(230, 192, 123, 0.4)',
+          glowColor: 'rgba(230, 192, 123, 0.45)',
           radius: 54,
-          zDist: 1.25, // Foreground (closer in 3D camera)
+          zDist: 1.25, // Foreground
           relX: 0,
           relY: 0
         },
@@ -230,7 +226,7 @@
           name: 'DESARROLLADORA',
           subtitle: 'ARQUITECTURA',
           color: '#D4AF37',
-          glowColor: 'rgba(212, 175, 55, 0.3)',
+          glowColor: 'rgba(212, 175, 55, 0.35)',
           radius: 40,
           zDist: 0.95,
           angle: -135,
@@ -241,7 +237,7 @@
           name: 'INMOBILIARIA',
           subtitle: 'PORTAFOLIO & ROI',
           color: '#C89A4A',
-          glowColor: 'rgba(200, 154, 74, 0.3)',
+          glowColor: 'rgba(200, 154, 74, 0.35)',
           radius: 40,
           zDist: 0.9,
           angle: -45,
@@ -252,7 +248,7 @@
           name: 'CADE',
           subtitle: 'CONSTRUCCIÓN',
           color: '#4E8752', // Verde Manglar
-          glowColor: 'rgba(78, 135, 82, 0.35)',
+          glowColor: 'rgba(78, 135, 82, 0.4)',
           radius: 42,
           zDist: 1.05,
           angle: 45,
@@ -263,7 +259,7 @@
           name: 'MAQUINARIA',
           subtitle: 'FLOTA PESADA',
           color: '#E6953B', // Ambar Maquinaria
-          glowColor: 'rgba(230, 149, 59, 0.35)',
+          glowColor: 'rgba(230, 149, 59, 0.4)',
           radius: 40,
           zDist: 0.88,
           angle: 135,
@@ -303,7 +299,7 @@
 
     /**
      * Damped Elastic Pop Calculation
-     * From user formula: val = a * Math.pow(2, -10 * s) * Math.sin((s - p / 4) * (2 * Math.PI) / p) + 1;
+     * Formula: val = a * Math.pow(2, -10 * s) * Math.sin((s - p / 4) * (2 * Math.PI) / p) + 1;
      */
     getElasticScale(nodeIndex, currentTime) {
       const delay = (nodeIndex === 0 ? 0 : nodeIndex) * 0.22;
@@ -316,8 +312,8 @@
       const t = currentTime - startTime;
       if (t < duration) {
         const s = t / duration;
-        const p = 0.32; // Elastic period
-        const a = 1.0;  // Amplitude
+        const p = 0.32;
+        const a = 1.0;
         const val = a * Math.pow(2, -10 * s) * Math.sin((s - p / 4) * (2 * Math.PI) / p) + 1;
         return Math.max(0, val);
       }
@@ -326,7 +322,7 @@
 
     /**
      * Antigravity Position Physics
-     * From user formula:
+     * Formula:
      * seed = index * 123.45;
      * x = value[0] + Math.sin(time * speed + seed) * amp + Math.cos(time * 0.3 + seed) * drift;
      * y = value[1] + Math.cos(time * speed * 0.8 + seed) * (amp * 1.2);
@@ -337,11 +333,9 @@
       const drift = 9;
       const seed = node.index * 123.45;
 
-      // Physics harmonic displacement
       const physX = Math.sin(currentTime * speed + seed) * amp + Math.cos(currentTime * 0.3 + seed) * drift;
       const physY = Math.cos(currentTime * speed * 0.8 + seed) * (amp * 1.25);
 
-      // Camera parallax & gyroscope influence
       const cameraX = (this.mouse.x + this.gyro.x) * (node.zDist * 0.8);
       const cameraY = (this.mouse.y + this.gyro.y) * (node.zDist * 0.8);
 
@@ -355,13 +349,13 @@
       if (this.isDismissed) return;
 
       if (!this.startTime) this.startTime = timestamp;
-      const elapsed = (timestamp - this.startTime) / 1000; // seconds
+      const elapsed = (timestamp - this.startTime) / 1000;
 
       // Smooth mouse interpolation
       this.mouse.x += (this.mouse.targetX - this.mouse.x) * 0.08;
       this.mouse.y += (this.mouse.targetY - this.mouse.y) * 0.08;
 
-      // Show Skip button after 1.5s
+      // Show Skip button after 1.2s
       if (elapsed > 1.2 && parseFloat(this.skipBtn.style.opacity) < 1) {
         this.skipBtn.style.opacity = '1';
         this.tagline.style.opacity = '0.8';
@@ -443,11 +437,10 @@
       this.ctx.moveTo(core.currentX, core.currentY);
       this.ctx.lineTo(sat.currentX, sat.currentY);
       
-      // Laser gradient
       const grad = this.ctx.createLinearGradient(core.currentX, core.currentY, sat.currentX, sat.currentY);
       grad.addColorStop(0, `rgba(230, 192, 123, ${alpha * 0.8})`);
       grad.addColorStop(0.5, `rgba(255, 255, 255, ${alpha * 0.9})`);
-      grad.addColorStop(1, `${sat.glowColor.replace('0.3', (alpha * 0.6).toString())}`);
+      grad.addColorStop(1, `${sat.glowColor.replace('0.35', (alpha * 0.6).toString()).replace('0.4', (alpha * 0.6).toString())}`);
       
       this.ctx.strokeStyle = grad;
       this.ctx.lineWidth = 1.5;
@@ -538,7 +531,6 @@
         this.ctx.textBaseline = 'middle';
 
         if (isCore) {
-          // Core ARUZ Brand
           this.ctx.font = `bold ${Math.round(18 * scale)}px 'Montserrat', sans-serif`;
           this.ctx.fillStyle = '#0D0A0B';
           this.ctx.shadowColor = 'transparent';
@@ -549,7 +541,6 @@
           this.ctx.letterSpacing = '1px';
           this.ctx.fillText('HOLDING', x, y + 10 * scale);
         } else {
-          // Division Label
           this.ctx.font = `bold ${Math.round(11 * scale)}px 'Montserrat', sans-serif`;
           this.ctx.fillStyle = '#FFFFFF';
           this.ctx.shadowColor = 'rgba(0,0,0,0.8)';
@@ -569,10 +560,6 @@
       if (this.isDismissed) return;
       this.isDismissed = true;
 
-      // Set session flag
-      sessionStorage.setItem('aruz_intro_seen', 'true');
-
-      // Trigger entrance transition on main body
       this.container.style.opacity = '0';
       this.container.style.pointerEvents = 'none';
 
@@ -585,12 +572,32 @@
     }
   }
 
-  // Auto-launch on DOM Content Loaded
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      window.AruzIntroInstance = new AruzAntigravityIntro();
-    });
-  } else {
+  // Global function to trigger intro anytime on demand
+  window.playAruzIntro = function() {
     window.AruzIntroInstance = new AruzAntigravityIntro();
+  };
+
+  // Launch automatically when loading index.html or when document is ready
+  function launchIntro() {
+    window.playAruzIntro();
+
+    // Attach listener to all logo links: clicking logo re-triggers the intro seamlessly!
+    document.querySelectorAll('a[href="index.html"], a[href="/"], a[href="./index.html"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        // If already on index.html, replay intro smoothly
+        const currentPath = window.location.pathname;
+        if (currentPath.endsWith('index.html') || currentPath === '/' || currentPath.endsWith('/Aruz/') || currentPath.endsWith('/Aruz')) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          window.playAruzIntro();
+        }
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', launchIntro);
+  } else {
+    launchIntro();
   }
 })();
