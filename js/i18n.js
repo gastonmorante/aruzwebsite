@@ -2249,6 +2249,50 @@ const aruzPhrases = {
 };
 
 const aruzDataKeys = {
+  "es": {
+    "nav.desarrolladora": "Desarrolladora",
+    "nav.inmobiliaria": "Inmobiliaria",
+    "nav.cade": "CADE Construcción",
+    "nav.maquinaria": "Maquinaria",
+    "nav.mayakoba": "Colección Mayakoba",
+    "nav.contacto": "Contacto",
+    "btn.ver_landing_planos": "Ver Landing & Planos",
+    "btn.ver_planos": "Ver Planos",
+    "btn.descargar_planos": "Descargar Planos",
+    "btn.ver_ficha": "Ver Ficha Técnica",
+    "btn.descargar_ficha": "Descargar Ficha Técnica",
+    "btn.ver_brochure": "Ver Brochure",
+    "btn.ver_condiciones": "Ver Condiciones",
+    "btn.ver_galeria": "Ver Galería Fotográfica",
+    "btn.solicitar_dossier": "Solicitar Dossier & Planos",
+    "btn.agendar_visita": "Agendar Recorrido en Obra",
+    "btn.hablar_director": "Hablar con el Director",
+    "btn.enviar_solicitud": "Enviar Solicitud Directa",
+    "badge.preventa": "Preventa",
+    "badge.sello_cade": "Sello CADE",
+    "badge.vector_cad": "Vector CAD / PDF",
+    "badge.memoria_descriptiva": "Memoria Descriptiva",
+    "badge.catalogo_editorial": "Catálogo Editorial",
+    "badge.holding_corporativo": "Consortium GPRuiz",
+    "kpi.trayectoria": "Trayectoria Técnica",
+    "kpi.cuadrillas": "Flota & Cuadrillas",
+    "kpi.cuadrillas_sub": "Cero Intermediarios",
+    "kpi.bono": "Bono Equipamiento",
+    "kpi.bono_sub": "Muebles de Autor o Paneles",
+    "spec.construccion": "Construcción",
+    "spec.distribucion": "Distribución",
+    "spec.entrega": "Entrega",
+    "spec.inversion": "Inversión Preventa",
+    "spec.amenidades": "Amenidades Privadas",
+    "spec.superficie_terreno": "Superficie de Terreno",
+    "spec.recamaras": "Recámaras",
+    "spec.banos": "Baños",
+    "docs.planos_title": "Planos Arquitectónicos",
+    "docs.ficha_title": "Ficha Técnica Oficial",
+    "docs.brochure_title": "Brochure de Autor",
+    "docs.condiciones_title": "Condiciones de Venta",
+    "docs.advisory_title": "¿Deseas una corrida financiera personalizada o agendar un recorrido en obra?"
+  },
   "en": {
   "nav.desarrolladora": "Developer",
   "nav.inmobiliaria": "Real Estate",
@@ -2350,6 +2394,7 @@ class AruzI18nEngine {
     this.defaultLang = 'es';
     this.currentLang = this.detectLanguage();
     this.isTranslating = false;
+    this._hasSnapshotted = false;
     this.init();
   }
 
@@ -2377,10 +2422,65 @@ class AruzI18nEngine {
     return this.defaultLang;
   }
 
+  snapshotPristineDOM() {
+    if (this._hasSnapshotted) return;
+    this._hasSnapshotted = true;
+
+    // 1. Snapshot data-i18n elements
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      if (el._origText === undefined) el._origText = el.textContent;
+    });
+
+    // 2. Snapshot form placeholders & options
+    document.querySelectorAll('input, textarea').forEach(el => {
+      if (el.placeholder && el._origPlaceholder === undefined) {
+        el._origPlaceholder = el.placeholder;
+      }
+    });
+
+    document.querySelectorAll('select option').forEach(opt => {
+      if (opt._origText === undefined) opt._origText = opt.textContent;
+    });
+
+    // 3. Snapshot headings, paragraphs, buttons, labels
+    document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, a, button, span, li, label, th, td').forEach(el => {
+      if (el.classList.contains('material-symbols-outlined') || el.classList.contains('lang-btn') || el.closest('.aruz-lang-switcher') || el.closest('#aruz-intro-overlay')) {
+        return;
+      }
+      if (el._origHTML === undefined) {
+        el._origHTML = el.innerHTML;
+        el._origText = el.textContent;
+      }
+    });
+
+    // 4. Snapshot TreeWalker text nodes
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        const parent = node.parentElement;
+        if (!parent) return NodeFilter.FILTER_REJECT;
+        const tag = parent.tagName.toLowerCase();
+        if (tag === 'script' || tag === 'style' || tag === 'svg' || tag === 'path' || tag === 'noscript') return NodeFilter.FILTER_REJECT;
+        if (parent.classList.contains('material-symbols-outlined') || parent.classList.contains('notranslate') || parent.classList.contains('lang-btn') || parent.closest('#aruz-intro-overlay') || parent.closest('.aruz-lang-switcher')) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+
+    let node;
+    while ((node = walker.nextNode())) {
+      if (node._origText === undefined) {
+        node._origText = node.nodeValue;
+      }
+    }
+  }
+
   init() {
     this.renderLanguageSwitchers();
+    this.snapshotPristineDOM();
     if (this.currentLang !== 'es') {
       this.applyLanguage(this.currentLang);
+    } else {
+      this.restoreSpanishDOM();
     }
   }
 
@@ -2388,13 +2488,18 @@ class AruzI18nEngine {
     if (!this.supportedLangs.includes(lang)) return;
     this.currentLang = lang;
     localStorage.setItem('aruz_lang', lang);
-    this.applyLanguage(lang);
+    if (lang === 'es') {
+      this.restoreSpanishDOM();
+    } else {
+      this.applyLanguage(lang);
+    }
     this.updateSwitcherUI();
   }
 
   applyLanguage(lang) {
     if (this.isTranslating) return;
     this.isTranslating = true;
+    this.snapshotPristineDOM();
     document.documentElement.setAttribute('lang', lang);
 
     if (lang === 'es') {
@@ -2407,11 +2512,10 @@ class AruzI18nEngine {
     const dataKeys = aruzDataKeys[lang] || {};
     const sortedList = aruzSortedPhrases[lang] || [];
 
-    // 1. Translate elements with data-i18n attributes
+    // 1. Translate elements with data-i18n attributes (Header links, specs, badges, buttons)
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (dataKeys[key]) {
-        if (el._origText === undefined) el._origText = el.textContent;
         el.textContent = dataKeys[key];
       }
     });
@@ -2419,8 +2523,7 @@ class AruzI18nEngine {
     // 2. Translate form placeholders and select options
     document.querySelectorAll('input, textarea').forEach(el => {
       if (el.placeholder) {
-        if (el._origPlaceholder === undefined) el._origPlaceholder = el.placeholder;
-        const clean = el._origPlaceholder.trim();
+        const clean = (el._origPlaceholder || el.placeholder).trim();
         if (dict[clean]) {
           el.placeholder = dict[clean];
         }
@@ -2428,8 +2531,7 @@ class AruzI18nEngine {
     });
 
     document.querySelectorAll('select option').forEach(opt => {
-      if (opt._origText === undefined) opt._origText = opt.textContent;
-      const clean = opt._origText.trim();
+      const clean = (opt._origText || opt.textContent).trim();
       if (dict[clean]) {
         opt.textContent = dict[clean];
       }
@@ -2437,22 +2539,18 @@ class AruzI18nEngine {
 
     // 3. Direct Element-level translation for full headings, paragraphs, spans & buttons
     document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, a, button, span, li, label, th, td').forEach(el => {
-      // Skip icons, scripts, language buttons
+      if (el.hasAttribute('data-i18n')) return; // handled strictly by step 1
       if (el.classList.contains('material-symbols-outlined') || el.classList.contains('lang-btn') || el.closest('.aruz-lang-switcher') || el.closest('#aruz-intro-overlay')) {
         return;
       }
 
-      // If element has no complex element children, or only text + simple spans
-      if (el._origHTML === undefined) {
-        el._origHTML = el.innerHTML;
-        el._origText = el.textContent;
-      }
+      const origText = el._origText || el.textContent;
+      const cleanText = origText.trim().replace(/\s+/g, ' ');
+      const origHTML = el._origHTML || el.innerHTML;
 
-      const cleanText = el._origText.trim().replace(/\s+/g, ' ');
       if (dict[cleanText] && !el.querySelector('div, section, article, nav, header, footer')) {
-        // If element had inner tags (like <strong> or <span>), do a smart replace in its HTML
-        if (el._origHTML.includes('<') && !el._origHTML.includes('<div')) {
-          let translatedHTML = el._origHTML;
+        if (origHTML.includes('<') && !origHTML.includes('<div')) {
+          let translatedHTML = origHTML;
           for (let i = 0; i < sortedList.length; i++) {
             const es = sortedList[i][0];
             const target = sortedList[i][1];
@@ -2475,6 +2573,7 @@ class AruzI18nEngine {
         if (!parent) return NodeFilter.FILTER_REJECT;
         const tag = parent.tagName.toLowerCase();
         if (tag === 'script' || tag === 'style' || tag === 'svg' || tag === 'path' || tag === 'noscript') return NodeFilter.FILTER_REJECT;
+        if (parent.hasAttribute('data-i18n') || parent.closest('[data-i18n]')) return NodeFilter.FILTER_REJECT;
         if (parent.classList.contains('material-symbols-outlined') || parent.classList.contains('notranslate') || parent.classList.contains('lang-btn') || parent.closest('#aruz-intro-overlay') || parent.closest('.aruz-lang-switcher')) return NodeFilter.FILTER_REJECT;
         return NodeFilter.FILTER_ACCEPT;
       }
@@ -2482,11 +2581,7 @@ class AruzI18nEngine {
 
     let node;
     while ((node = walker.nextNode())) {
-      if (node._origText === undefined) {
-        node._origText = node.nodeValue;
-      }
-      
-      const raw = node._origText;
+      const raw = node._origText || node.nodeValue;
       const clean = raw.trim().replace(/\s+/g, ' ');
       
       if (dict[clean]) {
@@ -2518,9 +2613,16 @@ class AruzI18nEngine {
   }
 
   restoreSpanishDOM() {
-    // 1. Restore data-i18n elements
+    this.snapshotPristineDOM();
+    document.documentElement.setAttribute('lang', 'es');
+    const esKeys = aruzDataKeys['es'] || {};
+
+    // 1. Explicitly restore data-i18n elements using the canonical Spanish dictionary
     document.querySelectorAll('[data-i18n]').forEach(el => {
-      if (el._origText !== undefined) {
+      const key = el.getAttribute('data-i18n');
+      if (esKeys[key]) {
+        el.textContent = esKeys[key];
+      } else if (el._origText !== undefined) {
         el.textContent = el._origText;
       }
     });
@@ -2540,6 +2642,7 @@ class AruzI18nEngine {
 
     // 3. Restore elements with stored _origHTML
     document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, a, button, span, li, label, th, td').forEach(el => {
+      if (el.hasAttribute('data-i18n')) return;
       if (el._origHTML !== undefined) {
         el.innerHTML = el._origHTML;
       }
@@ -2553,7 +2656,8 @@ class AruzI18nEngine {
         if (!parent) return NodeFilter.FILTER_REJECT;
         const tag = parent.tagName.toLowerCase();
         if (tag === 'script' || tag === 'style' || tag === 'svg' || tag === 'path' || tag === 'noscript') return NodeFilter.FILTER_REJECT;
-        if (parent.classList.contains('material-symbols-outlined') || parent.classList.contains('notranslate') || parent.classList.contains('lang-btn')) return NodeFilter.FILTER_REJECT;
+        if (parent.hasAttribute('data-i18n') || parent.closest('[data-i18n]')) return NodeFilter.FILTER_REJECT;
+        if (parent.classList.contains('material-symbols-outlined') || parent.classList.contains('notranslate') || parent.classList.contains('lang-btn') || parent.closest('#aruz-intro-overlay') || parent.closest('.aruz-lang-switcher')) return NodeFilter.FILTER_REJECT;
         return NodeFilter.FILTER_ACCEPT;
       }
     });
@@ -2565,6 +2669,7 @@ class AruzI18nEngine {
       }
     }
 
+    this.isTranslating = false;
     window.dispatchEvent(new CustomEvent('aruzLanguageChanged', { detail: { lang: 'es' } }));
   }
 

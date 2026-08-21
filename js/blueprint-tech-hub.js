@@ -209,18 +209,7 @@
 
       ctx.restore();
 
-      // 4. Subtle Technical CAD Header & Footer Information Bars
-      ctx.font = 'bold 9.5px "Montserrat", sans-serif';
-      ctx.fillStyle = 'rgba(35, 31, 32, 0.45)';
-      ctx.fillText("ARUZ ECOSISTEMA DIGITAL 360 · CIUDAD MAYAKOBA", 30, 32);
-
-      ctx.textAlign = 'right';
-      ctx.font = 'bold 9.5px monospace';
-      ctx.fillStyle = 'rgba(199, 146, 21, 0.65)';
-      ctx.fillText("SYS.GPS: 20°37'38.2\"N 87°04'48.6\"W", width - 30, 32);
-      ctx.textAlign = 'left';
-
-      // 5. Floating Technical Particles & Elevation Markers
+      // 4. Floating Technical Particles & Elevation Markers
       particles.forEach(p => {
         p.x += p.vx;
         p.y += p.vy;

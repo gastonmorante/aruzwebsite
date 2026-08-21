@@ -288,25 +288,32 @@
     handleResize() {
       this.width = window.innerWidth;
       this.height = window.innerHeight;
-      this.canvas.width = this.width * window.devicePixelRatio;
-      this.canvas.height = this.height * window.devicePixelRatio;
-      this.ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      this.canvas.width = Math.floor(this.width * dpr);
+      this.canvas.height = Math.floor(this.height * dpr);
+      this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
       const isMobile = this.width < 768;
       const isTablet = this.width >= 768 && this.width < 1024;
 
-      const rad = isMobile ? Math.min(this.width * 0.38, 145) : isTablet ? 190 : Math.min(this.width * 0.22, 230);
+      // Pure 1:1 circular orbit that fits perfectly inside mobile screens (360px-420px) without distortion or edge clipping
+      const rad = isMobile 
+        ? Math.min(this.width * 0.28, this.height * 0.17, 112) 
+        : (isTablet ? 190 : Math.min(this.width * 0.22, 230));
+
+      this.currentOrbitRad = rad;
 
       this.nodes.forEach(node => {
         if (node.isCore) {
           node.baseX = this.width / 2;
           node.baseY = this.height / 2;
-          node.radius = isMobile ? 52 : 62;
+          node.radius = isMobile ? 40 : 62;
         } else {
-          node.radius = isMobile ? 40 : 48;
+          node.radius = isMobile ? 32 : 48;
           const r = (node.angle * Math.PI) / 180;
+          // Pure 1:1 circular orbital coordinates (no distortion)
           node.baseX = this.width / 2 + Math.cos(r) * rad;
-          node.baseY = this.height / 2 + Math.sin(r) * (isMobile ? rad * 1.15 : rad);
+          node.baseY = this.height / 2 + Math.sin(r) * rad;
         }
       });
     }
@@ -335,16 +342,18 @@
     }
 
     getAntigravityPos(node, currentTime) {
+      const isMobile = this.width < 768;
       const speed = 0.52;
-      const amp = 10;
-      const drift = 7;
+      const amp = isMobile ? 4.5 : 10;
+      const drift = isMobile ? 3.5 : 7;
       const seed = node.index * 123.45;
 
       const physX = Math.sin(currentTime * speed + seed) * amp + Math.cos(currentTime * 0.25 + seed) * drift;
-      const physY = Math.cos(currentTime * speed * 0.8 + seed) * (amp * 1.15);
+      const physY = Math.cos(currentTime * speed * 0.8 + seed) * (amp * 1.1);
 
-      const cameraX = (this.mouse.x + this.gyro.x) * (node.zDist * 0.75);
-      const cameraY = (this.mouse.y + this.gyro.y) * (node.zDist * 0.75);
+      const cameraMult = isMobile ? 0.35 : 0.75;
+      const cameraX = (this.mouse.x + this.gyro.x) * (node.zDist * cameraMult);
+      const cameraY = (this.mouse.y + this.gyro.y) * (node.zDist * cameraMult);
 
       return {
         x: node.baseX + physX + cameraX,
@@ -449,7 +458,10 @@
       }
 
       // Concentric CAD Drafting Radius Rings
-      const rings = [100, 190, 290];
+      const isMobile = this.width < 768;
+      const orbitRad = this.currentOrbitRad || (isMobile ? 112 : 190);
+      const rings = isMobile ? [orbitRad * 0.55, orbitRad, orbitRad * 1.45] : [100, 190, 290];
+
       rings.forEach((r, idx) => {
         this.ctx.beginPath();
         this.ctx.arc(cx, cy, r, 0, Math.PI * 2);
@@ -466,11 +478,12 @@
       this.ctx.rotate(time * 0.05);
       this.ctx.strokeStyle = 'rgba(200, 154, 74, 0.4)';
       this.ctx.lineWidth = 1;
+      const compassRad = orbitRad;
       for (let a = 0; a < Math.PI * 2; a += Math.PI / 4) {
-        const x1 = Math.cos(a) * 184;
-        const y1 = Math.sin(a) * 184;
-        const x2 = Math.cos(a) * 196;
-        const y2 = Math.sin(a) * 196;
+        const x1 = Math.cos(a) * (compassRad - 6);
+        const y1 = Math.sin(a) * (compassRad - 6);
+        const x2 = Math.cos(a) * (compassRad + 6);
+        const y2 = Math.sin(a) * (compassRad + 6);
         this.ctx.beginPath();
         this.ctx.moveTo(x1, y1);
         this.ctx.lineTo(x2, y2);
@@ -483,10 +496,10 @@
       this.ctx.lineWidth = 1;
       const crosshairs = [
         { x: cx, y: cy },
-        { x: cx - 190, y: cy },
-        { x: cx + 190, y: cy },
-        { x: cx, y: cy - 190 },
-        { x: cx, y: cy + 190 }
+        { x: cx - orbitRad, y: cy },
+        { x: cx + orbitRad, y: cy },
+        { x: cx, y: cy - orbitRad },
+        { x: cx, y: cy + orbitRad }
       ];
       crosshairs.forEach(ch => {
         this.ctx.beginPath();
@@ -534,8 +547,10 @@
     }
 
     drawCircularIsologoNode(node, time) {
+      const isMobile = this.width < 768;
       const { currentX: x, currentY: y, currentScale: scale, radius: baseR, isCore, key, accentColor, glowColor, zDist, innerRatio } = node;
-      const r = baseR * scale * (0.88 + zDist * 0.12);
+      // On mobile, keep uniform 1:1 round circles; on desktop, allow subtle depth
+      const r = isMobile ? (baseR * scale) : (baseR * scale * (0.88 + zDist * 0.12));
 
       this.ctx.save();
 
