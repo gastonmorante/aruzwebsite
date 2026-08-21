@@ -1,18 +1,47 @@
 /**
- * ARUZ CORE 360 - LIGHT BLUEPRINT ARCHITECTURAL INTRO ENGINE (ZERO-FLASH GUARANTEE)
+ * ARUZ CORE 360 - LIGHT BLUEPRINT ARCHITECTURAL INTRO ENGINE (ZERO-FLASH & SMART SKIP)
  * Native Mobile, Tablet & Desktop Motion Graphics
  *
- * Guaranteed Execution:
- * 1. ZERO-FLASH: Overlays the entire screen immediately before DOM paint
- * 2. Warm Architectural Blueprint Background (#FAF8F5) with CAD Grid & Crosshairs
- * 3. 5 Clean Circular Nodes (Round Spheres) with pure, unclipped Isologos
- * 4. Harmonic Antigravity Physics with Damped Elastic Spring Entrance
- * 5. Minimalist Viewport (No GPS/HUD text, only clean Skip button)
+ * Capabilities:
+ * 1. ZERO-FLASH: Overlays screen immediately on load before DOM paints
+ * 2. SMART ANCHOR SKIP: If URL has hash (e.g. #preventas-mayakoba, #contacto-hub) or if user clicks
+ *    "Colección Mayakoba", the intro is skipped instantly and scrolls directly to that section!
+ * 3. Warm Architectural Blueprint Canvas (#FAF8F5) with CAD Grid & Crosshairs
+ * 4. 5 Clean Circular Nodes (Round Spheres) with pure, unclipped Isologos
+ * 5. Harmonic Antigravity Physics with Damped Elastic Spring Entrance
  * 6. "The Glow" Golden Radial Dissolve at 6.5s
  */
 
 (function () {
   'use strict';
+
+  // 1. Check if loading directly with a section anchor (e.g. #preventas-mayakoba)
+  const initialHash = window.location.hash;
+  if (initialHash && (initialHash === '#preventas-mayakoba' || initialHash === '#contacto-hub' || initialHash === '#holding-corporativo')) {
+    // Remove static overlay lock immediately
+    const overlay = document.getElementById('aruz-intro-overlay');
+    if (overlay && overlay.parentNode) {
+      overlay.parentNode.removeChild(overlay);
+    }
+    const lockStyle = document.getElementById('aruz-intro-lock');
+    if (lockStyle && lockStyle.parentNode) {
+      lockStyle.parentNode.removeChild(lockStyle);
+    }
+    if (document.body) {
+      document.body.style.overflow = '';
+    }
+
+    // Scroll directly to target after DOM is ready
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const target = document.querySelector(initialHash);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 50);
+    });
+    return;
+  }
 
   class AruzBlueprintIntro {
     constructor() {
@@ -599,9 +628,8 @@
     window.AruzIntroInstance = new AruzBlueprintIntro();
   };
 
-  function launchIntro() {
-    window.playAruzIntro();
-
+  function bindNavInteractions() {
+    // 1. Logo clicks: Replay intro from top
     document.querySelectorAll('a[href="index.html"], a[href="/"], a[href="./index.html"]').forEach(link => {
       link.addEventListener('click', function(e) {
         const currentPath = window.location.pathname;
@@ -612,9 +640,33 @@
         }
       });
     });
+
+    // 2. "Colección Mayakoba" & Section Anchor Clicks: SKIP INTRO & GO STRAIGHT TO SECTION!
+    document.querySelectorAll('a[href*="#preventas-mayakoba"], a[href*="#contacto-hub"], a[href*="#holding-corporativo"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (window.AruzIntroInstance && !window.AruzIntroInstance.isDismissed) {
+          window.AruzIntroInstance.dismiss();
+        }
+        const href = link.getAttribute('href');
+        const hashMatch = href.match(/(#[a-zA-Z0-9_-]+)/);
+        if (hashMatch) {
+          const target = document.querySelector(hashMatch[1]);
+          if (target) {
+            e.preventDefault();
+            setTimeout(() => {
+              target.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+          }
+        }
+      });
+    });
   }
 
-  // Execute immediately to prevent any flash of page content
+  function launchIntro() {
+    window.playAruzIntro();
+    bindNavInteractions();
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', launchIntro);
   } else {
