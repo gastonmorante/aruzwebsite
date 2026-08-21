@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 190" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 190" width="100%" height="100%">
   <defs>
     <!-- Facet Gold Gradients -->
     <linearGradient id="goldFacetLeftW" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -16,7 +16,7 @@
     </linearGradient>
   </defs>
 
-  <!-- ARUZ Isotype Emblem -->
+  <!-- ARUZ Isologo Emblem -->
   <g id="aruz-isotype" transform="translate(10, 10)">
     <!-- Left Lower Facet -->
     <polygon points="0,80 44,46 44,170 0,170" fill="url(#goldFacetLeftW)"/>
@@ -28,11 +28,8 @@
     <polygon points="144,48 182,78 182,170 144,170" fill="#FFFFFF"/>
   </g>
 
-  <!-- Wordmark: ARUZ -->
-  <g id="aruz-wordmark" transform="translate(216, 25)">
-    <!-- ARUZ Bold Title -->
-    <text x="0" y="98" font-family="'Montserrat', 'Poppins', sans-serif" font-size="96" font-weight="900" letter-spacing="-1px" fill="#FFFFFF">ARUZ</text>
-    <!-- ECOSYSTEM Subtitle -->
-    <text x="4" y="146" font-family="'Montserrat', 'Work Sans', sans-serif" font-size="28" font-weight="600" letter-spacing="8.5px" fill="#EEB623">HOLDING</text>
+  <!-- Wordmark: ARUZ Vertically Centered with Isologo -->
+  <g id="aruz-wordmark" transform="translate(216, 0)">
+    <text x="0" y="132" font-family="'Montserrat', 'Poppins', sans-serif" font-size="108" font-weight="900" letter-spacing="-1px" fill="#FFFFFF">ARUZ</text>
   </g>
 </svg>
