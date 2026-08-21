@@ -1,46 +1,77 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="light" lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>CADE Diseño y Construcción | Brazo Constructor de Grupo Ruiz México</title>
-  <meta name="description" content="CADE Diseño y Construcción. +12 años de trayectoria ejecutando obra residencial e industrial en Ciudad Mayakoba, Valle Aurora y Xpuha. Sello CADE de calidad.">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <title>CADE Diseño y Construcción | Brazo Constructor Oficial de ARUZ & Grupo Ruiz</title>
+  <meta name="description" content="CADE Diseño y Construcción. +12 años ejecutando obra civil, urbanización y residencias de autor en Ciudad Mayakoba, Bak Lum Tulum y la Riviera Maya. 100% cuadrillas y maquinaria propia.">
   <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
-    <link rel="icon" type="image/svg+xml" href="../assets/logo.svg">
+  
+  <!-- Tailwind CSS with Stitch Theme Tokens -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
   <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "surface": "#fff8f2",
-                        "surface-bright": "#fff8f2",
-                        "carbon-aruz": "#231F20",
-                        "dorado-aruz": "#EEB623",
-                        "dorado-profundo": "#C79215",
-                        "piedra-maya": "#D8C9AE",
-                        "verde-manglar": "#3F5D48",
-                        "gris-grafito": "#59555A",
-                        "outline-variant": "rgba(216, 201, 174, 0.4)"
-                    },
-                    "fontFamily": {
-                        "serif": ["Libre Caslon Text", "serif"],
-                        "sans": ["Plus Jakarta Sans", "sans-serif"]
-                    }
-                }
-            }
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#FFF8F2",
+            "surface-bright": "#FFF8F2",
+            "surface-container-lowest": "#FFFFFF",
+            "surface-container-low": "#FFF2DD",
+            "surface-container": "#FCECD0",
+            "surface-container-high": "#F6E6CA",
+            "surface-container-highest": "#F0E1C5",
+            "carbon-aruz": "#231F20",
+            "on-background": "#231F20",
+            "dorado-aruz": "#EEB623",
+            "dorado-profundo": "#C79215",
+            "primary-container": "#EEB623",
+            "on-primary-container": "#634900",
+            "piedra-maya": "#D8C9AE",
+            "verde-manglar": "#3F5D48",
+            "tertiary": "#476550",
+            "tertiary-container": "#C9EBD0",
+            "on-tertiary-container": "#032110",
+            "gris-grafito": "#59555A",
+            "on-surface-variant": "#4F4633",
+            "outline-variant": "rgba(216, 201, 174, 0.45)"
+          },
+          spacing: {
+            "margin-mobile": "20px",
+            "margin-desktop": "64px",
+            "section-gap": "96px",
+            "gutter": "24px"
+          },
+          fontFamily: {
+            "serif": ["Libre Caslon Text", "serif"],
+            "sans": ["Plus Jakarta Sans", "sans-serif"],
+            "title": ["Montserrat", "sans-serif"],
+            "label-caps": ["Plus Jakarta Sans", "sans-serif"]
+          }
         }
+      }
+    }
   </script>
+  
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/aruz-ai.css">
+  
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
 </head>
-<body>
-  <!-- Header -->
-    <!-- Site Header (Identical Standard Header) -->
-  <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-20 max-w-[1440px] left-1/2 -translate-x-1/2 bg-surface/85 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm shadow-carbon-aruz/5 transition-all duration-300">
+<body class="bg-surface text-carbon-aruz font-sans antialiased overflow-x-hidden">
+
+  <!-- ==========================================================================
+       TOP NAVIGATION (Standardized Universal Header)
+       ========================================================================== -->
+  <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-20 max-w-[1440px] left-1/2 -translate-x-1/2 bg-surface/90 backdrop-blur-xl border-b border-outline-variant shadow-sm shadow-carbon-aruz/5 transition-all duration-300">
     <a href="../index.html" class="flex items-center gap-3">
       <img src="../assets/logo.svg" alt="ARUZ" class="h-10 w-auto object-contain">
     </a>
@@ -52,157 +83,357 @@
       <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="aruz-maquinaria.html">Maquinaria</a>
       <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="../index.html#preventas-mayakoba">Colección Mayakoba</a>
       <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" href="../index.html#contacto-hub">Contacto</a>
-      <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20sobre%20las%20preventas%20de%20ARUZ." target="_blank" class="bg-dorado-profundo text-white font-button px-5 py-2.5 rounded font-label-caps uppercase hover:bg-dorado-aruz transition-all duration-300 ml-2 shadow-md hover:shadow-lg flex items-center gap-1.5 text-xs">
-        <span>Invertir Ahora</span>
+      <a href="https://api.whatsapp.com/send?phone=5219841776205&text=Hola%20Ing.%20Antonio%20Carre%C3%B3n%2C%20solicito%20informaci%C3%B3n%20sobre%20servicios%20de%20construcci%C3%B3n%20con%20CADE." target="_blank" class="bg-dorado-profundo text-white font-button px-5 py-2.5 rounded font-label-caps uppercase hover:bg-dorado-aruz hover:text-carbon-aruz transition-all duration-300 ml-2 shadow-md hover:shadow-lg flex items-center gap-1.5 text-xs font-bold">
+        <span>Cotizar Obra</span>
         <span class="material-symbols-outlined text-sm">arrow_forward</span>
       </a>
     </div>
 
-    <button class="lg:hidden flex items-center text-carbon-aruz p-2" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')">
+    <button class="lg:hidden flex items-center justify-center w-11 h-11 rounded-lg text-carbon-aruz hover:text-dorado-profundo hover:bg-black/5 active:scale-95 transition-all p-2" onclick="toggleMobileDrawer()" aria-label="Abrir Menú Móvil">
       <span class="material-symbols-outlined text-2xl">menu</span>
     </button>
   </nav>
 
-  <!-- Mobile Drawer -->
-  <div id="mobile-drawer" class="hidden fixed inset-0 z-40 bg-carbon-aruz/95 backdrop-blur-2xl pt-24 px-8 text-white flex flex-col gap-6">
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="../desarrolladora.html">ARUZ Desarrolladora</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="../inmobiliaria.html">ARUZ Inmobiliaria</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="cade-constructora.html">CADE Construcción</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="aruz-maquinaria.html">ARUZ Maquinaria Pesada</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="../index.html#preventas-mayakoba">Colección Mayakoba</a>
-    <a class="text-white font-label-caps uppercase text-sm border-b border-white/10 pb-3" href="../index.html#contacto-hub">Contacto</a>
-    <a href="https://api.whatsapp.com/send?phone=5216674069523" target="_blank" class="bg-dorado-aruz text-carbon-aruz font-button py-3 rounded text-center uppercase font-bold mt-4">WhatsApp Directo</a>
+  <!-- Mobile Drawer with Safe Area & Native Touch UX -->
+  <div id="mobile-drawer" class="hidden fixed inset-0 z-50 bg-carbon-aruz/95 backdrop-blur-2xl text-white flex flex-col justify-between p-6 sm:p-8 transition-all duration-300">
+    <div>
+      <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+        <a href="../index.html" onclick="closeMobileDrawer()" class="flex items-center gap-3">
+          <img src="../assets/logo-white.svg" alt="ARUZ" class="h-8 w-auto">
+        </a>
+        <button onclick="closeMobileDrawer()" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:text-dorado-aruz active:scale-90 transition-all text-xl" aria-label="Cerrar Menú">
+          ✕
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-4 text-base font-label-caps uppercase tracking-wider">
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="../desarrolladora.html" onclick="closeMobileDrawer()">
+          <span>ARUZ Desarrolladora</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="../inmobiliaria.html" onclick="closeMobileDrawer()">
+          <span>ARUZ Inmobiliaria</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-dorado-aruz font-bold hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="cade-constructora.html" onclick="closeMobileDrawer()">
+          <span>CADE Construcción</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="aruz-maquinaria.html" onclick="closeMobileDrawer()">
+          <span>ARUZ Maquinaria Pesada</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors border-b border-white/5 pb-3 flex justify-between items-center" href="../index.html#preventas-mayakoba" onclick="closeMobileDrawer()">
+          <span class="text-dorado-aruz font-bold">Colección Mayakoba (4 Preventas)</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+        <a class="text-white hover:text-dorado-aruz transition-colors pb-3 flex justify-between items-center" href="../index.html#contacto-hub" onclick="closeMobileDrawer()">
+          <span>Contacto & Asesoría</span>
+          <span class="material-symbols-outlined text-sm text-dorado-aruz">arrow_forward</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="space-y-3 pt-6 border-t border-white/10">
+      <a href="https://api.whatsapp.com/send?phone=5219841776205&text=Hola%20Ing.%20Antonio%20Carre%C3%B3n%2C%20solicito%20informaci%C3%B3n%20sobre%20servicios%20de%20construcci%C3%B3n%20con%20CADE." target="_blank" rel="noopener" class="w-full bg-gradient-to-r from-dorado-aruz to-dorado-profundo text-carbon-aruz font-bold py-3.5 px-4 rounded-xl text-center text-xs uppercase font-label-caps tracking-wider flex items-center justify-center gap-2 active:scale-95 transition-all shadow-lg">
+        <span class="material-symbols-outlined text-lg">construction</span>
+        <span>WhatsApp Gerente Construcción: 984 177 6205</span>
+      </a>
+      <a href="tel:+529841776205" class="w-full bg-white/10 text-white font-semibold py-3 px-4 rounded-xl text-center text-xs uppercase font-label-caps tracking-wider flex items-center justify-center gap-2 active:scale-95 transition-all">
+        <span class="material-symbols-outlined text-lg">call</span>
+        <span>Llamada Telefónica Directa</span>
+      </a>
+    </div>
   </div>
 
-  <!-- Hero CADE -->
-  <section class="hero-section" style="padding-top: 140px; min-height: 75vh;">
-    <div class="hero-backdrop"></div>
-    <div class="container">
-      <div style="font-size: 0.85rem; color: var(--color-grafito); margin-bottom: 1rem;">
-        <a href="../index.html" style="color: var(--color-grafito);">Inicio</a> &gt; 
-        <span style="color: var(--color-manglar); font-weight: 700;">CADE Diseño y Construcción</span>
+  <!-- ==========================================================================
+       HERO SECTION - CADE DISEÑO Y CONSTRUCCIÓN
+       ========================================================================== -->
+  <section class="relative min-h-[85vh] flex items-end pb-16 md:pb-24 pt-32 px-margin-mobile md:px-margin-desktop w-full overflow-hidden bg-carbon-aruz text-white">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+      <img alt="Fachada arquitectónica de concreto y acabados de lujo construida por CADE" class="w-full h-full object-cover object-center opacity-40 filter brightness-90" src="../assets/properties/eternity-jol/exteriores/fachada_frontal.webp" fetchpriority="high">
+      <!-- Overlay Gradient -->
+      <div class="absolute inset-0 bg-gradient-to-t from-carbon-aruz via-carbon-aruz/65 to-carbon-aruz/30"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 w-full max-w-4xl grid gap-6 animate-fade-up">
+      <div class="inline-flex items-center gap-2 flex-wrap">
+        <span class="bg-black/50 backdrop-blur-md text-dorado-aruz px-3.5 py-1 font-label-caps text-[11px] font-bold border border-dorado-aruz/40 rounded uppercase tracking-wider">
+          Brazo Constructor Oficial · Grupo Ruiz
+        </span>
+        <span class="bg-verde-manglar/90 text-white px-3.5 py-1 font-label-caps text-[11px] font-bold rounded uppercase tracking-wider">
+          100% Cuadrillas Propias · Cero Intermediarios
+        </span>
       </div>
 
-      <div style="margin-bottom: 1.2rem;">
-        <img src="../assets/logo-cade-dark.svg" alt="CADE Diseño y Construcción" style="height: 52px; width: auto;">
+      <div class="space-y-2">
+        <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl text-white leading-tight">
+          CADE Diseño y Construcción
+        </h1>
+        <p class="font-sans text-xl sm:text-2xl text-dorado-aruz font-semibold">
+          "Construido y avalado por CADE" — Solidez técnica, ingeniería y ejecución directa en la Riviera Maya.
+        </p>
       </div>
 
-      <div style="display: flex; gap: 0.8rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap;">
-        <span class="prop-tag cade-seal">Brazo Constructor Oficial</span>
-        <span class="prop-tag">+12 Años Mayakoba</span>
-        <span class="prop-tag">Cero Intermediarios</span>
-      </div>
-
-      <h1 class="hero-title" style="text-align: left; margin-bottom: 0.5rem;">
-        <span>CADE Diseño y Construcción</span>
-      </h1>
-      <p style="font-size: 1.3rem; color: var(--color-grafito); margin-bottom: 1.5rem;">
-        "Construido y avalado por CADE" — Solidez técnica, ingeniería y ejecución directa en la Riviera Maya.
+      <p class="text-sm sm:text-base text-[#E8E4DF] max-w-2xl leading-relaxed font-light">
+        CADE es el motor técnico que materializa la promesa de ARUZ. No subcontratamos la responsabilidad: nuestros ingenieros y cuadrillas calculan, ejecutan y supervisan cada metro cuadrado con equipo propio, cimentación en roca y modelado BIM.
       </p>
 
-      <div class="advisor-box" style="padding: 2rem; margin-top: 2rem; border-color: rgba(63, 93, 72, 0.4);">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem;">
-          <div>
-            <div class="spec-label">Experiencia en Costa</div>
-            <div style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 800; color: #5BA36F;">+12 Años</div>
-          </div>
-          <div>
-            <div class="spec-label">Proyectos Emblemáticos</div>
-            <div style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 800; color: #FFFFFF;">Mayakoba / Xpuha</div>
-          </div>
-          <div>
-            <div class="spec-label">Control Operativo</div>
-            <div style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 800; color: #FFFFFF;">100% Cuadrillas Propias</div>
-          </div>
-          <div>
-            <div class="spec-label">Garantía Estructural</div>
-            <div style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 800; color: var(--color-gold-deep); font-weight: 700;">Programa Círculo</div>
-          </div>
-        </div>
+      <div class="pt-4 flex flex-wrap gap-4 items-center">
+        <a class="inline-flex items-center justify-center bg-dorado-aruz hover:bg-white text-carbon-aruz font-label-caps text-xs font-bold px-8 py-4 uppercase tracking-widest rounded transition-all duration-300 shadow-xl gap-2" href="#contacto-gerencia">
+          <span>Hablar con el Gerente Técnico</span>
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+        <a class="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white border border-white/20 font-label-caps text-xs font-bold px-6 py-4 uppercase tracking-widest rounded transition-all duration-300 gap-2" href="#proyectos-emblematicos">
+          <span>Ver Proyectos</span>
+          <span class="material-symbols-outlined text-sm">expand_more</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Trayectoria y Obras Reales -->
-  <section class="section-spacing">
-    <div class="container">
-      <div class="technical-backing-grid">
+  <!-- ==========================================================================
+       KEY STATS BAR
+       ========================================================================== -->
+  <section class="border-y border-outline-variant bg-surface-container py-8 px-margin-mobile md:px-margin-desktop">
+    <div class="max-w-[1440px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 divide-y md:divide-y-0 md:divide-x divide-outline-variant/60">
+      
+      <div class="px-3 pt-2 md:pt-0">
+        <div class="font-label-caps text-xs text-gris-grafito mb-1 uppercase font-bold tracking-wider">Experiencia en Costa</div>
+        <div class="font-serif text-3xl sm:text-4xl font-bold text-carbon-aruz">+12 Años</div>
+        <div class="text-[11px] text-dorado-profundo font-semibold mt-0.5">Trayectoria Continua</div>
+      </div>
+
+      <div class="px-3 pt-2 md:pt-0">
+        <div class="font-label-caps text-xs text-gris-grafito mb-1 uppercase font-bold tracking-wider">Proyectos Insignia</div>
+        <div class="font-serif text-2xl sm:text-3xl font-bold text-carbon-aruz">Mayakoba / Tulum</div>
+        <div class="text-[11px] text-gris-grafito mt-0.5">Obras de Alta Complejidad</div>
+      </div>
+
+      <div class="px-3 pt-4 md:pt-0">
+        <div class="font-label-caps text-xs text-gris-grafito mb-1 uppercase font-bold tracking-wider">Control Operativo</div>
+        <div class="font-serif text-2xl sm:text-3xl font-bold text-carbon-aruz">100% Cuadrillas</div>
+        <div class="text-[11px] text-verde-manglar font-bold mt-0.5">Sin Tercerización Crítica</div>
+      </div>
+
+      <div class="px-3 pt-4 md:pt-0">
+        <div class="font-label-caps text-xs text-gris-grafito mb-1 uppercase font-bold tracking-wider">Garantía Estructural</div>
+        <div class="font-serif text-2xl sm:text-3xl font-bold text-carbon-aruz">Sello CADE</div>
+        <div class="text-[11px] text-dorado-profundo font-semibold mt-0.5">Programa Círculo de Calidad</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CORE PHILOSOPHY & BENTO GRID DE OBRAS EMBLEMÁTICAS
+       ========================================================================== -->
+  <section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface" id="proyectos-emblematicos">
+    <div class="max-w-[1440px] mx-auto">
+      
+      <!-- Section Header -->
+      <div class="mb-14 max-w-3xl">
+        <span class="font-label-caps text-xs text-dorado-profundo uppercase tracking-widest mb-2 block font-bold">
+          Ingeniería de Precisión en la Península
+        </span>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-carbon-aruz font-bold mb-4">
+          Más de una Década Construyendo en el Sureste Mexicano
+        </h2>
+        <p class="text-gris-grafito text-base leading-relaxed">
+          CADE cuenta con la infraestructura técnica, maquinaria pesada y personal especializado para ejecutar desde macro-proyectos de urbanización e infraestructura hasta residencias de autor con acabados artesanales en Chukum y maderas tropicales.
+        </p>
+      </div>
+
+      <!-- Bento Grid Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Card 1: Ciudad Mayakoba (Col 8) -->
+        <div class="lg:col-span-8 bg-surface-container-highest rounded-2xl border border-outline-variant flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+          <div class="relative h-72 overflow-hidden border-b border-outline-variant/60">
+            <img alt="Residencia de lujo construida en Ciudad Mayakoba con alberca en Chukum" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="../assets/properties/tuux/exteriores/img_1.webp" loading="lazy" decoding="async">
+            <div class="absolute top-4 left-4 inline-block px-3 py-1 bg-carbon-aruz/85 backdrop-blur-md text-dorado-aruz font-label-caps text-[10px] font-bold uppercase rounded border border-dorado-aruz/30">
+              Macro-Desarrollo Insignia
+            </div>
+          </div>
+          <div class="p-8">
+            <h3 class="font-serif text-2xl text-carbon-aruz font-bold mb-3">Ciudad Mayakoba: Urbanización & Residencias de Autor</h3>
+            <p class="text-gris-grafito text-sm leading-relaxed mb-4">
+              Supervisión técnica de redes hidrosanitarias, eléctricas, voz y datos en macro-lotes (2017–2021) y construcción de la colección de 4 residencias unifamiliares premium (Eternity Jol, Tu'ux, Sak Lu'um y K'áak Náajal).
+            </p>
+            <div class="flex items-center gap-2 text-xs font-bold text-dorado-profundo uppercase font-label-caps">
+              <span class="material-symbols-outlined text-base">verified</span>
+              <span>Cimentación profunda en roca sascab y losas reforzadas</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: BIM & Topografía Digital (Col 4) -->
+        <div class="lg:col-span-4 bg-tertiary-container rounded-2xl border border-outline-variant p-8 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-verde-manglar text-white flex items-center justify-center mb-6 shadow-md">
+              <span class="material-symbols-outlined text-3xl">architecture</span>
+            </div>
+            <h3 class="font-serif text-2xl text-on-tertiary-container font-bold mb-3">Modelado BIM & Topografía Digital</h3>
+            <p class="text-on-tertiary-container/85 text-sm leading-relaxed mb-6">
+              Detección de colisiones e interferencias electromecánicas en 3D antes del primer colado de concreto. Minimizamos desviaciones presupuestales y garantizamos entregas en fecha contractual.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-verde-manglar/20">
+            <span class="text-xs font-bold text-verde-manglar uppercase tracking-wider font-label-caps">
+              Tecnología de Control BIM
+            </span>
+          </div>
+        </div>
+
+        <!-- Card 3: Valle Aurora, Tulum & Xpuha (Col 12) -->
+        <div class="lg:col-span-12 bg-surface-container-lowest rounded-2xl border border-piedra-maya p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="w-full md:w-2/3">
+            <span class="font-label-caps text-xs text-dorado-profundo uppercase tracking-widest mb-1 block font-bold">
+              Cobertura Regional
+            </span>
+            <h3 class="font-serif text-2xl sm:text-3xl text-carbon-aruz font-bold mb-3">
+              Valle Aurora, Bak Lum Tulum & Corredor Riviera Maya
+            </h3>
+            <p class="text-gris-grafito text-sm leading-relaxed">
+              Desarrollo de condominios residenciales, residencias de alta gama ($4.57 MDP en Bak Lum Tulum) y terracerías con control estricto de rendimientos y materiales nativos sustentables.
+            </p>
+          </div>
+          <div class="w-full md:w-1/3 flex md:justify-end">
+            <a class="inline-flex items-center gap-2 font-label-caps text-xs font-bold bg-carbon-aruz hover:bg-dorado-profundo text-white hover:text-white px-6 py-3.5 rounded uppercase tracking-widest transition-all duration-300 shadow-md" href="https://api.whatsapp.com/send?phone=5219841776205&text=Hola%20Ing.%20Antonio%20Carre%C3%B3n%2C%20me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20las%20obras%20de%20CADE." target="_blank" rel="noopener">
+              <span>Solicitar Dossier de Obras</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       TECHNICAL MANAGEMENT PROFILE (Contacto Directo con Ing. Antonio Carreón)
+       ========================================================================== -->
+  <section class="py-16 md:py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-low border-t border-outline-variant" id="contacto-gerencia">
+    <div class="max-w-3xl mx-auto text-center">
+      
+      <div class="inline-flex items-center gap-2 bg-dorado-aruz/20 text-dorado-profundo px-4 py-1 rounded-full font-label-caps text-xs font-bold mb-4 tracking-widest uppercase border border-dorado-aruz/40">
+        <span class="material-symbols-outlined text-sm">engineering</span>
+        Gerencia Técnica de Construcción
+      </div>
+
+      <h2 class="font-serif text-3xl sm:text-4xl text-carbon-aruz font-bold mb-2">
+        Ing. Antonio Carreón García
+      </h2>
+      <p class="text-gris-grafito text-base mb-8 font-medium">
+        Gerente de Construcción — CADE Diseño y Construcción · Grupo Ruiz
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+        
+        <a class="flex flex-col items-center p-6 border border-outline-variant hover:border-dorado-profundo transition-all bg-surface rounded-xl shadow-sm hover:shadow-md group" href="tel:+529841776205">
+          <div class="w-12 h-12 rounded-full bg-dorado-aruz/20 text-dorado-profundo flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined text-2xl">call</span>
+          </div>
+          <span class="font-label-caps text-xs text-gris-grafito uppercase font-bold mb-1">Teléfono de Obra</span>
+          <span class="font-serif text-lg font-bold text-carbon-aruz">+52 984 177 6205</span>
+        </a>
+
+        <a class="flex flex-col items-center p-6 border border-outline-variant hover:border-dorado-profundo transition-all bg-surface rounded-xl shadow-sm hover:shadow-md group" href="mailto:a.carreon@construccionescade.com">
+          <div class="w-12 h-12 rounded-full bg-dorado-aruz/20 text-dorado-profundo flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined text-2xl">mail</span>
+          </div>
+          <span class="font-label-caps text-xs text-gris-grafito uppercase font-bold mb-1">Correo Directo</span>
+          <span class="font-sans text-sm font-bold text-carbon-aruz">a.carreon@construccionescade.com</span>
+        </a>
+
+      </div>
+
+      <a class="inline-flex items-center justify-center bg-[#25D366] hover:bg-[#128C7E] text-white font-label-caps text-xs font-bold px-8 py-4 uppercase tracking-widest rounded-xl transition-all w-full sm:w-auto shadow-lg gap-2" href="https://api.whatsapp.com/send?phone=5219841776205&text=Hola%20Ing.%20Antonio%20Carre%C3%B3n%2C%20solicito%20informaci%C3%B3n%20sobre%20servicios%20de%20construcci%C3%B3n%20y%20obra%20con%20CADE." target="_blank" rel="noopener">
+        <span class="material-symbols-outlined text-lg">chat</span>
+        <span>Contactar por WhatsApp con el Gerente</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="w-full bg-carbon-aruz text-white border-t border-white/10 py-16">
+    <div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+        
         <div>
-          <div class="stamp-rotator" style="margin-left: 0; width: 130px; height: 130px; margin-bottom: 1.5rem;">
-            <img src="../assets/cade-stamp.svg" alt="Sello CADE">
+          <div class="mb-5">
+            <img src="../assets/logo-white.svg" alt="ARUZ" class="h-8 w-auto">
           </div>
-          <span class="section-tag manglar-accent">Evidencia Real de Obra</span>
-          <h2>Más de una Década Construyendo en el Sureste</h2>
-          <p>
-            CADE es el motor técnico que hace posible la promesa de ARUZ. No subcontratamos la responsabilidad: nuestros ingenieros calculan, ejecutan y supervisan cada metro cuadrado con equipo propio.
+          <p class="text-xs text-piedra-maya leading-relaxed mb-4">
+            CADE Diseño y Construcción. Brazo técnico y constructor oficial de ARUZ y Grupo Ruiz en el Sureste Mexicano.
           </p>
+          <span class="text-[11px] text-dorado-aruz font-bold uppercase tracking-wider font-label-caps block">
+            Sello CADE · "Construimos Confianza"
+          </span>
+        </div>
 
-          <div class="technical-bullets">
-            <div class="tech-bullet-item">
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <div>
-                <strong>Ciudad Mayakoba</strong>
-                <span>Participación activa en obras de urbanización, infraestructura y residencias unifamiliares con los más altos estándares de la Riviera Maya.</span>
-              </div>
-            </div>
-            <div class="tech-bullet-item">
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <div>
-                <strong>Valle Aurora y Xpuha</strong>
-                <span>Desarrollo de condominios residenciales y obras marítimas con control total de tiempos y presupuestos.</span>
-              </div>
-            </div>
-            <div class="tech-bullet-item">
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              <div>
-                <strong>Modelado BIM & Topografía Digital</strong>
-                <span>Detección de interferencias en 3D antes del inicio de obra para evitar demoras y sobrecostos a nuestros clientes.</span>
-              </div>
-            </div>
+        <div>
+          <h4 class="font-label-caps text-xs text-dorado-aruz uppercase tracking-widest mb-4 font-bold">Ecosistema ARUZ</h4>
+          <ul class="space-y-2 text-xs text-piedra-maya">
+            <li><a href="../desarrolladora.html" class="hover:text-dorado-aruz transition-colors">ARUZ Desarrolladora</a></li>
+            <li><a href="../inmobiliaria.html" class="hover:text-dorado-aruz transition-colors">ARUZ Inmobiliaria</a></li>
+            <li><a href="cade-constructora.html" class="text-white font-bold hover:text-dorado-aruz transition-colors">CADE Construcción</a></li>
+            <li><a href="aruz-maquinaria.html" class="hover:text-dorado-aruz transition-colors">ARUZ Maquinaria Pesada</a></li>
+            <li><a href="../index.html#preventas-mayakoba" class="hover:text-dorado-aruz transition-colors">Preventas Mayakoba</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-label-caps text-xs text-dorado-aruz uppercase tracking-widest mb-4 font-bold">Servicios Técnicos</h4>
+          <ul class="space-y-2 text-xs text-piedra-maya">
+            <li><span class="text-white font-medium">Edificación Residencial de Lujo</span></li>
+            <li><span class="text-white font-medium">Urbanización e Infraestructura</span></li>
+            <li><span class="text-white font-medium">Modelado BIM & Topografía Digital</span></li>
+            <li><span class="text-white font-medium">Supervisión & Dictamen Estructural</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-label-caps text-xs text-dorado-aruz uppercase tracking-widest mb-4 font-bold">Gerencia Técnica</h4>
+          <div class="space-y-2 text-xs text-piedra-maya">
+            <p><strong class="text-white">Ing. Antonio Carreón García</strong><br>Gerente de Construcción</p>
+            <p>
+              <a href="mailto:a.carreon@construccionescade.com" class="hover:text-dorado-aruz transition-colors">a.carreon@construccionescade.com</a>
+            </p>
+            <p>
+              <a href="tel:+529841776205" class="text-dorado-aruz font-bold hover:underline">+52 (984) 177 6205</a>
+            </p>
+            <p class="text-[11px] text-piedra-maya/80 pt-2">
+              Plaza Palmeras Local 212, Playa del Carmen, Quintana Roo.
+            </p>
           </div>
         </div>
 
-        <!-- Contacto Directo con Gerente de Construcción -->
-        <div style="background: var(--color-bg-card); border: 1px solid rgba(63, 93, 72, 0.5); border-radius: var(--radius-lg); padding: 2.5rem;" id="contacto-cade">
-          <span class="prop-tag cade-seal" style="margin-bottom: 1rem; display: inline-block;">Gerencia Técnica</span>
-          <h3 style="margin-bottom: 0.5rem; color: #FFFFFF;">Antonio Carreón García</h3>
-          <p style="color: var(--color-piedra); font-size: 0.95rem; margin-bottom: 1.5rem;">Gerente de Construcción — CADE Diseño y Construcción</p>
-          
-          <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
-            <div style="background: rgba(0,0,0,0.3); padding: 0.8rem 1rem; border-radius: 6px;">
-              <span style="font-size: 0.8rem; color: var(--color-grafito); display: block;">Teléfono Directo</span>
-              <a href="tel:+529841776205" style="color: #5BA36F; font-weight: 700; font-size: 1.1rem;">Tel. 984 177 6205</a>
-            </div>
-            <div style="background: rgba(0,0,0,0.3); padding: 0.8rem 1rem; border-radius: 6px;">
-              <span style="font-size: 0.8rem; color: var(--color-grafito); display: block;">Correo Electrónico</span>
-              <a href="mailto:a.carreon@construccionescade.com" style="color: #FFFFFF; font-weight: 600;">a.carreon@construccionescade.com</a>
-            </div>
-          </div>
-
-          <a href="https://api.whatsapp.com/send?phone=5219841776205&text=Hola%20Ing.%20Antonio%20Carre%C3%B3n%2C%20solicito%20informaci%C3%B3n%20sobre%20servicios%20de%20construcci%C3%B3n%20y%20obra%20con%20CADE." target="_blank" class="btn-cta-gold" style="width: 100%; background: #5BA36F; color: #FFFFFF; margin-bottom: 1rem;">
-            <span>Contactar a Gerente Técnico por WhatsApp</span>
-          </a>
-        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-bottom">
-        <div class="legal-text">&copy; 2026 Consortium GPRuiz S.A. de C.V. · CADE Diseño y Construcción · Grupo Ruiz México</div>
-        <div class="legal-text"><a href="../index.html" style="color: var(--color-gold-deep); font-weight: 700;">Volver al Portal 360</a></div>
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-piedra-maya/70">
+        <p>© 2026 CADE Diseño y Construcción · Grupo Ruiz. Todos los derechos reservados.</p>
+        <p>Solidez Técnica · Cuadrillas Propias · Sello de Garantía</p>
       </div>
+
     </div>
   </footer>
-  <script src="../js/main.js"></script>
-  <!-- Floating Mobile WhatsApp Quick Contact Button -->
-  <a href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20solicito%20asesor%C3%ADa%20personalizada%20con%20el%20Director%20de%20ARUZ." target="_blank" rel="noopener" class="floating-whatsapp-btn lg:hidden flex items-center justify-center" aria-label="Contactar por WhatsApp">
+
+  <!-- Floating Mobile / Desktop WhatsApp Quick Contact Button (Bottom-Right) -->
+  <a href="https://api.whatsapp.com/send?phone=5219841776205&text=Hola%20Ing.%20Antonio%20Carre%C3%B3n%2C%20solicito%20informaci%C3%B3n%20sobre%20servicios%20de%20construcci%C3%B3n%20con%20CADE." target="_blank" rel="noopener" class="floating-whatsapp-btn" aria-label="Contactar a Antonio Carreón por WhatsApp">
     <svg class="w-7 h-7 fill-white" viewBox="0 0 24 24">
       <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
     </svg>
   </a>
+
+  <!-- Mobile Drawer Toggle Script -->
   <script>
     function toggleMobileDrawer() {
       const drawer = document.getElementById('mobile-drawer');
@@ -219,6 +450,7 @@
       }
     }
   </script>
+
   <!-- ARUZ AI Advisor (Gemini API Integration) -->
   <script src="../js/aruz-ai-agent.js" defer></script>
 </body>
