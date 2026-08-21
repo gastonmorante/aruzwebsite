@@ -23,6 +23,7 @@ function initNavbar() {
   const navLinks = document.querySelectorAll('.nav-link, .dropdown-link');
 
   window.addEventListener('scroll', () => {
+    if (!header) return;
     if (window.scrollY > 40) {
       header.classList.add('scrolled');
     } else {
