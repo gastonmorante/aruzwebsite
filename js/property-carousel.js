@@ -326,14 +326,12 @@
 
       if (img) {
         if (animate) {
-          img.style.opacity = '0.3';
-          img.style.transform = 'scale(0.98)';
+          img.style.opacity = '0.4';
           setTimeout(() => {
             img.src = currentItem.src;
             img.alt = currentItem.title;
             img.style.opacity = '1';
-            img.style.transform = 'scale(1)';
-          }, 180);
+          }, 140);
         } else {
           img.src = currentItem.src;
           img.alt = currentItem.title;
@@ -344,16 +342,29 @@
       if (badgeCat) badgeCat.textContent = currentItem.catLabel;
       if (badgeCounter) badgeCounter.textContent = `${this.currentIndex + 1} / ${this.filteredItems.length}`;
 
-      // Update Thumbnails Active States
+      // Update Thumbnails Active States & Scroll horizontal track ONLY (NEVER touches window vertical scroll)
+      const thumbsTrack = this.container.querySelector('#carouselThumbsTrack');
       const thumbs = this.container.querySelectorAll('.carousel-thumb-item');
+      let activeThumb = null;
+
       thumbs.forEach((thumb, i) => {
         if (i === this.currentIndex) {
           thumb.className = 'carousel-thumb-item relative flex-shrink-0 w-20 h-14 sm:w-24 sm:h-16 md:w-28 md:h-18 rounded-lg overflow-hidden border-2 border-dorado-aruz shadow-md scale-105 ring-2 ring-dorado-aruz/40 transition-all duration-300 cursor-pointer';
-          thumb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          activeThumb = thumb;
         } else {
           thumb.className = 'carousel-thumb-item relative flex-shrink-0 w-20 h-14 sm:w-24 sm:h-16 md:w-28 md:h-18 rounded-lg overflow-hidden border-2 border-outline-variant/40 opacity-60 hover:opacity-100 hover:border-dorado-aruz/60 transition-all duration-300 cursor-pointer';
         }
       });
+
+      if (thumbsTrack && activeThumb) {
+        const thumbLeft = activeThumb.offsetLeft;
+        const thumbWidth = activeThumb.offsetWidth;
+        const trackWidth = thumbsTrack.clientWidth;
+        thumbsTrack.scrollTo({
+          left: thumbLeft - (trackWidth / 2) + (thumbWidth / 2),
+          behavior: 'smooth'
+        });
+      }
 
       // Animate progress bar
       const bar = this.container.querySelector('#carouselProgressBar');
@@ -379,7 +390,12 @@
       if (!this.options.autoPlay) return;
       this.pauseAutoplay();
       this.timer = setInterval(() => {
-        this.next();
+        // Only advance slide if carousel is currently visible in viewport
+        const rect = this.container.getBoundingClientRect();
+        const inViewport = rect.top < window.innerHeight && rect.bottom > 0;
+        if (inViewport) {
+          this.next();
+        }
       }, this.options.autoPlayInterval);
     }
 
