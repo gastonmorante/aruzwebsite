@@ -341,29 +341,17 @@
   <section class="py-16 bg-surface-card border-y border-outline-variant/30" id="galeria">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
-        <div>
-          <span class="text-xs md:text-sm font-bold uppercase tracking-widest text-dorado-profundo font-label-caps block">
-            Portafolio Visual Oficial
-          </span>
-        </div>
-
-        <!-- Filter Buttons -->
-        <div class="flex flex-wrap gap-2">
-          <button onclick="filterGallery('all')" id="btn-all" class="gallery-filter-btn active px-4 py-2 rounded text-xs font-bold uppercase font-label-caps border border-outline-variant transition-all">
-            Todos (18)
-          </button>
-          <button onclick="filterGallery('exterior')" id="btn-exterior" class="gallery-filter-btn px-4 py-2 rounded text-xs font-bold uppercase font-label-caps border border-outline-variant bg-white text-carbon-aruz transition-all hover:border-dorado-profundo">
-            Exteriores & Volumetría (8)
-          </button>
-          <button onclick="filterGallery('interior')" id="btn-interior" class="gallery-filter-btn px-4 py-2 rounded text-xs font-bold uppercase font-label-caps border border-outline-variant bg-white text-carbon-aruz transition-all hover:border-dorado-profundo">
-            Interiores & Suites (10)
-          </button>
-        </div>
+      <div class="text-center md:text-left mb-6">
+        <span class="text-xs md:text-sm font-bold uppercase tracking-widest text-dorado-profundo font-label-caps block mb-1">
+          Portafolio Visual Oficial
+        </span>
+        <h2 class="font-serif text-2xl md:text-3xl font-bold text-carbon-aruz">
+          Galería & Renders de Autor
+        </h2>
       </div>
 
-      <!-- Gallery Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+      <!-- Luxury Interactive Carousel Container -->
+      <div class="aruz-property-carousel" id="gallery-grid">
         
         <!-- 1. Fachada Frontal -->
         <div class="gallery-item exterior relative rounded-xl overflow-hidden border border-outline-variant/40 bg-white group cursor-pointer" onclick="openLightbox('../assets/properties/sak-luum/exteriores/fachada_frontal.webp', 'Fachada Frontal Principal')">
@@ -960,6 +948,7 @@
   <script src="../js/main.js"></script>
   <script src="../js/aruz-ai-agent.js" defer></script>
   <!-- Interactive In-Page Document & Blueprint Viewer Modal ("React-Style") -->
+  <script src="../js/property-carousel.js"></script>
   <script src="../js/doc-viewer-modal.js"></script>
   <!-- Multilingual Translation Engine (ES / EN / FR) -->
   <script src="../js/i18n.js"></script>
