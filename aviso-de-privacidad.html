@@ -156,6 +156,17 @@
     ]
 }
   </script>
+
+  <!-- Global Architectural Scroll Padding to guarantee zero navbar overlap on anchors -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+    section[id], div[id] {
+      scroll-margin-top: 100px;
+    }
+  </style>
 </head>
 <body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col">
 
