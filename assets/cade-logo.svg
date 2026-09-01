@@ -1,26 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 190" width="100%" height="100%">
-  <!-- CADE Official Logo Vector - High Definition & Non-Clipping -->
-  <g id="cade-emblem" transform="translate(10, 12)">
-    <line x1="0" y1="75" x2="45" y2="45" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round"/>
-    <line x1="16" y1="55" x2="16" y2="155" stroke="#FFFFFF" stroke-width="6"/>
-    <path d="M 28 85 L 50 85 L 50 155 L 28 155 Z" fill="#FFFFFF"/>
-    <path d="M 58 10 L 105 45 L 105 155 L 58 155 Z" fill="none" stroke="#FFFFFF" stroke-width="7"/>
-    <path d="M 58 10 L 105 45 L 105 155 L 58 155 Z" fill="#161213"/>
-    <rect x="70" y="55" width="8" height="9" fill="#FFFFFF"/>
-    <rect x="85" y="66" width="8" height="9" fill="#FFFFFF"/>
-    <rect x="70" y="73" width="8" height="9" fill="#FFFFFF"/>
-    <rect x="85" y="84" width="8" height="9" fill="#FFFFFF"/>
-    <rect x="70" y="91" width="8" height="9" fill="#FFFFFF"/>
-    <rect x="85" y="102" width="8" height="9" fill="#FFFFFF"/>
-    <path d="M 88 88 L 138 65 L 138 155 L 88 155 Z" fill="#FFFFFF"/>
-    <path d="M 115 90 L 138 78 L 138 155 L 115 155 Z" fill="#161213" stroke="#FFFFFF" stroke-width="2"/>
-    <line x1="118" y1="108" x2="135" y2="100" stroke="#FFFFFF" stroke-width="3"/>
-    <line x1="118" y1="124" x2="135" y2="116" stroke="#FFFFFF" stroke-width="3"/>
-    <line x1="118" y1="140" x2="135" y2="132" stroke="#FFFFFF" stroke-width="3"/>
-    <line x1="16" y1="155" x2="140" y2="155" stroke="#FFFFFF" stroke-width="6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 220" width="100%" height="100%">
+  <!-- ARUZ Construcción Vector Logo (White & Gold Version) -->
+  <defs>
+    <linearGradient id="goldFacetLeftConstLightLogo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7C844"/>
+      <stop offset="100%" stop-color="#EEB623"/>
+    </linearGradient>
+    <linearGradient id="goldFacetCenterConstLightLogo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5A718"/>
+      <stop offset="100%" stop-color="#D49610"/>
+    </linearGradient>
+    <linearGradient id="goldFacetTallConstLightLogo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD65E"/>
+      <stop offset="60%" stop-color="#EEB623"/>
+      <stop offset="100%" stop-color="#C79215"/>
+    </linearGradient>
+  </defs>
+
+  <g id="aruz-isotype" transform="translate(15, 10)">
+    <polygon points="0,85 45,50 45,190 0,190" fill="url(#goldFacetLeftConstLightLogo)"/>
+    <polygon points="45,50 72,28 72,190 45,190" fill="url(#goldFacetCenterConstLightLogo)"/>
+    <polygon points="72,28 122,0 122,190 98,190 98,70 72,48" fill="url(#goldFacetTallConstLightLogo)"/>
+    <polygon points="150,55 188,88 188,190 150,190" fill="#FFFFFF"/>
   </g>
-  <g id="cade-wordmark" transform="translate(175, 12)">
-    <text x="0" y="98" font-family="'Montserrat', 'Arial Black', sans-serif" font-size="104" font-weight="900" letter-spacing="3px" fill="#FFFFFF">CADE</text>
-    <text x="2" y="142" font-family="'Montserrat', 'Work Sans', sans-serif" font-size="23" font-weight="600" letter-spacing="5px" fill="#FFFFFF">DISEÑO Y CONSTRUCCIÓN</text>
+
+  <!-- Wordmark: ARUZ CONSTRUCCIÓN -->
+  <g id="aruz-wordmark" transform="translate(225, 25)">
+    <text x="0" y="102" font-family="'Montserrat', 'Poppins', sans-serif" font-size="94" font-weight="900" letter-spacing="-1px" fill="#FFFFFF">ARUZ</text>
+    <text x="2" y="152" font-family="'Montserrat', 'Work Sans', sans-serif" font-size="28" font-weight="700" letter-spacing="5.5px" fill="#EEB623">CONSTRUCCIÓN</text>
   </g>
 </svg>

@@ -209,14 +209,14 @@
         core: new Image(),
         desarrolladora: new Image(),
         inmobiliaria: new Image(),
-        cade: new Image(),
+        construccion: new Image(),
         maquinaria: new Image()
       };
 
       this.isologos.core.src = 'assets/node-core.svg';
       this.isologos.desarrolladora.src = 'assets/node-desarrolladora.svg';
       this.isologos.inmobiliaria.src = 'assets/node-inmobiliaria.svg';
-      this.isologos.cade.src = 'assets/node-cade.svg';
+      this.isologos.construccion.src = 'assets/node-construccion.svg';
       this.isologos.maquinaria.src = 'assets/node-maquinaria.svg';
     }
 
@@ -261,11 +261,11 @@
         {
           index: 3,
           isCore: false,
-          key: 'cade',
+          key: 'construccion',
           radius: 48,
           innerRatio: 0.62,
-          accentColor: '#4E8752',
-          glowColor: 'rgba(78, 135, 82, 0.4)',
+          accentColor: '#C79215',
+          glowColor: 'rgba(199, 146, 21, 0.4)',
           zDist: 1.05,
           angle: 45,
           dist: 180

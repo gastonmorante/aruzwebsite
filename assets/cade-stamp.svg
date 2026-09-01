@@ -1,8 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" width="100%" height="100%">
+  <!-- Luxury Seal: ARUZ CONSTRUCCIÓN -->
   <defs>
     <path id="textCircleTop" d="M 30,130 A 100,100 0 0,1 230,130" fill="none"/>
     <path id="textCircleBottom" d="M 230,130 A 100,100 0 0,1 30,130" fill="none"/>
+    <linearGradient id="stampGoldFacet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD65E"/>
+      <stop offset="100%" stop-color="#EEB623"/>
+    </linearGradient>
   </defs>
+
   <!-- Outer double ring -->
   <circle cx="130" cy="130" r="122" fill="none" stroke="#231F20" stroke-width="2" stroke-dasharray="4 2"/>
   <circle cx="130" cy="130" r="114" fill="#FFFFFF" stroke="#EEB623" stroke-width="3"/>
@@ -20,13 +26,21 @@
     </textPath>
   </text>
 
-  <!-- Center badge emblem -->
-  <g transform="translate(75, 80)">
-    <!-- CADE text -->
-    <text x="55" y="38" text-anchor="middle" font-family="'Poppins', sans-serif" font-size="28" font-weight="900" letter-spacing="1px" fill="#231F20">CADE</text>
-    <text x="55" y="52" text-anchor="middle" font-family="'Work Sans', sans-serif" font-size="8.5" font-weight="600" letter-spacing="1.8px" fill="#3F5D48">CALIDAD TÉCNICA</text>
+  <!-- Center badge emblem: ARUZ CONSTRUCCIÓN -->
+  <g transform="translate(68, 70)">
+    <!-- Small ARUZ emblem -->
+    <g transform="translate(42, 0) scale(0.65)">
+      <polygon points="0,32 15,19 15,68 0,68" fill="#EEB623"/>
+      <polygon points="15,19 25,10 25,68 15,68" fill="#D49610"/>
+      <polygon points="25,10 42,0 42,68 33,68 33,26 25,18" fill="url(#stampGoldFacet)"/>
+      <polygon points="52,20 65,32 65,68 52,68" fill="#231F20"/>
+    </g>
+
+    <text x="62" y="58" text-anchor="middle" font-family="'Montserrat', 'Poppins', sans-serif" font-size="22" font-weight="900" letter-spacing="1px" fill="#231F20">ARUZ</text>
+    <text x="62" y="70" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="7.5" font-weight="700" letter-spacing="1.5px" fill="#C79215">CONSTRUCCIÓN</text>
+
     <!-- 12+ years badge -->
-    <rect x="15" y="62" width="80" height="18" rx="4" fill="#EEB623"/>
-    <text x="55" y="74" text-anchor="middle" font-family="'Work Sans', sans-serif" font-size="9" font-weight="800" fill="#231F20">+12 AÑOS EXPERIENCIA</text>
+    <rect x="18" y="77" width="88" height="17" rx="3" fill="#EEB623"/>
+    <text x="62" y="89" text-anchor="middle" font-family="'Work Sans', sans-serif" font-size="8.5" font-weight="800" fill="#231F20">+12 AÑOS EXPERIENCIA</text>
   </g>
 </svg>
