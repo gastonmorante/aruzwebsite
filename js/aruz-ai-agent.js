@@ -81,14 +81,24 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
 - **Esquema Tradicional**: 20% de Enganche / Mensualidades diferidas durante obra / Saldo contra entrega a la firma notarial.
 - **Esquema Inversionista**: 30% de Enganche / 70% Contra entrega a la escrituración.
 
-### DIRECTORIO EJECUTIVO & UBICACIÓN:
+### DIRECTORIO EJECUTIVO, UBICACIÓN & HORARIOS OFICIALES:
 - **Dirección de Operaciones**: WhatsApp/Tel: +52 984 130 8260 · Email: operaciones@aruzinmobiliaria.com
 - **Dirección de Construcción**: Tel: +52 984 177 6205 · Email: construccion@aruzinmobiliaria.com
-- **Oficinas Corporativas**: Carretera Federal Chetumal - Puerto Juárez Km 230, Local 212 Planta Alta, Plaza Palmeras Mz 02 Lt 04, Playa del Carmen, Quintana Roo, CP 77728.
+- **Oficinas Corporativas & Showroom**: Carretera Federal Chetumal - Puerto Juárez Km 230, Local 212 Planta Alta, Plaza Palmeras Mz 02 Lt 04, Playa del Carmen, Quintana Roo, CP 77728.
+- **Horario de Atención Presencial (Oficinas & Showroom)**:
+  - *Lunes a Viernes*: 9:00 a 18:00 hrs.
+  - *Sábados*: 9:00 a 14:00 hrs.
+- **Atención Virtual / Bot AI**: Disponible **24/7 ininterrumpidamente** para perfilado inicial y asesoría inmediata los 365 días del año.
+
+### PERFILADO INICIAL INTELIGENTE:
+Cuando un interesado solicite asesoría o pida recomendaciones, ayúdale a perfilar su proyecto consultando cortésmente:
+1. **Propósito**: ¿Busca una residencia para habitar/retiro familiar o busca un activo de alta rentabilidad/plusvalía para inversión?
+2. **Esquema de Pago**: ¿Prefiere financiamiento directo durante obra (20% enganche) o esquema inversionista (30% enganche / 70% contra entrega)?
+3. **Visita a Showroom**: Invita cordialmente a agendar un recorrido privado en Ciudad Mayakoba o cita en oficinas dentro del horario presencial (Lun-Vie 9-18h, Sáb 9-14h) a través del botón de WhatsApp.
 
 ### REGLAS DE RESPUESTA:
 - Responde siempre en español de forma elegante, profesional, estructurada y concisa.
-- Usa negritas para destacar metros cuadrados, precios, ubicaciones y bonos de muebles.
+- Usa negritas para destacar metros cuadrados, precios, ubicaciones, bonos de muebles y horarios.
 - Utiliza viñetas para desglosar distribuciones por nivel.
 - Al final de tu asesoría, invita amablemente a coordinar una llamada o visita a obra con Dirección de Operaciones en el botón de WhatsApp ubicado en la pantalla.`;
 
@@ -117,7 +127,7 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
       </div>
       <div class="floating-ai-label">
         <span class="floating-ai-title">Asesor IA</span>
-        <span class="floating-ai-sub">ARUZ · En Línea 24/7</span>
+        <span class="floating-ai-sub">Perfilado 24/7 · Showroom Lun-Sáb</span>
       </div>
     `;
 
@@ -155,7 +165,7 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
             </div>
             <div class="aruz-ai-status">
               <span class="aruz-ai-status-dot"></span>
-              <span>Inteligencia Oficial · Grupo Ruiz</span>
+              <span>Bot 24/7 · Showroom Lun-Vie 9-18h | Sáb 9-14h</span>
             </div>
           </div>
         </div>
@@ -174,15 +184,17 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
         <div class="aruz-msg assistant">
           <div class="aruz-msg-content">
             <p><strong>Bienvenido a ARUZ Desarrolladora & Inmobiliaria.</strong></p>
-            <p>Soy tu asesor inteligente capacitado con los expedientes técnicos y contractuales de <strong>Grupo Ruiz</strong> y <strong>ARUZ Construcción</strong>. Puedo orientarte sobre nuestras 4 preventas en Ciudad Mayakoba, planos arquitectónicos, bonos de muebles, costos y esquemas de financiamiento.</p>
+            <p>Soy tu asesor inteligente <strong>24/7</strong> capacitado con los expedientes técnicos y contractuales de <strong>Grupo Ruiz</strong> y <strong>ARUZ Construcción</strong>. Puedo ayudarte con el perfilado inicial de tu inversión, preventas en Mayakoba, planos arquitectónicos, bonos de equipamiento y citas en showroom.</p>
+            <p><em>Horario Presencial en Oficinas & Showroom: Lunes a Viernes de 9:00 a 18:00 y Sábados de 9:00 a 14:00 hrs.</em></p>
             <p>¿Qué información deseas consultar hoy?</p>
             
             <div class="aruz-ai-chips">
-              <button class="aruz-chip" data-query="¿Cuáles son las 4 casas en preventa en Mayakoba y sus precios?">🏷️ 4 Preventas Mayakoba</button>
+              <button class="aruz-chip" data-query="¿Cuáles son las preventas en Mayakoba y sus precios?">🏷️ Preventas Mayakoba</button>
+              <button class="aruz-chip" data-query="Ayúdame a perfilar la mejor propiedad para mi inversión">🎯 Perfilado de Inversión</button>
+              <button class="aruz-chip" data-query="¿Cuáles son los horarios de atención presencial y cómo agendar una cita?">📍 Horarios & Showroom</button>
               <button class="aruz-chip" data-query="¿Qué esquemas de financiamiento y enganche ofrecen?">💰 Planes de Financiamiento</button>
               <button class="aruz-chip" data-query="¿Cuáles son las promociones y bonos de muebles actuales?">🎁 Bonos de Muebles</button>
-              <button class="aruz-chip" data-query="¿Qué garantía y respaldo técnico ofrece ARUZ Construcción?">🏗️ Respaldo Técnico ARUZ Construcción</button>
-              <button class="aruz-chip" data-query="¿Qué servicios ofrece ARUZ Maquinaria Pesada?">🚜 Flota de Maquinaria</button>
+              <button class="aruz-chip" data-query="¿Qué garantía y respaldo técnico ofrece ARUZ Construcción?">🏗️ ARUZ Construcción</button>
             </div>
           </div>
         </div>

@@ -188,6 +188,20 @@
     },
     "telephone": "+52-984-130-8260",
     "email": "operaciones@aruzinmobiliaria.com",
+    "openingHoursSpecification": [
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "09:00",
+            "closes": "14:00"
+        }
+    ],
     "founders": [
         {
             "@type": "Person",
@@ -706,7 +720,16 @@
             </div>
             <div class="flex items-center gap-3 pt-2 border-t border-outline-variant/30 text-xs text-gris-grafito">
               <span class="material-symbols-outlined text-verde-manglar text-base shrink-0">schedule</span>
-              <span>Lunes a Sábado: 9:00 - 19:00 hrs · Atención Presencial en Mayakoba & Remota</span>
+              <div class="space-y-1 w-full">
+                <div class="flex items-center gap-2">
+                  <span class="font-semibold text-carbon-aruz">Atención Presencial:</span>
+                  <span class="text-carbon-aruz">Lun - Vie 9:00 a 18:00 | Sáb 9:00 a 14:00</span>
+                </div>
+                <div class="flex items-center gap-2 text-verde-manglar text-[11px] font-medium">
+                  <span class="w-2 h-2 rounded-full bg-verde-manglar animate-pulse"></span>
+                  <span>Bot de Asesoría & Perfilado Inicial Activo 24/7</span>
+                </div>
+              </div>
             </div>
           </div>
 
