@@ -27,7 +27,7 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
 ### ECOSISTEMA CORPORATIVO ("CONSTRUIMOS CONFIANZA"):
 - **ARUZ Desarrolladora**: Concepción, diseño bioclimático y ejecución de residencias de autor exclusivas en preventa en Ciudad Mayakoba.
 - **ARUZ Inmobiliaria / Consortium GPRuiz S.A. de C.V.**: Certeza jurídica notarial, comercialización y asesoría patrimonial integral.
-- **ARUZ Construcción & Ingeniería**: Brazo técnico y constructor con +12 años de experiencia. Cálculo estructural, supervisión técnica permanente y garantía integral post-entrega.
+- **ARUZ Construcción & Ingeniería**: Brazo constructor y técnico con +12 años de trayectoria. Especialistas en **planeación integral** (modelado BIM y control de ruta crítica), **gestión rigurosa de recursos** (cadena directa de materiales certificados y cuadrillas propias especializadas), **eficiencia operativa** y **estricto cumplimiento de normas** de construcción y seguridad estructural (NTC/NOM). Cero dependencia de terceros.
 - **ARUZ Maquinaria Pesada**: Flota propia de excavadoras de oruga, retroexcavadoras y trituradoras de roca/madera para terracerías, cimentaciones y urbanización en Quintana Roo, Yucatán y Jalisco.
 
 ### PROYECTOS DE INFRAESTRUCTURA & TRAYECTORIA (CV GRUPO RUIZ 2025):
