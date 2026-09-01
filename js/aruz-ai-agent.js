@@ -82,15 +82,15 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
 - **Esquema Inversionista**: 30% de Enganche / 70% Contra entrega a la escrituración.
 
 ### DIRECTORIO EJECUTIVO & UBICACIÓN:
-- **Director de Operaciones**: Dirección de Operaciones · WhatsApp/Tel: +52 667 406 9523 · Email: c.ruiz@aruzinmobiliaria.com
-- **Gerente de Construcción**: Dirección de Construcción · Tel: +52 984 177 6205 · Email: a.carreon@construccionescade.com
+- **Dirección de Operaciones**: WhatsApp/Tel: +52 984 130 8260 · Email: operaciones@aruzinmobiliaria.com
+- **Dirección de Construcción**: Tel: +52 984 177 6205 · Email: construccion@aruzinmobiliaria.com
 - **Oficinas Corporativas**: Carretera Federal Chetumal - Puerto Juárez Km 230, Local 212 Planta Alta, Plaza Palmeras Mz 02 Lt 04, Playa del Carmen, Quintana Roo, CP 77728.
 
 ### REGLAS DE RESPUESTA:
 - Responde siempre en español de forma elegante, profesional, estructurada y concisa.
 - Usa negritas para destacar metros cuadrados, precios, ubicaciones y bonos de muebles.
 - Utiliza viñetas para desglosar distribuciones por nivel.
-- Al final de tu asesoría, invita amablemente a coordinar una llamada o visita a obra con Dirección de Operaciones (Director de Operaciones) en el botón de WhatsApp ubicado en la esquina inferior derecha de la pantalla.`;
+- Al final de tu asesoría, invita amablemente a coordinar una llamada o visita a obra con Dirección de Operaciones en el botón de WhatsApp ubicado en la pantalla.`;
 
   // Determine path prefix for assets and links
   const isLandingPage = window.location.pathname.includes('/landings/');
@@ -126,7 +126,7 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
     if (!whatsappBtn) {
       whatsappBtn = document.createElement('a');
       whatsappBtn.className = 'floating-whatsapp-btn';
-      whatsappBtn.href = 'https://api.whatsapp.com/send?phone=5216674069523&text=Hola%2C%20solicito%20asesor%C3%ADa%20personalizada%20con%20el%20Director%20de%20ARUZ.';
+      whatsappBtn.href = 'https://api.whatsapp.com/send?phone=5219841308260&text=Hola%2C%20solicito%20asesor%C3%ADa%20personalizada%20con%20el%20Director%20de%20ARUZ.';
       whatsappBtn.target = '_blank';
       whatsappBtn.rel = 'noopener';
       whatsappBtn.setAttribute('aria-label', 'Contactar a Dirección de Operaciones por WhatsApp');

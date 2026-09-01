@@ -400,7 +400,7 @@ function initAdvisorForm() {
     const budget = document.getElementById('advBudget')?.value || '$2.5M - $5M MXN';
     const message = document.getElementById('advMessage')?.value.trim() || '';
 
-    const directorPhone = '5216674069523'; // Dirección de Operaciones
+    const directorPhone = '5219841308260'; // Dirección de Operaciones
     
     let text = `Hola Dirección de Operaciones (Director de Operaciones ARUZ),\n\n`;
     text += `Mi nombre es *${name}* y solicito asesoría técnica y comercial:\n`;
@@ -459,7 +459,7 @@ function handleLeadSubmit(event) {
   }
 
   // Build WhatsApp payload for Director Dirección de Operaciones
-  const directorPhone = '5216674069523';
+  const directorPhone = '5219841308260';
   let text = `*NUEVO LEAD DESDE SITIO WEB ARUZ*\n\n`;
   text += `👤 *Nombre:* ${name}\n`;
   text += `📱 *Tel / WhatsApp:* ${phone}\n`;

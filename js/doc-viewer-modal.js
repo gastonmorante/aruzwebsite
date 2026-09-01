@@ -246,7 +246,7 @@
                 <span class="material-symbols-outlined text-base">download</span>
                 <span>Descargar PDF</span>
               </a>
-              <a id="btn-modal-director-wa" href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%2C%20estoy%20viendo%20los%20planos%20y%20dossier%20técnico%20y%20deseo%20asesoría%20directa." target="_blank" rel="noopener" class="px-5 py-2 rounded-xl bg-carbon-aruz hover:bg-dorado-profundo text-dorado-aruz hover:text-white text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 transition-all shadow-md">
+              <a id="btn-modal-director-wa" href="https://api.whatsapp.com/send?phone=5219841308260&text=Hola%2C%20estoy%20viendo%20los%20planos%20y%20dossier%20técnico%20y%20deseo%20asesoría%20directa." target="_blank" rel="noopener" class="px-5 py-2 rounded-xl bg-carbon-aruz hover:bg-dorado-profundo text-dorado-aruz hover:text-white text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 transition-all shadow-md">
                 <span class="material-symbols-outlined text-base">phone</span>
                 <span>Hablar con el Director</span>
               </a>
@@ -399,7 +399,7 @@
       document.getElementById('btn-download-raw-pdf').href = pdfTarget;
 
       // Update WhatsApp action message
-      const waLink = `https://api.whatsapp.com/send?phone=5216674069523&text=Hola%2C%20estoy%20revisando%20los%20${encodeURIComponent(this.activeTab.toUpperCase())}%20de%20${encodeURIComponent(prop.title)}%20en%20el%20sitio%20y%20solicito%20asesoría%20directa.`;
+      const waLink = `https://api.whatsapp.com/send?phone=5219841308260&text=Hola%2C%20estoy%20revisando%20los%20${encodeURIComponent(this.activeTab.toUpperCase())}%20de%20${encodeURIComponent(prop.title)}%20en%20el%20sitio%20y%20solicito%20asesoría%20directa.`;
       document.getElementById('btn-modal-director-wa').href = waLink;
     }
 
