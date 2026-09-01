@@ -24,7 +24,7 @@
       specs: [
         { label: 'Superficie de Construcción', val: '305.31 m² habitables' },
         { label: 'Superficie de Lote', val: '272.50 m²' },
-        { label: 'Cimentación', val: 'Zapata Corrida CADE f\'c=250 kg/cm² sobre roca sólida' },
+        { label: 'Cimentación', val: 'Zapata Corrida ARUZ Construcción f\'c=250 kg/cm² sobre roca sólida' },
         { label: 'Estructura', val: 'Concreto armado antisísmico con varilla corrugada grado 42' },
         { label: 'Muros y Cerramientos', val: 'Block vibrocomprimido 15x20x40 con castillos ahogados' },
         { label: 'Carpintería de Autor', val: 'Madera de Tzalam macizo tropicalizado con sellador marino' },
@@ -37,14 +37,14 @@
         { name: 'Planta Baja', desc: 'Acceso principal, cochera 2 autos, sala-comedor doble altura, cocina integral en isla con granito, terraza con alberca Chukum y jardín tropical.' },
         { name: 'Primer Nivel', desc: 'Master Suite con vestidor y baño en mármol, 2 Junior Suites cada una con baño privado y clóset de Tzalam, family room.' },
         { name: 'Roof Deck', desc: 'Área lounge semicubierta con pérgola de Tzalam, barra de bar con tarja, asador de acero inoxidable y jacuzzi panorámico.' },
-        { name: 'Cortes & Fachadas', desc: 'Elevación frontal bioclimática, cortes transversales con altura libre de 2.85m y memorias de cálculo estructural CADE.' }
+        { name: 'Cortes & Fachadas', desc: 'Elevación frontal bioclimática, cortes transversales con altura libre de 2.85m y memorias de cálculo estructural ARUZ Construcción.' }
       ],
       terms: [
         { title: 'Esquema de Inversión en Preventa', desc: '30% de enganche a la firma del contrato privado de compraventa notariado.' },
-        { title: 'Calendario de Pagos a Obra', desc: '60% diferido en mensualidades vinculadas directamente al avance de obra CADE verificado en bitácora.' },
+        { title: 'Calendario de Pagos a Obra', desc: '60% diferido en mensualidades vinculadas directamente al avance de obra ARUZ Construcción verificado en bitácora.' },
         { title: 'Saldo a la Entrega y Escrituración', desc: '10% contra entrega física de llaves y escrituración notarial ante Notario Público en Playa del Carmen.' },
         { title: 'Bono de Equipamiento de $450,000 MXN', desc: 'Incluye paquete de muebles de autor en Tzalam o bonificación para sistema de paneles solares fotovoltaicos.' },
-        { title: 'Garantía Estructural CADE', desc: '5 años de garantía estructural por escrito y 1 año en vicios ocultos e impermeabilización.' }
+        { title: 'Garantía Estructural ARUZ', desc: '5 años de garantía estructural por escrito y 1 año en vicios ocultos e impermeabilización.' }
       ]
     },
     'tuux': {
@@ -62,7 +62,7 @@
       specs: [
         { label: 'Superficie de Construcción', val: '333.59 m²' },
         { label: 'Superficie de Lote', val: '280.00 m²' },
-        { label: 'Cimentación', val: 'Zapata Corrida CADE f\'c=250 kg/cm² con impermeabilización integral' },
+        { label: 'Cimentación', val: 'Zapata Corrida ARUZ Construcción f\'c=250 kg/cm² con impermeabilización integral' },
         { label: 'Estructura', val: 'Columnas y trabes de concreto armado calculadas para zona costera' },
         { label: 'Carpintería', val: 'Tzalam macizo en puertas principales, clósets y vanity' },
         { label: 'Acabados en Muros', val: 'Chukum artesanal impermeable y piedra maya natural en fachada' },
@@ -76,7 +76,7 @@
       ],
       terms: [
         { title: 'Enganche', desc: '30% a la firma del contrato notarial.' },
-        { title: 'Pagos Durante Construcción', desc: '60% mensualidades durante la obra CADE.' },
+        { title: 'Pagos Durante Construcción', desc: '60% mensualidades durante la obra ARUZ Construcción.' },
         { title: 'Finiquito', desc: '10% a la entrega y firma notarial.' },
         { title: 'Bono $450,000 MXN', desc: 'Equipamiento de autor o paneles solares incluidos.' }
       ]
@@ -96,7 +96,7 @@
       specs: [
         { label: 'Superficie de Construcción', val: '318.45 m²' },
         { label: 'Superficie de Lote', val: '275.00 m²' },
-        { label: 'Cimentación', val: 'Zapata Corrida CADE f\'c=250 kg/cm²' },
+        { label: 'Cimentación', val: 'Zapata Corrida ARUZ Construcción f\'c=250 kg/cm²' },
         { label: 'Maderas', val: 'Tzalam macizo en vestidores y puertas' },
         { label: 'Alberca', val: 'Acabado Chukum con iluminación subacuática LED' }
       ],
@@ -126,7 +126,7 @@
       specs: [
         { label: 'Superficie de Construcción', val: '310.00 m²' },
         { label: 'Superficie de Lote', val: '270.00 m²' },
-        { label: 'Estructura', val: 'Concreto CADE alta resistencia y varilla corrugada' },
+        { label: 'Estructura', val: 'Concreto ARUZ Construcción alta resistencia y varilla corrugada' },
         { label: 'Carpintería', val: 'Tzalam tropical con acabado semimate' },
         { label: 'Alberca', val: 'Chukum artesanal con sistema de bombeo silencioso' }
       ],
@@ -246,7 +246,7 @@
                 <span class="material-symbols-outlined text-base">download</span>
                 <span>Descargar PDF</span>
               </a>
-              <a id="btn-modal-director-wa" href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20estoy%20viendo%20los%20planos%20y%20dossier%20técnico%20y%20deseo%20asesoría%20directa." target="_blank" rel="noopener" class="px-5 py-2 rounded-xl bg-carbon-aruz hover:bg-dorado-profundo text-dorado-aruz hover:text-white text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 transition-all shadow-md">
+              <a id="btn-modal-director-wa" href="https://api.whatsapp.com/send?phone=5216674069523&text=Hola%2C%20estoy%20viendo%20los%20planos%20y%20dossier%20técnico%20y%20deseo%20asesoría%20directa." target="_blank" rel="noopener" class="px-5 py-2 rounded-xl bg-carbon-aruz hover:bg-dorado-profundo text-dorado-aruz hover:text-white text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 transition-all shadow-md">
                 <span class="material-symbols-outlined text-base">phone</span>
                 <span>Hablar con el Director</span>
               </a>
@@ -399,7 +399,7 @@
       document.getElementById('btn-download-raw-pdf').href = pdfTarget;
 
       // Update WhatsApp action message
-      const waLink = `https://api.whatsapp.com/send?phone=5216674069523&text=Hola%20Carlos%20Alfredo%2C%20estoy%20revisando%20los%20${encodeURIComponent(this.activeTab.toUpperCase())}%20de%20${encodeURIComponent(prop.title)}%20en%20el%20sitio%20y%20solicito%20asesoría%20directa.`;
+      const waLink = `https://api.whatsapp.com/send?phone=5216674069523&text=Hola%2C%20estoy%20revisando%20los%20${encodeURIComponent(this.activeTab.toUpperCase())}%20de%20${encodeURIComponent(prop.title)}%20en%20el%20sitio%20y%20solicito%20asesoría%20directa.`;
       document.getElementById('btn-modal-director-wa').href = waLink;
     }
 
@@ -495,7 +495,7 @@
             <div class="bg-surface-container-highest/40 rounded-2xl p-5 border border-outline-variant/30">
               <h5 class="font-serif font-bold text-sm text-carbon-aruz mb-3 flex items-center gap-2">
                 <span class="material-symbols-outlined text-base text-dorado-profundo">verified</span>
-                <span>Criterios Estructurales & Cimentación Oficial CADE</span>
+                <span>Criterios Estructurales & Cimentación Oficial ARUZ Construcción</span>
               </h5>
               <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
                 <div class="bg-white p-3 rounded-xl border border-outline-variant/30">
@@ -520,7 +520,7 @@
             <div class="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant/40">
               <span class="text-[10px] uppercase font-bold tracking-widest text-dorado-profundo">Ficha Técnica & Memoria de Materiales</span>
               <h4 class="font-serif text-xl font-bold text-carbon-aruz">Especificaciones Constructivas de Autor</h4>
-              <p class="text-xs text-gris-grafito mt-1">Supervisión directa por CADE Diseño y Construcción con bitácora colegiada.</p>
+              <p class="text-xs text-gris-grafito mt-1">Supervisión directa por ARUZ Construcción & Ingeniería con bitácora colegiada.</p>
             </div>
 
             <!-- Specs Grid -->

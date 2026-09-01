@@ -158,7 +158,7 @@ function init3DHudOrbit() {
   const nodeOffsets = [
     0,                  // 0 rad (ARUZ Desarrolladora)
     Math.PI / 2,        // PI/2 rad (ARUZ Inmobiliaria)
-    Math.PI,            // PI rad (CADE Constructora)
+    Math.PI,            // PI rad (ARUZ Construcción)
     (3 * Math.PI) / 2   // 3PI/2 rad (ARUZ Maquinaria)
   ];
 
@@ -244,7 +244,7 @@ function init3DHudOrbit() {
     const cardPositions = [
       { x: centerX + rx * 0.85, y: centerY - ry * 1.25 }, // Top Right (Desarrolladora)
       { x: centerX + rx * 0.85, y: centerY + ry * 0.85 }, // Bottom Right (Inmobiliaria)
-      { x: centerX - rx * 1.35, y: centerY + ry * 0.85 }, // Bottom Left (CADE)
+      { x: centerX - rx * 1.35, y: centerY + ry * 0.85 }, // Bottom Left (ARUZ Construcción)
       { x: centerX - rx * 1.35, y: centerY - ry * 1.25 }  // Top Left (Maquinaria)
     ];
 
@@ -400,9 +400,9 @@ function initAdvisorForm() {
     const budget = document.getElementById('advBudget')?.value || '$2.5M - $5M MXN';
     const message = document.getElementById('advMessage')?.value.trim() || '';
 
-    const directorPhone = '5216674069523'; // Carlos Alfredo Ruiz Ramos
+    const directorPhone = '5216674069523'; // Dirección de Operaciones
     
-    let text = `Hola Carlos Alfredo Ruiz Ramos (Director de Operaciones ARUZ),\n\n`;
+    let text = `Hola Dirección de Operaciones (Director de Operaciones ARUZ),\n\n`;
     text += `Mi nombre es *${name}* y solicito asesoría técnica y comercial:\n`;
     text += `• *Objetivo:* ${motivation}\n`;
     text += `• *Submarca de Interés:* ${division}\n`;
@@ -410,7 +410,7 @@ function initAdvisorForm() {
     if (message) {
       text += `• *Comentarios específicos:* ${message}\n`;
     }
-    text += `\nSolicito agendar una llamada de asesoría bajo el criterio experto del ecosistema ARUZ + CADE.`;
+    text += `\nSolicito agendar una llamada de asesoría bajo el criterio experto del ecosistema ARUZ.`;
 
     const encodedText = encodeURIComponent(text);
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${directorPhone}&text=${encodedText}`;
@@ -458,7 +458,7 @@ function handleLeadSubmit(event) {
     btn.innerHTML = `<span>Procesando Solicitud...</span><span class="material-symbols-outlined text-sm animate-spin">refresh</span>`;
   }
 
-  // Build WhatsApp payload for Director Carlos Ruiz
+  // Build WhatsApp payload for Director Dirección de Operaciones
   const directorPhone = '5216674069523';
   let text = `*NUEVO LEAD DESDE SITIO WEB ARUZ*\n\n`;
   text += `👤 *Nombre:* ${name}\n`;

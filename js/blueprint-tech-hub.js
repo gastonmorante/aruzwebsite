@@ -71,7 +71,7 @@
       "20°37'38\"N",
       "87°04'48\"W",
       "BIM 4D READY",
-      "CADE S100"
+      "ARUZ Construcción S100"
     ];
 
     for (let i = 0; i < particleCount; i++) {
