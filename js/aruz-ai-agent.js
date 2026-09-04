@@ -77,9 +77,33 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
    - **Inversión Preventa**: $5,650,000 MXN (Precio de lista catálogo: $10,480,000 MXN). Entrega: Marzo 2027.
    - **Bono Oficial de Muebles**: $400,000 MXN. Equipamiento completo incluido.
 
+### LOMAS AURORA · MACRODESARROLLO RESIDENCIAL EN PLAYA DEL CARMEN (DETALLE TÉCNICO OFICIAL):
+- **Ubicación Estratégica**: Prolongación Av. 115 Sur, Playa del Carmen, Quintana Roo.
+  - Conectividad: 5 min de Centro Maya, 7 min de Parque Xplor, 10 min de la 5ta Avenida, 11 min de Parque Xcaret, 12 min de Playas del Caribe, 60 min del Aeropuerto Internacional de Cancún.
+- **Lotes Residenciales Unifamiliares (4 Tipologías)**:
+  - *160.00 m²* (8.00 m x 20.00 m) · COS 50% (80 m²) · CUS 1.61 (257.60 m²)
+  - *180.00 m²* (9.00 m x 20.00 m) · COS 50% (90 m²) · CUS 1.61 (289.80 m²)
+  - *200.00 m²* (10.00 m x 20.00 m) · COS 50% (100 m²) · CUS 1.61 (322.00 m²)
+  - *225.00 m²* (11.25 m x 20.00 m) · COS 50% (112.50 m²) · CUS 1.61 (362.25 m²)
+  - *Normativa de Construcción*: Uso de Suelo H3 (Habitacional Unifamiliar hasta 3 niveles / 10.50 m de altura).
+  - *Fechas de Entrega Lotes*: Etapa 1 en Noviembre 2025 · Etapa 2 en Marzo 2026.
+- **Torres Departamentales**:
+  - *Torre Fuego*: Departamentos de 2 y 3 Recámaras · Últimas Unidades disponibles · Entrega: Septiembre 2026.
+  - *Torre Tierra*: Preventa Inicial · Departamentos de 2 y 3 Recámaras · Entrega: Abril 2027.
+  - *Torre Agua*: 100% Vendida (Mayo 2026).
+  - *Tipología 2 Recámaras*: 80.54 m² interior + 10.00 m² terraza = 90.54 m² Totales.
+  - *Tipología 3 Recámaras*: 109.93 m² interior + 7.69 m² terraza = 117.62 m² Totales.
+- **Casa Club de Autor (Diseño GVA Arquitectos · +25 Amenidades)**:
+  - Alberca Semiolímpica, Pista de Pádel profesional, Cancha de Tenis, Gimnasio de 2 niveles con área cardio y pesas, SPA & Wellness con sauna y vapor, Sala de Cine privada, Coworking de alto rendimiento con internet simétrico, Salón de Eventos, Sports Bar, Kids Club, Terrazas lounge, Zona de asadores BBQ, Parque para mascotas y Seguridad privada 24/7 con doble filtro de acceso.
+- **Financiamiento Lomas Aurora**:
+  - Apartado: $50,000 MXN.
+  - Plan A: 30% Enganche / 70% Contra entrega.
+  - Plan B: 30% Enganche / 40% Durante obra / 30% Contra entrega.
+
 ### CONDICIONES DE PAGO & FINANCIAMIENTO OFICIALES:
-- **Esquema Tradicional**: 20% de Enganche / Mensualidades diferidas durante obra / Saldo contra entrega a la firma notarial.
-- **Esquema Inversionista**: 30% de Enganche / 70% Contra entrega a la escrituración.
+- **Esquema Mayakoba Tradicional**: 20% de Enganche / Mensualidades diferidas durante obra / Saldo contra entrega a la firma notarial.
+- **Esquema Mayakoba Inversionista**: 30% de Enganche / 70% Contra entrega a la escrituración.
+- **Esquema Lomas Aurora**: Apartado $50,000 MXN, 30% Enganche, esquemas 30/70 o 30/40/30.
 
 ### DIRECTORIO EJECUTIVO, UBICACIÓN & HORARIOS OFICIALES:
 - **Dirección de Operaciones**: WhatsApp/Tel: +52 984 130 8260 · Email: operaciones@aruzinmobiliaria.com
@@ -92,15 +116,15 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
 
 ### PERFILADO INICIAL INTELIGENTE:
 Cuando un interesado solicite asesoría o pida recomendaciones, ayúdale a perfilar su proyecto consultando cortésmente:
-1. **Propósito**: ¿Busca una residencia para habitar/retiro familiar o busca un activo de alta rentabilidad/plusvalía para inversión?
-2. **Esquema de Pago**: ¿Prefiere financiamiento directo durante obra (20% enganche) o esquema inversionista (30% enganche / 70% contra entrega)?
-3. **Visita a Showroom**: Invita cordialmente a agendar un recorrido privado en Ciudad Mayakoba o cita en oficinas dentro del horario presencial (Lun-Vie 9-18h, Sáb 9-14h) a través del botón de WhatsApp.
+1. **Propósito**: ¿Busca una residencia unifamiliar en Mayakoba, un lote residencial o un departamento en Lomas Aurora?
+2. **Esquema de Pago**: ¿Prefiere financiamiento directo durante obra o esquemas de enganche contra entrega?
+3. **Visita a Showroom**: Invita cordialmente a agendar un recorrido privado en Ciudad Mayakoba, Lomas Aurora o cita en oficinas dentro del horario presencial (Lun-Vie 9-18h, Sáb 9-14h) a través del botón de WhatsApp.
 
 ### REGLAS DE RESPUESTA:
 - Responde siempre en español de forma elegante, profesional, estructurada y concisa.
 - Usa negritas para destacar metros cuadrados, precios, ubicaciones, bonos de muebles y horarios.
-- Utiliza viñetas para desglosar distribuciones por nivel.
-- Al final de tu asesoría, invita amablemente a coordinar una llamada o visita a obra con Dirección de Operaciones en el botón de WhatsApp ubicado en la pantalla.`;
+- Utiliza viñetas para desglosar distribuciones por nivel o características técnicas.
+- Al final de tu asesoría, invita amablemente a coordinar una llamada o visita con Dirección de Operaciones en el botón de WhatsApp ubicado en la pantalla.`;
 
   // Determine path prefix for assets and links
   const isLandingPage = window.location.pathname.includes('/landings/');
@@ -136,7 +160,7 @@ Cuando un interesado solicite asesoría o pida recomendaciones, ayúdale a perfi
     if (!whatsappBtn) {
       whatsappBtn = document.createElement('a');
       whatsappBtn.className = 'floating-whatsapp-btn';
-      whatsappBtn.href = 'https://api.whatsapp.com/send?phone=5219841308260&text=Hola%2C%20solicito%20asesor%C3%ADa%20personalizada%20con%20el%20Director%20de%20ARUZ.';
+      whatsappBtn.href = 'https://api.whatsapp.com/send?phone=5219841308260&text=Hola%2C%20solicito%20asesor%C3%ADa%20personalizada%20con%20Direcci%C3%B3n%20de%20Operaciones%20de%20ARUZ.';
       whatsappBtn.target = '_blank';
       whatsappBtn.rel = 'noopener';
       whatsappBtn.setAttribute('aria-label', 'Contactar a Dirección de Operaciones por WhatsApp');
@@ -184,16 +208,17 @@ Cuando un interesado solicite asesoría o pida recomendaciones, ayúdale a perfi
         <div class="aruz-msg assistant">
           <div class="aruz-msg-content">
             <p><strong>Bienvenido a ARUZ Desarrolladora & Inmobiliaria.</strong></p>
-            <p>Soy tu asesor inteligente <strong>24/7</strong> capacitado con los expedientes técnicos y contractuales de <strong>Grupo Ruiz</strong> y <strong>ARUZ Construcción</strong>. Puedo ayudarte con el perfilado inicial de tu inversión, preventas en Mayakoba, planos arquitectónicos, bonos de equipamiento y citas en showroom.</p>
+            <p>Soy tu asesor inteligente <strong>24/7</strong> capacitado con los expedientes técnicos y contractuales de <strong>Grupo Ruiz</strong>, <strong>ARUZ Construcción</strong> y <strong>Lomas Aurora</strong>. Puedo ayudarte con el perfilado inicial de tu inversión, preventas en Mayakoba, macrodesarrollo Lomas Aurora, planos arquitectónicos, bonos de equipamiento y citas en showroom.</p>
             <p><em>Horario Presencial en Oficinas & Showroom: Lunes a Viernes de 9:00 a 18:00 y Sábados de 9:00 a 14:00 hrs.</em></p>
             <p>¿Qué información deseas consultar hoy?</p>
             
             <div class="aruz-ai-chips">
+              <button class="aruz-chip" data-query="¿Cuáles son las opciones de lotes y departamentos en Lomas Aurora?">🌿 Lomas Aurora (Lotes & Torres)</button>
               <button class="aruz-chip" data-query="¿Cuáles son las preventas en Mayakoba y sus precios?">🏷️ Preventas Mayakoba</button>
               <button class="aruz-chip" data-query="Ayúdame a perfilar la mejor propiedad para mi inversión">🎯 Perfilado de Inversión</button>
               <button class="aruz-chip" data-query="¿Cuáles son los horarios de atención presencial y cómo agendar una cita?">📍 Horarios & Showroom</button>
               <button class="aruz-chip" data-query="¿Qué esquemas de financiamiento y enganche ofrecen?">💰 Planes de Financiamiento</button>
-              <button class="aruz-chip" data-query="¿Cuáles son las promociones y bonos de muebles actuales?">🎁 Bonos de Muebles</button>
+              <button class="aruz-chip" data-query="¿Qué amenidades incluye la Casa Club de Lomas Aurora?">🏊 Casa Club (+25 Amenidades)</button>
               <button class="aruz-chip" data-query="¿Qué garantía y respaldo técnico ofrece ARUZ Construcción?">🏗️ ARUZ Construcción</button>
             </div>
           </div>
