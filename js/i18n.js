@@ -1165,7 +1165,22 @@ const aruzPhrases = {
   "60 min Aeropuerto Cancún": "60 min to Cancun Airport",
   "Explorar Lomas Aurora": "Explore Lomas Aurora",
   "Ver Masterplan HD": "View HD Master Plan",
-  "Descargar Brochure Lomas Aurora": "Download Lomas Aurora Brochure"
+  "Descargar Brochure Lomas Aurora": "Download Lomas Aurora Brochure",
+  "Cédula Catastral & Datos del Lote 18": "Cadastral Certificate & Lot 18 Data",
+  "Certeza Notarial & Parámetros Oficiales (Anexo A Contrato)": "Notarial Certainty & Official Urban Parameters (Contract Annex A)",
+  "Superficie Oficiales de Construcción": "Official Construction Areas",
+  "Desglose de 333.59 m² Totales": "Breakdown of 333.59 m² Total",
+  "Construcción Interior Cubierta": "Enclosed Interior Construction",
+  "Cubiertas Ligeras & Pérgolas": "Lightweight Pergolas & Canopies",
+  "Terrazas Exteriores Sociales": "Outdoor Social Terraces",
+  "Alberca Exterior Chukum": "Chukum Outdoor Swimming Pool",
+  "Polígono de Linderos & Colindancias": "Boundary Polygon & Adjoining Properties",
+  "Galería Fotográfica & Renders de Autor (22 Vistas HD)": "Photo Gallery & Signature Renders (22 HD Views)",
+  "Ver Galería (22 Renders)": "View Gallery (22 Renders)",
+  "Ver Planos & Polígono": "View Floorplans & Lot Polygon",
+  "Todos (22)": "All (22)",
+  "Exteriores (10)": "Exteriors (10)",
+  "Interiores (12)": "Interiors (12)"
 },
   "fr": {
   "Inicio": "Accueil",
@@ -2332,7 +2347,22 @@ const aruzPhrases = {
   "60 min Aeropuerto Cancún": "60 min de l'Aéroport de Cancún",
   "Explorar Lomas Aurora": "Explorer Lomas Aurora",
   "Ver Masterplan HD": "Voir le Plan Directeur HD",
-  "Descargar Brochure Lomas Aurora": "Télécharger la Brochure Lomas Aurora"
+  "Descargar Brochure Lomas Aurora": "Télécharger la Brochure Lomas Aurora",
+  "Cédula Catastral & Datos del Lote 18": "Certificat Cadastral & Données du Lot 18",
+  "Certeza Notarial & Parámetros Oficiales (Anexo A Contrato)": "Sécurité Notariée & Paramètres Urbains Officiels (Annexe A du Contrat)",
+  "Superficie Oficiales de Construcción": "Surfaces Officielles de Construction",
+  "Desglose de 333.59 m² Totales": "Détail des 333,59 m² Totaux",
+  "Construcción Interior Cubierta": "Construction Intérieure Couverte",
+  "Cubiertas Ligeras & Pérgolas": "Pergolas Légères & Auvents",
+  "Terrazas Exteriores Sociales": "Terrasses Extérieures Sociales",
+  "Alberca Exterior Chukum": "Piscine Extérieure en Chukum",
+  "Polígono de Linderos & Colindancias": "Polygone des Limites & Mitoyennetés",
+  "Galería Fotográfica & Renders de Autor (22 Vistas HD)": "Galerie Photos & Renders d'Auteur (22 Vues HD)",
+  "Ver Galería (22 Renders)": "Voir la Galerie (22 Renders)",
+  "Ver Planos & Polígono": "Voir les Plans & Polygone",
+  "Todos (22)": "Tous (22)",
+  "Exteriores (10)": "Extérieurs (10)",
+  "Interiores (12)": "Intérieurs (12)"
 }
 };
 

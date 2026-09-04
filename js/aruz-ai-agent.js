@@ -49,13 +49,14 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
 
 2. **Casa Tu'ux (Senderos Poniente Mz 11 Lt 18 - Calle Parque del Nilo)**:
    - **Metraje Total**: 333.59 m² de Construcción (258.51 m² Interior + 47.49 m² Cubiertas ligeras + 18.64 m² Terrazas + 8.95 m² Alberca).
-   - **Terreno**: 185.45 m².
+   - **Terreno & Parámetros Catastrales**: 185.45 m² (Frente 8.09 m curvo en Calle Parque del Nilo, laterales 22.49 m y 21.62 m, posterior 8.78 m curvo). Normativa: C.O.S. 0.50 (92.73 m² desplante máx), C.U.S. 2.00 (370.90 m² constr. máx), C.M.S. 0.80, Altura máx 3 niveles / 10.00 m.
    - **Distribución en 3 Niveles**:
-     - *Planta Baja*: Cochera para 2 autos techada, acceso lobby, cocina integral con isla de cuarzo y comedor integrado, sala a doble altura con ventilación cruzada, medio baño, lavandería, terraza exterior, alberca privada en Chukum y jardín.
-     - *Primer Nivel*: 3 Suites privadas con baño completo cada una (Master suite con vestidor y balcón panorámico), biblioteca / estudio para home office.
-     - *Roof Top*: Terraza pergolada, área de asador con barra y tarja, medio baño social exterior y área técnica.
+     - *Planta Baja*: Cochera pergolada para 2 autos, acceso lobby, cocina integral con isla y comedor en concepto abierto, sala de estar a doble altura con ventilación cruzada y vistas al jardín, medio baño de visitas, lavandería independiente, cuarto de máquinas, terraza exterior techada (18.64 m²) y alberca exterior privada en Chukum (8.95 m²) con regadera.
+     - *Primer Nivel*: Master Suite con terraza privada, vestidor walk-in y baño master en Chukum y mármol; Recámara 1 con baño completo privado; Recámara 2 con baño completo privado; y **Biblioteca / Estudio / Home Office** independiente.
+     - *Roof Top*: Terraza pergolada panorámica con vistas a la selva, asador con tarja y barra de servicio, **Cuarto de usos múltiples / Estudio cerrado**, baño completo en Roof Top, solárium descubierto y área técnica para equipos de A/C.
    - **Inversión Preventa**: $5,150,000 MXN (Precio de lista catálogo: $10,990,000 MXN). Entrega: Noviembre 2026.
-   - **Bono Oficial de Muebles**: $450,000 MXN. Equipamiento completo incluido.
+   - **Bono Oficial de Muebles**: $450,000 MXN. Equipamiento completo incluido (Cocina integral con isla, closets en madera de Tzalam, aires acondicionados inverter, alberca Chukum, hidroneumático).
+   - **Documentos Oficiales Disponibles**: Plano Catastral y Planos Arquitectónicos (MANZANA_11_LT18.pdf), Ficha Técnica (CARACTERISTICAS_SP_MZ11LT18_Tuux.pdf), Brochure de Autor (Brochure_Tuux.pdf) y Condiciones Contractuales (ARUZ_CONDICIONES_DE_VENTA.pdf).
 
 3. **Casa Sak Lu'um (Senderos Poniente Mz 14 Lt 04)**:
    - **Metraje Total**: 333.59 m² de Construcción (204.13 m² Interior + terrazas + alberca 8.27 m²).
