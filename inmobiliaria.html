@@ -505,29 +505,35 @@
 
         <!-- Bento Card 2: Masterplan & Urbanismo Integral (Vertical Card - 4 cols) -->
         <article class="col-span-1 lg:col-span-4 group bg-surface-container-lowest rounded-2xl border border-piedra-maya flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
-          <div class="h-60 overflow-hidden relative">
+          <div class="h-60 overflow-hidden relative group/img cursor-pointer" onclick="window.DocViewer && window.DocViewer.openImageModal('assets/properties/lomas-aurora/renders/masterplan.jpg', 'Masterplan Oficial · Lomas Aurora Residencial')">
             <img alt="Masterplan y Urbanismo en Lomas Aurora" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="assets/properties/lomas-aurora/renders/masterplan.jpg" loading="lazy" decoding="async">
             <div class="absolute top-4 left-4 inline-block px-3 py-1 bg-carbon-aruz/85 backdrop-blur-md text-dorado-aruz font-label-caps text-[10px] font-bold uppercase rounded border border-dorado-aruz/30">
-              Doble Caseta & Lagos
+              Masterplan · Privadas & Lagos
+            </div>
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="px-3 py-1.5 bg-dorado-aruz text-carbon-aruz font-label-caps font-bold text-[10px] uppercase rounded shadow-lg flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">zoom_in</span>
+                <span>Ampliar Masterplan</span>
+              </span>
             </div>
           </div>
           <div class="p-6 flex-grow flex flex-col justify-between">
             <div>
-              <p class="font-label-caps text-xs text-dorado-profundo mb-1 uppercase font-bold">Urbanismo de Vanguardia</p>
+              <p class="font-label-caps text-xs text-dorado-profundo mb-1 uppercase font-bold">Urbanismo & Masterplan</p>
               <h3 class="font-serif text-xl text-carbon-aruz font-bold mb-2">Masterplan & Privadas</h3>
               <p class="text-gris-grafito text-xs leading-relaxed mb-4">
-                Comunidad cerrada con vialidades de concreto hidráulico, cableado 100% subterráneo (agua, luz, drenaje y fibra óptica), circuito cerrado y lagos panorámicos.
+                Comunidad planeada exclusiva con lotes residenciales, vialidades de concreto hidráulico, infraestructura 100% subterránea, circuito cerrado 24/7 y lagos panorámicos.
               </p>
             </div>
             <div>
               <div class="grid grid-cols-2 gap-2 bg-surface-container/60 p-2.5 rounded border border-outline-variant/30 mb-4 text-center">
                 <div>
-                  <span class="block text-sm font-bold text-carbon-aruz font-serif">Nov 2025</span>
-                  <span class="text-[9px] text-gris-grafito uppercase">Etapa 1 Entrega</span>
+                  <span class="block text-sm font-bold text-carbon-aruz font-serif">160 a 225 m²</span>
+                  <span class="text-[9px] text-gris-grafito uppercase">Lotes Unifamiliares</span>
                 </div>
                 <div>
-                  <span class="block text-sm font-bold text-carbon-aruz font-serif">Mar 2026</span>
-                  <span class="text-[9px] text-gris-grafito uppercase">Etapa 2 Entrega</span>
+                  <span class="block text-sm font-bold text-carbon-aruz font-serif">Nov '25 / Mar '26</span>
+                  <span class="text-[9px] text-gris-grafito uppercase">Entregas Etapas 1 y 2</span>
                 </div>
               </div>
               <div class="mb-4 flex items-center justify-between">
@@ -537,7 +543,7 @@
                 </div>
               </div>
               <a class="block w-full text-center py-2.5 border border-carbon-aruz text-carbon-aruz font-label-caps text-xs uppercase font-bold rounded hover:bg-carbon-aruz hover:text-white transition-all" href="landings/lomas-aurora.html#masterplan">
-                Explorar Masterplan HD
+                Explorar Masterplan & Lotes
               </a>
             </div>
           </div>
