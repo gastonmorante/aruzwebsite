@@ -1,5 +1,9 @@
+# Google Search Console & Web Crawler Directives for ARUZ
 User-agent: *
 Allow: /
+
+# Host
+Host: https://aruz.com.mx
 
 # Sitemaps
 Sitemap: https://aruz.com.mx/sitemap.xml
