@@ -6,6 +6,17 @@
 
 const aruzPhrases = {
   "en": {
+  "Casa Mía": "Casa Mía",
+  "Casa K'u": "Casa K'u",
+  "Casa Mía (225 m²)": "Casa Mía (225 m²)",
+  "Casa K'u (210 m²)": "Casa K'u (210 m²)",
+  "Casa Mía | Preventa de Autor · Senderos Mayakoba Mz 09 Lt 12 · ARUZ Desarrolladora": "Casa Mía | Signature Presale · Senderos Mayakoba Mz 09 Lt 12 · ARUZ Developer",
+  "Casa K'u | Preventa de Autor · Senderos Mayakoba Mz 04 Lt 14 · ARUZ Desarrolladora": "Casa K'u | Signature Presale · Senderos Mayakoba Mz 04 Lt 14 · ARUZ Developer",
+  "Preventas en Ciudad Mayakoba (Eternity Jol, Tu'ux, Sak Lu'um, K'áak Náajal, Mía, K'u)": "Presales in Ciudad Mayakoba (Eternity Jol, Tu'ux, Sak Lu'um, K'áak Náajal, Mía, K'u)",
+  "Colección Mayakoba (6 Preventas)": "Mayakoba Collection (6 Presales)",
+  "Conoce nuestra colección de residencias concebidas y construidas directamente por ARUZ Desarrolladora y ARUZ Construcción (Eternity Jol, Tu'ux, Sak Lu'um, K'áak Náajal, Mía y K'u) con bonos de muebles de hasta $450,000 MXN y 210 a 334 m² de construcción.": "Discover our collection of residences designed and built directly by ARUZ Developer and ARUZ Construction (Eternity Jol, Tu'ux, Sak Lu'um, K'áak Náajal, Mía and K'u) with furniture bonuses up to $450,000 MXN and 210 to 334 m² of construction.",
+  "Supervisión técnica de redes hidrosanitarias, eléctricas, voz y datos en macro-lotes (2017–2021) y ejecución de la Colección de Residencias Premium (Eternity Jol, Tu'ux, Sak Lu'um, K'áak Náajal, Mía y K'u).": "Technical supervision of hydrosanitary, electrical, voice and data networks in macro-lots (2017–2021) and execution of the Premium Residence Collection (Eternity Jol, Tu'ux, Sak Lu'um, K'áak Náajal, Mía and K'u).",
+
   "Inicio": "Home",
   "Desarrolladora": "Developer",
   "ARUZ Desarrolladora": "ARUZ Developer",
@@ -1199,6 +1210,17 @@ const aruzPhrases = {
   "Interiores (12)": "Interiors (12)"
 },
   "fr": {
+  "Casa Mía": "Casa Mía",
+  "Casa K'u": "Casa K'u",
+  "Casa Mía (225 m²)": "Maison Mía (225 m²)",
+  "Casa K'u (210 m²)": "Maison K'u (210 m²)",
+  "Casa Mía | Preventa de Autor · Senderos Mayakoba Mz 09 Lt 12 · ARUZ Desarrolladora": "Casa Mía | Prévente d'Auteur · Senderos Mayakoba Mz 09 Lt 12 · ARUZ Promoteur",
+  "Casa K'u | Preventa de Autor · Senderos Mayakoba Mz 04 Lt 14 · ARUZ Desarrolladora": "Casa K'u | Prévente d'Auteur · Senderos Mayakoba Mz 04 Lt 14 · ARUZ Promoteur",
+  "Preventas en Ciudad Mayakoba (Eternity Jol, Tu'ux, Sak Lu'um, K'áak Náajal, Mía, K'u)": "Préventes à Ciudad Mayakoba (Eternity Jol, Tu'ux, Sak Lu'um, K'áak Náajal, Mía, K'u)",
+  "Colección Mayakoba (6 Preventas)": "Collection Mayakoba (6 Préventes)",
+  "Conoce nuestra colección de residencias concebidas y construidas directamente por ARUZ Desarrolladora y ARUZ Construcción (Eternity Jol, Tu'ux, Sak Lu'um, K'áak Náajal, Mía y K'u) con bonos de muebles de hasta $450,000 MXN y 210 a 334 m² de construcción.": "Découvrez notre collection de résidences conçues et construites directement par ARUZ Promoteur et ARUZ Construction (Eternity Jol, Tu'ux, Sak Lu'um, K'áak Náajal, Mía et K'u) avec des primes d'ameublement allant jusqu'à 450 000 MXN et de 210 à 334 m² de construction.",
+  "Supervisión técnica de redes hidrosanitarias, eléctricas, voz y datos en macro-lotes (2017–2021) y ejecución de la Colección de Residencias Premium (Eternity Jol, Tu'ux, Sak Lu'um, K'áak Náajal, Mía y K'u).": "Supervision technique des réseaux hydrosanitaires, électriques, voix et données sur macro-lots (2017–2021) et exécution de la Collection de Résidences Premium (Eternity Jol, Tu'ux, Sak Lu'um, K'áak Náajal, Mía et K'u).",
+
   "Inicio": "Accueil",
   "Desarrolladora": "Promoteur",
   "ARUZ Desarrolladora": "ARUZ Promoteur",

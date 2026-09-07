@@ -36,7 +36,7 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
 - Supervisión de infraestructura hidráulica, sanitaria, eléctrica y voz y datos en Ciudad Mayakoba (2017-2021).
 - Residencias ejecutadas en Mayakoba, Bak Lum Tulum ($4.57 MDP) y Lomas Aurora.
 
-### COLECCIÓN OFICIAL DE 4 PREVENTAS EN CIUDAD MAYAKOBA (DETALLE TÉCNICO PDF):
+### COLECCIÓN OFICIAL DE 6 PREVENTAS EN CIUDAD MAYAKOBA (DETALLE TÉCNICO PDF):
 1. **Casa Eternity Jol (Senderos Norte Mz 18 Lt 03)**:
    - **Metraje Total**: 305.31 m² de Construcción (229.49 m² Interior + 52.63 m² Cubiertas ligeras + 13.95 m² Terrazas + 9.24 m² Alberca).
    - **Terreno**: 179.25 m².
@@ -77,6 +77,26 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
      - *Roof Top*: Solárium panorámico, pérgola, asador con barra, tarja y medio baño.
    - **Inversión Preventa**: $5,650,000 MXN (Precio de lista catálogo: $10,480,000 MXN). Entrega: Marzo 2027.
    - **Bono Oficial de Muebles**: $400,000 MXN. Equipamiento completo incluido.
+
+5. **Casa Mía (Senderos Poniente Mz 09 Lt 12 - Lote 86)**:
+   - **Metraje Total**: 225.00 m² de Construcción.
+   - **Terreno**: 165.00 m² (Frente 7.50m x Fondo 22.00m).
+   - **Distribución en 2 Niveles**:
+     - *Planta Baja*: Cochera para 2 autos con huellas de concreto y pasto, pórtico de acceso, medio baño de visitas, estancia / sala de estar, comedor formal, cocina de autor con isla en Cuarzo Negro Andromeda (incluye parrilla, campana y doble tarja de acero inoxidable), área de lavandería con pileta y boiler, terraza exterior con firme de concreto, jardín posterior y alberca privada en acabado Chukum con muro decorativo de Piedra Galarza.
+     - *Planta Alta*: Family Room / Estancia familiar central, Recámara Principal (Master Suite) con walk-in closet, baño privado completo y balcón; Recámara 1 con clóset y baño privado completo; Recámara 2 con clóset y baño privado completo. Total: 3 suites completas todas con baño privado.
+   - **Materiales & Acabados de Autor**: Mármol Travertino Fiorito en pisos y áreas húmedas, Muro de Piedra Galarza en alberca, barras de Cuarzo Negro Andromeda en cocina, cancelería Eurovent Serie 80/100, carpintería fina, grifería Helvex/Grohe en negro mate.
+   - **Inversión Preventa**: $7,600,000 MXN ($7.6 MDP).
+   - **Documentos Oficiales Disponibles**: Ficha Técnica y Planos Arquitectónicos (CASA MÍA LOTE 86.pdf).
+
+6. **Casa K'u (Senderos Poniente Mz 04 Lt 14 - Lote 81)**:
+   - **Metraje Total**: 210.00 m² de Construcción.
+   - **Terreno**: 170.00 m² (Frente 8.50m x Fondo 20.00m).
+   - **Distribución en 2 Niveles**:
+     - *Planta Baja*: Cochera para 2 autos con piso de concreto lavado y piedra regional, vestíbulo de acceso, **Recámara 3 Completa en Planta Baja** con clóset (ideal para accesibilidad/invitados), baño completo en PB con doble función (baño para recámara y visitas con cristal templado), estancia / sala a doble altura, comedor abierto, cocina integral equipada con cubierta de granito natural y barra desayunadora, cuarto de lavado techado, terraza posterior descubierta con pérgola de vigas WPC teca, jardín posterior y alberca privada en acabado Chukum.
+     - *Planta Alta*: Family Room / Sala de TV, Recámara Principal (Master Suite) con amplio walk-in closet, doble lavabo de mármol y baño completo de autor; Recámara 2 con clóset integrado y baño privado completo. Total: 3 recámaras y 3 baños completos.
+   - **Materiales & Cédula de Acabados**: Mármol Travertino Santo Tomás en pisos, cubiertas de Granito San Gabriel en cocina, pérgola exterior de vigas WPC color teca, recubrimiento exterior en pasta lisa y piedra regional laja maya, cancelería Serie 70 con cristal 6mm tintex, iluminación LED cálida indirecta.
+   - **Inversión Preventa**: $6,800,000 MXN ($6.8 MDP).
+   - **Documentos Oficiales Disponibles**: Ficha Técnica y Planos Arquitectónicos (CASA K'U LOTE 81.pdf, CÉDULA DE ACABADOS 81.pdf).
 
 ### LOMAS AURORA · MACRODESARROLLO RESIDENCIAL EN PLAYA DEL CARMEN (DETALLE TÉCNICO OFICIAL):
 - **Ubicación Estratégica**: Prolongación Av. 115 Sur, Playa del Carmen, Quintana Roo.

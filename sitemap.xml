@@ -134,7 +134,31 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/xpu-ha-oasis.html"/>
   </url>
 
-  <!-- 18. Aviso de Privacidad -->
+  <!-- 12. Casa Mía -->
+  <url>
+    <loc>https://aruz.com.mx/landings/casa-mia.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-mia.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/landings/casa-mia.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/landings/casa-mia.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-mia.html"/>
+  </url>
+
+  <!-- 13. Casa K'u -->
+  <url>
+    <loc>https://aruz.com.mx/landings/casa-ku.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-ku.html?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/landings/casa-ku.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/landings/casa-ku.html?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-ku.html"/>
+  </url>
+
+  <!-- 14. Aviso de Privacidad -->
   <url>
     <loc>https://aruz.com.mx/aviso-de-privacidad.html</loc>
     <lastmod>2026-08-21</lastmod>
