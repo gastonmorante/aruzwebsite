@@ -96,10 +96,25 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
   - Plan A: 30% Enganche / 70% Contra entrega.
   - Plan B: 30% Enganche / 40% Durante urbanización / 30% Contra entrega.
 
+### XPU-HA OASIS · LOTES RESIDENCIALES CON CLUB DE PLAYA EN RIVIERA MAYA (DETALLE TÉCNICO OFICIAL):
+- **Ubicación Estratégica**: Carretera Federal Km 265, Xpu-Ha, Quintana Roo (entre Playa del Carmen y Tulum).
+  - Conectividad: 6 min de la Playa Xpu-Ha (1.5 km), 20 min de Playa del Carmen, 30 min de Tulum, 60 min de los Aeropuertos Internacionales de Cancún (CUN) y Tulum (TQO).
+- **Lotes Residenciales de Gran Formato (Última Fase · 47 Lotes)**:
+  - Superficies: **600 m² a 660 m²** (frentes de 20 a 22 metros).
+  - Inversión: **Lotes desde $3,500,000 MXN** con financiamiento directo disponible.
+  - Estatus: **Entrega inmediata y listo para escrituración notarial**.
+  - Sin plazo forzoso de construcción (construye cuando estés listo con tu arquitecto o con ARUZ Construcción).
+  - Servicios 100% subterráneos a pie de lote: Agua potable, drenaje sanitario, electricidad subterránea, alumbrado LED, vialidades de concreto hidráulico y caseta de seguridad privada 24/7.
+- **Triple Amenidad Exclusiva**:
+  1. *Xpu-Ha Beach Club Privado* (a 1.5 km / 6 min): Camastros, asoleaderos, restaurante de autor frente al mar Caribe, bar de mixología, lounge y salón de eventos.
+  2. *Casa Club Oasis*: Exclusiva para los 47 propietarios de la última fase con alberca y terrazas.
+  3. *Club Deportivo*: Alberca semiolímpica de nado, gimnasio equipado panorámico, canchas de pádel, tenis, pickleball, senderos ecológicos y ciclovía.
+
 ### CONDICIONES DE PAGO & FINANCIAMIENTO OFICIALES:
 - **Esquema Mayakoba Tradicional**: 20% de Enganche / Mensualidades diferidas durante obra / Saldo contra entrega a la firma notarial.
 - **Esquema Mayakoba Inversionista**: 30% de Enganche / 70% Contra entrega a la escrituración.
 - **Esquema Lomas Aurora**: Apartado $50,000 MXN, 30% Enganche, esquemas 30/70 o 30/40/30.
+- **Esquema Xpu-Ha Oasis**: Lotes desde $3,500,000 MXN, planes de financiamiento personalizados y entrega inmediata.
 
 ### DIRECTORIO EJECUTIVO, UBICACIÓN & HORARIOS OFICIALES:
 - **Dirección de Operaciones**: WhatsApp/Tel: +52 984 130 8260 · Email: operaciones@aruzinmobiliaria.com
@@ -112,9 +127,9 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
 
 ### PERFILADO INICIAL INTELIGENTE:
 Cuando un interesado solicite asesoría o pida recomendaciones, ayúdale a perfilar su proyecto consultando cortésmente:
-1. **Propósito**: ¿Busca una residencia unifamiliar en Mayakoba o un lote residencial en Lomas Aurora para construir a la medida?
-2. **Esquema de Pago**: ¿Prefiere financiamiento directo durante obra o esquemas de enganche contra entrega?
-3. **Visita a Showroom**: Invita cordialmente a agendar un recorrido privado en Ciudad Mayakoba, Lomas Aurora o cita en oficinas dentro del horario presencial (Lun-Vie 9-18h, Sáb 9-14h) a través del botón de WhatsApp.
+1. **Propósito**: ¿Busca una residencia unifamiliar terminada en Mayakoba, un lote residencial con Casa Club en Lomas Aurora (Playa del Carmen, 160-225 m²), o un lote de gran formato con Club de Playa privado en Xpu-Ha Oasis (600-660 m², desde $3.5M MXN)?
+2. **Esquema de Pago & Entrega**: ¿Prefiere preventa con entrega programada o entrega inmediata lista para escriturar?
+3. **Visita & Recorrido**: Invita cordialmente a agendar un recorrido privado (Mayakoba, Lomas Aurora, Xpu-Ha Beach Club) o cita en oficinas dentro del horario presencial (Lun-Vie 9-18h, Sáb 9-14h) a través del botón de WhatsApp.
 
 ### REGLAS DE RESPUESTA:
 - Responde siempre en español de forma elegante, profesional, estructurada y concisa.
@@ -204,17 +219,17 @@ Cuando un interesado solicite asesoría o pida recomendaciones, ayúdale a perfi
         <div class="aruz-msg assistant">
           <div class="aruz-msg-content">
             <p><strong>Bienvenido a ARUZ Desarrolladora & Inmobiliaria.</strong></p>
-            <p>Soy tu asesor inteligente <strong>24/7</strong> capacitado con los expedientes técnicos y contractuales de <strong>Grupo Ruiz</strong>, <strong>ARUZ Construcción</strong> y <strong>Lomas Aurora</strong>. Puedo ayudarte con el perfilado inicial de tu inversión, preventas en Mayakoba, macrodesarrollo Lomas Aurora, planos arquitectónicos, bonos de equipamiento y citas en showroom.</p>
+            <p>Soy tu asesor inteligente <strong>24/7</strong> capacitado con los expedientes técnicos y contractuales de <strong>Grupo Ruiz</strong>, <strong>Lomas Aurora</strong>, <strong>Xpu-Ha Oasis</strong> y <strong>ARUZ Construcción</strong>. Puedo ayudarte con el perfilado de tu inversión, preventas en Mayakoba, lotes residenciales, accesos a Club de Playa, amenidades y citas en showroom.</p>
             <p><em>Horario Presencial en Oficinas & Showroom: Lunes a Viernes de 9:00 a 18:00 y Sábados de 9:00 a 14:00 hrs.</em></p>
             <p>¿Qué información deseas consultar hoy?</p>
             
             <div class="aruz-ai-chips">
-              <button class="aruz-chip" data-query="¿Cuáles son las opciones y medidas de lotes residenciales en Lomas Aurora?">🌿 Lomas Aurora (Lotes Residenciales)</button>
+              <button class="aruz-chip" data-query="¿Cuáles son los precios y amenidades de Xpu-Ha Oasis con Club de Playa?">🌊 Xpu-Ha Oasis (Club de Playa)</button>
+              <button class="aruz-chip" data-query="¿Cuáles son las opciones y medidas de lotes residenciales en Lomas Aurora?">🌿 Lomas Aurora (Lotes & Casa Club)</button>
               <button class="aruz-chip" data-query="¿Cuáles son las preventas en Mayakoba y sus precios?">🏷️ Preventas Mayakoba</button>
               <button class="aruz-chip" data-query="Ayúdame a perfilar la mejor propiedad para mi inversión">🎯 Perfilado de Inversión</button>
               <button class="aruz-chip" data-query="¿Cuáles son los horarios de atención presencial y cómo agendar una cita?">📍 Horarios & Showroom</button>
               <button class="aruz-chip" data-query="¿Qué esquemas de financiamiento y enganche ofrecen?">💰 Planes de Financiamiento</button>
-              <button class="aruz-chip" data-query="¿Qué amenidades incluye la Casa Club de Lomas Aurora?">🏊 Casa Club (+25 Amenidades)</button>
               <button class="aruz-chip" data-query="¿Qué garantía y respaldo técnico ofrece ARUZ Construcción?">🏗️ ARUZ Construcción</button>
             </div>
           </div>
