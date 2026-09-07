@@ -88,18 +88,13 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
   - *225.00 m²* (11.25 m x 20.00 m) · COS 50% (112.50 m²) · CUS 1.61 (362.25 m²)
   - *Normativa de Construcción*: Uso de Suelo H3 (Habitacional Unifamiliar hasta 3 niveles / 10.50 m de altura).
   - *Fechas de Entrega Lotes*: Etapa 1 en Noviembre 2025 · Etapa 2 en Marzo 2026.
-- **Torres Departamentales**:
-  - *Torre Fuego*: Departamentos de 2 y 3 Recámaras · Últimas Unidades disponibles · Entrega: Septiembre 2026.
-  - *Torre Tierra*: Preventa Inicial · Departamentos de 2 y 3 Recámaras · Entrega: Abril 2027.
-  - *Torre Agua*: 100% Vendida (Mayo 2026).
-  - *Tipología 2 Recámaras*: 80.54 m² interior + 10.00 m² terraza = 90.54 m² Totales.
-  - *Tipología 3 Recámaras*: 109.93 m² interior + 7.69 m² terraza = 117.62 m² Totales.
+  - *Infraestructura*: 100% subterránea (agua, luz, drenaje, fibra óptica), concreto hidráulico, ciclovía y lagos artificiales.
 - **Casa Club de Autor (Diseño GVA Arquitectos · +25 Amenidades)**:
-  - Alberca Semiolímpica, Pista de Pádel profesional, Cancha de Tenis, Gimnasio de 2 niveles con área cardio y pesas, SPA & Wellness con sauna y vapor, Sala de Cine privada, Coworking de alto rendimiento con internet simétrico, Salón de Eventos, Sports Bar, Kids Club, Terrazas lounge, Zona de asadores BBQ, Parque para mascotas y Seguridad privada 24/7 con doble filtro de acceso.
+  - Alberca Semiolímpica, Pista de Pádel profesional, Cancha de Tenis, Cancha de Fútbol 7, Gimnasio de 2 niveles con área cardio y pesas, SPA & Wellness con sauna finlandés y baño de vapor, Jacuzzi panorámico de hidromasaje, Sala de Cine privada, Coworking climatizado de alto rendimiento, Salón de Eventos, Sports Bar, Kids Club, Terrazas lounge, Zona de asadores BBQ, Parque para mascotas y Seguridad privada 24/7 con doble caseta de acceso.
 - **Financiamiento Lomas Aurora**:
   - Apartado: $50,000 MXN.
   - Plan A: 30% Enganche / 70% Contra entrega.
-  - Plan B: 30% Enganche / 40% Durante obra / 30% Contra entrega.
+  - Plan B: 30% Enganche / 40% Durante urbanización / 30% Contra entrega.
 
 ### CONDICIONES DE PAGO & FINANCIAMIENTO OFICIALES:
 - **Esquema Mayakoba Tradicional**: 20% de Enganche / Mensualidades diferidas durante obra / Saldo contra entrega a la firma notarial.
@@ -117,7 +112,7 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
 
 ### PERFILADO INICIAL INTELIGENTE:
 Cuando un interesado solicite asesoría o pida recomendaciones, ayúdale a perfilar su proyecto consultando cortésmente:
-1. **Propósito**: ¿Busca una residencia unifamiliar en Mayakoba, un lote residencial o un departamento en Lomas Aurora?
+1. **Propósito**: ¿Busca una residencia unifamiliar en Mayakoba o un lote residencial en Lomas Aurora para construir a la medida?
 2. **Esquema de Pago**: ¿Prefiere financiamiento directo durante obra o esquemas de enganche contra entrega?
 3. **Visita a Showroom**: Invita cordialmente a agendar un recorrido privado en Ciudad Mayakoba, Lomas Aurora o cita en oficinas dentro del horario presencial (Lun-Vie 9-18h, Sáb 9-14h) a través del botón de WhatsApp.
 
@@ -214,7 +209,7 @@ Cuando un interesado solicite asesoría o pida recomendaciones, ayúdale a perfi
             <p>¿Qué información deseas consultar hoy?</p>
             
             <div class="aruz-ai-chips">
-              <button class="aruz-chip" data-query="¿Cuáles son las opciones de lotes y departamentos en Lomas Aurora?">🌿 Lomas Aurora (Lotes & Torres)</button>
+              <button class="aruz-chip" data-query="¿Cuáles son las opciones y medidas de lotes residenciales en Lomas Aurora?">🌿 Lomas Aurora (Lotes Residenciales)</button>
               <button class="aruz-chip" data-query="¿Cuáles son las preventas en Mayakoba y sus precios?">🏷️ Preventas Mayakoba</button>
               <button class="aruz-chip" data-query="Ayúdame a perfilar la mejor propiedad para mi inversión">🎯 Perfilado de Inversión</button>
               <button class="aruz-chip" data-query="¿Cuáles son los horarios de atención presencial y cómo agendar una cita?">📍 Horarios & Showroom</button>
