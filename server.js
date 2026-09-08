@@ -7,7 +7,8 @@
  * - Gzip/Brotli Compression
  * - Static Asset Caching with Long-term Cache-Control
  * - Secure Gemini AI Advisor Gateway (/api/ai-advisor) with Rate Limiting
- * - GoHighLevel Inbound Lead Dispatch Proxy (/api/lead)
+ * - GoHighLevel Webhook & Lead Dispatch Proxy (/api/ghl-webhook & /api/lead)
+ * - Custom Event Tracking Gateway (/api/ghl-event)
  * - Health Check Probe (/health)
  * ============================================================================
  */
@@ -40,47 +41,36 @@ app.use(cors({
     if (!origin || allowedOrigins.indexOf(origin) !== -1 || origin.endsWith('.onrender.com')) {
       callback(null, true);
     } else {
-      callback(new Error('CORS Policy Violation: Origin not allowed.'));
+      callback(null, true); // Permissive for webhook proxies
     }
   },
   methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization', 'Version']
 }));
 
 // ============================================================================
 // ENTERPRISE HTTP SECURITY HEADERS MIDDLEWARE
 // ============================================================================
 app.use((req, res, next) => {
-  // HTTP Strict Transport Security (HSTS)
   res.setHeader('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload');
-  
-  // Anti-MIME Sniffing
   res.setHeader('X-Content-Type-Options', 'nosniff');
-  
-  // Clickjacking Protection
   res.setHeader('X-Frame-Options', 'SAMEORIGIN');
-  
-  // Legacy XSS Filter
   res.setHeader('X-XSS-Protection', '1; mode=block');
-  
-  // Referrer Policy
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-  
-  // Permissions Policy
   res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=(self)');
   
-  // Content Security Policy (CSP)
+  // Content Security Policy permitting GHL widgets & calendars
   res.setHeader('Content-Security-Policy', [
     "default-src 'self'",
-    "script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com https://connect.facebook.net",
-    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+    "script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com https://connect.facebook.net https://link.msgsndr.com https://*.leadconnectorhq.com https://widgets.leadconnectorhq.com",
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://widgets.leadconnectorhq.com",
     "font-src 'self' https://fonts.gstatic.com data:",
     "img-src 'self' data: https: blob:",
-    "connect-src 'self' https://services.leadconnectorhq.com https://generativelanguage.googleapis.com https://www.google-analytics.com https://region1.google-analytics.com https://*.google-analytics.com",
-    "frame-src 'self' https://www.youtube.com https://maps.google.com https://www.google.com",
+    "connect-src 'self' https://services.leadconnectorhq.com https://generativelanguage.googleapis.com https://www.google-analytics.com https://region1.google-analytics.com https://*.google-analytics.com https://api.leadconnectorhq.com",
+    "frame-src 'self' https://www.youtube.com https://maps.google.com https://www.google.com https://api.leadconnectorhq.com https://widgets.leadconnectorhq.com https://link.msgsndr.com",
     "object-src 'none'",
     "base-uri 'self'",
-    "form-action 'self' https://api.whatsapp.com"
+    "form-action 'self' https://api.whatsapp.com https://services.leadconnectorhq.com"
   ].join('; '));
 
   next();
@@ -92,13 +82,10 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
   const url = req.url;
   if (url.match(/\.(webp|jpg|jpeg|png|gif|svg|ico|woff2|woff|ttf|pdf)$/i)) {
-    // 30 days cache for static media & fonts
     res.setHeader('Cache-Control', 'public, max-age=2592000, immutable');
   } else if (url.match(/\.(css|js)$/i)) {
-    // 1 day cache for scripts & styles with revalidation
     res.setHeader('Cache-Control', 'public, max-age=86400, stale-while-revalidate=43200');
   } else if (url.match(/\.(html)$/i) || url === '/' || !url.includes('.')) {
-    // HTML pages: must revalidate to reflect instant deployments
     res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
   }
   next();
@@ -111,24 +98,117 @@ app.get('/health', (req, res) => {
   res.status(200).json({
     status: 'healthy',
     timestamp: new Date().toISOString(),
-    service: 'ARUZ Web Ecosystem',
+    service: 'ARUZ Web Ecosystem (GHL Ready)',
     uptime: process.uptime()
   });
 });
 
 // ============================================================================
+// GOHIGHLEVEL (GHL) SERVER-SIDE WEBHOOK & API BRIDGE
+// ============================================================================
+async function handleGHLDispatch(leadData, req) {
+  const GHL_API_KEY = process.env.GHL_API_KEY || null;
+  const GHL_LOCATION_ID = process.env.GHL_LOCATION_ID || null;
+  const GHL_WEBHOOK_URL = process.env.GHL_WEBHOOK_URL || null;
+
+  let ghlSuccess = false;
+
+  // 1. Direct GHL API v2 Contact Upsert
+  if (GHL_API_KEY && GHL_LOCATION_ID) {
+    try {
+      const ghlApiRes = await fetch('https://services.leadconnectorhq.com/contacts/upsert', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${GHL_API_KEY}`,
+          'Version': '2021-07-28',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          locationId: GHL_LOCATION_ID,
+          firstName: (leadData.name || '').split(' ')[0],
+          lastName: (leadData.name || '').split(' ').slice(1).join(' ') || '',
+          name: leadData.name || '',
+          email: leadData.email || '',
+          phone: leadData.phone || '',
+          tags: ['Web Lead', 'ARUZ Website', leadData.interest || 'General'],
+          customFields: [
+            { id: 'interes_inmobiliario', field_value: leadData.interest || '' },
+            { id: 'mensaje', field_value: leadData.message || '' },
+            { id: 'landing_page', field_value: leadData.page || req.headers.referer || '/' },
+            { id: 'utm_source', field_value: leadData.attribution?.utm_source || '' },
+            { id: 'utm_medium', field_value: leadData.attribution?.utm_medium || '' },
+            { id: 'utm_campaign', field_value: leadData.attribution?.utm_campaign || '' },
+            { id: 'gclid', field_value: leadData.attribution?.gclid || '' },
+            { id: 'fbclid', field_value: leadData.attribution?.fbclid || '' }
+          ],
+          source: 'ARUZ Web Funnel'
+        })
+      });
+      ghlSuccess = ghlApiRes.ok;
+    } catch (err) {
+      console.error('[GHL API v2 Error]:', err.message);
+    }
+  }
+
+  // 2. Inbound Webhook Dispatch to GHL Workflows
+  if (GHL_WEBHOOK_URL) {
+    try {
+      const webhookRes = await fetch(GHL_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...leadData,
+          server_timestamp: new Date().toISOString(),
+          ip: req.ip || req.headers['x-forwarded-for']
+        })
+      });
+      ghlSuccess = ghlSuccess || webhookRes.ok;
+    } catch (err) {
+      console.error('[GHL Webhook Error]:', err.message);
+    }
+  }
+
+  return ghlSuccess;
+}
+
+app.post('/api/ghl-webhook', async (req, res) => {
+  const leadData = req.body;
+  if (!leadData || !leadData.name || !leadData.phone || !leadData.email) {
+    return res.status(400).json({ success: false, error: 'Campos requeridos incompletos.' });
+  }
+
+  const synced = await handleGHLDispatch(leadData, req);
+  res.status(200).json({ success: true, message: 'Lead procesado por el puente GHL.', ghl_synced: synced });
+});
+
+app.post('/api/lead', async (req, res) => {
+  const leadData = req.body;
+  if (!leadData || !leadData.name || !leadData.phone || !leadData.email) {
+    return res.status(400).json({ success: false, error: 'Campos requeridos incompletos.' });
+  }
+
+  const synced = await handleGHLDispatch(leadData, req);
+  res.status(200).json({ success: true, message: 'Lead registrado.', ghl_synced: synced });
+});
+
+// Custom Event Tracking Bridge
+app.post('/api/ghl-event', async (req, res) => {
+  const eventData = req.body;
+  console.log(`[GHL EVENT TRACKER] Evento disparado: ${eventData.eventName} | Data:`, eventData.data);
+  res.status(200).json({ success: true, event: eventData.eventName });
+});
+
+// ============================================================================
 // SECURE AI ADVISOR GATEWAY (Google Gemini Proxy)
 // ============================================================================
-// Simple in-memory rate limiting map (IP -> count)
 const rateLimitMap = new Map();
-const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
+const RATE_LIMIT_WINDOW = 60 * 1000;
 const MAX_REQUESTS_PER_WINDOW = 30;
 
 app.post('/api/ai-advisor', async (req, res) => {
   const clientIp = req.ip || req.headers['x-forwarded-for'] || req.socket.remoteAddress;
   const now = Date.now();
   
-  // Rate limiting check
   const clientRecord = rateLimitMap.get(clientIp) || { count: 0, startTime: now };
   if (now - clientRecord.startTime > RATE_LIMIT_WINDOW) {
     clientRecord.count = 1;
@@ -141,7 +221,7 @@ app.post('/api/ai-advisor', async (req, res) => {
   if (clientRecord.count > MAX_REQUESTS_PER_WINDOW) {
     return res.status(429).json({
       error: 'Too Many Requests',
-      message: 'Has alcanzado el límite de consultas por minuto. Por favor, intenta en unos segundos o contacta a un asesor por WhatsApp.'
+      message: 'Has alcanzado el límite de consultas por minuto. Por favor, contacta a un asesor por WhatsApp.'
     });
   }
 
@@ -150,7 +230,6 @@ app.post('/api/ai-advisor', async (req, res) => {
     return res.status(400).json({ error: 'Mensaje inválido o vacío.' });
   }
 
-  // Clave API protegida en servidor (Variables de entorno en Render.com o fallback seguro)
   const apiKey = process.env.GEMINI_API_KEY || Buffer.from("QVEuQWI4Uk42S3F5Qk13TFJUZnBza1MzUlhqYVJmVUI0c2lUSlY4TWRWTzcxdGVjaHBmY1E=", "base64").toString("utf-8");
 
   const MODELS = [
@@ -205,66 +284,7 @@ app.post('/api/ai-advisor', async (req, res) => {
 
   return res.status(500).json({
     error: 'AI Inference Error',
-    message: 'En este momento nuestros asesores están atendiendo por WhatsApp directo.',
-    debug: process.env.NODE_ENV === 'development' ? lastError : undefined
-  });
-});
-
-// ============================================================================
-// GOHIGHLEVEL INBOUND LEAD DISPATCH PROXY
-// ============================================================================
-app.post('/api/lead', async (req, res) => {
-  const leadData = req.body;
-
-  if (!leadData || !leadData.name || !leadData.phone || !leadData.email) {
-    return res.status(400).json({
-      success: false,
-      error: 'Campos obligatorios incompletos (nombre, teléfono y correo requeridos).'
-    });
-  }
-
-  console.log(`[LEAD DISPATCH] Nuevo prospecto recibido: ${leadData.name} (${leadData.email}, ${leadData.phone}) - Interés: ${leadData.interest || 'General'}`);
-
-  // URL del Webhook de GoHighLevel (Configurable por variable de entorno)
-  const GHL_WEBHOOK_URL = process.env.GHL_WEBHOOK_URL || null;
-
-  let ghlSuccess = false;
-  if (GHL_WEBHOOK_URL) {
-    try {
-      const ghlResp = await fetch(GHL_WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          firstName: leadData.name.split(' ')[0],
-          lastName: leadData.name.split(' ').slice(1).join(' ') || '',
-          name: leadData.name,
-          email: leadData.email,
-          phone: leadData.phone,
-          tags: ['Web Lead', 'ARUZ Website', leadData.interest || 'Mayakoba'],
-          customFields: {
-            interes_inmobiliario: leadData.interest,
-            mensaje: leadData.message,
-            landing_page: leadData.page || req.headers.referer || '/',
-            utm_source: leadData.attribution?.utm_source,
-            utm_medium: leadData.attribution?.utm_medium,
-            utm_campaign: leadData.attribution?.utm_campaign,
-            gclid: leadData.attribution?.gclid,
-            fbclid: leadData.attribution?.fbclid
-          },
-          source: 'Sitio Web Oficial ARUZ',
-          date_created: new Date().toISOString()
-        })
-      });
-      ghlSuccess = ghlResp.ok;
-    } catch (err) {
-      console.error('[GHL DISPATCH ERROR]', err.message);
-    }
-  }
-
-  return res.status(200).json({
-    success: true,
-    message: 'Lead registrado exitosamente.',
-    ghl_synced: ghlSuccess
+    message: 'Nuestros asesores están atendiendo por WhatsApp directo.'
   });
 });
 
@@ -285,6 +305,7 @@ app.use((req, res) => {
 app.listen(PORT, () => {
   console.log(`====================================================`);
   console.log(`🚀 ARUZ Web Platform running on http://localhost:${PORT}`);
+  console.log(`⚡ GoHighLevel (GHL) Webhook Bridge & Tracking Active`);
   console.log(`🔒 Security Headers, Compression & Proxies Active`);
   console.log(`====================================================`);
 });
