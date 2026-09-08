@@ -441,51 +441,76 @@ function initIntersectionAnimations() {
 /* --------------------------------------------------------------------------
    GLOBAL LEAD CAPTURE FORM SUBMISSION HANDLER
    -------------------------------------------------------------------------- */
-function handleLeadSubmit(event) {
+async function handleLeadSubmit(event) {
   if (event) event.preventDefault();
 
   const name = document.getElementById('leadName')?.value.trim() || '';
   const phone = document.getElementById('leadPhone')?.value.trim() || '';
   const email = document.getElementById('leadEmail')?.value.trim() || '';
-  const interest = document.getElementById('leadInterest')?.value || 'Preventas Ciudad Mayakoba';
+  const interest = document.getElementById('leadInterest')?.value || document.getElementById('leadProperty')?.value || 'Preventas Ciudad Mayakoba';
   const message = document.getElementById('leadMessage')?.value.trim() || '';
+  const consentBox = document.getElementById('leadConsent');
+
+  if (consentBox && !consentBox.checked) {
+    alert('Por favor, acepta el Aviso de Privacidad para continuar.');
+    return;
+  }
 
   if (!name || !phone || !email) return;
 
   const btn = document.getElementById('btnSubmitLead');
   if (btn) {
     btn.disabled = true;
-    btn.innerHTML = `<span>Procesando Solicitud...</span><span class="material-symbols-outlined text-sm animate-spin">refresh</span>`;
+    btn.innerHTML = `<span>Registrando en CRM...</span><span class="material-symbols-outlined text-sm animate-spin">refresh</span>`;
   }
 
-  // Build WhatsApp payload for Director Dirección de Operaciones
-  const directorPhone = '5219841308260';
-  let text = `*NUEVO LEAD DESDE SITIO WEB ARUZ*\n\n`;
-  text += `👤 *Nombre:* ${name}\n`;
-  text += `📱 *Tel / WhatsApp:* ${phone}\n`;
-  text += `📧 *Correo:* ${email}\n`;
-  text += `🏛️ *División / Interés:* ${interest}\n`;
-  if (message) {
-    text += `💬 *Mensaje:* ${message}\n`;
+  // 1. Dual-Dispatch to GoHighLevel CRM via async proxy
+  if (typeof window.dispatchLeadToCRM === 'function') {
+    await window.dispatchLeadToCRM({
+      name: name,
+      phone: phone,
+      email: email,
+      interest: interest,
+      message: message
+    });
   }
-  text += `\n_Solicito atención directa de la dirección operativa y envío de dossier técnico._`;
+
+  // 2. Build WhatsApp Payload for Direct Instant Contact
+  const directorPhone = '5219841308260';
+  let text = `*NUEVO LEAD REGISTRADO EN CRM ARUZ*
+
+`;
+  text += `👤 *Nombre:* ${name}
+`;
+  text += `📱 *Tel / WhatsApp:* ${phone}
+`;
+  text += `📧 *Correo:* ${email}
+`;
+  text += `🏛️ *División / Interés:* ${interest}
+`;
+  if (message) {
+    text += `💬 *Mensaje:* ${message}
+`;
+  }
+  text += `
+_Solicito atención directa de la dirección operativa y envío de dossier técnico._`;
 
   const encodedText = encodeURIComponent(text);
   const whatsappUrl = `https://api.whatsapp.com/send?phone=${directorPhone}&text=${encodedText}`;
 
-  setTimeout(() => {
-    const successMsg = document.getElementById('leadSuccessMsg');
-    if (successMsg) {
-      successMsg.classList.remove('hidden');
-    }
-    if (btn) {
-      btn.innerHTML = `<span>Solicitud Enviada a Dirección</span><span class="material-symbols-outlined text-sm">check_circle</span>`;
-      btn.className = "w-full bg-verde-manglar text-white font-button py-3.5 px-6 rounded-lg font-label-caps uppercase text-xs font-bold tracking-wider transition-all duration-300 shadow-md flex items-center justify-center gap-2";
-    }
+  const successMsg = document.getElementById('leadSuccessMsg');
+  if (successMsg) {
+    successMsg.classList.remove('hidden');
+  }
+  if (btn) {
+    btn.innerHTML = `<span>¡Solicitud Enviada a Dirección!</span><span class="material-symbols-outlined text-sm">check_circle</span>`;
+    btn.className = "w-full bg-verde-manglar text-white font-button py-3.5 px-6 rounded-lg font-label-caps uppercase text-xs font-bold tracking-wider transition-all duration-300 shadow-md flex items-center justify-center gap-2";
+  }
 
-    // Open WhatsApp in new tab with prefilled lead data
+  // Open WhatsApp in new tab
+  setTimeout(() => {
     window.open(whatsappUrl, '_blank');
-  }, 500);
+  }, 400);
 }
 
 // Make handleLeadSubmit globally accessible

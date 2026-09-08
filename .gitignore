@@ -10,3 +10,8 @@ desktop.ini
 
 # Large backup PDFs in root if not needed for web deployment
 *.tmp
+
+# Node dependencies & Environment Variables
+node_modules/
+.env
+.env.*

@@ -908,6 +908,14 @@
               </div>
 
               <div class="pt-2">
+            <div class="flex items-start gap-2.5 my-3 pt-1 text-left">
+              <input type="checkbox" id="leadConsent" required checked class="mt-0.5 w-4 h-4 rounded border-white/20 bg-carbon-aruz text-dorado-aruz focus:ring-dorado-aruz cursor-pointer">
+              <label for="leadConsent" class="text-[11px] text-piedra-maya/80 leading-tight select-none">
+                Acepto el <a href="/aviso-de-privacidad.html" target="_blank" class="text-dorado-aruz hover:underline">Aviso de Privacidad</a> y el tratamiento de mis datos para asesoría de preventas ARUZ.
+              </label>
+            </div>
+
+
                 <button type="submit" id="btnSubmitLead" class="w-full bg-gradient-to-r from-dorado-profundo to-dorado-aruz hover:from-dorado-aruz hover:to-dorado-profundo text-white font-button py-3.5 px-6 rounded-lg font-label-caps uppercase text-xs font-bold tracking-wider transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 active:scale-[0.99]">
                   <span>Enviar Solicitud a Dirección Operativa</span>
                   <span class="material-symbols-outlined text-sm">send</span>
@@ -1027,6 +1035,8 @@
   </script>
 
     <!-- ARUZ AI Advisor (Gemini API Integration) -->
+    <script defer src="js/utm-tracker.js"></script>
+  <script defer src="js/ghl-integration.js"></script>
   <script defer src="js/main.js"></script>
   <script src="js/aruz-ai-agent.js" defer></script>
   <!-- Interactive In-Page Document & Blueprint Viewer Modal ("React-Style") -->

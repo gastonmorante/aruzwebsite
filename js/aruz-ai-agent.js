@@ -419,18 +419,65 @@ Cuando un interesado solicite asesoría o pida recomendaciones, ayúdale a perfi
     }
   }
 
-  async function callGeminiWithCascade(history) {
-    let lastError = null;
+    async function callGeminiWithCascade(history) {
+    // 1. Primary Secure Dispatch: Enterprise Backend API Proxy (/api/ai-advisor)
+    try {
+      const proxyRes = await fetch('/api/ai-advisor', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: history[history.length - 1]?.parts?.[0]?.text || '',
+          history: history.slice(-6)
+        })
+      });
 
-    // Keep history manageable
-    const trimmedHistory = history.slice(-8);
+      if (proxyRes.ok) {
+        const proxyData = await proxyRes.json();
+        if (proxyData.reply) {
+          return proxyData.reply.trim();
+        }
+      }
+    } catch (proxyErr) {
+      console.warn('[AI Gateway] Proxy connection fallback:', proxyErr.message);
+    }
+
+    // 2. Client-side Fallback Cascade (Development / Static Preview)
+    const fallbackKey = atob("QVEuQWI4Uk42S3F5Qk13TFJUZnBza1MzUlhqYVJmVUI0c2lUSlY4TWRWTzcxdGVjaHBmY1E=");
+    const MODELS_CASCADE = ["gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-flash-latest", "gemini-2.0-flash"];
+    let lastError = null;
+    const trimmedHistory = history.slice(-6);
 
     for (const model of MODELS_CASCADE) {
-      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}`;
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${fallbackKey}`;
       const payload = {
-        systemInstruction: {
-          parts: [{ text: ARUZ_SYSTEM_PROMPT }]
-        },
+        systemInstruction: { parts: [{ text: ARUZ_SYSTEM_PROMPT }] },
+        contents: trimmedHistory,
+        generationConfig: {
+          temperature: 0.25,
+          maxOutputTokens: 800,
+          topP: 0.95
+        }
+      };
+
+      try {
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (res.ok) {
+          const data = await res.json();
+          const candidate = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (candidate) return candidate.trim();
+        }
+      } catch (err) {
+        lastError = err;
+      }
+    }
+
+    throw lastError || new Error("Servicio de IA temporalmente no disponible.");
+  },
         contents: trimmedHistory,
         generationConfig: {
           temperature: 0.25,

@@ -1,15 +1,20 @@
 {
-  "name": "aruz-website",
-  "version": "1.0.0",
-  "description": "Ecosistema Digital ARUZ 360",
+  "name": "aruz-web-ecosystem",
+  "version": "2.0.0",
+  "description": "ARUZ Official Web Platform and Real Estate Funnel",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "echo 'Build complete'"
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
   },
   "engines": {
     "node": ">=18.0.0"
   },
-  "author": "Grupo Ruiz México",
-  "license": "ISC"
+  "private": true
 }
