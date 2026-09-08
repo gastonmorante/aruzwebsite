@@ -1,0 +1,19 @@
+# ==============================================================================
+# ARUZ REAL ESTATE - CREDENCIALES DE INTEGRACIÓN GOHIGHLEVEL (GHL)
+# ==============================================================================
+# Pega estos valores en el panel de variables de entorno de Render.com o .env.local
+
+# 1. API Key de la subcuenta de GHL (Settings -> Business Profile / API Keys)
+GHL_API_KEY=ghl_live_tu_api_key_aqui
+
+# 2. Location ID (ID de la subcuenta de GHL en la URL del navegador)
+GHL_LOCATION_ID=tu_location_id_aqui
+
+# 3. Webhook de Entrada del Workflow Principal (Automation -> Workflows -> Inbound Webhook)
+GHL_WEBHOOK_URL=https://services.leadconnectorhq.com/hooks/TU_WEBHOOK_ID_AQUI
+
+# 4. ID del Calendario Oficial para Agendamiento de Citas (Calendars -> Settings -> Embed/Share)
+GHL_CALENDAR_ID=tu_calendar_id_aqui
+
+# 5. ID del Widget de Chat Web (Sites -> Chat Widget -> Get Code)
+GHL_CHAT_WIDGET_ID=tu_chat_widget_id_aqui

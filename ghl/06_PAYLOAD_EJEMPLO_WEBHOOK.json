@@ -1,0 +1,31 @@
+{
+  "firstName": "Carlos",
+  "lastName": "Mendoza",
+  "name": "Carlos Mendoza",
+  "email": "carlos.mendoza@ejemplo.com",
+  "phone": "+529841234567",
+  "interest": "Casa Tu'ux - Preventa Mayakoba",
+  "message": "Solicito información sobre el plan de financiamiento 30/70 y bono de muebles.",
+  "page": "/landings/casa-tuux.html",
+  "tags": [
+    "Web Lead",
+    "ARUZ Website",
+    "Casa Tuux",
+    "Mayakoba"
+  ],
+  "customFields": {
+    "interes_inmobiliario": "Casa Tu'ux - Preventa Mayakoba",
+    "mensaje_prospecto": "Solicito información sobre el plan de financiamiento 30/70 y bono de muebles.",
+    "landing_page_origen": "/landings/casa-tuux.html",
+    "utm_source": "google_ads",
+    "utm_medium": "cpc",
+    "utm_campaign": "mayakoba_preventas_2026",
+    "utm_term": "casas en venta mayakoba",
+    "utm_content": "anuncio_banner_01",
+    "gclid": "CjwKCAjwwfnUBhAtEiwAfQpAYg-SampleGoogleClickId123",
+    "fbclid": "IwAR2V8kX9-SampleMetaClickId456",
+    "gad_source": "1"
+  },
+  "source": "Sitio Web Oficial ARUZ",
+  "timestamp": "2026-09-08T15:00:00.000Z"
+}

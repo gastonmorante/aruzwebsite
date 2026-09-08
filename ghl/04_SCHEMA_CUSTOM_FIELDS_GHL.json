@@ -1,0 +1,67 @@
+{
+  "version": "2.0.0",
+  "platform": "GoHighLevel",
+  "description": "Custom Fields Schema para el Ecosistema Inmobiliario ARUZ",
+  "custom_fields": [
+    {
+      "name": "Interés Inmobiliario",
+      "field_key": "interes_inmobiliario",
+      "data_type": "TEXT",
+      "description": "Propiedad, desarrollo o división por la que consulta el prospecto."
+    },
+    {
+      "name": "Mensaje del Prospecto",
+      "field_key": "mensaje_prospecto",
+      "data_type": "LARGE_TEXT",
+      "description": "Mensaje o duda específica ingresada por el lead en el formulario."
+    },
+    {
+      "name": "Landing Page de Origen",
+      "field_key": "landing_page_origen",
+      "data_type": "TEXT",
+      "description": "URL relativa de la página donde se generó la conversión."
+    },
+    {
+      "name": "UTM Source",
+      "field_key": "utm_source",
+      "data_type": "TEXT",
+      "description": "Fuente de tráfico de la campaña (google, meta, newsletter)."
+    },
+    {
+      "name": "UTM Medium",
+      "field_key": "utm_medium",
+      "data_type": "TEXT",
+      "description": "Medio de la campaña (cpc, paid_social, email, organic)."
+    },
+    {
+      "name": "UTM Campaign",
+      "field_key": "utm_campaign",
+      "data_type": "TEXT",
+      "description": "Nombre de la campaña publicitaria activa."
+    },
+    {
+      "name": "UTM Term",
+      "field_key": "utm_term",
+      "data_type": "TEXT",
+      "description": "Palabra clave de búsqueda que activó el anuncio."
+    },
+    {
+      "name": "UTM Content",
+      "field_key": "utm_content",
+      "data_type": "TEXT",
+      "description": "Variante del anuncio o creatividad específica."
+    },
+    {
+      "name": "Google Click ID (GCLID)",
+      "field_key": "gclid",
+      "data_type": "TEXT",
+      "description": "Identificador único de clic de Google Ads para Conversiones Offline."
+    },
+    {
+      "name": "Facebook Click ID (FBCLID)",
+      "field_key": "fbclid",
+      "data_type": "TEXT",
+      "description": "Identificador único de clic de Meta Ads para Conversions API (CAPI)."
+    }
+  ]
+}

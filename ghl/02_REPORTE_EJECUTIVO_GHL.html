@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reporte Técnico de Conectividad GHL · ARUZ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Montserrat:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #181415;
+      --card-bg: #221D1E;
+      --card-border: rgba(238, 182, 35, 0.25);
+      --gold: #EEB623;
+      --gold-deep: #C79215;
+      --stone: #D8C9AE;
+      --text: #FCF9F5;
+      --green: #25D366;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-dark);
+      color: var(--text);
+      font-family: 'Manrope', sans-serif;
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    header {
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      color: var(--gold);
+      letter-spacing: -0.02em;
+    }
+    .badge {
+      background: rgba(238, 182, 35, 0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .meta-box {
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 28px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      font-size: 13px;
+    }
+    .meta-box span { display: block; color: var(--stone); font-size: 11px; text-transform: uppercase; }
+    .meta-box strong { color: #fff; font-size: 14px; }
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      color: #fff;
+      margin: 32px 0 16px;
+      border-left: 4px solid var(--gold);
+      padding-left: 12px;
+    }
+    h3 {
+      font-size: 15px;
+      color: var(--gold);
+      margin: 20px 0 10px;
+    }
+    p, li {
+      font-size: 14px;
+      color: rgba(252, 249, 245, 0.88);
+      margin-bottom: 12px;
+    }
+    ul, ol { padding-left: 20px; margin-bottom: 16px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px;
+      background: var(--card-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 13px;
+    }
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    th {
+      background: rgba(255,255,255,0.04);
+      color: var(--gold);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    pre {
+      background: #0E0C0D;
+      border: 1px solid rgba(238, 182, 35, 0.3);
+      border-radius: 8px;
+      padding: 16px;
+      overflow-x: auto;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #E6E1DC;
+      margin: 16px 0 24px;
+    }
+    code {
+      background: rgba(255,255,255,0.08);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--gold);
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    @media print {
+      body { background: #fff; color: #000; padding: 0; }
+      .card, .meta-box, table { border-color: #ccc; background: #fafafa; color: #000; }
+      pre { background: #f0f0f0; color: #000; border-color: #999; }
+      h1, h2, h3, th, .badge { color: #000; }
+      .badge { border-color: #000; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>ARUZ · REPORTE TÉCNICO GOHIGHLEVEL</h1>
+        <p style="color: var(--stone); font-size: 12px; margin-top: 4px;">Documento Oficial de Conectividad, Webhooks y Automatizaciones CRM</p>
+      </div>
+      <span class="badge">PRODUCCIÓN READY</span>
+    </header>
+
+    <div class="meta-box">
+      <div><span>Proyecto:</span><strong>ARUZ Web Ecosystem</strong></div>
+      <div><span>Dominio:</span><strong>aruz.com.mx</strong></div>
+      <div><span>Arquitectura:</span><strong>Dual-Dispatch + API v2</strong></div>
+      <div><span>GitHub:</span><strong>origin/main (Commit 0bef02c)</strong></div>
+    </div>
+
+    <h2>1. Arquitectura de Integración (Dual-Dispatch)</h2>
+    <p>Para eliminar al 100% la fuga de prospectos al momento de hacer clic en WhatsApp, la web envía los datos en segundo plano hacia GoHighLevel (vía API v2 o Inbound Webhook) antes o simultáneamente a la apertura del chat de WhatsApp.</p>
+
+    <h2>2. Endpoints Server-Side Activos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Endpoint</th>
+          <th>Método</th>
+          <th>Función Técnica</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>/api/ghl-webhook</code></td>
+          <td>POST</td>
+          <td>Puente principal que hace upsert a la API v2 de GHL y reenvía al webhook del workflow.</td>
+        </tr>
+        <tr>
+          <td><code>/api/lead</code></td>
+          <td>POST</td>
+          <td>Endpoint de captura con cola de respaldo y sanitización de datos.</td>
+        </tr>
+        <tr>
+          <td><code>/api/ghl-event</code></td>
+          <td>POST</td>
+          <td>Receptor de eventos de telemetría (clics en WhatsApp, aperturas de calendario, etc.).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>3. Mapeo de Custom Fields Requeridos en GHL</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre en GHL</th>
+          <th>Object</th>
+          <th>Tipo</th>
+          <th>Key Identificador</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Interés Inmobiliario</td><td>Contact</td><td>Text / Dropdown</td><td><code>interes_inmobiliario</code></td></tr>
+        <tr><td>Mensaje del Prospecto</td><td>Contact</td><td>Large Text</td><td><code>mensaje_prospecto</code></td></tr>
+        <tr><td>Landing de Origen</td><td>Contact</td><td>Single Line Text</td><td><code>landing_page_origen</code></td></tr>
+        <tr><td>UTM Source</td><td>Contact</td><td>Single Line Text</td><td><code>utm_source</code></td></tr>
+        <tr><td>UTM Medium</td><td>Contact</td><td>Single Line Text</td><td><code>utm_medium</code></td></tr>
+        <tr><td>UTM Campaign</td><td>Contact</td><td>Single Line Text</td><td><code>utm_campaign</code></td></tr>
+        <tr><td>Google Click ID</td><td>Contact</td><td>Single Line Text</td><td><code>gclid</code></td></tr>
+        <tr><td>Facebook Click ID</td><td>Contact</td><td>Single Line Text</td><td><code>fbclid</code></td></tr>
+      </tbody>
+    </table>
+
+    <h2>4. Payload JSON Estándar Enviado al CRM</h2>
+    <pre>{
+  "firstName": "Carlos",
+  "lastName": "Mendoza",
+  "name": "Carlos Mendoza",
+  "email": "carlos.mendoza@ejemplo.com",
+  "phone": "+529841234567",
+  "interest": "Casa Tu'ux - Preventa Mayakoba",
+  "message": "Solicito información sobre el plan de financiamiento 30/70.",
+  "page": "/landings/casa-tuux.html",
+  "tags": ["Web Lead", "ARUZ Website", "Casa Tuux", "Mayakoba"],
+  "customFields": {
+    "interes_inmobiliario": "Casa Tu'ux - Preventa Mayakoba",
+    "mensaje_prospecto": "Solicito información sobre el plan de financiamiento 30/70.",
+    "landing_page_origen": "/landings/casa-tuux.html",
+    "utm_source": "google_ads",
+    "utm_medium": "cpc",
+    "utm_campaign": "mayakoba_preventas_2026",
+    "gclid": "CjwKCAjwwfnUBhAtEiwAfQpAYg...",
+    "fbclid": "IwAR2V8kX9..."
+  },
+  "source": "Sitio Web Oficial ARUZ",
+  "timestamp": "2026-09-08T15:00:00.000Z"
+}</pre>
+
+    <h2>5. Variables de Entorno a Configurar</h2>
+    <pre>GHL_API_KEY=ghl_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+GHL_LOCATION_ID=xxxxxxxxxxxxxxxxxxxx
+GHL_WEBHOOK_URL=https://services.leadconnectorhq.com/hooks/TU_WEBHOOK_ID_AQUI
+GHL_CALENDAR_ID=tu_calendar_id_aqui
+GHL_CHAT_WIDGET_ID=tu_chat_widget_id_aqui</pre>
+  </div>
+</body>
+</html>
