@@ -1,8 +1,8 @@
 /**
- * Next.js / Serverless API Route for GoHighLevel Webhook Bridge
+ * Serverless API Route for GoHighLevel Webhook Bridge
  * Endpoint: /api/ghl-webhook
  */
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ success: false, error: 'Method Not Allowed' });
   }
@@ -72,4 +72,4 @@ export default async function handler(req, res) {
     message: 'Lead processed successfully.',
     ghl_synced: ghlSuccess
   });
-}
+};
