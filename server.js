@@ -301,11 +301,16 @@ app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Start Server
-app.listen(PORT, () => {
-  console.log(`====================================================`);
-  console.log(`🚀 ARUZ Web Platform running on http://localhost:${PORT}`);
-  console.log(`⚡ GoHighLevel (GHL) Webhook Bridge & Tracking Active`);
-  console.log(`🔒 Security Headers, Compression & Proxies Active`);
-  console.log(`====================================================`);
-});
+// Start Server (if executed directly)
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`====================================================`);
+    console.log(`🚀 ARUZ Web Platform running on http://localhost:${PORT}`);
+    console.log(`⚡ GoHighLevel (GHL) Webhook Bridge & Tracking Active`);
+    console.log(`🔒 Security Headers, Compression & Proxies Active`);
+    console.log(`====================================================`);
+  });
+}
+
+module.exports = app;
+
