@@ -8,7 +8,7 @@
       "use": "@vercel/node"
     },
     {
-      "src": "{*.html,*.svg,*.webp,*.png,*.jpg,*.ico,*.xml,*.txt,assets/**,css/**,js/**,landings/**,images/**,img/**}",
+      "src": "{*.html,*.svg,*.webp,*.png,*.jpg,*.ico,*.xml,*.txt,assets/**,css/**,js/**,landings/**,en/**,fr/**,it/**,images/**,img/**}",
       "use": "@vercel/static"
     }
   ],
@@ -58,12 +58,48 @@
       "dest": "/img/$1"
     },
     {
+      "src": "/en/landings/([a-zA-Z0-9_-]+)",
+      "dest": "/en/landings/$1.html"
+    },
+    {
+      "src": "/fr/landings/([a-zA-Z0-9_-]+)",
+      "dest": "/fr/landings/$1.html"
+    },
+    {
+      "src": "/it/landings/([a-zA-Z0-9_-]+)",
+      "dest": "/it/landings/$1.html"
+    },
+    {
       "src": "/landings/([a-zA-Z0-9_-]+)",
       "dest": "/landings/$1.html"
     },
     {
       "src": "/landings/(.*)",
       "dest": "/landings/$1"
+    },
+    {
+      "src": "/en",
+      "dest": "/en/index.html"
+    },
+    {
+      "src": "/en/([a-zA-Z0-9_-]+)",
+      "dest": "/en/$1.html"
+    },
+    {
+      "src": "/fr",
+      "dest": "/fr/index.html"
+    },
+    {
+      "src": "/fr/([a-zA-Z0-9_-]+)",
+      "dest": "/fr/$1.html"
+    },
+    {
+      "src": "/it",
+      "dest": "/it/index.html"
+    },
+    {
+      "src": "/it/([a-zA-Z0-9_-]+)",
+      "dest": "/it/$1.html"
     },
     {
       "src": "/sitemap.xml",
