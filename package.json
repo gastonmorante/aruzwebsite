@@ -2,7 +2,6 @@
   "name": "aruz-web-ecosystem",
   "version": "2.0.0",
   "description": "ARUZ Official Web Platform and Real Estate Funnel",
-  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js"
