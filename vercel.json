@@ -8,7 +8,63 @@
       "use": "@vercel/node"
     },
     {
-      "src": "{*.html,*.svg,*.webp,*.png,*.jpg,*.ico,*.xml,*.txt,assets/**,css/**,js/**,landings/**,en/**,fr/**,it/**,images/**,img/**}",
+      "src": "*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "landings/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "en/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "en/landings/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "fr/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "fr/landings/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "it/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "it/landings/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "assets/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "css/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "js/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "images/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "img/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "sitemap.xml",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "robots.txt",
       "use": "@vercel/static"
     }
   ],
@@ -78,7 +134,7 @@
       "dest": "/landings/$1"
     },
     {
-      "src": "/en",
+      "src": "/en/?$",
       "dest": "/en/index.html"
     },
     {
@@ -86,7 +142,7 @@
       "dest": "/en/$1.html"
     },
     {
-      "src": "/fr",
+      "src": "/fr/?$",
       "dest": "/fr/index.html"
     },
     {
@@ -94,7 +150,7 @@
       "dest": "/fr/$1.html"
     },
     {
-      "src": "/it",
+      "src": "/it/?$",
       "dest": "/it/index.html"
     },
     {
