@@ -222,30 +222,19 @@
 
       <!-- Desktop Nav Links -->
       <nav class="hidden lg:flex items-center gap-6">
-        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#masterplan">Masterplan</a>
-        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#lotes">Lotes Unifamiliares</a>
-        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#casa-club">Casa Club GVA</a>
-        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#ubicacion">Ubicación</a>
-        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#brochures">Dossier PDF</a>
-        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#contacto">Contacto</a>
+        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#masterplan" data-i18n="nav.masterplan">Masterplan</a>
+        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#lotes" data-i18n="nav.lotes">Lotes Unifamiliares</a>
+        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#casa-club" data-i18n="nav.casa_club">Casa Club GVA</a>
+        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#ubicacion" data-i18n="nav.ubicacion">Ubicación</a>
+        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#brochures" data-i18n="nav.brochures">Dossier PDF</a>
+        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#contacto" data-i18n="nav.contacto">Contacto</a>
       </nav>
 
       <!-- Right Actions: Language & Contact -->
       <div class="flex items-center gap-3 sm:gap-4">
         
         <!-- Language Selector -->
-        <div class="relative group">
-          <button id="langToggleBtn" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded bg-white/5 border border-white/15 text-white hover:border-dorado-aruz text-xs font-mono uppercase font-bold transition-all">
-            <span class="material-symbols-outlined text-sm text-dorado-aruz">language</span>
-            <span id="currentLangLabel">ES</span>
-            <span class="material-symbols-outlined text-xs">expand_more</span>
-          </button>
-          <div class="absolute right-0 top-full mt-1 w-24 bg-carbon-aruz border border-white/20 rounded shadow-xl py-1 hidden group-hover:block z-50">
-            <button onclick="window.i18n && window.i18n.setLanguage('es')" class="w-full text-left px-3 py-1.5 text-xs text-white hover:bg-dorado-profundo hover:text-white transition-colors">Español</button>
-            <button onclick="window.i18n && window.i18n.setLanguage('en')" class="w-full text-left px-3 py-1.5 text-xs text-white hover:bg-dorado-profundo hover:text-white transition-colors">English</button>
-            <button onclick="window.i18n && window.i18n.setLanguage('fr')" class="w-full text-left px-3 py-1.5 text-xs text-white hover:bg-dorado-profundo hover:text-white transition-colors">Français</button>
-          </div>
-        </div>
+        <div class="header-lang-slot"></div>
 
         <!-- Phone Quick Link -->
         <a href="tel:+529841308260" class="hidden xl:flex items-center gap-1 text-xs text-piedra-maya hover:text-dorado-aruz transition-colors font-mono">
@@ -276,6 +265,9 @@
         <button class="text-white hover:text-dorado-aruz p-2" onclick="closeMobileDrawer()" aria-label="Cerrar menú">
           <span class="material-symbols-outlined text-2xl">close</span>
         </button>
+      </div>
+      <div class="flex justify-center my-4">
+        <div class="header-lang-slot"></div>
       </div>
       <nav class="flex flex-col gap-4 mt-8 text-sm font-label-caps uppercase">
         <a class="text-white hover:text-dorado-aruz py-2 border-b border-white/5" href="#masterplan" onclick="closeMobileDrawer()">Masterplan</a>

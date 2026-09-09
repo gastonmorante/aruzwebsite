@@ -218,31 +218,20 @@
 
       <!-- Desktop Nav Links -->
       <nav class="hidden lg:flex items-center gap-6">
-        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#proyecto">Proyecto</a>
-        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#lotes">Lotes 600-660 m²</a>
-        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#club-playa">Club de Playa</a>
-        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#amenidades">Casa Club & Deporte</a>
-        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#ubicacion">Ubicación</a>
-        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#faq">FAQ</a>
-        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#contacto">Contacto</a>
+        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#proyecto" data-i18n="nav.proyecto">Proyecto</a>
+        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#lotes" data-i18n="nav.lotes">Lotes 600-660 m²</a>
+        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#club-playa" data-i18n="nav.club_playa">Club de Playa</a>
+        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#amenidades" data-i18n="nav.amenidades">Casa Club & Deporte</a>
+        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#ubicacion" data-i18n="nav.ubicacion">Ubicación</a>
+        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a class="text-white hover:text-dorado-aruz text-xs font-label-caps uppercase transition-colors nav-link" href="#contacto" data-i18n="nav.contacto">Contacto</a>
       </nav>
 
       <!-- Right Actions: Language & Contact -->
       <div class="flex items-center gap-3 sm:gap-4">
         
         <!-- Language Selector -->
-        <div class="relative group">
-          <button id="langToggleBtn" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded bg-white/5 border border-white/15 text-white hover:border-dorado-aruz text-xs font-mono uppercase font-bold transition-all">
-            <span class="material-symbols-outlined text-sm text-dorado-aruz">language</span>
-            <span id="currentLangLabel">ES</span>
-            <span class="material-symbols-outlined text-xs">expand_more</span>
-          </button>
-          <div class="absolute right-0 top-full mt-1 w-24 bg-carbon-aruz border border-white/20 rounded shadow-xl py-1 hidden group-hover:block z-50">
-            <button onclick="window.i18n && window.i18n.setLanguage('es')" class="w-full text-left px-3 py-1.5 text-xs text-white hover:bg-dorado-profundo hover:text-white transition-colors">Español</button>
-            <button onclick="window.i18n && window.i18n.setLanguage('en')" class="w-full text-left px-3 py-1.5 text-xs text-white hover:bg-dorado-profundo hover:text-white transition-colors">English</button>
-            <button onclick="window.i18n && window.i18n.setLanguage('fr')" class="w-full text-left px-3 py-1.5 text-xs text-white hover:bg-dorado-profundo hover:text-white transition-colors">Français</button>
-          </div>
-        </div>
+        <div class="header-lang-slot"></div>
 
         <!-- Phone Quick Link -->
         <a href="tel:+529841308260" class="hidden xl:flex items-center gap-1 text-xs text-piedra-maya hover:text-dorado-aruz transition-colors font-mono">
@@ -276,6 +265,9 @@
         <button class="text-white p-2" onclick="closeMobileDrawer()" aria-label="Cerrar Menú">
           <span class="material-symbols-outlined text-2xl">close</span>
         </button>
+      </div>
+      <div class="flex justify-center mb-4">
+        <div class="header-lang-slot"></div>
       </div>
       
       <nav class="flex flex-col space-y-4">
