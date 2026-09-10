@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://aruz.com.mx/</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/"/>
@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/en</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/"/>
@@ -25,7 +25,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/fr</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/"/>
@@ -36,7 +36,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/it</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/"/>
@@ -47,7 +47,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/desarrolladora</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/desarrolladora"/>
@@ -58,7 +58,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/en/desarrolladora</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/desarrolladora"/>
@@ -69,7 +69,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/fr/desarrolladora</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/desarrolladora"/>
@@ -80,7 +80,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/it/desarrolladora</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/desarrolladora"/>
@@ -91,7 +91,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/inmobiliaria</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/inmobiliaria"/>
@@ -102,7 +102,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/en/inmobiliaria</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/inmobiliaria"/>
@@ -113,7 +113,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/fr/inmobiliaria</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/inmobiliaria"/>
@@ -124,7 +124,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/it/inmobiliaria</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/inmobiliaria"/>
@@ -135,7 +135,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/aviso-de-privacidad</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/aviso-de-privacidad"/>
@@ -146,7 +146,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/en/aviso-de-privacidad</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/aviso-de-privacidad"/>
@@ -157,7 +157,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/fr/aviso-de-privacidad</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/aviso-de-privacidad"/>
@@ -168,7 +168,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/it/aviso-de-privacidad</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/aviso-de-privacidad"/>
@@ -178,140 +178,140 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/aviso-de-privacidad"/>
   </url>
   <url>
-    <loc>https://aruz.com.mx/landings/xpu-ha-oasis</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/xpu-ha-oasis"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/xpu-ha-oasis"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/xpu-ha-oasis"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/xpu-ha-oasis"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/xpu-ha-oasis"/>
-  </url>
-  <url>
-    <loc>https://aruz.com.mx/en/landings/xpu-ha-oasis</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/xpu-ha-oasis"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/xpu-ha-oasis"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/xpu-ha-oasis"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/xpu-ha-oasis"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/xpu-ha-oasis"/>
-  </url>
-  <url>
-    <loc>https://aruz.com.mx/fr/landings/xpu-ha-oasis</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/xpu-ha-oasis"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/xpu-ha-oasis"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/xpu-ha-oasis"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/xpu-ha-oasis"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/xpu-ha-oasis"/>
-  </url>
-  <url>
-    <loc>https://aruz.com.mx/it/landings/xpu-ha-oasis</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/xpu-ha-oasis"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/xpu-ha-oasis"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/xpu-ha-oasis"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/xpu-ha-oasis"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/xpu-ha-oasis"/>
-  </url>
-  <url>
-    <loc>https://aruz.com.mx/landings/lomas-aurora</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/lomas-aurora"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/lomas-aurora"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/lomas-aurora"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/lomas-aurora"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/lomas-aurora"/>
-  </url>
-  <url>
-    <loc>https://aruz.com.mx/en/landings/lomas-aurora</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/lomas-aurora"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/lomas-aurora"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/lomas-aurora"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/lomas-aurora"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/lomas-aurora"/>
-  </url>
-  <url>
-    <loc>https://aruz.com.mx/fr/landings/lomas-aurora</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/lomas-aurora"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/lomas-aurora"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/lomas-aurora"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/lomas-aurora"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/lomas-aurora"/>
-  </url>
-  <url>
-    <loc>https://aruz.com.mx/it/landings/lomas-aurora</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/lomas-aurora"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/lomas-aurora"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/lomas-aurora"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/lomas-aurora"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/lomas-aurora"/>
-  </url>
-  <url>
-    <loc>https://aruz.com.mx/landings/casa-tuux</loc>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aruz.com.mx/landings/aruz-construccion</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-tuux"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/casa-tuux"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/casa-tuux"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/casa-tuux"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/aruz-construccion"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/aruz-construccion"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/aruz-construccion"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/aruz-construccion"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/aruz-construccion"/>
   </url>
   <url>
-    <loc>https://aruz.com.mx/en/landings/casa-tuux</loc>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aruz.com.mx/en/landings/aruz-construccion</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-tuux"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/casa-tuux"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/casa-tuux"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/casa-tuux"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/aruz-construccion"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/aruz-construccion"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/aruz-construccion"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/aruz-construccion"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/aruz-construccion"/>
   </url>
   <url>
-    <loc>https://aruz.com.mx/fr/landings/casa-tuux</loc>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aruz.com.mx/fr/landings/aruz-construccion</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-tuux"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/casa-tuux"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/casa-tuux"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/casa-tuux"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/aruz-construccion"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/aruz-construccion"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/aruz-construccion"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/aruz-construccion"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/aruz-construccion"/>
   </url>
   <url>
-    <loc>https://aruz.com.mx/it/landings/casa-tuux</loc>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aruz.com.mx/it/landings/aruz-construccion</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-tuux"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/casa-tuux"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/casa-tuux"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/casa-tuux"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/aruz-construccion"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/aruz-construccion"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/aruz-construccion"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/aruz-construccion"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/aruz-construccion"/>
+  </url>
+  <url>
+    <loc>https://aruz.com.mx/landings/aruz-maquinaria</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/aruz-maquinaria"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/aruz-maquinaria"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/aruz-maquinaria"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/aruz-maquinaria"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/aruz-maquinaria"/>
+  </url>
+  <url>
+    <loc>https://aruz.com.mx/en/landings/aruz-maquinaria</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/aruz-maquinaria"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/aruz-maquinaria"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/aruz-maquinaria"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/aruz-maquinaria"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/aruz-maquinaria"/>
+  </url>
+  <url>
+    <loc>https://aruz.com.mx/fr/landings/aruz-maquinaria</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/aruz-maquinaria"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/aruz-maquinaria"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/aruz-maquinaria"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/aruz-maquinaria"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/aruz-maquinaria"/>
+  </url>
+  <url>
+    <loc>https://aruz.com.mx/it/landings/aruz-maquinaria</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/aruz-maquinaria"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/aruz-maquinaria"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/aruz-maquinaria"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/aruz-maquinaria"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/aruz-maquinaria"/>
+  </url>
+  <url>
+    <loc>https://aruz.com.mx/landings/cade-constructora</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/cade-constructora"/>
+  </url>
+  <url>
+    <loc>https://aruz.com.mx/en/landings/cade-constructora</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/cade-constructora"/>
+  </url>
+  <url>
+    <loc>https://aruz.com.mx/fr/landings/cade-constructora</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/cade-constructora"/>
+  </url>
+  <url>
+    <loc>https://aruz.com.mx/it/landings/cade-constructora</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/cade-constructora"/>
   </url>
   <url>
     <loc>https://aruz.com.mx/landings/casa-eternity-jol</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-eternity-jol"/>
@@ -322,7 +322,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/en/landings/casa-eternity-jol</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-eternity-jol"/>
@@ -333,7 +333,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/fr/landings/casa-eternity-jol</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-eternity-jol"/>
@@ -344,7 +344,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/it/landings/casa-eternity-jol</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-eternity-jol"/>
@@ -354,52 +354,8 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-eternity-jol"/>
   </url>
   <url>
-    <loc>https://aruz.com.mx/landings/casa-sak-luum</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-sak-luum"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/casa-sak-luum"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/casa-sak-luum"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/casa-sak-luum"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-sak-luum"/>
-  </url>
-  <url>
-    <loc>https://aruz.com.mx/en/landings/casa-sak-luum</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-sak-luum"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/casa-sak-luum"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/casa-sak-luum"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/casa-sak-luum"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-sak-luum"/>
-  </url>
-  <url>
-    <loc>https://aruz.com.mx/fr/landings/casa-sak-luum</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-sak-luum"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/casa-sak-luum"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/casa-sak-luum"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/casa-sak-luum"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-sak-luum"/>
-  </url>
-  <url>
-    <loc>https://aruz.com.mx/it/landings/casa-sak-luum</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-sak-luum"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/casa-sak-luum"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/casa-sak-luum"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/casa-sak-luum"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-sak-luum"/>
-  </url>
-  <url>
     <loc>https://aruz.com.mx/landings/casa-kaak-naajal</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-kaak-naajal"/>
@@ -410,7 +366,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/en/landings/casa-kaak-naajal</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-kaak-naajal"/>
@@ -421,7 +377,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/fr/landings/casa-kaak-naajal</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-kaak-naajal"/>
@@ -432,7 +388,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/it/landings/casa-kaak-naajal</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-kaak-naajal"/>
@@ -443,7 +399,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/landings/casa-ku</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-ku"/>
@@ -454,7 +410,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/en/landings/casa-ku</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-ku"/>
@@ -465,7 +421,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/fr/landings/casa-ku</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-ku"/>
@@ -476,7 +432,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/it/landings/casa-ku</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-ku"/>
@@ -487,7 +443,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/landings/casa-mia</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-mia"/>
@@ -498,7 +454,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/en/landings/casa-mia</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-mia"/>
@@ -509,7 +465,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/fr/landings/casa-mia</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-mia"/>
@@ -520,7 +476,7 @@
   </url>
   <url>
     <loc>https://aruz.com.mx/it/landings/casa-mia</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-mia"/>
@@ -530,135 +486,179 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-mia"/>
   </url>
   <url>
-    <loc>https://aruz.com.mx/landings/aruz-construccion</loc>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aruz.com.mx/landings/casa-sak-luum</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/aruz-construccion"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/aruz-construccion"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/aruz-construccion"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/aruz-construccion"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/aruz-construccion"/>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-sak-luum"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/casa-sak-luum"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/casa-sak-luum"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/casa-sak-luum"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-sak-luum"/>
   </url>
   <url>
-    <loc>https://aruz.com.mx/en/landings/aruz-construccion</loc>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aruz.com.mx/en/landings/casa-sak-luum</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/aruz-construccion"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/aruz-construccion"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/aruz-construccion"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/aruz-construccion"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/aruz-construccion"/>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-sak-luum"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/casa-sak-luum"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/casa-sak-luum"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/casa-sak-luum"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-sak-luum"/>
   </url>
   <url>
-    <loc>https://aruz.com.mx/fr/landings/aruz-construccion</loc>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aruz.com.mx/fr/landings/casa-sak-luum</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/aruz-construccion"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/aruz-construccion"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/aruz-construccion"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/aruz-construccion"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/aruz-construccion"/>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-sak-luum"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/casa-sak-luum"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/casa-sak-luum"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/casa-sak-luum"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-sak-luum"/>
   </url>
   <url>
-    <loc>https://aruz.com.mx/it/landings/aruz-construccion</loc>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aruz.com.mx/it/landings/casa-sak-luum</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/aruz-construccion"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/aruz-construccion"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/aruz-construccion"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/aruz-construccion"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/aruz-construccion"/>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-sak-luum"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/casa-sak-luum"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/casa-sak-luum"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/casa-sak-luum"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-sak-luum"/>
   </url>
   <url>
-    <loc>https://aruz.com.mx/landings/aruz-maquinaria</loc>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aruz.com.mx/landings/casa-tuux</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/aruz-maquinaria"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/aruz-maquinaria"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/aruz-maquinaria"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/aruz-maquinaria"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/aruz-maquinaria"/>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-tuux"/>
   </url>
   <url>
-    <loc>https://aruz.com.mx/en/landings/aruz-maquinaria</loc>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aruz.com.mx/en/landings/casa-tuux</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/aruz-maquinaria"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/aruz-maquinaria"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/aruz-maquinaria"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/aruz-maquinaria"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/aruz-maquinaria"/>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-tuux"/>
   </url>
   <url>
-    <loc>https://aruz.com.mx/fr/landings/aruz-maquinaria</loc>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aruz.com.mx/fr/landings/casa-tuux</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/aruz-maquinaria"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/aruz-maquinaria"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/aruz-maquinaria"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/aruz-maquinaria"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/aruz-maquinaria"/>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-tuux"/>
   </url>
   <url>
-    <loc>https://aruz.com.mx/it/landings/aruz-maquinaria</loc>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aruz.com.mx/it/landings/casa-tuux</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/aruz-maquinaria"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/aruz-maquinaria"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/aruz-maquinaria"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/aruz-maquinaria"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/aruz-maquinaria"/>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/casa-tuux"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/casa-tuux"/>
   </url>
   <url>
-    <loc>https://aruz.com.mx/landings/cade-constructora</loc>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aruz.com.mx/landings/lomas-aurora</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/cade-constructora"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/cade-constructora"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/cade-constructora"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/cade-constructora"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/lomas-aurora"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/lomas-aurora"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/lomas-aurora"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/lomas-aurora"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/lomas-aurora"/>
   </url>
   <url>
-    <loc>https://aruz.com.mx/en/landings/cade-constructora</loc>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aruz.com.mx/en/landings/lomas-aurora</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/cade-constructora"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/cade-constructora"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/cade-constructora"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/cade-constructora"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/lomas-aurora"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/lomas-aurora"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/lomas-aurora"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/lomas-aurora"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/lomas-aurora"/>
   </url>
   <url>
-    <loc>https://aruz.com.mx/fr/landings/cade-constructora</loc>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aruz.com.mx/fr/landings/lomas-aurora</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/cade-constructora"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/cade-constructora"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/cade-constructora"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/cade-constructora"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/lomas-aurora"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/lomas-aurora"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/lomas-aurora"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/lomas-aurora"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/lomas-aurora"/>
   </url>
   <url>
-    <loc>https://aruz.com.mx/it/landings/cade-constructora</loc>
-    <lastmod>2026-09-08</lastmod>
+    <loc>https://aruz.com.mx/it/landings/lomas-aurora</loc>
+    <lastmod>2026-09-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/cade-constructora"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/cade-constructora"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/cade-constructora"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/cade-constructora"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/cade-constructora"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/lomas-aurora"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/lomas-aurora"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/lomas-aurora"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/lomas-aurora"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/lomas-aurora"/>
+  </url>
+  <url>
+    <loc>https://aruz.com.mx/landings/xpu-ha-oasis</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/xpu-ha-oasis"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/xpu-ha-oasis"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/xpu-ha-oasis"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/xpu-ha-oasis"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/xpu-ha-oasis"/>
+  </url>
+  <url>
+    <loc>https://aruz.com.mx/en/landings/xpu-ha-oasis</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/xpu-ha-oasis"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/xpu-ha-oasis"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/xpu-ha-oasis"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/xpu-ha-oasis"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/xpu-ha-oasis"/>
+  </url>
+  <url>
+    <loc>https://aruz.com.mx/fr/landings/xpu-ha-oasis</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/xpu-ha-oasis"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/xpu-ha-oasis"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/xpu-ha-oasis"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/xpu-ha-oasis"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/xpu-ha-oasis"/>
+  </url>
+  <url>
+    <loc>https://aruz.com.mx/it/landings/xpu-ha-oasis</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aruz.com.mx/landings/xpu-ha-oasis"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aruz.com.mx/en/landings/xpu-ha-oasis"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aruz.com.mx/fr/landings/xpu-ha-oasis"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aruz.com.mx/it/landings/xpu-ha-oasis"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://aruz.com.mx/landings/xpu-ha-oasis"/>
   </url>
 </urlset>
