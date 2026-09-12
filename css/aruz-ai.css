@@ -2,12 +2,13 @@
    ARUZ AI ADVISOR - LUXURY FLOATING UI & CHAT MODAL
    ========================================================================== */
 
-/* Floating Left AI Assistant Button */
+/* Floating Right AI Assistant Button */
 .floating-ai-btn {
   position: fixed;
   bottom: max(1.25rem, calc(env(safe-area-inset-bottom, 0px) + 0.75rem));
-  left: 1.25rem;
-  z-index: 48;
+  right: 1.25rem;
+  left: auto;
+  z-index: 50;
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -83,14 +84,15 @@
   opacity: 0.85;
 }
 
-/* Floating Right WhatsApp Button */
+/* Floating Left WhatsApp Button */
 .floating-whatsapp-btn {
   position: fixed;
   bottom: max(1.25rem, calc(env(safe-area-inset-bottom, 0px) + 0.75rem));
-  right: 1.25rem;
+  left: 1.25rem;
+  right: auto;
   z-index: 48;
-  width: 54px;
-  height: 54px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
   color: #FFFFFF;
@@ -115,11 +117,12 @@
   transform: scale(0.92);
 }
 
-/* AI Chat Modal Dialog */
+/* AI Chat Modal Dialog (Positioned Bottom-Right) */
 .aruz-ai-modal {
   position: fixed;
-  bottom: 5.25rem;
-  left: 1.25rem;
+  bottom: 5.5rem;
+  right: 1.25rem;
+  left: auto;
   width: 410px;
   max-width: calc(100vw - 2.5rem);
   height: 580px;
@@ -494,7 +497,8 @@
 @media (max-width: 640px) {
   .floating-ai-btn {
     padding: 0.55rem 0.85rem;
-    left: 0.85rem;
+    right: 0.85rem;
+    left: auto;
     bottom: max(0.85rem, calc(env(safe-area-inset-bottom, 0px) + 0.5rem));
   }
   .floating-ai-title {
@@ -505,7 +509,8 @@
   }
 
   .floating-whatsapp-btn {
-    right: 0.85rem;
+    left: 0.85rem;
+    right: auto;
     bottom: max(0.85rem, calc(env(safe-area-inset-bottom, 0px) + 0.5rem));
     width: 48px;
     height: 48px;
