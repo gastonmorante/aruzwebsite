@@ -40,7 +40,7 @@
         { name: 'Cortes & Fachadas', desc: 'Elevación frontal bioclimática, cortes transversales con altura libre de 2.85m y memorias de cálculo estructural ARUZ Construcción.' }
       ],
       terms: [
-        { title: 'Esquema de Inversión en Preventa', desc: '30% de enganche a la firma del contrato privado de compraventa notariado.' },
+        { title: 'Enganche en Preventa', desc: 'Enganche de $50,000 MXN a la firma del contrato privado de compraventa notariado.' },
         { title: 'Calendario de Pagos a Obra', desc: '60% diferido en mensualidades vinculadas directamente al avance de obra ARUZ Construcción.' },
         { title: 'Saldo a la Entrega y Escrituración', desc: '10% contra entrega física de llaves y escrituración notarial ante Notario Público.' },
         { title: 'Terminación', desc: '6 meses de plazo de entrega garantizada.' },
@@ -75,7 +75,7 @@
         { name: 'Roof Deck (Opción)', desc: 'Terraza y cuarto de usos múltiples con baño completo (total 333.59 m²).' }
       ],
       terms: [
-        { title: 'Enganche', desc: '30% a la firma del contrato notarial.' },
+        { title: 'Enganche', desc: 'Enganche de $50,000 MXN a la firma del contrato notarial.' },
         { title: 'Pagos Durante Construcción', desc: 'Pagos diferidos hasta 8 meses.' },
         { title: 'Terminación', desc: '7 meses de plazo de entrega garantizada.' },
         { title: 'Equipamiento Incluido', desc: '4 minisplits inverter incluidos de fábrica.' }
@@ -106,7 +106,7 @@
         { name: 'Roof Deck', desc: 'Barra de asador, pérgola de madera dura y vista panorámica a la selva maya.' }
       ],
       terms: [
-        { title: 'Enganche', desc: '30% en promesa de compraventa notariada.' },
+        { title: 'Enganche', desc: 'Enganche de $50,000 MXN en promesa de compraventa notariada.' },
         { title: 'Plan de Obra', desc: '60% en ministraciones de avance constructivo.' },
         { title: 'Entrega Final', desc: '10% a la entrega de llaves y notaría.' }
       ]
@@ -136,7 +136,7 @@
         { name: 'Roof Deck', desc: 'Terraza apergolada, asador de acero inoxidable y área lounge con vista a la selva.' }
       ],
       terms: [
-        { title: 'Enganche', desc: '30% a la firma del contrato privado de preventa.' },
+        { title: 'Enganche', desc: 'Enganche de $50,000 MXN a la firma del contrato privado de preventa.' },
         { title: 'Ministraciones', desc: '60% durante el proceso de construcción.' },
         { title: 'Finiquito', desc: '10% contra entrega de posesión y título de propiedad.' }
       ]
@@ -165,7 +165,7 @@
         { name: 'Planta Alta', desc: '3 recámaras, principal con walk-in closet y baño privado, recámaras secundarias con baño, gran sala de TV.' }
       ],
       terms: [
-        { title: 'Enganche', desc: '30% a la firma del contrato de compraventa notariado.' },
+        { title: 'Enganche', desc: 'Enganche de $50,000 MXN a la firma del contrato de compraventa notariado.' },
         { title: 'Construcción', desc: '60% en ministraciones de avance de obra.' },
         { title: 'Finiquito', desc: '10% contra entrega de llaves y escrituración.' }
       ]
@@ -187,15 +187,14 @@
         { label: 'Superficie de Terreno', val: '169.00 m²' },
         { label: 'Recámaras', val: '3 recámaras (una en PB, principal con vestidor)' },
         { label: 'Baños', val: '3 baños completos' },
-        { label: 'Entrega y Reserva', val: 'Entrega 14 meses · Reserva $50,000 MXN' }
+        { label: 'Entrega y Enganche', val: 'Entrega 14 meses · Enganche $50,000 MXN' }
       ],
       blueprintLevels: [
         { name: 'Planta Baja', desc: 'Recámara en PB con baño completo, sala, comedor, cocina equipada, terraza, área de lavado, cochera 2 autos.' },
         { name: 'Primer Nivel', desc: 'Recámara principal con vestidor y baño completo, recámara secundaria con baño completo, sala de TV.' }
       ],
       terms: [
-        { title: 'Reserva', desc: '$50,000 MXN de apartado.' },
-        { title: 'Enganche', desc: '30% a la firma del contrato.' },
+        { title: 'Enganche', desc: 'Enganche de $50,000 MXN a la firma del contrato.' },
         { title: 'Entrega', desc: '14 meses.' }
       ]
     }

@@ -116,9 +116,8 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
   3. *Club Deportivo*: Alberca semiolímpica, gimnasio panorámico, pádel, tenis, pickleball, senderos y ciclovía.
 
 ### CONDICIONES DE PAGO & FINANCIAMIENTO OFICIALES:
-- **Esquema Mayakoba Tradicional**: 20% de Enganche / Mensualidades diferidas durante obra / Saldo contra entrega a la firma notarial.
-- **Esquema Mayakoba Inversionista**: 30% de Enganche / 70% Contra entrega a la escrituración.
-- **Esquema Lomas Aurora**: Apartado $50,000 MXN, 30% Enganche, esquemas 30/70 o 30/40/30.
+- **Esquema Preventas Mayakoba**: Enganche de $50,000 MXN a la firma del contrato / Mensualidades diferidas durante obra / Saldo contra entrega a la escrituración notarial.
+- **Esquema Lomas Aurora**: Apartado $50,000 MXN, planes de financiamiento 30/70 o 30/40/30.
 - **Esquema Xpu-Ha Oasis**: Lotes desde $3,500,000 MXN, financiamiento directo y entrega inmediata.
 
 ### DIRECTORIO EJECUTIVO, UBICACIÓN & HORARIOS:
