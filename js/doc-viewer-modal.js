@@ -12,9 +12,9 @@
     'eternity-jol': {
       title: 'Casa Eternity Jol',
       subtitle: 'Senderos Norte Mz 18 Lt 03 · Ciudad Mayakoba',
-      price: '$5,450,000 MXN',
+      price: '$9,191,287 MXN',
       area: '305.31 m²',
-      levels: 'Planta Baja + Nivel 1 + Roof Deck Privado',
+      levels: 'Planta Baja + Nivel 1 + Roof Multiusos',
       videoUrl: '../assets/properties/eternity-jol/videos/eternity-esp.mp4',
       posterUrl: '../assets/properties/eternity-jol/exteriores/fachada_frontal.webp',
       pdfPlanos: '../assets/properties/eternity-jol/docs/MZ_18_L_03.pdf',
@@ -22,8 +22,8 @@
       pdfBrochure: '../assets/properties/eternity-jol/docs/CARACTERISTICAS_SN_MZ18LT03_Eternity_Jol.pdf',
       pdfCondiciones: '../assets/docs/ARUZ_CONDICIONES_DE_VENTA.pdf',
       specs: [
-        { label: 'Superficie de Construcción', val: '305.31 m² habitables' },
-        { label: 'Superficie de Lote', val: '272.50 m²' },
+        { label: 'Superficie de Construcción', val: '305.31 m² totales' },
+        { label: 'Superficie de Lote', val: '179.30 m²' },
         { label: 'Cimentación', val: 'Zapata Corrida ARUZ Construcción f\'c=250 kg/cm² sobre roca sólida' },
         { label: 'Estructura', val: 'Concreto armado antisísmico con varilla corrugada grado 42' },
         { label: 'Muros y Cerramientos', val: 'Block vibrocomprimido 15x20x40 con castillos ahogados' },
@@ -34,51 +34,51 @@
         { label: 'Cancelería', val: 'Aluminio anodizado negro línea española Serie 80 con cristal templado 9mm' }
       ],
       blueprintLevels: [
-        { name: 'Planta Baja', desc: 'Acceso principal, cochera 2 autos, sala-comedor doble altura, cocina integral en isla con granito, terraza con alberca Chukum y jardín tropical.' },
-        { name: 'Primer Nivel', desc: 'Master Suite con vestidor y baño en mármol, 2 Junior Suites cada una con baño privado y clóset de Tzalam, family room.' },
-        { name: 'Roof Deck', desc: 'Área lounge semicubierta con pérgola de Tzalam, barra de bar con tarja, asador de acero inoxidable y jacuzzi panorámico.' },
+        { name: 'Planta Baja', desc: 'Acceso principal, cochera pergolada, cocina/comedor, sala, terraza, alberca privada, jardín y lavandería.' },
+        { name: 'Primer Nivel', desc: '3 recámaras con baño privado, recámara principal con vestidor.' },
+        { name: 'Roof Deck', desc: 'Roof con cuarto de usos múltiples (opción de habitación adicional) y baño completo.' },
         { name: 'Cortes & Fachadas', desc: 'Elevación frontal bioclimática, cortes transversales con altura libre de 2.85m y memorias de cálculo estructural ARUZ Construcción.' }
       ],
       terms: [
         { title: 'Esquema de Inversión en Preventa', desc: '30% de enganche a la firma del contrato privado de compraventa notariado.' },
-        { title: 'Calendario de Pagos a Obra', desc: '60% diferido en mensualidades vinculadas directamente al avance de obra ARUZ Construcción verificado en bitácora.' },
-        { title: 'Saldo a la Entrega y Escrituración', desc: '10% contra entrega física de llaves y escrituración notarial ante Notario Público en Playa del Carmen.' },
-        { title: 'Bono de Equipamiento de $450,000 MXN', desc: 'Incluye paquete de muebles de autor en Tzalam o bonificación para sistema de paneles solares fotovoltaicos.' },
+        { title: 'Calendario de Pagos a Obra', desc: '60% diferido en mensualidades vinculadas directamente al avance de obra ARUZ Construcción.' },
+        { title: 'Saldo a la Entrega y Escrituración', desc: '10% contra entrega física de llaves y escrituración notarial ante Notario Público.' },
+        { title: 'Terminación', desc: '6 meses de plazo de entrega garantizada.' },
         { title: 'Garantía Estructural ARUZ', desc: '5 años de garantía estructural por escrito y 1 año en vicios ocultos e impermeabilización.' }
       ]
     },
     'tuux': {
       title: 'Casa Tu\'ux',
-      subtitle: 'Senderos Norte Mz 11 Lt 18 · Ciudad Mayakoba',
-      price: '$5,290,000 MXN',
-      area: '333.59 m²',
-      levels: 'Planta Baja + Nivel 1 + Roof Top & Cine Exterior',
+      subtitle: 'Senderos Poniente Mz 11 Lt 18 · Parque del Nilo · Ciudad Mayakoba',
+      price: '$8,890,000 MXN',
+      area: '266.09 m² (opción roof 333.59 m²)',
+      levels: 'Planta Baja + Nivel 1 + Opción Roof Deck',
       videoUrl: '../assets/properties/tuux/videos/tuux-esp.mp4',
       posterUrl: '../assets/properties/tuux/videos/poster.webp',
       pdfPlanos: '../assets/properties/tuux/docs/MANZANA_11_LT18.pdf',
-      pdfFicha: '../assets/properties/tuux/docs/Brochure_Tuux.pdf',
+      pdfFicha: '../assets/properties/tuux/docs/CARACTERISTICAS_SP_MZ11LT18_Tuux.pdf',
       pdfBrochure: '../assets/properties/tuux/docs/Brochure_Tuux.pdf',
       pdfCondiciones: '../assets/docs/ARUZ_CONDICIONES_DE_VENTA.pdf',
       specs: [
-        { label: 'Superficie de Construcción', val: '333.59 m²' },
-        { label: 'Superficie de Lote', val: '280.00 m²' },
+        { label: 'Superficie de Construcción', val: '266.09 m² (base sin roof) · 333.59 m² (con roof)' },
+        { label: 'Superficie de Lote', val: '185.50 m²' },
+        { label: 'Climatización', val: '4 minisplits inverter incluidos' },
         { label: 'Cimentación', val: 'Zapata Corrida ARUZ Construcción f\'c=250 kg/cm² con impermeabilización integral' },
         { label: 'Estructura', val: 'Columnas y trabes de concreto armado calculadas para zona costera' },
         { label: 'Carpintería', val: 'Tzalam macizo en puertas principales, clósets y vanity' },
         { label: 'Acabados en Muros', val: 'Chukum artesanal impermeable y piedra maya natural en fachada' },
-        { label: 'Alberca', val: 'Alberca privada en Chukum con deck perimetral de Tzalam' },
-        { label: 'Climatización', val: 'Equipos Inverter VRF multizona en todas las estancias' }
+        { label: 'Alberca', val: 'Alberca privada en Chukum con deck perimetral de Tzalam' }
       ],
       blueprintLevels: [
-        { name: 'Planta Baja', desc: 'Vestíbulo de acceso, estancia doble altura, cocina abierta con isla de cuarzo, suite de visitas con baño, terraza con alberca.' },
-        { name: 'Primer Nivel', desc: '3 suites completas con baño privado, recámara principal con walk-in closet y balcón privado hacia el jardín.' },
-        { name: 'Roof Deck & Cine', desc: 'Rooftop panorámico con proyector exterior para cine al aire libre, asador, medio baño y área de camastros.' }
+        { name: 'Planta Baja', desc: 'Vestíbulo, cocina/comedor, sala, biblioteca, medio baño, terraza, alberca privada, lavandería y cochera pergolada.' },
+        { name: 'Primer Nivel', desc: '3 recámaras con baño privado, recámara principal con vestidor.' },
+        { name: 'Roof Deck (Opción)', desc: 'Terraza y cuarto de usos múltiples con baño completo (total 333.59 m²).' }
       ],
       terms: [
         { title: 'Enganche', desc: '30% a la firma del contrato notarial.' },
-        { title: 'Pagos Durante Construcción', desc: '60% mensualidades durante la obra ARUZ Construcción.' },
-        { title: 'Finiquito', desc: '10% a la entrega y firma notarial.' },
-        { title: 'Bono $450,000 MXN', desc: 'Equipamiento de autor o paneles solares incluidos.' }
+        { title: 'Pagos Durante Construcción', desc: 'Pagos diferidos hasta 8 meses.' },
+        { title: 'Terminación', desc: '7 meses de plazo de entrega garantizada.' },
+        { title: 'Equipamiento Incluido', desc: '4 minisplits inverter incluidos de fábrica.' }
       ]
     },
     'sak-luum': {
@@ -140,6 +140,64 @@
         { title: 'Ministraciones', desc: '60% durante el proceso de construcción.' },
         { title: 'Finiquito', desc: '10% contra entrega de posesión y título de propiedad.' }
       ]
+    },
+    'mia': {
+      title: 'Casa Mía',
+      subtitle: 'Senderos Poniente Mz 12 Lt 08 · Parque del Nilo, UPE 332',
+      price: '$7,600,000 MXN',
+      area: '198.00 m²',
+      levels: 'Planta Baja + Planta Alta',
+      videoUrl: '',
+      posterUrl: '../assets/properties/casa-mia/exteriores/fachada_principal.webp',
+      pdfPlanos: '../assets/properties/casa-mia/docs/dossier-casa-mia.pdf',
+      pdfFicha: '../assets/properties/casa-mia/docs/dossier-casa-mia.pdf',
+      pdfBrochure: '../assets/properties/casa-mia/docs/dossier-casa-mia.pdf',
+      pdfCondiciones: '../assets/docs/ARUZ_CONDICIONES_DE_VENTA.pdf',
+      specs: [
+        { label: 'Superficie de Construcción', val: '198.00 m²' },
+        { label: 'Superficie de Terreno', val: '202.50 m²' },
+        { label: 'Recámaras', val: '3 recámaras concentradas en planta alta (principal con vestidor)' },
+        { label: 'Baños', val: '3 baños completos y 1 medio baño' },
+        { label: 'Amenidades', val: 'Cocina amplia, alacena, amplio cuarto de lavado, gran sala de TV, cochera 2 autos, acceso a Casa Club' }
+      ],
+      blueprintLevels: [
+        { name: 'Planta Baja', desc: 'Cochera 2 autos, cocina amplia, alacena, sala, comedor, medio baño, amplio cuarto de lavado y jardín.' },
+        { name: 'Planta Alta', desc: '3 recámaras, principal con walk-in closet y baño privado, recámaras secundarias con baño, gran sala de TV.' }
+      ],
+      terms: [
+        { title: 'Enganche', desc: '30% a la firma del contrato de compraventa notariado.' },
+        { title: 'Construcción', desc: '60% en ministraciones de avance de obra.' },
+        { title: 'Finiquito', desc: '10% contra entrega de llaves y escrituración.' }
+      ]
+    },
+    'ku': {
+      title: 'Casa K\'u',
+      subtitle: 'Condominio Senderos Poniente Mz 14 Lt 04 · Ciudad Mayakoba',
+      price: '$6,800,000 MXN',
+      area: '176.00 m²',
+      levels: 'Planta Baja + Primer Nivel',
+      videoUrl: '',
+      posterUrl: '../assets/properties/casa-ku/exteriores/fachada_principal.webp',
+      pdfPlanos: '../assets/properties/casa-ku/docs/dossier-casa-ku.pdf',
+      pdfFicha: '../assets/properties/casa-ku/docs/cedula-acabados-casa-ku.pdf',
+      pdfBrochure: '../assets/properties/casa-ku/docs/dossier-casa-ku.pdf',
+      pdfCondiciones: '../assets/docs/ARUZ_CONDICIONES_DE_VENTA.pdf',
+      specs: [
+        { label: 'Superficie de Construcción', val: '176.00 m²' },
+        { label: 'Superficie de Terreno', val: '169.00 m²' },
+        { label: 'Recámaras', val: '3 recámaras (una en PB, principal con vestidor)' },
+        { label: 'Baños', val: '3 baños completos' },
+        { label: 'Entrega y Reserva', val: 'Entrega 14 meses · Reserva $50,000 MXN' }
+      ],
+      blueprintLevels: [
+        { name: 'Planta Baja', desc: 'Recámara en PB con baño completo, sala, comedor, cocina equipada, terraza, área de lavado, cochera 2 autos.' },
+        { name: 'Primer Nivel', desc: 'Recámara principal con vestidor y baño completo, recámara secundaria con baño completo, sala de TV.' }
+      ],
+      terms: [
+        { title: 'Reserva', desc: '$50,000 MXN de apartado.' },
+        { title: 'Enganche', desc: '30% a la firma del contrato.' },
+        { title: 'Entrega', desc: '14 meses.' }
+      ]
     }
   };
 
@@ -163,6 +221,8 @@
       if (path.includes('tuux')) this.currentPropKey = 'tuux';
       else if (path.includes('sak-luum') || path.includes('sak_luum')) this.currentPropKey = 'sak-luum';
       else if (path.includes('kaak-naajal') || path.includes('kaak_naajal')) this.currentPropKey = 'kaak-naajal';
+      else if (path.includes('casa-mia') || path.includes('mia')) this.currentPropKey = 'mia';
+      else if (path.includes('casa-ku') || path.includes('ku')) this.currentPropKey = 'ku';
       else this.currentPropKey = 'eternity-jol';
     }
 

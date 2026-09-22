@@ -35,17 +35,17 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
 
 ### COLECCIÓN OFICIAL DE 6 PREVENTAS EN CIUDAD MAYAKOBA:
 1. **Casa Eternity Jol (Senderos Norte Mz 18 Lt 03)**:
-   - 305.31 m² constr. (179.25 m² terreno). 3 niveles, 3 recámaras en suite, roof top con pérgola y asador, alberca Chukum. $5,450,000 MXN. Bono: $400,000 MXN. Entrega: Dic 2026.
+   - 305.31 m² constr. (179.30 m² terreno). Versión con roof: 3 recámaras con baño; principal con vestidor. Roof con cuarto de usos múltiples (opción de habitación adicional) y baño completo. Cocina/comedor, sala, alberca, terraza, jardín, lavandería y cochera pergolada. Terminación: 6 meses. Precio de venta: $9,191,287.00 MXN.
 2. **Casa Tu'ux (Senderos Poniente Mz 11 Lt 18)**:
-   - 333.59 m² constr. (185.45 m² terreno). 3 niveles, 3 recámaras + estudio/home office, sala doble altura, alberca Chukum, roof top panorámico. $5,150,000 MXN. Bono: $450,000 MXN. Entrega: Nov 2026.
+   - Terreno: 185.50 m². 3 recámaras con baño, principal con vestidor; biblioteca, cocina/comedor, sala, alberca, terraza, lavandería y cochera pergolada. Con roof opcional: añade terraza y cuarto de usos múltiples con baño completo. Versión comercial ofrecida: SIN ROOF · 266.09 m² · 4 MINISPLITS INVERTER. Precio de venta: $8,890,000.00 MXN. Terminación: 7 meses. Pagos: hasta 8 meses.
 3. **Casa Sak Lu'um (Senderos Poniente Mz 14 Lt 04)**:
    - 333.59 m² constr. (169.00 m² terreno). 3 niveles, 3 recámaras con baño, roof top lounge. $5,290,000 MXN. Bono: $250,000 MXN. Entrega: Ene 2027.
 4. **Casa K'áak Náajal (Senderos Poniente Mz 12 Lt 08)**:
    - 310.00 m² constr. (202.50 m² terreno). Suite completa en PB + 3 recámaras en PA (Total 4), alberca ampliada 20 m², roof top panorámico. $5,650,000 MXN. Bono: $400,000 MXN. Entrega: Mar 2027.
-5. **Casa Mía (Senderos Poniente Mz 09 Lt 12 - Lote 86)**:
-   - 225.00 m² constr. (165.00 m² terreno). 2 niveles, 3 recámaras en suite, cocina en Cuarzo Negro Andromeda, acabados en Travertino Fiorito y Piedra Galarza. $7,600,000 MXN.
-6. **Casa K'u (Senderos Poniente Mz 04 Lt 14 - Lote 81)**:
-   - 210.00 m² constr. (170.00 m² terreno). 2 niveles, 3 recámaras (1 en PB), alberca Chukum, cubiertas de Granito San Gabriel y Travertino Santo Tomás. $6,800,000 MXN.
+5. **Casa Mía (Condominio Senderos Poniente · Manzana 12 · Lote 08)**:
+   - 198.00 m² constr. (202.50 m² terreno). 3 recámaras, todas en planta alta; principal con vestidor (walk-in closet). 3 baños completos y medio baño (3.5 baños). Cocina amplia, alacena, amplio cuarto de lavado, gran sala de TV y cochera para 2 vehículos. Ubicación sobre Parque del Nilo, UPE 332. Destaca por la amplitud de las áreas de convivencia y servicio, con las recámaras concentradas en planta alta. Acceso a Casa Club Senderos (sujeto al reglamento del condominio). Precio de venta: $7,600,000.00 MXN.
+6. **Casa K'u (Condominio Senderos Poniente · Manzana 14 · Lote 04)**:
+   - 176.00 m² constr. (169.00 m² terreno). 2 niveles, 3 recámaras (una en PB y principal con vestidor / walk-in closet), 3 baños completos, cocina equipada, sala de TV, terraza, área de lavado y cochera para 2 vehículos. Frente a un área de conservación de selva nativa. En este lote no incluye pasillo lateral; puede incorporarse en otras ubicaciones o lotes que lo permitan. Acceso a Casa Club Senderos (sujeto al reglamento del condominio). Precio de venta: $6,800,000.00 MXN. Entrega: 14 meses a partir de la firma del contrato. Reserva con $50,000 MXN.
 
 ### LOMAS AURORA (PLAYA DEL CARMEN):
 - Lotes unifamiliares de 160 m², 180 m², 200 m² y 225 m² (Uso de Suelo H3).

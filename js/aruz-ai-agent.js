@@ -40,24 +40,14 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
 
 ### COLECCIÓN OFICIAL DE 6 PREVENTAS EN CIUDAD MAYAKOBA:
 1. **Casa Eternity Jol (Senderos Norte Mz 18 Lt 03)**:
-   - **Metraje Total**: 305.31 m² de Construcción (229.49 m² Interior + 52.63 m² Cubiertas ligeras + 13.95 m² Terrazas + 9.24 m² Alberca).
-   - **Terreno**: 179.25 m².
-   - **Distribución en 3 Niveles**:
-     - *Planta Baja*: Cochera pergolada, acceso lobby, cubo escaleras, cocina con barra/comedor, sala de estar, terraza exterior techada, alberca exterior Chukum, jardín tropical, lavandería, regadera exterior, medio baño de visitas y cuarto de máquinas.
-     - *Primer Nivel*: Recámara 1 con baño privado, Recámara 2 con walk-in closet y baño, Recámara Principal con baño master y clóset de blancos.
-     - *Roof Top*: Terraza pergolada, asador y tarja, terraza exterior, cuarto de usos múltiples, baño completo, área de servicios A.C. y área para proyector de cine al aire libre.
-   - **Inversión Preventa**: $5,450,000 MXN (Precio de lista catálogo: $9,900,000 MXN). Entrega: Diciembre 2026.
-   - **Bono Oficial de Muebles**: $400,000 MXN. Equipamiento completo: Cocina integral, closets, aires acondicionados inverter, alberca Chukum, cisterna y presurizador.
+   - **Metraje Total & Terreno**: Versión con roof | Superficie total: 305.31 m² de Construcción | Terreno: 179.30 m².
+   - **Distribución**: 3 recámaras con baño; principal con vestidor. Roof con cuarto de usos múltiples (opción de habitación adicional) y baño completo. Cocina/comedor, sala, alberca, terraza, jardín, lavandería y cochera pergolada.
+   - **Tiempos & Condiciones Comerciales**: Terminación: 6 meses. Precio de venta: $9,191,287.00 MXN ($9.19 MDP).
 
 2. **Casa Tu'ux (Senderos Poniente Mz 11 Lt 18 - Calle Parque del Nilo)**:
-   - **Metraje Total**: 333.59 m² de Construcción (258.51 m² Interior + 47.49 m² Cubiertas ligeras + 18.64 m² Terrazas + 8.95 m² Alberca).
-   - **Terreno & Parámetros Catastrales**: 185.45 m² (Frente 8.09 m curvo en Calle Parque del Nilo, laterales 22.49 m y 21.62 m, posterior 8.78 m curvo). Normativa: C.O.S. 0.50 (92.73 m² desplante máx), C.U.S. 2.00 (370.90 m² constr. máx), C.M.S. 0.80, Altura máx 3 niveles / 10.00 m.
-   - **Distribución en 3 Niveles**:
-     - *Planta Baja*: Cochera pergolada para 2 autos, acceso lobby, cocina integral con isla y comedor en concepto abierto, sala de estar a doble altura con ventilación cruzada y vistas al jardín, medio baño de visitas, lavandería independiente, cuarto de máquinas, terraza exterior techada (18.64 m²) y alberca exterior privada en Chukum (8.95 m²) con regadera.
-     - *Primer Nivel*: Master Suite con terraza privada, vestidor walk-in y baño master en Chukum y mármol; Recámara 1 con baño completo privado; Recámara 2 con baño completo privado; y **Biblioteca / Estudio / Home Office** independiente.
-     - *Roof Top*: Terraza pergolada panorámica con vistas a la selva, asador con tarja y barra de servicio, **Cuarto de usos múltiples / Estudio cerrado**, baño completo en Roof Top, solárium descubierto y área técnica para equipos de A/C.
-   - **Inversión Preventa**: $5,150,000 MXN (Precio de lista catálogo: $10,990,000 MXN). Entrega: Noviembre 2026.
-   - **Bono Oficial de Muebles**: $450,000 MXN. Equipamiento completo incluido (Cocina integral con isla, closets en madera de Tzalam, aires acondicionados inverter, alberca Chukum, hidroneumático).
+   - **Metraje & Terreno**: Terreno: 185.50 m². Versión comercial ofrecida: SIN ROOF · 266.09 m² · 4 MINISPLITS INVERTER. (Opción con roof: añade terraza y cuarto de usos múltiples con baño completo, total 333.59 m²).
+   - **Distribución**: 3 recámaras con baño, principal con vestidor; biblioteca, cocina/comedor, sala, alberca, terraza, lavandería y cochera pergolada.
+   - **Tiempos & Condiciones Comerciales**: Inversión Preventa: $8,890,000.00 MXN ($8.89 MDP). Terminación: 7 meses. Esquema de pagos: hasta 8 meses.
 
 3. **Casa Sak Lu'um (Senderos Poniente Mz 14 Lt 04)**:
    - **Metraje Total**: 333.59 m² de Construcción (204.13 m² Interior + terrazas + alberca 8.27 m²).
@@ -79,23 +69,22 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
    - **Inversión Preventa**: $5,650,000 MXN (Precio de lista catálogo: $10,480,000 MXN). Entrega: Marzo 2027.
    - **Bono Oficial de Muebles**: $400,000 MXN. Equipamiento completo incluido.
 
-5. **Casa Mía (Senderos Poniente Mz 09 Lt 12 - Lote 86)**:
-   - **Metraje Total**: 225.00 m² de Construcción.
-   - **Terreno**: 165.00 m² (Frente 7.50m x Fondo 22.00m).
-   - **Distribución en 2 Niveles**:
-     - *Planta Baja*: Cochera para 2 autos con huellas de concreto y pasto, pórtico de acceso, medio baño de visitas, estancia / sala de estar, comedor formal, cocina de autor con isla en Cuarzo Negro Andromeda (incluye parrilla, campana y doble tarja de acero inoxidable), área de lavandería con pileta y boiler, terraza exterior con firme de concreto, jardín posterior y alberca privada en acabado Chukum con muro decorativo de Piedra Galarza.
-     - *Planta Alta*: Family Room / Estancia familiar central, Recámara Principal (Master Suite) con walk-in closet, baño privado completo y balcón; Recámara 1 con clóset y baño privado completo; Recámara 2 con clóset y baño privado completo. Total: 3 suites completas todas con baño privado.
-   - **Materiales & Acabados de Autor**: Mármol Travertino Fiorito en pisos y áreas húmedas, Muro de Piedra Galarza en alberca, barras de Cuarzo Negro Andromeda en cocina, cancelería Eurovent Serie 80/100, carpintería fina, grifería Helvex/Grohe en negro mate.
-   - **Inversión Preventa**: $7,600,000 MXN ($7.6 MDP).
+5. **Casa Mía (Condominio Senderos Poniente · Manzana 12 · Lote 08)**:
+   - **Metraje Total**: 198.00 m² de Construcción.
+   - **Terreno**: 202.50 m². Ubicación sobre Parque del Nilo, UPE 332.
+   - **Distribución**: 3 recámaras, todas concentradas en planta alta; principal con vestidor (walk-in closet). 3 baños completos y medio baño (3.5 baños). Cocina amplia, alacena, amplio cuarto de lavado, gran sala de TV y cochera para 2 vehículos. Destaca por la amplitud de las áreas de convivencia y servicio, con las recámaras concentradas en planta alta.
+   - **Amenidades & Entorno**: Acceso a Casa Club Senderos, sujeto al reglamento del condominio.
+   - **Materiales & Acabados de Autor**: Mármol Travertino Fiorito en pisos y áreas húmedas, Muro de Piedra Galarza, barras de Cuarzo Negro Andromeda en cocina, cancelería de alta calidad.
+   - **Inversión Preventa**: $7,600,000.00 MXN ($7.6 MDP).
 
-6. **Casa K'u (Senderos Poniente Mz 04 Lt 14 - Lote 81)**:
-   - **Metraje Total**: 210.00 m² de Construcción.
-   - **Terreno**: 170.00 m² (Frente 8.50m x Fondo 20.00m).
+6. **Casa K'u (Condominio Senderos Poniente · Manzana 14 · Lote 04)**:
+   - **Metraje Total**: 176.00 m² de Construcción.
+   - **Terreno**: 169.00 m² (Frente a un área de conservación de selva nativa).
    - **Distribución en 2 Niveles**:
-     - *Planta Baja*: Cochera para 2 autos con piso de concreto lavado y piedra regional, vestíbulo de acceso, **Recámara 3 Completa en Planta Baja** con clóset (ideal para accesibilidad/invitados), baño completo en PB con doble función (baño para recámara y visitas con cristal templado), estancia / sala a doble altura, comedor abierto, cocina integral equipada con cubierta de granito natural y barra desayunadora, cuarto de lavado techado, terraza posterior descubierta con pérgola de vigas WPC teca, jardín posterior y alberca privada en acabado Chukum.
-     - *Planta Alta*: Family Room / Sala de TV, Recámara Principal (Master Suite) con amplio walk-in closet, doble lavabo de mármol y baño completo de autor; Recámara 2 con clóset integrado y baño privado completo. Total: 3 recámaras y 3 baños completos.
-   - **Materiales & Cédula de Acabados**: Mármol Travertino Santo Tomás en pisos, cubiertas de Granito San Gabriel en cocina, pérgola exterior de vigas WPC color teca, recubrimiento exterior en pasta lisa y piedra regional laja maya, cancelería Serie 70 con cristal 6mm tintex, iluminación LED cálida indirecta.
-   - **Inversión Preventa**: $6,800,000 MXN ($6.8 MDP).
+     - *Planta Baja*: Cochera para 2 vehículos, vestíbulo de acceso, **Recámara en Planta Baja**, baño completo PB, estancia sala-comedor abierta, cocina integral equipada, área de lavado y bodega/alacena, terraza y jardín posterior. (Nota: en este lote no incluye pasillo lateral; puede incorporarse en otras ubicaciones o lotes que lo permitan).
+     - *Planta Alta*: Sala de TV, **Recámara Principal (Master Suite) con vestidor (walk-in closet)** y baño completo; Recámara 2 con baño completo. Total: 3 recámaras y 3 baños completos.
+   - **Amenidades & Entorno**: Acceso a Casa Club Senderos (sujeto al reglamento del condominio) y frente directo a selva nativa.
+   - **Condiciones Comerciales**: Precio de venta $6,800,000.00 MXN ($6.8 MDP). Entrega: 14 meses a partir de la firma del contrato. Reserva con $50,000 MXN.
 
 ### LOMAS AURORA · MACRODESARROLLO RESIDENCIAL EN PLAYA DEL CARMEN:
 - **Ubicación Estratégica**: Prolongación Av. 115 Sur, Playa del Carmen, Quintana Roo.
