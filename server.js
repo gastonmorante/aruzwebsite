@@ -32,6 +32,10 @@ app.use(express.urlencoded({ extended: true, limit: '1mb' }));
 // CORS configuration (allow same-origin and trusted staging/custom domains)
 const allowedOrigins = [
   'https://aruz.com.mx',
+  'https://aruzinmobiliaria.com',
+  'https://www.aruzinmobiliaria.com',
+  'https://aruz-inmobiliaria.com',
+  'https://www.aruz-inmobiliaria.com',
   'http://localhost:3000',
   'http://127.0.0.1:3000'
 ];
@@ -92,8 +96,13 @@ app.use((req, res, next) => {
 });
 
 // ============================================================================
-// HEALTH PROBE FOR ZERO-DOWNTIME MONITORING
+// GOOGLE SEARCH CONSOLE VERIFICATION & HEALTH PROBE
 // ============================================================================
+app.get('/google46c0a3dd2a45b8c9.html', (req, res) => {
+  res.setHeader('Content-Type', 'text/html; charset=UTF-8');
+  res.status(200).send('google-site-verification: google46c0a3dd2a45b8c9.html');
+});
+
 app.get('/health', (req, res) => {
   res.status(200).json({
     status: 'healthy',

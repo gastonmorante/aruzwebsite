@@ -162,6 +162,10 @@
       "dest": "/sitemap.xml"
     },
     {
+      "src": "/google46c0a3dd2a45b8c9.html",
+      "dest": "/google46c0a3dd2a45b8c9.html"
+    },
+    {
       "src": "/robots.txt",
       "dest": "/robots.txt"
     },
