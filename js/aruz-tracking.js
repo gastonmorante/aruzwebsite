@@ -31,7 +31,7 @@
     // ID de medición de Google Ads (AW-XXXXXXXXXX) o Google Analytics 4 (G-XXXXXXXXXX)
     // Ejemplo: 'AW-1234567890'
     // ------------------------------------------------------------------------
-    googleAdsId: '',
+    googleAdsId: 'AW-3942171870',
 
     // ------------------------------------------------------------------------
     // C. ETIQUETAS DE CONVERSIÓN DE GOOGLE ADS (Opcionales para seguimiento exacto)
@@ -92,6 +92,16 @@
   }
 
   // ============================================================================
+  function getCleanGoogleAdsId() {
+    let raw = (config.googleAdsId || '').trim();
+    if (!raw) return '';
+    if (!raw.startsWith('AW-') && !raw.startsWith('G-') && !raw.startsWith('GT-')) {
+      raw = 'AW-' + raw.replace(/[^0-9]/g, '');
+    }
+    return raw;
+  }
+
+  // ============================================================================
   // 3. INICIALIZACIÓN BASE DE GOOGLE ADS / GOOGLE TAG (gtag.js)
   // ============================================================================
   function initGoogleTag() {
@@ -103,8 +113,8 @@
       window.gtag('js', new Date());
     }
 
-    if (config.googleAdsId && config.googleAdsId.trim() !== '') {
-      const gTagId = config.googleAdsId.trim();
+    const gTagId = getCleanGoogleAdsId();
+    if (gTagId) {
       const existingScript = document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${gTagId}"]`);
       if (!existingScript) {
         const script = document.createElement('script');
@@ -131,14 +141,15 @@
 
   // Helper para resolver send_to en conversiones de Google Ads
   function resolveGoogleSendTo(labelKey) {
-    if (!config.googleAdsId) return null;
+    const baseId = getCleanGoogleAdsId();
+    if (!baseId) return null;
     const label = config.googleConversionLabels && config.googleConversionLabels[labelKey];
     if (label && label.trim() !== '') {
       // Si ya viene con el prefijo AW-XXXXXXXXX/Label
       if (label.includes('/')) return label.trim();
-      return `${config.googleAdsId.trim()}/${label.trim()}`;
+      return `${baseId}/${label.trim()}`;
     }
-    return config.googleAdsId.trim();
+    return baseId;
   }
 
   /**
