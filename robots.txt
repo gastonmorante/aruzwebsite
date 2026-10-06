@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://aruz.com.mx
+Host: https://www.aruz-inmobiliaria.com
 
 # Sitemaps
-Sitemap: https://aruz.com.mx/sitemap.xml
+Sitemap: https://www.aruz-inmobiliaria.com/sitemap.xml

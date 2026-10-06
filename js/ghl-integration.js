@@ -79,6 +79,17 @@ window.trackGHLEvent = function (eventName, eventData = {}) {
     }
   } catch (e) {}
 
+  // B2. Trigger Universal Ads & Pixel Engine if active
+  try {
+    if (eventName === 'whatsapp_floating_click' && typeof window.aruzTrackWhatsApp === 'function') {
+      window.aruzTrackWhatsApp({ property: eventData.property || 'ARUZ Holding' });
+    } else if (eventName === 'calendar_booking_initiated' && typeof window.aruzTrackCalendar === 'function') {
+      window.aruzTrackCalendar(eventData);
+    } else if (eventName === 'dossier_downloaded' && typeof window.aruzTrackDossier === 'function') {
+      window.aruzTrackDossier(eventData);
+    }
+  } catch (e) {}
+
   // C. Send to Server Event Bridge (/api/ghl-event)
   try {
     if (navigator.sendBeacon) {
@@ -120,6 +131,18 @@ window.dispatchLeadToCRM = async function (leadData) {
     property_interest: payload.interest,
     lead_email: payload.email
   });
+
+  // Track Lead Conversion in Meta Pixel & Google Ads
+  try {
+    if (typeof window.aruzTrackLead === 'function') {
+      window.aruzTrackLead({
+        interest: payload.interest,
+        name: payload.name,
+        email: payload.email,
+        phone: payload.phone
+      });
+    }
+  } catch (e) {}
 
   // Primary Dispatch via server-side bridge (/api/ghl-webhook)
   try {

@@ -31,11 +31,12 @@ app.use(express.urlencoded({ extended: true, limit: '1mb' }));
 
 // CORS configuration (allow same-origin and trusted staging/custom domains)
 const allowedOrigins = [
-  'https://aruz.com.mx',
-  'https://aruzinmobiliaria.com',
-  'https://www.aruzinmobiliaria.com',
-  'https://aruz-inmobiliaria.com',
   'https://www.aruz-inmobiliaria.com',
+  'https://aruz-inmobiliaria.com',
+  'https://www.aruzinmobiliaria.com',
+  'https://aruzinmobiliaria.com',
+  'https://aruz.com.mx',
+  'https://www.aruz.com.mx',
   'http://localhost:3000',
   'http://127.0.0.1:3000'
 ];
@@ -63,14 +64,14 @@ app.use((req, res, next) => {
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
   res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=(self)');
   
-  // Content Security Policy permitting GHL widgets & calendars
+  // Content Security Policy permitting GHL widgets, Meta Pixel & Google Ads
   res.setHeader('Content-Security-Policy', [
     "default-src 'self'",
-    "script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com https://connect.facebook.net https://link.msgsndr.com https://*.leadconnectorhq.com https://widgets.leadconnectorhq.com",
+    "script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com https://connect.facebook.net https://www.googleadservices.com https://googleads.g.doubleclick.net https://link.msgsndr.com https://*.leadconnectorhq.com https://widgets.leadconnectorhq.com",
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://widgets.leadconnectorhq.com",
     "font-src 'self' https://fonts.gstatic.com data:",
-    "img-src 'self' data: https: blob:",
-    "connect-src 'self' https://services.leadconnectorhq.com https://generativelanguage.googleapis.com https://www.google-analytics.com https://region1.google-analytics.com https://*.google-analytics.com https://api.leadconnectorhq.com",
+    "img-src 'self' data: https: blob: https://www.facebook.com https://www.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net",
+    "connect-src 'self' https://services.leadconnectorhq.com https://generativelanguage.googleapis.com https://www.google-analytics.com https://region1.google-analytics.com https://*.google-analytics.com https://api.leadconnectorhq.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://www.facebook.com https://www.google.com",
     "frame-src 'self' https://www.youtube.com https://maps.google.com https://www.google.com https://api.leadconnectorhq.com https://widgets.leadconnectorhq.com https://link.msgsndr.com",
     "object-src 'none'",
     "base-uri 'self'",
