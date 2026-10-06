@@ -3,8 +3,7 @@
    Manual de Identidad de Marca v2.0 - Google Stitch Luxury High-Tech
    Paleta: Carbon & Gold (#231F20, #EEB623, #D8C9AE, #3F5D48, #C79215)
    ========================================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800;900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+/* Fonts are preloaded asynchronously in HTML <head> for zero-render-blocking performance */
 
 :root {
   /* Official Brand Palette (Google Stitch & Luxury Identity) */
