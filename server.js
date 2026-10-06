@@ -62,6 +62,25 @@ app.use(cors({
 }));
 
 // ============================================================================
+// CANONICAL DOMAIN ENFORCEMENT & 301 PERMANENT REDIRECT (SEO BEST PRACTICE)
+// Consolidates PageRank & backlink equity from mirror & non-www domains to
+// https://www.aruz-inmobiliaria.com
+// ============================================================================
+app.use((req, res, next) => {
+  const rawHost = req.headers.host || '';
+  const host = rawHost.toLowerCase().split(':')[0];
+  const mirrorHosts = [
+    'aruzinmobiliaria.com',
+    'www.aruzinmobiliaria.com',
+    'aruz-inmobiliaria.com'
+  ];
+  if (mirrorHosts.includes(host)) {
+    return res.redirect(301, `https://www.aruz-inmobiliaria.com${req.originalUrl}`);
+  }
+  next();
+});
+
+// ============================================================================
 // ENTERPRISE HTTP SECURITY HEADERS MIDDLEWARE
 // ============================================================================
 app.use((req, res, next) => {
