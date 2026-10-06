@@ -56,7 +56,7 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
      - *Planta Baja*: Cochera, vestíbulo, estancia, comedor, cocina integral abierta, medio baño, terraza techada, alberca Chukum y jardín.
      - *Primer Nivel*: 3 Recámaras con baño completo privado cada una, clósets de madera dura regional, sala de TV / biblioteca.
      - *Roof Top*: Lounge pergolado, asador con tarja, baño completo y vistas a la selva.
-   - **Inversión Preventa**: $5,290,000 MXN (Precio de lista catálogo: $7,790,000 MXN). Entrega: Enero 2027.
+   - **Inversión Preventa**: $7,190,000.00 MXN (Precio de lista catálogo: $7,790,000 MXN). Entrega: Enero 2027.
    - **Bono Oficial de Muebles**: $250,000 MXN. Equipamiento completo incluido.
 
 4. **Casa K'áak Náajal (Senderos Poniente Mz 12 Lt 08)**:
@@ -66,7 +66,7 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
      - *Planta Baja*: Cochera para 2 autos, estancia, comedor, cocina con isla, **Suite Completa en Planta Baja con baño privado y clóset** (ideal para accesibilidad o personas mayores), medio baño de visitas, terraza techada, alberca Chukum ampliada de 20 m² y jardín.
      - *Primer Nivel*: 3 Recámaras en suite (Master con walk-in closet y balcón) y estancia familiar.
      - *Roof Top*: Solárium panorámico, pérgola, asador con barra, tarja y medio baño.
-   - **Inversión Preventa**: $5,650,000 MXN (Precio de lista catálogo: $10,480,000 MXN). Entrega: Marzo 2027.
+   - **Inversión Preventa**: $9,780,000.00 MXN (Precio de lista catálogo: $10,480,000 MXN). Entrega: Marzo 2027.
    - **Bono Oficial de Muebles**: $400,000 MXN. Equipamiento completo incluido.
 
 5. **Casa Mía (Condominio Senderos Poniente · Manzana 12 · Lote 08)**:

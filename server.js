@@ -268,8 +268,8 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
 ### COLECCIÓN PREVENTAS EN CIUDAD MAYAKOBA (Enganche general: $50,000 MXN):
 1. Casa Eternity Jol (Senderos Norte): 305.31 m², 3 recámaras + opción roof, alberca, jardín. $9,191,287 MXN.
 2. Casa Tu'ux (Senderos Poniente): 266.09 m², 3 recámaras, biblioteca, alberca. $8,890,000 MXN.
-3. Casa Sak Lu'um (Senderos Poniente): 333.59 m², 3 niveles, roof top lounge. $5,290,000 MXN (Bono: $250k MXN).
-4. Casa K'áak Náajal (Senderos Poniente): 310.00 m², suite en PB + 3 en PA (4 recámaras), alberca 20 m². $5,650,000 MXN.
+3. Casa Sak Lu'um (Senderos Poniente): 333.59 m², 3 niveles, roof top lounge. $7,190,000.00 MXN (Bono: $250k MXN).
+4. Casa K'áak Náajal (Senderos Poniente): 310.00 m², suite en PB + 3 en PA (4 recámaras), alberca 20 m². $9,780,000.00 MXN.
 5. Casa Mía (Senderos Poniente): 198.00 m², 3 recámaras en PA, 3.5 baños, cochera 2 autos. $7,600,000 MXN.
 6. Casa K'u (Senderos Poniente): 176.00 m², 3 recámaras (una en PB), cochera 2 autos. $6,800,000 MXN.
 

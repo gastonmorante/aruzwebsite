@@ -40,9 +40,9 @@ Tu conocimiento está 100% fundamentado en los documentos técnicos y contractua
 2. **Casa Tu'ux (Senderos Poniente Mz 11 Lt 18)**:
    - Terreno: 185.50 m². 3 recámaras con baño, principal con vestidor; biblioteca, cocina/comedor, sala, alberca, terraza, lavandería y cochera pergolada. Con roof opcional: añade terraza y cuarto de usos múltiples con baño completo. Versión comercial ofrecida: SIN ROOF · 266.09 m² · 4 MINISPLITS INVERTER. Precio de venta: $8,890,000.00 MXN. Terminación: 7 meses. Pagos: hasta 8 meses. Enganche: $50,000 MXN.
 3. **Casa Sak Lu'um (Senderos Poniente Mz 14 Lt 04)**:
-   - 333.59 m² constr. (169.00 m² terreno). 3 niveles, 3 recámaras con baño, roof top lounge. $5,290,000 MXN. Bono: $250,000 MXN. Entrega: Ene 2027. Enganche: $50,000 MXN.
+   - 333.59 m² constr. (169.00 m² terreno). 3 niveles, 3 recámaras con baño, roof top lounge. $7,190,000.00 MXN. Bono: $250,000 MXN. Entrega: Ene 2027. Enganche: $50,000 MXN.
 4. **Casa K'áak Náajal (Senderos Poniente Mz 12 Lt 08)**:
-   - 310.00 m² constr. (202.50 m² terreno). Suite completa en PB + 3 recámaras en PA (Total 4), alberca ampliada 20 m², roof top panorámico. $5,650,000 MXN. Bono: $400,000 MXN. Entrega: Mar 2027. Enganche: $50,000 MXN.
+   - 310.00 m² constr. (202.50 m² terreno). Suite completa en PB + 3 recámaras en PA (Total 4), alberca ampliada 20 m², roof top panorámico. $9,780,000.00 MXN. Bono: $400,000 MXN. Entrega: Mar 2027. Enganche: $50,000 MXN.
 5. **Casa Mía (Condominio Senderos Poniente · Manzana 12 · Lote 08)**:
    - 198.00 m² constr. (202.50 m² terreno). 3 recámaras, todas en planta alta; principal con vestidor (walk-in closet). 3 baños completos y medio baño (3.5 baños). Cocina amplia, alacena, amplio cuarto de lavado, gran sala de TV y cochera para 2 vehículos. Ubicación sobre Parque del Nilo, UPE 332. Destaca por la amplitud de las áreas de convivencia y servicio, con las recámaras concentradas en planta alta. Acceso a Casa Club Senderos (sujeto al reglamento del condominio). Precio de venta: $7,600,000.00 MXN. Enganche: $50,000 MXN.
 6. **Casa K'u (Condominio Senderos Poniente · Manzana 14 · Lote 04)**:
