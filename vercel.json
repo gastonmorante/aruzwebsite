@@ -94,6 +94,22 @@
       "dest": "/api/health.js"
     },
     {
+      "src": "/(?:en|fr|it|landings|en/landings|fr/landings|it/landings)/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(?:en|fr|it|landings|en/landings|fr/landings|it/landings)/logos/(.*)",
+      "dest": "/logos/$1"
+    },
+    {
+      "src": "/(?:en|fr|it|landings|en/landings|fr/landings|it/landings)/css/(.*)",
+      "dest": "/css/$1"
+    },
+    {
+      "src": "/(?:en|fr|it|landings|en/landings|fr/landings|it/landings)/js/(.*)",
+      "dest": "/js/$1"
+    },
+    {
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
     },

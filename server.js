@@ -412,6 +412,42 @@ app.use((req, res, next) => {
 });
 
 // ============================================================================
+// UNIVERSAL ASSET RESOLUTION MIDDLEWARE FOR SUBPATHS (en, fr, it, landings)
+// Guarantees all images, logos, styles and scripts load cleanly regardless
+// of whether requested with a subpath prefix (e.g. /fr/assets/..., /en/logos/...)
+// ============================================================================
+app.use((req, res, next) => {
+  const match = req.path.match(/\/(assets|logos|css|js|images|img)\/(.+)$/i);
+  if (match) {
+    const folder = match[1].toLowerCase();
+    const subpath = match[2];
+    const filePath = path.join(__dirname, folder, subpath);
+    return res.sendFile(filePath, (err) => {
+      if (err) next();
+    });
+  }
+  next();
+});
+
+// Explicit static asset mounts for subfolders
+['assets', 'logos', 'css', 'js'].forEach(folder => {
+  const staticHandler = express.static(path.join(__dirname, folder), {
+    maxAge: folder === 'assets' || folder === 'logos' ? '30d' : '1d',
+    immutable: folder === 'assets' || folder === 'logos'
+  });
+  app.use([
+    `/${folder}`,
+    `/en/${folder}`,
+    `/fr/${folder}`,
+    `/it/${folder}`,
+    `/landings/${folder}`,
+    `/en/landings/${folder}`,
+    `/fr/landings/${folder}`,
+    `/it/landings/${folder}`
+  ], staticHandler);
+});
+
+// ============================================================================
 // SERVE STATIC FILES
 // ============================================================================
 app.use(express.static(path.join(__dirname, '/'), {
@@ -426,7 +462,7 @@ app.use((req, res) => {
 });
 
 // Start Server (if executed directly)
-if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+if (require.main === module) {
   app.listen(PORT, () => {
     console.log(`====================================================`);
     console.log(`🚀 ARUZ Web Platform running on http://localhost:${PORT}`);

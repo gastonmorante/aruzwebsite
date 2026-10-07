@@ -8,7 +8,7 @@
 <meta content="Preventas de autor y casas en venta en Ciudad Mayakoba, Playa del Carmen. Residencias bioclimáticas con alberca privada, acabados de lujo y certeza legal notarial." name="description"/>
 <meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
 <meta content="#181415" name="theme-color"/>
-<link href="assets/logo.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/logo.svg" rel="icon" type="image/svg+xml"/>
 <!-- Tailwind CSS CDN with forms & container queries -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <!-- Preconnect & Asynchronous Non-Blocking Google Fonts -->
@@ -122,9 +122,9 @@
       }
     }
   </script>
-<link href="css/style.css" rel="stylesheet"/>
-<link href="css/aruz-ai.css" rel="stylesheet" media="print" onload="this.media='all'"/>
-<noscript><link href="css/aruz-ai.css" rel="stylesheet"/></noscript>
+<link href="/css/style.css" rel="stylesheet"/>
+<link href="/css/aruz-ai.css" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link href="/css/aruz-ai.css" rel="stylesheet"/></noscript>
 <style>
     .nav-link {
       position: relative;
@@ -226,21 +226,8 @@
   ],
   "inLanguage": "es-MX"
 }</script>
-<!-- Zero-Flash Intro Lock: Guarantees 100% overlay coverage before DOM paints -->
-<style id="aruz-intro-lock">
-    #aruz-intro-overlay {
-      position: fixed !important;
-      inset: 0 !important;
-      width: 100vw !important;
-      height: 100vh !important;
-      z-index: 999999 !important;
-      background-color: #FAF8F5 !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-    }
-  </style>
-<script defer="" src="js/intro-antigravity.js"></script>
+
+
 <!-- Global Architectural Scroll Padding to guarantee zero navbar overlap on anchors -->
 <style>
     html {
@@ -251,20 +238,20 @@
       scroll-margin-top: 100px;
     }
   </style>
-<link href="https://www.aruz-inmobiliaria.com/" rel="canonical"/><link href="https://www.aruz-inmobiliaria.com/" hreflang="es" rel="alternate"/><link href="https://www.aruz-inmobiliaria.com/en" hreflang="en" rel="alternate"/><link href="https://www.aruz-inmobiliaria.com/fr" hreflang="fr" rel="alternate"/><link href="https://www.aruz-inmobiliaria.com/it" hreflang="it" rel="alternate"/><link href="https://www.aruz-inmobiliaria.com/" hreflang="x-default" rel="alternate"/>  <!-- ARUZ Centralized Tracking Engine: Meta Pixel & Google Ads -->
+<link href="https://www.aruz-inmobiliaria.com/" rel="canonical"/><link href="https://www.aruz-inmobiliaria.com/" hreflang="es" rel="alternate"/><link href="https://www.aruz-inmobiliaria.com/en/" hreflang="en" rel="alternate"/><link href="https://www.aruz-inmobiliaria.com/fr/" hreflang="fr" rel="alternate"/><link href="https://www.aruz-inmobiliaria.com/it/" hreflang="it" rel="alternate"/><link href="https://www.aruz-inmobiliaria.com/" hreflang="x-default" rel="alternate"/>  <!-- ARUZ Centralized Tracking Engine: Meta Pixel & Google Ads -->
   <script src="/js/aruz-tracking.js"></script>
 </head>
 <body class="bg-surface text-carbon-aruz font-body-md overflow-x-hidden selection:bg-dorado-aruz selection:text-white">
-<!-- Instant Intro Overlay (Zero-Flash Pre-DOM Root) -->
-<div id="aruz-intro-overlay"></div>
+
+
 <!-- ==========================================================================
        TOP NAVIGATION
        ========================================================================== -->
 <!-- Site Header (Identical Standard Header) -->
 <header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/85 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm shadow-carbon-aruz/5 transition-all duration-300">
 <nav class="w-full max-w-[1440px] mx-auto flex justify-between items-center px-6 md:px-12 h-20">
-<a class="flex items-center gap-3" href="index.html">
-<img alt="ARUZ" class="h-10 w-auto object-contain" width="160" height="40" decoding="async" fetchpriority="high" src="assets/logo.svg"/>
+<a aria-label="ARUZ - Inicio" class="flex items-center gap-3" href="index.html">
+<img alt="ARUZ" class="h-10 w-auto object-contain" width="160" height="40" decoding="async" fetchpriority="high" src="/assets/logo.svg"/>
 </a>
 <div class="hidden lg:flex gap-6 items-center">
 <a class="text-carbon-aruz font-label-caps uppercase transition-colors duration-300 text-xs hover:text-dorado-aruz font-semibold" data-i18n="nav.desarrolladora" href="desarrolladora.html">Desarrolladora</a>
@@ -286,13 +273,19 @@
 <svg class="w-5 h-5 fill-white" viewbox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"></path></svg>
 </a>
 </div>
-<button class="lg:hidden flex items-center text-carbon-aruz p-2" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')">
+<button aria-label="Abrir Menú Móvil" class="lg:hidden flex items-center justify-center min-w-[44px] min-h-[44px] text-carbon-aruz p-2" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')">
 <span class="material-symbols-outlined text-2xl">menu</span>
 </button>
 </nav>
 </header>
 <!-- Mobile Drawer -->
-<div class="hidden fixed inset-0 z-40 bg-carbon-aruz/95 backdrop-blur-2xl pt-24 px-8 text-white flex flex-col gap-6" id="mobile-drawer">
+<div class="hidden fixed inset-0 z-40 bg-carbon-aruz/95 backdrop-blur-2xl pt-6 px-8 text-white flex flex-col gap-6 overflow-y-auto" id="mobile-drawer">
+<div class="flex items-center justify-between pb-4 border-b border-white/10 w-full">
+<img alt="ARUZ" class="h-8 w-auto filter brightness-0 invert" decoding="async" loading="lazy" src="/assets/logo.svg"/>
+<button aria-label="Cerrar Menú" class="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center active:scale-95 transition-all" onclick="document.getElementById('mobile-drawer').classList.add('hidden')">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
 <div class="flex justify-center mb-2">
 <div class="header-lang-slot"><div class="aruz-lang-switcher inline-flex items-center bg-black/70 border border-dorado-aruz/40 rounded-full px-2.5 py-1 text-[11px] font-sans font-bold tracking-wider backdrop-blur-md shadow-sm">
 <a class="lang-btn px-2.5 py-0.5 rounded-full transition-all bg-dorado-aruz text-carbon-aruz font-extrabold shadow-sm scale-105" href="/">ES</a>
@@ -344,7 +337,7 @@
 <div class="core-hologram-disk"></div>
 <div class="core-hologram-ticks"></div>
 <div class="core-logo-wrap" style="padding: 10px; display: flex; align-items: center; justify-content: center;">
-<img alt="ARUZ Core" width="82" height="34" decoding="async" loading="lazy" src="assets/logo-white.svg" style="width: 82px; height: auto; object-fit: contain;"/>
+<img alt="ARUZ Core" width="82" height="34" decoding="async" loading="lazy" src="/assets/logo-white.svg" style="width: 82px; height: auto; object-fit: contain;"/>
 </div>
 </div>
 <!-- Orbiting Nodes (4 Integrated Sub-brands with Official SVGs) -->
@@ -352,28 +345,28 @@
 <!-- Node 0: ARUZ Desarrolladora -->
 <div class="hud-orbit-node" data-subbrand="desarrolladora" data-url="desarrolladora.html">
 <div class="node-emblem" style="background: #1F191B; border-color: #EEB623;">
-<img alt="ARUZ Desarrolladora" class="node-logo-svg" width="48" height="48" decoding="async" loading="lazy" src="assets/node-desarrolladora.svg"/>
+<img alt="ARUZ Desarrolladora" class="node-logo-svg" width="48" height="48" decoding="async" loading="lazy" src="/assets/node-desarrolladora.svg"/>
 <div class="node-ring-pulse"></div>
 </div>
 </div>
 <!-- Node 1: ARUZ Inmobiliaria -->
 <div class="hud-orbit-node" data-subbrand="inmobiliaria" data-url="inmobiliaria.html">
 <div class="node-emblem" style="background: #1F191B; border-color: #EEB623;">
-<img alt="ARUZ Inmobiliaria" class="node-logo-svg" width="48" height="48" decoding="async" loading="lazy" src="assets/node-inmobiliaria.svg"/>
+<img alt="ARUZ Inmobiliaria" class="node-logo-svg" width="48" height="48" decoding="async" loading="lazy" src="/assets/node-inmobiliaria.svg"/>
 <div class="node-ring-pulse"></div>
 </div>
 </div>
 <!-- Node 2: ARUZ Construcción -->
 <div class="hud-orbit-node" data-subbrand="construccion" data-url="landings/aruz-construccion.html">
 <div class="node-emblem" style="background: #1F191B; border-color: #EEB623;">
-<img alt="ARUZ Construcción" class="node-logo-svg" width="48" height="48" decoding="async" loading="lazy" src="assets/node-construccion.svg"/>
+<img alt="ARUZ Construcción" class="node-logo-svg" width="48" height="48" decoding="async" loading="lazy" src="/assets/node-construccion.svg"/>
 <div class="node-ring-pulse"></div>
 </div>
 </div>
 <!-- Node 3: ARUZ Maquinaria Pesada -->
 <div class="hud-orbit-node" data-subbrand="maquinaria" data-url="landings/aruz-maquinaria.html">
 <div class="node-emblem" style="background: #1F191B; border-color: #EEB623;">
-<img alt="ARUZ Maquinaria" class="node-logo-svg" width="48" height="48" decoding="async" loading="lazy" src="assets/node-maquinaria.svg"/>
+<img alt="ARUZ Maquinaria" class="node-logo-svg" width="48" height="48" decoding="async" loading="lazy" src="/assets/node-maquinaria.svg"/>
 <div class="node-ring-pulse"></div>
 </div>
 </div>
@@ -385,7 +378,7 @@
 <div class="hud-card-corner tl"></div>
 <div class="hud-card-corner br"></div>
 <div class="hud-card-logo-wrap">
-<img alt="ARUZ Desarrolladora" width="220" height="56" decoding="async" loading="lazy" src="assets/logo-aruz-desarrolladora.svg"/>
+<img alt="ARUZ Desarrolladora" width="220" height="56" decoding="async" loading="lazy" src="/assets/logo-aruz-desarrolladora.svg"/>
 <span class="hud-card-badge">Preventas</span>
 </div>
 <p class="hud-card-desc">Concepción de proyectos residenciales de autor en preventa con arquitectura bioclimática en Ciudad Mayakoba.</p>
@@ -399,7 +392,7 @@
 <div class="hud-card-corner tl"></div>
 <div class="hud-card-corner br"></div>
 <div class="hud-card-logo-wrap">
-<img alt="ARUZ Inmobiliaria" width="220" height="56" decoding="async" loading="lazy" src="assets/logo-aruz-inmobiliaria.svg"/>
+<img alt="ARUZ Inmobiliaria" width="220" height="56" decoding="async" loading="lazy" src="/assets/logo-aruz-inmobiliaria.svg"/>
 <span class="hud-card-badge">Asesoría</span>
 </div>
 <p class="hud-card-desc">Asesoría hiperlocal y catálogo seleccionado de propiedades de terceros con estricto dictamen técnico y legal.</p>
@@ -413,7 +406,7 @@
 <div class="hud-card-corner tl"></div>
 <div class="hud-card-corner br"></div>
 <div class="hud-card-logo-wrap">
-<img alt="ARUZ Construcción &amp; Ingeniería" width="220" height="56" decoding="async" loading="lazy" src="assets/logo-aruz-construccion-dark.svg"/>
+<img alt="ARUZ Construcción &amp; Ingeniería" width="220" height="56" decoding="async" loading="lazy" src="/assets/logo-aruz-construccion-dark.svg"/>
 <span class="hud-card-badge">Planeación</span>
 </div>
 <p class="hud-card-desc">Planeación integral y gestión de recursos (materiales certificados y cuadrillas propias). Eficiencia operativa y cumplimiento de normas.</p>
@@ -427,7 +420,7 @@
 <div class="hud-card-corner tl"></div>
 <div class="hud-card-corner br"></div>
 <div class="hud-card-logo-wrap">
-<img alt="ARUZ Maquinaria" width="220" height="56" decoding="async" loading="lazy" src="assets/logo-aruz-maquinaria.svg"/>
+<img alt="ARUZ Maquinaria" width="220" height="56" decoding="async" loading="lazy" src="/assets/logo-aruz-maquinaria.svg"/>
 <span class="hud-card-badge">Flota</span>
 </div>
 <p class="hud-card-desc">Flota pesada propia de excavadoras y camiones para terracerías, cimentaciones profundas y urbanización.</p>
@@ -460,7 +453,7 @@
 <!-- 1. ARUZ Desarrolladora -->
 <div class="glass-panel rounded-xl p-7 ambient-shadow hover:shadow-xl transition-all duration-300 animate-fade-up group flex flex-col h-full border-t-4 border-t-transparent hover:border-t-dorado-profundo hover:-translate-y-1">
 <div class="h-14 mb-4 flex items-center">
-<img alt="ARUZ Desarrolladora" class="h-11 w-auto object-contain" width="180" height="44" decoding="async" loading="lazy" src="assets/logo-aruz-desarrolladora-dark.svg"/>
+<img alt="ARUZ Desarrolladora" class="h-11 w-auto object-contain" width="180" height="44" decoding="async" loading="lazy" src="/assets/logo-aruz-desarrolladora-dark.svg"/>
 </div>
 <span class="font-label-caps text-[11px] text-dorado-profundo mb-2 block uppercase font-bold tracking-wider">Desarrollo Propio</span>
 <p class="font-body-md text-xs sm:text-sm text-gris-grafito mb-6 flex-grow leading-relaxed">
@@ -480,7 +473,7 @@
 <!-- 2. ARUZ Inmobiliaria -->
 <div class="glass-panel rounded-xl p-7 ambient-shadow hover:shadow-xl transition-all duration-300 animate-fade-up delay-100 group flex flex-col h-full border-t-4 border-t-transparent hover:border-t-dorado-profundo hover:-translate-y-1">
 <div class="h-14 mb-4 flex items-center">
-<img alt="ARUZ Inmobiliaria" class="h-11 w-auto object-contain" width="180" height="44" decoding="async" loading="lazy" src="assets/logo-aruz-inmobiliaria-dark.svg"/>
+<img alt="ARUZ Inmobiliaria" class="h-11 w-auto object-contain" width="180" height="44" decoding="async" loading="lazy" src="/assets/logo-aruz-inmobiliaria-dark.svg"/>
 </div>
 <span class="font-label-caps text-[11px] text-dorado-profundo mb-2 block uppercase font-bold tracking-wider">Comercialización</span>
 <p class="font-body-md text-xs sm:text-sm text-gris-grafito mb-6 flex-grow leading-relaxed">
@@ -500,7 +493,7 @@
 <!-- 3. ARUZ Construcción -->
 <div class="glass-panel rounded-xl p-7 ambient-shadow hover:shadow-xl transition-all duration-300 animate-fade-up delay-200 group flex flex-col h-full border-t-4 border-t-transparent hover:border-t-dorado-profundo hover:-translate-y-1">
 <div class="h-14 mb-4 flex items-center">
-<img alt="ARUZ Construcción &amp; Ingeniería" class="h-11 w-auto object-contain" width="180" height="44" decoding="async" loading="lazy" src="assets/logo-aruz-construccion-dark.svg"/>
+<img alt="ARUZ Construcción &amp; Ingeniería" class="h-11 w-auto object-contain" width="180" height="44" decoding="async" loading="lazy" src="/assets/logo-aruz-construccion-dark.svg"/>
 </div>
 <span class="font-label-caps text-[11px] text-dorado-profundo mb-2 block uppercase font-bold tracking-wider">Planeación &amp; Ejecución</span>
 <p class="font-body-md text-xs sm:text-sm text-gris-grafito mb-6 flex-grow leading-relaxed">
@@ -524,7 +517,7 @@
 <!-- 4. ARUZ Maquinaria -->
 <div class="glass-panel rounded-xl p-7 ambient-shadow hover:shadow-xl transition-all duration-300 animate-fade-up delay-300 group flex flex-col h-full border-t-4 border-t-transparent hover:border-t-dorado-profundo hover:-translate-y-1">
 <div class="h-14 mb-4 flex items-center">
-<img alt="ARUZ Maquinaria" class="h-11 w-auto object-contain" width="180" height="44" decoding="async" loading="lazy" src="assets/logo-aruz-maquinaria-dark.svg"/>
+<img alt="ARUZ Maquinaria" class="h-11 w-auto object-contain" width="180" height="44" decoding="async" loading="lazy" src="/assets/logo-aruz-maquinaria-dark.svg"/>
 </div>
 <span class="font-label-caps text-[11px] text-dorado-profundo mb-2 block uppercase font-bold tracking-wider">Infraestructura</span>
 <p class="font-body-md text-xs sm:text-sm text-gris-grafito mb-6 flex-grow leading-relaxed">
@@ -606,7 +599,7 @@
 <span class="bg-dorado-aruz text-carbon-aruz font-bold text-[10px] px-2 py-0.5 rounded font-label-caps uppercase" data-i18n="badge.preventa">Preventa</span>
 <span class="bg-verde-manglar text-white text-[10px] px-2 py-0.5 rounded font-label-caps uppercase" data-i18n="badge.sello_construccion">Sello ARUZ Construcción</span>
 </div>
-<img alt="Casa Eternity Jol Fachada Principal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="600" height="400" decoding="async" loading="lazy" src="assets/properties/eternity-jol/exteriores/fachada_principal.webp"/>
+<img alt="Casa Eternity Jol Fachada Principal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="600" height="400" decoding="async" loading="lazy" src="/assets/properties/eternity-jol/exteriores/fachada_principal.webp"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 <div class="absolute bottom-2 left-3 text-[10px] font-mono text-dorado-aruz tracking-wider font-bold">CASA ETERNITY JOL · SN MZ18 LT03</div>
 </div>
@@ -643,7 +636,7 @@
 <span class="bg-dorado-aruz text-carbon-aruz font-bold text-[10px] px-2 py-0.5 rounded font-label-caps uppercase" data-i18n="badge.preventa">Preventa</span>
 <span class="bg-verde-manglar text-white text-[10px] px-2 py-0.5 rounded font-label-caps uppercase" data-i18n="badge.sello_construccion">Sello ARUZ Construcción</span>
 </div>
-<img alt="Casa Tu'ux Fachada Principal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="600" height="400" decoding="async" loading="lazy" src="assets/properties/tuux/exteriores/img_1.webp"/>
+<img alt="Casa Tu'ux Fachada Principal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="600" height="400" decoding="async" loading="lazy" src="/assets/properties/tuux/exteriores/img_1.webp"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 <div class="absolute bottom-2 left-3 text-[10px] font-mono text-dorado-aruz tracking-wider font-bold">CASA TU'UX · SP MZ11 LT18</div>
 </div>
@@ -680,7 +673,7 @@
 <span class="bg-dorado-aruz text-carbon-aruz font-bold text-[10px] px-2 py-0.5 rounded font-label-caps uppercase" data-i18n="badge.preventa">Preventa</span>
 <span class="bg-verde-manglar text-white text-[10px] px-2 py-0.5 rounded font-label-caps uppercase" data-i18n="badge.sello_construccion">Sello ARUZ Construcción</span>
 </div>
-<img alt="Casa Sak Lu'um Fachada Frontal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="600" height="400" decoding="async" loading="lazy" src="assets/properties/sak-luum/exteriores/fachada_frontal.webp"/>
+<img alt="Casa Sak Lu'um Fachada Frontal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="600" height="400" decoding="async" loading="lazy" src="/assets/properties/sak-luum/exteriores/fachada_frontal.webp"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 <div class="absolute bottom-2 left-3 text-[10px] font-mono text-dorado-aruz tracking-wider font-bold">CASA SAK LU'UM · SP MZ14 LT04</div>
 </div>
@@ -717,7 +710,7 @@
 <span class="bg-dorado-aruz text-carbon-aruz font-bold text-[10px] px-2 py-0.5 rounded font-label-caps uppercase">Signature</span>
 <span class="bg-verde-manglar text-white text-[10px] px-2 py-0.5 rounded font-label-caps uppercase" data-i18n="badge.sello_construccion">Sello ARUZ Construcción</span>
 </div>
-<img alt="Casa K'áak Náajal Fachada Principal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="600" height="400" decoding="async" loading="lazy" src="assets/properties/kaak-naajal/exteriores/img_0.webp"/>
+<img alt="Casa K'áak Náajal Fachada Principal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="600" height="400" decoding="async" loading="lazy" src="/assets/properties/kaak-naajal/exteriores/img_0.webp"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 <div class="absolute bottom-2 left-3 text-[10px] font-mono text-dorado-aruz tracking-wider font-bold">CASA K'AAK NÁAJAL · SP MZ12 LT08</div>
 </div>
@@ -754,7 +747,7 @@
 <span class="bg-dorado-aruz text-carbon-aruz font-bold text-[10px] px-2 py-0.5 rounded font-label-caps uppercase" data-i18n="badge.preventa">Preventa</span>
 <span class="bg-verde-manglar text-white text-[10px] px-2 py-0.5 rounded font-label-caps uppercase" data-i18n="badge.sello_construccion">Sello ARUZ Construcción</span>
 </div>
-<img alt="Casa Mía Fachada Principal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="600" height="400" decoding="async" loading="lazy" src="assets/properties/casa-mia/exteriores/fachada_principal.webp"/>
+<img alt="Casa Mía Fachada Principal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="600" height="400" decoding="async" loading="lazy" src="/assets/properties/casa-mia/exteriores/fachada_principal.webp"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 <div class="absolute bottom-2 left-3 text-[10px] font-mono text-dorado-aruz tracking-wider font-bold">CASA MÍA · SP MZ12 LT08</div>
 </div>
@@ -791,7 +784,7 @@
 <span class="bg-dorado-aruz text-carbon-aruz font-bold text-[10px] px-2 py-0.5 rounded font-label-caps uppercase" data-i18n="badge.preventa">Preventa</span>
 <span class="bg-verde-manglar text-white text-[10px] px-2 py-0.5 rounded font-label-caps uppercase" data-i18n="badge.sello_construccion">Sello ARUZ Construcción</span>
 </div>
-<img alt="Casa K'u Fachada Principal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="600" height="400" decoding="async" loading="lazy" src="assets/properties/casa-ku/exteriores/fachada_principal.webp"/>
+<img alt="Casa K'u Fachada Principal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="600" height="400" decoding="async" loading="lazy" src="/assets/properties/casa-ku/exteriores/fachada_principal.webp"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 <div class="absolute bottom-2 left-3 text-[10px] font-mono text-dorado-aruz tracking-wider font-bold">CASA K'U · SP MZ14 LT04</div>
 </div>
@@ -1004,7 +997,7 @@
 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
 <div class="md:col-span-2">
 <div class="flex items-center gap-3 mb-4">
-<img alt="ARUZ" class="h-10 w-auto" width="160" height="40" decoding="async" loading="lazy" src="assets/logo-white.svg"/>
+<img alt="ARUZ" class="h-10 w-auto" width="160" height="40" decoding="async" loading="lazy" src="/assets/logo-white.svg"/>
 </div>
 <p class="text-piedra-maya text-sm max-w-md leading-relaxed">
             Ecosistema inmobiliario, constructivo y logístico en la Riviera Maya. Asesoría experta y ejecución técnica bajo el respaldo corporativo de Grupo Ruiz México.
@@ -1064,7 +1057,7 @@
 </div>
 </footer>
 <!-- 3D Architectural CAD Blueprint & Tech Hub Engine -->
-<script defer="" src="js/blueprint-tech-hub.js"></script>
+<script defer="" src="/js/blueprint-tech-hub.js"></script>
 <!-- Floating Mobile WhatsApp Quick Contact Button -->
 <a aria-label="Contactar por WhatsApp" class="floating-whatsapp-btn lg:hidden flex items-center justify-center" href="https://api.whatsapp.com/send?phone=5219841308260&amp;text=Hola%2C%20solicito%20asesor%C3%ADa%20personalizada%20con%20el%20Director%20de%20ARUZ." onclick="window.trackGHLEvent &amp;&amp; window.trackGHLEvent('whatsapp_floating_click', { property: 'ARUZ Holding' })" rel="noopener" target="_blank">
 <svg class="w-7 h-7 fill-white" viewbox="0 0 24 24">
@@ -1088,12 +1081,12 @@
     }
   </script>
 <!-- ARUZ AI Advisor (Gemini API Integration) -->
-<script defer="" src="js/utm-tracker.js"></script>
-<script defer="" src="js/ghl-integration.js"></script>
-<script defer="" src="js/main.js"></script>
-<script defer="" src="js/aruz-ai-agent.js"></script>
+<script defer="" src="/js/utm-tracker.js"></script>
+<script defer="" src="/js/ghl-integration.js"></script>
+<script defer="" src="/js/main.js"></script>
+<script defer="" src="/js/aruz-ai-agent.js"></script>
 <!-- Multilingual Translation Engine (ES / EN / FR) -->
-<script defer="" src="js/i18n.js"></script>
+<script defer="" src="/js/i18n.js"></script>
 <!-- Non-Critical Interactive Components Loaded On Idle to Preserve Main Thread -->
 <script>
   (function() {
