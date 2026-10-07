@@ -447,6 +447,23 @@ app.use((req, res, next) => {
   ], staticHandler);
 });
 
+// Landing alias routes: allows /(en|fr|it)/[landing] to resolve to /(en|fr|it)/landings/[landing].html
+const fs = require('fs');
+app.use((req, res, next) => {
+  const match = req.path.match(/^\/(en|fr|it|landings)\/([a-zA-Z0-9_-]+)$/i);
+  if (match) {
+    const prefix = match[1].toLowerCase();
+    const slug = match[2];
+    const candidatePath = prefix === 'landings'
+      ? path.join(__dirname, 'landings', `${slug}.html`)
+      : path.join(__dirname, prefix, 'landings', `${slug}.html`);
+    if (fs.existsSync(candidatePath)) {
+      return res.sendFile(candidatePath);
+    }
+  }
+  next();
+});
+
 // ============================================================================
 // SERVE STATIC FILES
 // ============================================================================
