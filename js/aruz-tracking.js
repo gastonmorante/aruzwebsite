@@ -65,33 +65,31 @@
   }
 
   // ============================================================================
-  // 2. INICIALIZACIÓN BASE DE META PIXEL
+  // 2. STUBS SÍNCRONOS Y SEGUROS (Captura de eventos sin demoras)
   // ============================================================================
-  function initMetaPixel() {
-    if (window.fbq) return;
-
-    /* eslint-disable */
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    if(s && s.parentNode) s.parentNode.insertBefore(t,s);
-    else document.head.appendChild(t);}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    /* eslint-enable */
-
-    if (config.metaPixelId && config.metaPixelId.trim() !== '') {
-      window.fbq('init', config.metaPixelId.trim());
-      window.fbq('track', 'PageView');
-      log(`Meta Pixel inicializado con ID: ${config.metaPixelId}`);
-    } else {
-      log('Meta Pixel base cargado. Pendiente configurar metaPixelId en ARUZ_TRACKING_CONFIG.');
-    }
+  window.dataLayer = window.dataLayer || [];
+  if (!window.gtag) {
+    window.gtag = function () {
+      window.dataLayer.push(arguments);
+    };
+    window.gtag('js', new Date());
   }
 
-  // ============================================================================
+  if (!window.fbq) {
+    const fbqStub = function () {
+      if (fbqStub.callMethod) {
+        fbqStub.callMethod.apply(fbqStub, arguments);
+      } else {
+        fbqStub.queue.push(arguments);
+      }
+    };
+    fbqStub.push = fbqStub;
+    fbqStub.loaded = true;
+    fbqStub.version = '2.0';
+    fbqStub.queue = [];
+    window.fbq = fbqStub;
+  }
+
   function getCleanGoogleAdsId() {
     let raw = (config.googleAdsId || '').trim();
     if (!raw) return '';
@@ -102,17 +100,14 @@
   }
 
   // ============================================================================
-  // 3. INICIALIZACIÓN BASE DE GOOGLE ADS / GOOGLE TAG (gtag.js)
+  // 3. CARGA NO BLOQUEANTE DE SDKs DE TERCEROS (Google Tag & Meta Pixel)
   // ============================================================================
-  function initGoogleTag() {
-    window.dataLayer = window.dataLayer || [];
-    if (!window.gtag) {
-      window.gtag = function () {
-        window.dataLayer.push(arguments);
-      };
-      window.gtag('js', new Date());
-    }
+  let externalTagsLoaded = false;
+  function loadExternalTrackingLibraries() {
+    if (externalTagsLoaded) return;
+    externalTagsLoaded = true;
 
+    // A. Google Ads / Google Tag
     const gTagId = getCleanGoogleAdsId();
     if (gTagId) {
       const existingScript = document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${gTagId}"]`);
@@ -126,14 +121,38 @@
         page_path: window.location.pathname
       });
       log(`Google Tag inicializado con ID: ${gTagId}`);
-    } else {
-      log('Google Tag base preparado. Pendiente configurar googleAdsId en ARUZ_TRACKING_CONFIG.');
+    }
+
+    // B. Meta Pixel (Solo si metaPixelId está configurado)
+    if (config.metaPixelId && config.metaPixelId.trim() !== '') {
+      const existingFb = document.querySelector('script[src*="connect.facebook.net"]');
+      if (!existingFb) {
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://connect.facebook.net/en_US/fbevents.js';
+        document.head.appendChild(script);
+      }
+      window.fbq('init', config.metaPixelId.trim());
+      window.fbq('track', 'PageView');
+      log(`Meta Pixel inicializado con ID: ${config.metaPixelId}`);
     }
   }
 
-  // Ejecutar inicializadores base
-  initMetaPixel();
-  initGoogleTag();
+  function scheduleTrackingLoad() {
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(loadExternalTrackingLibraries, { timeout: 2500 });
+    } else {
+      setTimeout(loadExternalTrackingLibraries, 2000);
+    }
+    const userEvents = ['pointerdown', 'touchstart', 'scroll', 'keydown'];
+    function onUserInteraction() {
+      userEvents.forEach(e => window.removeEventListener(e, onUserInteraction, { passive: true }));
+      loadExternalTrackingLibraries();
+    }
+    userEvents.forEach(e => window.addEventListener(e, onUserInteraction, { passive: true, once: true }));
+  }
+
+  scheduleTrackingLoad();
 
   // ============================================================================
   // 4. MÉTODOS UNIVERSALES DE SEGUIMIENTO DE EVENTOS
@@ -156,6 +175,7 @@
    * Dispara conversión de Lead (Formularios de contacto, preventa, etc.)
    */
   window.aruzTrackLead = function (data = {}) {
+    loadExternalTrackingLibraries();
     const property = data.interest || data.property || 'Preventa ARUZ';
     const value = data.value || 0;
     const currency = data.currency || 'MXN';
@@ -213,6 +233,7 @@
    * Dispara conversión de Contacto por WhatsApp
    */
   window.aruzTrackWhatsApp = function (data = {}) {
+    loadExternalTrackingLibraries();
     const property = data.property || 'ARUZ Holding General';
 
     log('Disparando evento de conversión: WHATSAPP CLICK', { property, data });
