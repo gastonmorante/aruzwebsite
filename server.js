@@ -94,7 +94,7 @@ app.use((req, res, next) => {
   // Content Security Policy permitting GHL widgets, Meta Pixel & Google Ads
   res.setHeader('Content-Security-Policy', [
     "default-src 'self'",
-    "script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com https://connect.facebook.net https://www.googleadservices.com https://googleads.g.doubleclick.net https://link.msgsndr.com https://*.leadconnectorhq.com https://widgets.leadconnectorhq.com",
+    "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net https://www.googleadservices.com https://googleads.g.doubleclick.net https://link.msgsndr.com https://*.leadconnectorhq.com https://widgets.leadconnectorhq.com",
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://widgets.leadconnectorhq.com",
     "font-src 'self' https://fonts.gstatic.com data:",
     "img-src 'self' data: https: blob: https://www.facebook.com https://www.google.com https://www.googleadservices.com https://googleads.g.doubleclick.net",
@@ -102,7 +102,8 @@ app.use((req, res, next) => {
     "frame-src 'self' https://www.youtube.com https://maps.google.com https://www.google.com https://api.leadconnectorhq.com https://widgets.leadconnectorhq.com https://link.msgsndr.com",
     "object-src 'none'",
     "base-uri 'self'",
-    "form-action 'self' https://api.whatsapp.com https://services.leadconnectorhq.com"
+    "form-action 'self' https://api.whatsapp.com https://services.leadconnectorhq.com",
+    "upgrade-insecure-requests"
   ].join('; '));
 
   next();

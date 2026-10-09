@@ -138,7 +138,7 @@ function initParticleCanvas() {
 }
 
 /* --------------------------------------------------------------------------
-   3D HUD ORBIT ENGINE & REAL-TIME CALLOUT LEADER LINES (ON HOVER)
+   3D HUD ORBIT ENGINE & REAL-TIME CALLOUT LEADER LINES (OPTIMIZED)
    -------------------------------------------------------------------------- */
 function init3DHudOrbit() {
   const stage = document.getElementById('hudStage');
@@ -148,12 +148,27 @@ function init3DHudOrbit() {
 
   if (!stage || !svg || !nodes.length) return;
 
-  // 4 Integrated Sub-brands initial orbital angles
-  let currentAngle = 0;
-  let targetSpeed = 0.0032;
-  let currentSpeed = 0.0032;
-  let activeHoverIndex = -1;
-  let leaveTimer = null;
+  const isMobile = window.innerWidth <= 768;
+  const isTablet = window.innerWidth > 768 && window.innerWidth <= 1024;
+
+  let stageWidth = stage.offsetWidth || 1100;
+  let stageHeight = stage.offsetHeight || 480;
+  let centerX = stageWidth / 2;
+  let centerY = stageHeight / 2;
+  let rx = isMobile ? stageWidth * 0.40 : isTablet ? Math.min(320, stageWidth * 0.35) : Math.min(410, stageWidth * 0.38);
+  let ry = isMobile ? stageHeight * 0.30 : isTablet ? Math.min(140, stageHeight * 0.28) : Math.min(165, stageHeight * 0.30);
+
+  function updateDimensions() {
+    stageWidth = stage.offsetWidth || 1100;
+    stageHeight = stage.offsetHeight || 480;
+    centerX = stageWidth / 2;
+    centerY = stageHeight / 2;
+    const mob = window.innerWidth <= 768;
+    const tab = window.innerWidth > 768 && window.innerWidth <= 1024;
+    rx = mob ? stageWidth * 0.40 : tab ? Math.min(320, stageWidth * 0.35) : Math.min(410, stageWidth * 0.38);
+    ry = mob ? stageHeight * 0.30 : tab ? Math.min(140, stageHeight * 0.28) : Math.min(165, stageHeight * 0.30);
+  }
+  window.addEventListener('resize', updateDimensions, { passive: true });
 
   const nodeOffsets = [
     0,                  // 0 rad (ARUZ Desarrolladora)
@@ -162,16 +177,58 @@ function init3DHudOrbit() {
     (3 * Math.PI) / 2   // 3PI/2 rad (ARUZ Maquinaria)
   ];
 
+  let currentAngle = 0;
+  let targetSpeed = 0.0032;
+  let currentSpeed = 0.0032;
+  let activeHoverIndex = -1;
+  let leaveTimer = null;
+  let isVisible = true;
+  let animId = null;
+
+  // Pre-create conduits and photons in SVG once (zero DOM allocation in animation loop)
+  const conduits = [];
+  const photons = [];
+  for (let i = 0; i < 4; i++) {
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('stroke', 'rgba(238, 182, 35, 0.32)');
+    line.setAttribute('stroke-width', '1.2');
+    line.setAttribute('stroke-dasharray', '4 3');
+    svg.appendChild(line);
+    conduits.push(line);
+
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    circle.setAttribute('r', '2.5');
+    circle.setAttribute('fill', '#EEB623');
+    svg.appendChild(circle);
+    photons.push(circle);
+  }
+
+  // Pre-create leader elements for active card hover
+  const leaderPolyline = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  leaderPolyline.setAttribute('class', 'hud-leader-line active');
+  leaderPolyline.style.opacity = '0';
+  svg.appendChild(leaderPolyline);
+
+  const leaderDotNode = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+  leaderDotNode.setAttribute('r', '4.5');
+  leaderDotNode.setAttribute('class', 'hud-leader-dot');
+  leaderDotNode.style.opacity = '0';
+  svg.appendChild(leaderDotNode);
+
+  const leaderDotCard = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+  leaderDotCard.setAttribute('r', '3.5');
+  leaderDotCard.setAttribute('class', 'hud-leader-dot');
+  leaderDotCard.style.opacity = '0';
+  svg.appendChild(leaderDotCard);
+
   function setActive(idx) {
     if (leaveTimer) clearTimeout(leaveTimer);
     activeHoverIndex = idx;
-    targetSpeed = 0.0003; // Gentle slow motion inspection
-    
+    targetSpeed = 0.0003;
     nodes.forEach((n, i) => {
       if (i === idx) n.classList.add('active');
       else n.classList.remove('active');
     });
-
     cards.forEach((c, i) => {
       if (i === idx) c.classList.add('visible');
       else c.classList.remove('visible');
@@ -184,14 +241,15 @@ function init3DHudOrbit() {
       targetSpeed = 0.0032;
       nodes.forEach(n => n.classList.remove('active'));
       cards.forEach(c => c.classList.remove('visible'));
+      leaderPolyline.style.opacity = '0';
+      leaderDotNode.style.opacity = '0';
+      leaderDotCard.style.opacity = '0';
     }, 180);
   }
 
-  // Node hover events
   nodes.forEach((node, idx) => {
     node.addEventListener('mouseenter', () => setActive(idx));
     node.addEventListener('mouseleave', clearActive);
-    // Touch support for mobile devices
     node.addEventListener('click', (e) => {
       if (window.innerWidth <= 768 && activeHoverIndex !== idx) {
         e.preventDefault();
@@ -200,97 +258,83 @@ function init3DHudOrbit() {
     });
   });
 
-  // Card hover events to maintain visibility
   cards.forEach((card, idx) => {
     card.addEventListener('mouseenter', () => setActive(idx));
     card.addEventListener('mouseleave', clearActive);
   });
 
-  // Mouse tilt parallax on the 3D stage
-  let stageTiltX = 0;
-  let stageTiltY = 0;
-  let targetTiltX = 0;
-  let targetTiltY = 0;
-
-  window.addEventListener('mousemove', (e) => {
-    const rect = stage.getBoundingClientRect();
-    const nx = (e.clientX - (rect.left + rect.width / 2)) / (window.innerWidth / 2);
-    const ny = (e.clientY - (rect.top + rect.height / 2)) / (window.innerHeight / 2);
-    targetTiltY = nx * 6;  // Rotate Y in deg
-    targetTiltX = -ny * 5; // Rotate X in deg
-  });
+  let stageTiltX = 0, stageTiltY = 0, targetTiltX = 0, targetTiltY = 0;
+  if (!isMobile) {
+    window.addEventListener('mousemove', (e) => {
+      const nx = (e.clientX - window.innerWidth / 2) / (window.innerWidth / 2);
+      const ny = (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2);
+      targetTiltY = nx * 5;
+      targetTiltX = -ny * 4;
+    }, { passive: true });
+  }
 
   function updateOrbit() {
-    // Smooth speed interpolation
+    if (!isVisible) return;
+
+    if (isMobile) {
+      // On mobile: position static balanced nodes once without continuous CPU animation
+      nodes.forEach((node, idx) => {
+        const angle = nodeOffsets[idx] + 0.4;
+        const nodeX = centerX + Math.cos(angle) * rx;
+        const nodeY = centerY + Math.sin(angle) * ry;
+        node.style.left = `${nodeX}px`;
+        node.style.top = `${nodeY}px`;
+        node.style.transform = 'translate(-50%, -50%) scale(1)';
+        conduits[idx].setAttribute('x1', centerX);
+        conduits[idx].setAttribute('y1', centerY);
+        conduits[idx].setAttribute('x2', nodeX);
+        conduits[idx].setAttribute('y2', nodeY);
+        photons[idx].style.display = 'none';
+      });
+      return; // Stop animation loop on mobile! Saves 100% CPU!
+    }
+
     currentSpeed += (targetSpeed - currentSpeed) * 0.08;
     currentAngle += currentSpeed;
 
-    // Smooth stage 3D tilt
     stageTiltX += (targetTiltX - stageTiltX) * 0.06;
     stageTiltY += (targetTiltY - stageTiltY) * 0.06;
     stage.style.transform = `rotateX(${stageTiltX}deg) rotateY(${stageTiltY}deg)`;
 
-    const stageWidth = stage.offsetWidth;
-    const stageHeight = stage.offsetHeight;
-    const centerX = stageWidth / 2;
-    const centerY = stageHeight / 2;
-
-    const isMobile = window.innerWidth <= 768;
-    const isTablet = window.innerWidth > 768 && window.innerWidth <= 1024;
-    const rx = isMobile ? stageWidth * 0.40 : isTablet ? Math.min(320, stageWidth * 0.35) : Math.min(410, stageWidth * 0.38);
-    const ry = isMobile ? stageHeight * 0.30 : isTablet ? Math.min(140, stageHeight * 0.28) : Math.min(165, stageHeight * 0.30);
-
-    // Dynamic quadrant anchor positions for Callout Cards
     const cardPositions = [
-      { x: centerX + rx * 0.85, y: centerY - ry * 1.25 }, // Top Right (Desarrolladora)
-      { x: centerX + rx * 0.85, y: centerY + ry * 0.85 }, // Bottom Right (Inmobiliaria)
-      { x: centerX - rx * 1.35, y: centerY + ry * 0.85 }, // Bottom Left (ARUZ Construcción)
-      { x: centerX - rx * 1.35, y: centerY - ry * 1.25 }  // Top Left (Maquinaria)
+      { x: centerX + rx * 0.85, y: centerY - ry * 1.25 },
+      { x: centerX + rx * 0.85, y: centerY + ry * 0.85 },
+      { x: centerX - rx * 1.35, y: centerY + ry * 0.85 },
+      { x: centerX - rx * 1.35, y: centerY - ry * 1.25 }
     ];
 
-    // Clear SVG dynamic lines
-    while (svg.firstChild) {
-      svg.removeChild(svg.firstChild);
-    }
-
-    // Update each node in 3D orbit
     nodes.forEach((node, idx) => {
       const angle = currentAngle + nodeOffsets[idx];
       const cosA = Math.cos(angle);
       const sinA = Math.sin(angle);
-
       const nodeX = centerX + cosA * rx;
       const nodeY = centerY + sinA * ry;
 
-      // 3D Depth calculation
-      const depthFactor = (sinA + 1) / 2; // 0 (far) to 1 (near)
+      const depthFactor = (sinA + 1) / 2;
       const scale = (idx === activeHoverIndex ? 1.18 : 0.88) + depthFactor * 0.28;
       const opacity = idx === activeHoverIndex ? 1.0 : (0.75 + depthFactor * 0.25);
       const zIndex = Math.round((idx === activeHoverIndex ? 35 : 5) + depthFactor * 20);
-      const shadowBlur = Math.round(15 + depthFactor * 25);
 
-      // Draw 3D Energy Conduit from Center Core to Node
-      const conduit = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+      const conduit = conduits[idx];
       conduit.setAttribute('x1', centerX);
       conduit.setAttribute('y1', centerY);
       conduit.setAttribute('x2', nodeX);
       conduit.setAttribute('y2', nodeY);
       conduit.setAttribute('stroke', idx === activeHoverIndex ? '#EEB623' : 'rgba(238, 182, 35, 0.32)');
       conduit.setAttribute('stroke-width', idx === activeHoverIndex ? '2.2' : '1.2');
-      conduit.setAttribute('stroke-dasharray', idx === activeHoverIndex ? 'none' : '4 3');
-      svg.appendChild(conduit);
 
-      // Traveling Energy Photon Pulse
       const pulseT = ((currentAngle * 2.2 + idx * 0.25) % 1);
       const pulseX = centerX + (nodeX - centerX) * pulseT;
       const pulseY = centerY + (nodeY - centerY) * pulseT;
-      const photon = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      const photon = photons[idx];
       photon.setAttribute('cx', pulseX);
       photon.setAttribute('cy', pulseY);
       photon.setAttribute('r', idx === activeHoverIndex ? 3.5 : 2.5);
-      photon.setAttribute('fill', '#EEB623');
-      photon.style.filter = 'drop-shadow(0 0 6px #EEB623)';
-      svg.appendChild(photon);
 
       node.style.left = `${nodeX}px`;
       node.style.top = `${nodeY}px`;
@@ -298,59 +342,52 @@ function init3DHudOrbit() {
       node.style.opacity = opacity;
       node.style.zIndex = zIndex;
 
-      // Update card positioning
       const card = cards[idx];
       if (card) {
-        if (!isMobile) {
-          const cardW = card.offsetWidth || 280;
-          const rawX = cardPositions[idx].x;
-          // Clamp cardX within stage bounds with margin
-          const cardX = Math.max(8, Math.min(rawX, stageWidth - cardW - 8));
-          const cardY = Math.max(8, Math.min(cardPositions[idx].y, stageHeight - card.offsetHeight - 8));
-          card.style.left = `${cardX}px`;
-          card.style.top = `${cardY}px`;
-        }
+        const cardW = 280;
+        const rawX = cardPositions[idx].x;
+        const cardX = Math.max(8, Math.min(rawX, stageWidth - cardW - 8));
+        const cardY = Math.max(8, Math.min(cardPositions[idx].y, stageHeight - 120));
+        card.style.left = `${cardX}px`;
+        card.style.top = `${cardY}px`;
 
-        // ONLY draw Technical Callout Leader Line if this node/card is currently active/hovered!
-        if (!isMobile && idx === activeHoverIndex) {
-          const cardW = card.offsetWidth || 280;
-          const rawX = cardPositions[idx].x;
-          const cardX = Math.max(8, Math.min(rawX, stageWidth - cardW - 8));
-          const cardY = Math.max(8, Math.min(cardPositions[idx].y, stageHeight - card.offsetHeight - 8));
+        if (idx === activeHoverIndex) {
           const cardAnchorX = idx < 2 ? cardX : cardX + cardW;
-          const cardAnchorY = cardY + card.offsetHeight / 2;
-
+          const cardAnchorY = cardY + 50;
           const kneeX = nodeX + (cardAnchorX > nodeX ? 35 : -35);
           const kneeY = cardAnchorY;
-
-          // Leader Polyline
-          const polyline = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-          const d = `M ${nodeX} ${nodeY} L ${kneeX} ${nodeY} L ${kneeX} ${kneeY} L ${cardAnchorX} ${cardAnchorY}`;
-          polyline.setAttribute('d', d);
-          polyline.setAttribute('class', 'hud-leader-line active');
-          polyline.style.opacity = '1';
-          svg.appendChild(polyline);
-
-          // Node Anchor Dot
-          const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-          dot.setAttribute('cx', nodeX);
-          dot.setAttribute('cy', nodeY);
-          dot.setAttribute('r', 4.5);
-          dot.setAttribute('class', 'hud-leader-dot');
-          svg.appendChild(dot);
-
-          // Card Anchor Dot
-          const dotCard = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-          dotCard.setAttribute('cx', cardAnchorX);
-          dotCard.setAttribute('cy', cardAnchorY);
-          dotCard.setAttribute('r', 3.5);
-          dotCard.setAttribute('class', 'hud-leader-dot');
-          svg.appendChild(dotCard);
+          leaderPolyline.setAttribute('d', `M ${nodeX} ${nodeY} L ${kneeX} ${nodeY} L ${kneeX} ${kneeY} L ${cardAnchorX} ${cardAnchorY}`);
+          leaderPolyline.style.opacity = '1';
+          leaderDotNode.setAttribute('cx', nodeX);
+          leaderDotNode.setAttribute('cy', nodeY);
+          leaderDotNode.style.opacity = '1';
+          leaderDotCard.setAttribute('cx', cardAnchorX);
+          leaderDotCard.setAttribute('cy', cardAnchorY);
+          leaderDotCard.style.opacity = '1';
         }
       }
     });
 
-    requestAnimationFrame(updateOrbit);
+    animId = requestAnimationFrame(updateOrbit);
+  }
+
+  // IntersectionObserver: Pause completely when offscreen
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          isVisible = true;
+          if (!isMobile && !animId) updateOrbit();
+        } else {
+          isVisible = false;
+          if (animId) {
+            cancelAnimationFrame(animId);
+            animId = null;
+          }
+        }
+      });
+    }, { threshold: 0.05 });
+    observer.observe(stage);
   }
 
   updateOrbit();

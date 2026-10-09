@@ -43,9 +43,9 @@ class AruzI18nEngine {
       switcher.querySelectorAll('.lang-btn').forEach(btn => {
         const text = btn.textContent.trim().toLowerCase();
         if (text === this.currentLang) {
-          btn.className = 'lang-btn px-2.5 py-0.5 rounded-full transition-all bg-dorado-aruz text-carbon-aruz font-extrabold shadow-sm scale-105';
+          btn.className = 'lang-btn min-w-[34px] min-h-[32px] inline-flex items-center justify-center px-2.5 py-0.5 rounded-full transition-all bg-dorado-aruz text-carbon-aruz font-extrabold shadow-sm scale-105';
         } else {
-          btn.className = 'lang-btn px-2.5 py-0.5 rounded-full transition-all text-white/75 hover:text-dorado-aruz';
+          btn.className = 'lang-btn min-w-[34px] min-h-[32px] inline-flex items-center justify-center px-2.5 py-0.5 rounded-full transition-all text-stone-200 hover:text-dorado-aruz';
         }
       });
     });

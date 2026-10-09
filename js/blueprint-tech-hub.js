@@ -285,6 +285,8 @@
     resize();
     if (!isMobile && !prefersReducedMotion) {
       render();
+    } else {
+      drawStaticBackground();
     }
   }
 
